@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var RxjsOf_1 = require("./RxjsOf");
-var a = new RxjsOf_1.ofPoc();
+var RxjsDo_1 = require("./RxjsDo");
+//let a = new ofPoc();
+var a = new RxjsDo_1.doPoc();
 a.test();
 //# sourceMappingURL=app.js.map
