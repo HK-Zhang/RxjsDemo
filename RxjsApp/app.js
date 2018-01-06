@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var RxjsSwitchMap_1 = require("./Transformation/RxjsSwitchMap");
+var RxjsMergeMap_1 = require("./Transformation/RxjsMergeMap");
 //let a = new ofPoc();
 //let a = new doPoc();
-var a = new RxjsSwitchMap_1.SwithMapPoc();
+//let a = new SwithMapPoc();
+var a = new RxjsMergeMap_1.MergeMapPoc();
 a.test();
 //# sourceMappingURL=app.js.map

@@ -42,6 +42,9 @@
     <TypeScriptCompile Include="RxjsOf.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Transformation\RxjsMergeMap.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Transformation\RxjsSwitchMap.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
