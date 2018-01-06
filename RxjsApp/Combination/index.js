@@ -4,4 +4,7 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./RxjsConcat"));
+__export(require("./RxjsForkJoin"));
+__export(require("./RxjsCombineLatest"));
+__export(require("./RxjsPairwise"));
 //# sourceMappingURL=index.js.map

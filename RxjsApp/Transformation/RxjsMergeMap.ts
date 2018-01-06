@@ -2,7 +2,8 @@
 
 export class MergeMapPoc {
     test() {
-        this.func1();
+        //this.func1();
+        this.func3();
     }
 
     func1() {
@@ -40,5 +41,12 @@ export class MergeMapPoc {
                 [3, 3, 0, 0] <--4th inner observable
         */
         const subscribe = example.subscribe(val => console.log(val));
+    }
+
+    func3() {
+        const post$ = Rx.Observable.of({ id: 1 });
+        const getPostInfo$ = Rx.Observable.timer(3000).mapTo({ title: "Post title" });
+
+        const posts$ = post$.mergeMap(post => getPostInfo$).subscribe(res => console.log(res));
     }
 }

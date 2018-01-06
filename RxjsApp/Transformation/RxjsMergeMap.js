@@ -5,7 +5,8 @@ var MergeMapPoc = /** @class */ (function () {
     function MergeMapPoc() {
     }
     MergeMapPoc.prototype.test = function () {
-        this.func1();
+        //this.func1();
+        this.func3();
     };
     MergeMapPoc.prototype.func1 = function () {
         //emit value every 1s
@@ -38,6 +39,11 @@ var MergeMapPoc = /** @class */ (function () {
                 [3, 3, 0, 0] <--4th inner observable
         */
         var subscribe = example.subscribe(function (val) { return console.log(val); });
+    };
+    MergeMapPoc.prototype.func3 = function () {
+        var post$ = Rx.Observable.of({ id: 1 });
+        var getPostInfo$ = Rx.Observable.timer(3000).mapTo({ title: "Post title" });
+        var posts$ = post$.mergeMap(function (post) { return getPostInfo$; }).subscribe(function (res) { return console.log(res); });
     };
     return MergeMapPoc;
 }());
