@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var ErrorHandle_1 = require("./ErrorHandle");
+var Multicasting_1 = require("./Multicasting");
 //let a = new OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
@@ -22,6 +22,12 @@ var ErrorHandle_1 = require("./ErrorHandle");
 //let a = new DictionaryPoc()
 //let a = new CatchPoc();
 //let a = new RetryPoc();
-var a = new ErrorHandle_1.RetryWhenPoc();
+//let a = new RetryWhenPoc();
+//let a = new DebounceTimePoc();
+//let a = new RxjsDistinctUntilChangedPoc();
+//let a = new FilterPoc();
+//let a = new TakePoc();
+//let a = new TakeUntilPoc();
+var a = new Multicasting_1.SharePoc();
 a.test();
 //# sourceMappingURL=app.js.map

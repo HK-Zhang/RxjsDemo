@@ -4,7 +4,9 @@ import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartW
 import { FromPoc, FromPromisePoc, OfPoc } from './Creation'
 import { Poc } from './LodashPoc'
 import { SetPoc, QueuePoc, DictionaryPoc } from './Collections'
-import { CatchPoc, RetryPoc,RetryWhenPoc } from './ErrorHandle'
+import { CatchPoc, RetryPoc, RetryWhenPoc } from './ErrorHandle'
+import { DebounceTimePoc, RxjsDistinctUntilChangedPoc, FilterPoc, TakePoc, TakeUntilPoc } from './Filter'
+import { SharePoc } from './Multicasting'
 
 //let a = new OfPoc();
 //let a = new doPoc();
@@ -27,7 +29,14 @@ import { CatchPoc, RetryPoc,RetryWhenPoc } from './ErrorHandle'
 //let a = new DictionaryPoc()
 //let a = new CatchPoc();
 //let a = new RetryPoc();
-let a = new RetryWhenPoc();
+//let a = new RetryWhenPoc();
+//let a = new DebounceTimePoc();
+//let a = new RxjsDistinctUntilChangedPoc();
+//let a = new FilterPoc();
+//let a = new TakePoc();
+//let a = new TakeUntilPoc();
+let a = new SharePoc();
+
 
 
 

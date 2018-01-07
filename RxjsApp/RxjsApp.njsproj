@@ -96,10 +96,34 @@
     <TypeScriptCompile Include="ErrorHandle\rxjsRetryWhen.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Filter\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Filter\RxjsDebounceTime.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Filter\RxjsDistinctUntilChanged.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Filter\RxjsFilter.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Filter\RxjsTake.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Filter\RxjsTakeUntil.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="LodashPoc\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="LodashPoc\Poc.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Multicasting\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Multicasting\RxjsShare.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Utility\RxjsDo.ts">
@@ -129,6 +153,8 @@
     <Folder Include="LodashPoc\" />
     <Folder Include="Collections\" />
     <Folder Include="ErrorHandle\" />
+    <Folder Include="Filter\" />
+    <Folder Include="Multicasting\" />
     <Folder Include="Utility\" />
     <Folder Include="Transformation\" />
     <Folder Include="Combination\" />
