@@ -36,6 +36,12 @@
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
+    <TypeScriptCompile Include="Collections\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Collections\SetPoc.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Combination\RxjsCombineLatest.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -58,6 +64,18 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Combination\RxjsWithLatestFrom.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Creation\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Creation\RxjsFrom.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="LodashPoc\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="LodashPoc\Poc.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="RxjsDo.ts">
@@ -83,6 +101,9 @@
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Creation\" />
+    <Folder Include="LodashPoc\" />
+    <Folder Include="Collections\" />
     <Folder Include="Transformation\" />
     <Folder Include="Combination\" />
   </ItemGroup>
