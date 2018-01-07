@@ -1,5 +1,5 @@
 ﻿import { doPoc } from './Utility'
-import { MapPoc, MergeMapPoc, SwithMapPoc, ConcatMapPoc } from './Transformation'
+import { MapPoc, MergeMapPoc, SwithMapPoc, ConcatMapPoc, BufferTimePoc, ScanPoc } from './Transformation'
 import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartWithPoc, WithLatestFromPoc } from './Combination'
 import { FromPoc, FromPromisePoc, OfPoc } from './Creation'
 import { Poc } from './LodashPoc'
@@ -35,7 +35,10 @@ import { SharePoc } from './Multicasting'
 //let a = new FilterPoc();
 //let a = new TakePoc();
 //let a = new TakeUntilPoc();
-let a = new SharePoc();
+//let a = new SharePoc();
+//let a = new BufferTimePoc();
+let a = new ScanPoc();
+
 
 
 

@@ -126,6 +126,12 @@
     <TypeScriptCompile Include="Multicasting\RxjsShare.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Transformation\RxjsBufferTime.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Transformation\RxjsScan.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Utility\RxjsDo.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

@@ -2,3 +2,5 @@
 export * from './RxjsSwitchMap'
 export * from './RxjsMap'
 export * from './RxjsConcatMap'
+export * from './RxjsBufferTime'
+export * from './RxjsScan'

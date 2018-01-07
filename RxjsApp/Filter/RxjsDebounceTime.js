@@ -1,13 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Rx = require('rxjs/Rx');
-var DebounceTimePoc = /** @class */ (function () {
-    function DebounceTimePoc() {
-    }
-    DebounceTimePoc.prototype.test = function () {
+class DebounceTimePoc {
+    test() {
         this.func1();
-    };
-    DebounceTimePoc.prototype.func1 = function () {
+    }
+    func1() {
         var times = [
             { value: 0, time: 100 },
             { value: 1, time: 600 },
@@ -32,8 +30,7 @@ var DebounceTimePoc = /** @class */ (function () {
         });
         // => Next: 3
         // => Completed
-    };
-    return DebounceTimePoc;
-}());
+    }
+}
 exports.DebounceTimePoc = DebounceTimePoc;
 //# sourceMappingURL=RxjsDebounceTime.js.map

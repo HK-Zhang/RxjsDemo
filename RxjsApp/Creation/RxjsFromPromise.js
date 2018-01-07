@@ -3,16 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Promise = require('promise');
 var Rx = require('rxjs/Rx');
 //import Rx = require('rxjs/Rx');
-var FromPromisePoc = /** @class */ (function () {
-    function FromPromisePoc() {
-    }
-    FromPromisePoc.prototype.test = function () {
+class FromPromisePoc {
+    test() {
         this.func1();
-    };
-    FromPromisePoc.prototype.func1 = function () {
+    }
+    func1() {
         //example promise that will resolve or reject based on input
-        var myPromise = function (willReject) {
-            return new Promise(function (resolve, reject) {
+        const myPromise = willReject => {
+            return new Promise((resolve, reject) => {
                 if (willReject) {
                     reject('Rejected!');
                 }
@@ -20,16 +18,13 @@ var FromPromisePoc = /** @class */ (function () {
             });
         };
         //emit true, then false
-        var source = Rx.Observable.of(true, false);
-        var example = source.mergeMap(function (val) {
-            return Rx.Observable
-                .fromPromise(myPromise(val))
-                .catch(function (error) { return Rx.Observable.of("Error: " + error); });
-        });
+        const source = Rx.Observable.of(true, false);
+        const example = source.mergeMap(val => Rx.Observable
+            .fromPromise(myPromise(val))
+            .catch(error => Rx.Observable.of(`Error: ${error}`)));
         //output: 'Error: Rejected!', 'Resolved!'
-        var subscribe = example.subscribe(function (val) { return console.log(val); });
-    };
-    return FromPromisePoc;
-}());
+        const subscribe = example.subscribe(val => console.log(val));
+    }
+}
 exports.FromPromisePoc = FromPromisePoc;
 //# sourceMappingURL=RxjsFromPromise.js.map

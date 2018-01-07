@@ -1,32 +1,28 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Rx = require('rxjs/Rx');
-var MergeMapPoc = /** @class */ (function () {
-    function MergeMapPoc() {
-    }
-    MergeMapPoc.prototype.test = function () {
+class MergeMapPoc {
+    test() {
         //this.func1();
         this.func3();
-    };
-    MergeMapPoc.prototype.func1 = function () {
+    }
+    func1() {
         //emit value every 1s
         var letters = Rx.Observable.of('a', 'b', 'c');
-        var result = letters.mergeMap(function (x) {
-            return Rx.Observable.interval(1000).map(function (i) { return x + i; }).take(5);
-        }, function (oV, iV, oI, iI) {
+        var result = letters.mergeMap(x => Rx.Observable.interval(1000).map(i => x + i).take(5), (oV, iV, oI, iI) => {
             // console.log("innerValue", iV);
             return "inner" + iV;
         }, 2);
-        result.subscribe(function (x) { return console.log(x); });
-    };
-    MergeMapPoc.prototype.func2 = function () {
+        result.subscribe(x => console.log(x));
+    }
+    func2() {
         //emit value every 1s
-        var source = Rx.Observable.interval(1000);
-        var example = source.mergeMap(
+        const source = Rx.Observable.interval(1000);
+        const example = source.mergeMap(
         //project
-        function (val) { return Rx.Observable.interval(5000).take(2); }, 
+            val => Rx.Observable.interval(5000).take(2), 
         //resultSelector
-        function (oVal, iVal, oIndex, iIndex) { return [oIndex, oVal, iIndex, iVal]; }, 
+        (oVal, iVal, oIndex, iIndex) => [oIndex, oVal, iIndex, iVal], 
         //concurrent
         2);
         /*
@@ -38,14 +34,13 @@ var MergeMapPoc = /** @class */ (function () {
                 [2, 2, 0, 0] <--3rd inner observable
                 [3, 3, 0, 0] <--4th inner observable
         */
-        var subscribe = example.subscribe(function (val) { return console.log(val); });
-    };
-    MergeMapPoc.prototype.func3 = function () {
-        var post$ = Rx.Observable.of({ id: 1 });
-        var getPostInfo$ = Rx.Observable.timer(3000).mapTo({ title: "Post title" });
-        var posts$ = post$.mergeMap(function (post) { return getPostInfo$; }).subscribe(function (res) { return console.log(res); });
-    };
-    return MergeMapPoc;
-}());
+        const subscribe = example.subscribe(val => console.log(val));
+    }
+    func3() {
+        const post$ = Rx.Observable.of({ id: 1 });
+        const getPostInfo$ = Rx.Observable.timer(3000).mapTo({ title: "Post title" });
+        const posts$ = post$.mergeMap(post => getPostInfo$).subscribe(res => console.log(res));
+    }
+}
 exports.MergeMapPoc = MergeMapPoc;
 //# sourceMappingURL=RxjsMergeMap.js.map

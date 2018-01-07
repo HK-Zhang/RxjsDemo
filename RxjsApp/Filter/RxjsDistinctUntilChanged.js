@@ -1,16 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Rx = require('rxjs/Rx');
-var RxjsDistinctUntilChangedPoc = /** @class */ (function () {
-    function RxjsDistinctUntilChangedPoc() {
-    }
-    RxjsDistinctUntilChangedPoc.prototype.test = function () {
+class RxjsDistinctUntilChangedPoc {
+    test() {
         //this.func1();
         this.func2();
-    };
-    RxjsDistinctUntilChangedPoc.prototype.func1 = function () {
+    }
+    func1() {
         //only output distinct values, based on the last emitted value
-        var myArrayWithDuplicatesInARow = Rx.Observable.from([
+        const myArrayWithDuplicatesInARow = Rx.Observable.from([
             1,
             1,
             2,
@@ -20,26 +18,25 @@ var RxjsDistinctUntilChangedPoc = /** @class */ (function () {
             2,
             3
         ]);
-        var distinctSub = myArrayWithDuplicatesInARow
+        const distinctSub = myArrayWithDuplicatesInARow
             .distinctUntilChanged()
-            .subscribe(function (val) { return console.log('DISTINCT SUB:', val); });
-        var nonDistinctSub = myArrayWithDuplicatesInARow
-            .subscribe(function (val) { return console.log('NON DISTINCT SUB:', val); });
-    };
-    RxjsDistinctUntilChangedPoc.prototype.func2 = function () {
-        var sampleObject = { name: 'Test' };
+            .subscribe(val => console.log('DISTINCT SUB:', val));
+        const nonDistinctSub = myArrayWithDuplicatesInARow
+            .subscribe(val => console.log('NON DISTINCT SUB:', val));
+    }
+    func2() {
+        const sampleObject = { name: 'Test' };
         //Objects must be same reference
-        var myArrayWithDuplicateObjects = Rx.Observable.from([
+        const myArrayWithDuplicateObjects = Rx.Observable.from([
             sampleObject,
             sampleObject,
             sampleObject
         ]);
         //only out distinct objects, based on last emitted value
-        var nonDistinctObjects = myArrayWithDuplicateObjects
+        const nonDistinctObjects = myArrayWithDuplicateObjects
             .distinctUntilChanged()
-            .subscribe(function (val) { return console.log('DISTINCT OBJECTS:', val); });
-    };
-    return RxjsDistinctUntilChangedPoc;
-}());
+            .subscribe(val => console.log('DISTINCT OBJECTS:', val));
+    }
+}
 exports.RxjsDistinctUntilChangedPoc = RxjsDistinctUntilChangedPoc;
 //# sourceMappingURL=RxjsDistinctUntilChanged.js.map

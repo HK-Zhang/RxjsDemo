@@ -1,19 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Rx = require('rxjs/Rx');
-var SharePoc = /** @class */ (function () {
-    function SharePoc() {
-    }
-    SharePoc.prototype.test = function () {
+class SharePoc {
+    test() {
         //this.func1();
         this.func2();
-    };
-    SharePoc.prototype.func2 = function () {
+    }
+    func2() {
         //emit value in 1s
-        var source = Rx.Observable.timer(1000);
+        const source = Rx.Observable.timer(1000);
         //log side effect, emit result
-        var example = source
-            .do(function () { return console.log('***SIDE EFFECT***'); })
+        const example = source
+            .do(() => console.log('***SIDE EFFECT***'))
             .mapTo('***RESULT***');
         /*
           ***NOT SHARED, SIDE EFFECT WILL BE EXECUTED TWICE***
@@ -23,10 +21,10 @@ var SharePoc = /** @class */ (function () {
           "***SIDE EFFECT***"
           "***RESULT***"
         */
-        var subscribe = example.subscribe(function (val) { return console.log(val); });
-        var subscribeTwo = example.subscribe(function (val) { return console.log(val); });
+        const subscribe = example.subscribe(val => console.log(val));
+        const subscribeTwo = example.subscribe(val => console.log(val));
         //share observable among subscribers
-        var sharedExample = example.share();
+        const sharedExample = example.share();
         /*
           ***SHARED, SIDE EFFECT EXECUTED ONCE***
           output:
@@ -34,10 +32,9 @@ var SharePoc = /** @class */ (function () {
           "***RESULT***"
           "***RESULT***"
         */
-        var subscribeThree = sharedExample.subscribe(function (val) { return console.log(val); });
-        var subscribeFour = sharedExample.subscribe(function (val) { return console.log(val); });
-    };
-    return SharePoc;
-}());
+        const subscribeThree = sharedExample.subscribe(val => console.log(val));
+        const subscribeFour = sharedExample.subscribe(val => console.log(val));
+    }
+}
 exports.SharePoc = SharePoc;
 //# sourceMappingURL=RxjsShare.js.map

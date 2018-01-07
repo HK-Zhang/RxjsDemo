@@ -7,4 +7,6 @@ __export(require("./RxjsMergeMap"));
 __export(require("./RxjsSwitchMap"));
 __export(require("./RxjsMap"));
 __export(require("./RxjsConcatMap"));
+__export(require("./RxjsBufferTime"));
+__export(require("./RxjsScan"));
 //# sourceMappingURL=index.js.map

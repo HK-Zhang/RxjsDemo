@@ -2,38 +2,29 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Promise = require('promise');
 var Rx = require('rxjs/Rx');
-var CatchPoc = /** @class */ (function () {
-    function CatchPoc() {
-    }
-    CatchPoc.prototype.test = function () {
+class CatchPoc {
+    test() {
         //this.func1();
         this.func2();
-    };
-    CatchPoc.prototype.func1 = function () {
+    }
+    func1() {
         //emit error
-        var source = Rx.Observable.throw('This is an error!');
+        const source = Rx.Observable.throw('This is an error!');
         //gracefully handle error, returning observable with error message
-        var example = source.catch(function (val) { return Rx.Observable.of("I caught: " + val); });
+        const example = source.catch(val => Rx.Observable.of(`I caught: ${val}`));
         //output: 'I caught: This is an error'
-        var subscribe = example.subscribe(function (val) { return console.log(val); });
-    };
-    CatchPoc.prototype.func2 = function () {
+        const subscribe = example.subscribe(val => console.log(val));
+    }
+    func2() {
         //create promise that immediately rejects
-        var myBadPromise = function () {
-            return new Promise(function (resolve, reject) { return reject('Rejected!'); });
-        };
+        const myBadPromise = () => new Promise((resolve, reject) => reject('Rejected!'));
         //emit single value after 1 second
-        var source = Rx.Observable.timer(1000);
+        const source = Rx.Observable.timer(1000);
         //catch rejected promise, returning observable containing error message
-        var example = source.flatMap(function () {
-            return Rx.Observable.fromPromise(myBadPromise()).catch(function (error) {
-                return Rx.Observable.of("Bad Promise: " + error);
-            });
-        });
+        const example = source.flatMap(() => Rx.Observable.fromPromise(myBadPromise()).catch(error => Rx.Observable.of(`Bad Promise: ${error}`)));
         //output: 'Bad Promise: Rejected'
-        var subscribe = example.subscribe(function (val) { return console.log(val); });
-    };
-    return CatchPoc;
-}());
+        const subscribe = example.subscribe(val => console.log(val));
+    }
+}
 exports.CatchPoc = CatchPoc;
 //# sourceMappingURL=RxjsCatchPoc.js.map

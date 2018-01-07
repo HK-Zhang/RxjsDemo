@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Multicasting_1 = require("./Multicasting");
+const Transformation_1 = require("./Transformation");
 //let a = new OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
@@ -28,6 +28,8 @@ var Multicasting_1 = require("./Multicasting");
 //let a = new FilterPoc();
 //let a = new TakePoc();
 //let a = new TakeUntilPoc();
-var a = new Multicasting_1.SharePoc();
+//let a = new SharePoc();
+//let a = new BufferTimePoc();
+let a = new Transformation_1.ScanPoc();
 a.test();
 //# sourceMappingURL=app.js.map

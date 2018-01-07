@@ -1,18 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Rx = require('rxjs/Rx');
-var CombineLatestPoc = /** @class */ (function () {
-    function CombineLatestPoc() {
-    }
-    CombineLatestPoc.prototype.test = function () {
+class CombineLatestPoc {
+    test() {
         this.func1();
-    };
-    CombineLatestPoc.prototype.func1 = function () {
-        var intervalOne$ = Rx.Observable.interval(1000);
-        var intervalTwo$ = Rx.Observable.interval(2000);
-        Rx.Observable.combineLatest(intervalOne$, intervalTwo$).subscribe(function (all) { return console.log(all); });
-    };
-    return CombineLatestPoc;
-}());
+    }
+    func1() {
+        const intervalOne$ = Rx.Observable.interval(1000);
+        const intervalTwo$ = Rx.Observable.interval(2000);
+        Rx.Observable.combineLatest(intervalOne$, intervalTwo$).subscribe(all => console.log(all));
+    }
+}
 exports.CombineLatestPoc = CombineLatestPoc;
 //# sourceMappingURL=RxjsCombineLatest.js.map

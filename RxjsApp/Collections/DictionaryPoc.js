@@ -1,13 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Collections = require("typescript-collections");
-var DictionaryPoc = /** @class */ (function () {
-    function DictionaryPoc() {
-    }
-    DictionaryPoc.prototype.test = function () {
+const Collections = require("typescript-collections");
+class DictionaryPoc {
+    test() {
         this.func1();
-    };
-    DictionaryPoc.prototype.func1 = function () {
+    }
+    func1() {
         var dict = new Collections.Dictionary();
         dict.setValue(new Person("john", 1970, "melbourne"), new Car("honda", "city", 2002));
         dict.setValue(new Person("gavin", 1984), new Car("ferrari", "F50", 2006));
@@ -27,31 +25,28 @@ var DictionaryPoc = /** @class */ (function () {
         var car = dict.getValue(person);
         console.log("-Car:");
         console.log(car.toString());
-    };
-    return DictionaryPoc;
-}());
+    }
+}
 exports.DictionaryPoc = DictionaryPoc;
-var Person = /** @class */ (function () {
-    function Person(name, yearOfBirth, city) {
+class Person {
+    constructor(name, yearOfBirth, city) {
         this.name = name;
         this.yearOfBirth = yearOfBirth;
         this.city = city;
     }
-    Person.prototype.toString = function () {
+    toString() {
         return this.name + "-" + this.yearOfBirth; // City is not a part of the key.
-    };
-    return Person;
-}());
-var Car = /** @class */ (function () {
-    function Car(company, type, year) {
+    }
+}
+class Car {
+    constructor(company, type, year) {
         this.company = company;
         this.type = type;
         this.year = year;
     }
-    Car.prototype.toString = function () {
+    toString() {
         // Short hand. Adds each own property
         return Collections.util.makeString(this);
-    };
-    return Car;
-}());
+    }
+}
 //# sourceMappingURL=DictionaryPoc.js.map

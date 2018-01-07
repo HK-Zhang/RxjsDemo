@@ -1,18 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Rx = require('rxjs/Rx');
-var PairwisePoc = /** @class */ (function () {
-    function PairwisePoc() {
-    }
-    PairwisePoc.prototype.test = function () {
+class PairwisePoc {
+    test() {
         this.func1();
-    };
-    PairwisePoc.prototype.func1 = function () {
+    }
+    func1() {
         Rx.Observable.interval(1000)
             .pairwise()
-            .subscribe(function (pair) { return console.log(pair); }); // pair[1] - pair[0]
-    };
-    return PairwisePoc;
-}());
+            .subscribe(pair => console.log(pair)); // pair[1] - pair[0]
+    }
+}
 exports.PairwisePoc = PairwisePoc;
 //# sourceMappingURL=RxjsPairwise.js.map
