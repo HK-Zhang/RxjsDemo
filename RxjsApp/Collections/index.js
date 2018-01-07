@@ -4,4 +4,6 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./SetPoc"));
+__export(require("./QueuePoc"));
+__export(require("./DictionaryPoc"));
 //# sourceMappingURL=index.js.map

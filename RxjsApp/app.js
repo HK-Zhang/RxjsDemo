@@ -16,6 +16,8 @@ var Collections_1 = require("./Collections");
 //let a = new WithLatestFromPoc()
 //let a = new FromPoc()
 //let a = new Poc()
-var a = new Collections_1.SetPoc();
+//let a = new SetPoc()
+//let a = new QueuePoc()
+var a = new Collections_1.DictionaryPoc();
 a.test();
 //# sourceMappingURL=app.js.map
