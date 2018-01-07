@@ -10,6 +10,9 @@ var Combination_1 = require("./Combination");
 //let a = new ConcatPoc();
 //let a = new ForkJoinPoc();
 //let a = new CombineLatestPoc();
-var a = new Combination_1.PairwisePoc();
+//let a = new PairwisePoc();
+//let a = new MergePoc();
+//let a = new StartWithPoc();
+var a = new Combination_1.WithLatestFromPoc();
 a.test();
 //# sourceMappingURL=app.js.map

@@ -2,3 +2,6 @@
 export * from './RxjsForkJoin'
 export * from './RxjsCombineLatest'
 export * from './RxjsPairwise'
+export * from './RxjsMerge'
+export * from './RxjsStartWith'
+export * from './RxjsWithLatestFrom'

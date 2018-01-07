@@ -1,7 +1,7 @@
 ﻿import { ofPoc } from './RxjsOf'
 import { doPoc } from './RxjsDo'
 import { MapPoc, MergeMapPoc, SwithMapPoc, ConcatMapPoc } from './Transformation'
-import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc } from './Combination'
+import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartWithPoc, WithLatestFromPoc } from './Combination'
 
 
 //let a = new ofPoc();
@@ -13,7 +13,9 @@ import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc } from './Combina
 //let a = new ConcatPoc();
 //let a = new ForkJoinPoc();
 //let a = new CombineLatestPoc();
-let a = new PairwisePoc();
-
+//let a = new PairwisePoc();
+//let a = new MergePoc();
+//let a = new StartWithPoc();
+let a = new WithLatestFromPoc()
 
 a.test();

@@ -7,4 +7,7 @@ __export(require("./RxjsConcat"));
 __export(require("./RxjsForkJoin"));
 __export(require("./RxjsCombineLatest"));
 __export(require("./RxjsPairwise"));
+__export(require("./RxjsMerge"));
+__export(require("./RxjsStartWith"));
+__export(require("./RxjsWithLatestFrom"));
 //# sourceMappingURL=index.js.map
