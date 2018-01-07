@@ -3,9 +3,10 @@ import { MapPoc, MergeMapPoc, SwithMapPoc, ConcatMapPoc } from './Transformation
 import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartWithPoc, WithLatestFromPoc } from './Combination'
 import { FromPoc, FromPromisePoc, OfPoc } from './Creation'
 import { Poc } from './LodashPoc'
-import { SetPoc, QueuePoc,DictionaryPoc } from './Collections'
+import { SetPoc, QueuePoc, DictionaryPoc } from './Collections'
+import { CatchPoc } from './ErrorHandle'
 
-let a = new OfPoc();
+//let a = new OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
 //let a = new MergeMapPoc();
@@ -24,7 +25,7 @@ let a = new OfPoc();
 //let a = new SetPoc()
 //let a = new QueuePoc()
 //let a = new DictionaryPoc()
-
+let a = new CatchPoc();
 
 
 

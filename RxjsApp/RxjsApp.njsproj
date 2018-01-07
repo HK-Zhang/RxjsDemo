@@ -84,6 +84,12 @@
     <TypeScriptCompile Include="Creation\RxjsOf.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="ErrorHandle\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ErrorHandle\RxjsCatchPoc.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="LodashPoc\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -113,6 +119,7 @@
     <Folder Include="Creation\" />
     <Folder Include="LodashPoc\" />
     <Folder Include="Collections\" />
+    <Folder Include="ErrorHandle\" />
     <Folder Include="Transformation\" />
     <Folder Include="Combination\" />
   </ItemGroup>

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Creation_1 = require("./Creation");
-var a = new Creation_1.OfPoc();
+var ErrorHandle_1 = require("./ErrorHandle");
+//let a = new OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
 //let a = new MergeMapPoc();
@@ -20,5 +20,6 @@ var a = new Creation_1.OfPoc();
 //let a = new SetPoc()
 //let a = new QueuePoc()
 //let a = new DictionaryPoc()
+var a = new ErrorHandle_1.CatchPoc();
 a.test();
 //# sourceMappingURL=app.js.map
