@@ -1,4 +1,4 @@
-﻿import { doPoc } from './RxjsDo'
+﻿import { doPoc } from './Utility'
 import { MapPoc, MergeMapPoc, SwithMapPoc, ConcatMapPoc } from './Transformation'
 import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartWithPoc, WithLatestFromPoc } from './Combination'
 import { FromPoc, FromPromisePoc, OfPoc } from './Creation'

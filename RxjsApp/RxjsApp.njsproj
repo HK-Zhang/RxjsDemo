@@ -102,7 +102,7 @@
     <TypeScriptCompile Include="LodashPoc\Poc.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="RxjsDo.ts">
+    <TypeScriptCompile Include="Utility\RxjsDo.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Transformation\index.ts">
@@ -120,12 +120,16 @@
     <TypeScriptCompile Include="Transformation\RxjsSwitchMap.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Utility\Index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Creation\" />
     <Folder Include="LodashPoc\" />
     <Folder Include="Collections\" />
     <Folder Include="ErrorHandle\" />
+    <Folder Include="Utility\" />
     <Folder Include="Transformation\" />
     <Folder Include="Combination\" />
   </ItemGroup>
