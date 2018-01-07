@@ -8,7 +8,9 @@ var FromPoc = /** @class */ (function () {
     }
     FromPoc.prototype.test = function () {
         //this.func1();
-        this.func2();
+        //this.func2();
+        //this.func3();
+        this.func4();
     };
     FromPoc.prototype.func1 = function () {
         //emit array as a sequence of values
@@ -23,13 +25,18 @@ var FromPoc = /** @class */ (function () {
         var subscribe = promiseSource.subscribe(function (val) { return console.log(val); });
     };
     FromPoc.prototype.func3 = function () {
-        ////works on js collections
-        //const map = new l
-        //map.set(1, 'Hi');
-        //map.set(2, 'Bye');
-        //const mapSource = Rx.Observable.from(map);
-        ////output: [1, 'Hi'], [2, 'Bye']
-        //const subscribe = mapSource.subscribe(val => console.log(val));
+        //emit string as a sequence
+        var source = Rx.Observable.from('Hello World');
+        //output: 'H','e','l','l','o',' ','W','o','r','l','d'
+        var subscribe = source.subscribe(function (val) { return console.log(val); });
+    };
+    FromPoc.prototype.func4 = function () {
+        var map = {};
+        map['1'] = 'Hi';
+        map['2'] = 'Bye';
+        var mapSource = Rx.Observable.from(map);
+        //output: [1, 'Hi'], [2, 'Bye']
+        var subscribe = mapSource.subscribe(function (val) { return console.log(val); });
     };
     return FromPoc;
 }());

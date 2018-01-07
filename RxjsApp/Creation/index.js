@@ -4,4 +4,6 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./RxjsFrom"));
+__export(require("./RxjsFromPromise"));
+__export(require("./RxjsOf"));
 //# sourceMappingURL=index.js.map

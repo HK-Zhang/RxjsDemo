@@ -1,11 +1,15 @@
-﻿var Promise = require('promise');
+﻿import * as Collections from 'typescript-collections';
+
+var Promise = require('promise');
 var Rx = require('rxjs/Rx');
 //import Rx = require('rxjs/Rx');
 
 export class FromPoc {
     test() {
         //this.func1();
-        this.func2();
+        //this.func2();
+        //this.func3();
+        this.func4();
     }
 
     func1() {
@@ -25,14 +29,19 @@ export class FromPoc {
     }
 
     func3() {
-        ////works on js collections
-        //const map = new l
-        //map.set(1, 'Hi');
-        //map.set(2, 'Bye');
-
-        //const mapSource = Rx.Observable.from(map);
-        ////output: [1, 'Hi'], [2, 'Bye']
-        //const subscribe = mapSource.subscribe(val => console.log(val));
+        //emit string as a sequence
+        const source = Rx.Observable.from('Hello World');
+        //output: 'H','e','l','l','o',' ','W','o','r','l','d'
+        const subscribe = source.subscribe(val => console.log(val));
     }
 
+    func4() {
+        let map: { [key: number]: string; } = {};
+        map['1'] = 'Hi';
+        map['2'] = 'Bye';
+
+        const mapSource = Rx.Observable.from(map);
+        //output: [1, 'Hi'], [2, 'Bye']
+        const subscribe = mapSource.subscribe(val => console.log(val));
+    }
 }

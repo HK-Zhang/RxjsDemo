@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Collections_1 = require("./Collections");
-//let a = new ofPoc();
+var Creation_1 = require("./Creation");
+var a = new Creation_1.OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
 //let a = new MergeMapPoc();
@@ -15,9 +15,10 @@ var Collections_1 = require("./Collections");
 //let a = new StartWithPoc();
 //let a = new WithLatestFromPoc()
 //let a = new FromPoc()
+//let a = new FromPromisePoc()
 //let a = new Poc()
 //let a = new SetPoc()
 //let a = new QueuePoc()
-var a = new Collections_1.DictionaryPoc();
+//let a = new DictionaryPoc()
 a.test();
 //# sourceMappingURL=app.js.map
