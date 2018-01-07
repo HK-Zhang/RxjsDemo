@@ -90,6 +90,12 @@
     <TypeScriptCompile Include="ErrorHandle\RxjsCatchPoc.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="ErrorHandle\rxjsRetry.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ErrorHandle\rxjsRetryWhen.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="LodashPoc\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

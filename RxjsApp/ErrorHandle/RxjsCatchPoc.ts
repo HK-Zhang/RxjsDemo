@@ -1,10 +1,6 @@
 ﻿var Promise = require('promise');
 var Rx = require('rxjs/Rx');
 
-var tfx = function (item, index) {
-    return item * 2;
-};
-
 export class CatchPoc {
     test() {
         //this.func1();

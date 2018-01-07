@@ -20,6 +20,8 @@ var ErrorHandle_1 = require("./ErrorHandle");
 //let a = new SetPoc()
 //let a = new QueuePoc()
 //let a = new DictionaryPoc()
-var a = new ErrorHandle_1.CatchPoc();
+//let a = new CatchPoc();
+//let a = new RetryPoc();
+var a = new ErrorHandle_1.RetryWhenPoc();
 a.test();
 //# sourceMappingURL=app.js.map

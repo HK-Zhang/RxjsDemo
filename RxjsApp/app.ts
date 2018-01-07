@@ -4,7 +4,7 @@ import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartW
 import { FromPoc, FromPromisePoc, OfPoc } from './Creation'
 import { Poc } from './LodashPoc'
 import { SetPoc, QueuePoc, DictionaryPoc } from './Collections'
-import { CatchPoc } from './ErrorHandle'
+import { CatchPoc, RetryPoc,RetryWhenPoc } from './ErrorHandle'
 
 //let a = new OfPoc();
 //let a = new doPoc();
@@ -25,7 +25,9 @@ import { CatchPoc } from './ErrorHandle'
 //let a = new SetPoc()
 //let a = new QueuePoc()
 //let a = new DictionaryPoc()
-let a = new CatchPoc();
+//let a = new CatchPoc();
+//let a = new RetryPoc();
+let a = new RetryWhenPoc();
 
 
 

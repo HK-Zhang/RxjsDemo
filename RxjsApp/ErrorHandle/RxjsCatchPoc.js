@@ -2,9 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Promise = require('promise');
 var Rx = require('rxjs/Rx');
-var tfx = function (item, index) {
-    return item * 2;
-};
 var CatchPoc = /** @class */ (function () {
     function CatchPoc() {
     }
