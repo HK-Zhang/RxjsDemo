@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Creation_1 = require("./Creation");
+const Conditional_1 = require("./Conditional");
 //let a = new OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
@@ -36,6 +36,8 @@ const Creation_1 = require("./Creation");
 //let a = new IntervalPoc();
 //let a = new RangePoc();
 //let a = new ThrowPoc();
-let a = new Creation_1.TimerPoc();
+//let a = new TimerPoc();
+//let a = new EveryPoc();
+let a = new Conditional_1.DefaultIfEmptyPoc();
 a.test();
 //# sourceMappingURL=app.js.map

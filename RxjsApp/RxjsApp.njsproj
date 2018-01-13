@@ -72,6 +72,15 @@
     <TypeScriptCompile Include="Combination\RxjsWithLatestFrom.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Conditional\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Conditional\rxjsDefaultIfEmpty.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Conditional\rxjsEvery.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Creation\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -177,6 +186,7 @@
     <Folder Include="ErrorHandle\" />
     <Folder Include="Filter\" />
     <Folder Include="Multicasting\" />
+    <Folder Include="Conditional\" />
     <Folder Include="Utility\" />
     <Folder Include="Transformation\" />
     <Folder Include="Combination\" />

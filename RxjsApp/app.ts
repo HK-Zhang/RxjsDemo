@@ -7,6 +7,7 @@ import { SetPoc, QueuePoc, DictionaryPoc } from './Collections'
 import { CatchPoc, RetryPoc, RetryWhenPoc } from './ErrorHandle'
 import { DebounceTimePoc, RxjsDistinctUntilChangedPoc, FilterPoc, TakePoc, TakeUntilPoc } from './Filter'
 import { SharePoc } from './Multicasting'
+import { EveryPoc,DefaultIfEmptyPoc } from './Conditional'
 
 //let a = new OfPoc();
 //let a = new doPoc();
@@ -43,8 +44,9 @@ import { SharePoc } from './Multicasting'
 //let a = new IntervalPoc();
 //let a = new RangePoc();
 //let a = new ThrowPoc();
-let a = new TimerPoc();
-
+//let a = new TimerPoc();
+//let a = new EveryPoc();
+let a = new DefaultIfEmptyPoc();
 
 
 
