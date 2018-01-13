@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Transformation_1 = require("./Transformation");
+const Creation_1 = require("./Creation");
 //let a = new OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
@@ -30,6 +30,12 @@ const Transformation_1 = require("./Transformation");
 //let a = new TakeUntilPoc();
 //let a = new SharePoc();
 //let a = new BufferTimePoc();
-let a = new Transformation_1.ScanPoc();
+//let a = new ScanPoc();
+//let a = new CreatePoc();
+//let a = new EmptyPoc();
+//let a = new IntervalPoc();
+//let a = new RangePoc();
+//let a = new ThrowPoc();
+let a = new Creation_1.TimerPoc();
 a.test();
 //# sourceMappingURL=app.js.map

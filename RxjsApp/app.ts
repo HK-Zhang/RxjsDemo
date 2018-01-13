@@ -1,7 +1,7 @@
 ﻿import { doPoc } from './Utility'
 import { MapPoc, MergeMapPoc, SwithMapPoc, ConcatMapPoc, BufferTimePoc, ScanPoc } from './Transformation'
 import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartWithPoc, WithLatestFromPoc } from './Combination'
-import { FromPoc, FromPromisePoc, OfPoc } from './Creation'
+import { FromPoc, FromPromisePoc, OfPoc, CreatePoc, EmptyPoc,IntervalPoc,RangePoc,ThrowPoc,TimerPoc } from './Creation'
 import { Poc } from './LodashPoc'
 import { SetPoc, QueuePoc, DictionaryPoc } from './Collections'
 import { CatchPoc, RetryPoc, RetryWhenPoc } from './ErrorHandle'
@@ -37,7 +37,13 @@ import { SharePoc } from './Multicasting'
 //let a = new TakeUntilPoc();
 //let a = new SharePoc();
 //let a = new BufferTimePoc();
-let a = new ScanPoc();
+//let a = new ScanPoc();
+//let a = new CreatePoc();
+//let a = new EmptyPoc();
+//let a = new IntervalPoc();
+//let a = new RangePoc();
+//let a = new ThrowPoc();
+let a = new TimerPoc();
 
 
 

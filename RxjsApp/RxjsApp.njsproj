@@ -75,13 +75,29 @@
     <TypeScriptCompile Include="Creation\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Creation\rxjsCreate.ts" />
     <TypeScriptCompile Include="Creation\RxjsFrom.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Creation\rxjsFromEvent.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Creation\RxjsFromPromise.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Creation\rxjsInterval.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Creation\RxjsOf.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Creation\rxjsRange.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Creation\rxjsThrow.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Creation\rxjsTimer.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ErrorHandle\index.ts">
@@ -164,6 +180,11 @@
     <Folder Include="Utility\" />
     <Folder Include="Transformation\" />
     <Folder Include="Combination\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Creation\rxjsEmpty.ts">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
