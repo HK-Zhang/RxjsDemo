@@ -157,6 +157,12 @@
     <TypeScriptCompile Include="Transformation\RxjsScan.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Utility\rxjsDelay.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Utility\rxjsDelayWhen.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Utility\RxjsDo.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -176,6 +182,15 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Utility\Index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Utility\rxjsLet.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Utility\rxjsTimeout.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Utility\rxjsToPromise.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>

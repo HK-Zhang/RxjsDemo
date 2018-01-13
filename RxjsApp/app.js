@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Conditional_1 = require("./Conditional");
+const Utility_1 = require("./Utility");
 //let a = new OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
@@ -38,6 +38,11 @@ const Conditional_1 = require("./Conditional");
 //let a = new ThrowPoc();
 //let a = new TimerPoc();
 //let a = new EveryPoc();
-let a = new Conditional_1.DefaultIfEmptyPoc();
+//let a = new DefaultIfEmptyPoc();
+//let a = new delayPoc();
+//let a = new delayWhenPoc();
+//let a = new letPoc();
+//let a = new toPromisePoc();
+let a = new Utility_1.timeoutPoc();
 a.test();
 //# sourceMappingURL=app.js.map

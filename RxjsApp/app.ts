@@ -1,4 +1,4 @@
-﻿import { doPoc } from './Utility'
+﻿import { doPoc,delayPoc,delayWhenPoc,letPoc,toPromisePoc,timeoutPoc } from './Utility'
 import { MapPoc, MergeMapPoc, SwithMapPoc, ConcatMapPoc, BufferTimePoc, ScanPoc } from './Transformation'
 import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartWithPoc, WithLatestFromPoc } from './Combination'
 import { FromPoc, FromPromisePoc, OfPoc, CreatePoc, EmptyPoc,IntervalPoc,RangePoc,ThrowPoc,TimerPoc } from './Creation'
@@ -46,7 +46,12 @@ import { EveryPoc,DefaultIfEmptyPoc } from './Conditional'
 //let a = new ThrowPoc();
 //let a = new TimerPoc();
 //let a = new EveryPoc();
-let a = new DefaultIfEmptyPoc();
+//let a = new DefaultIfEmptyPoc();
+//let a = new delayPoc();
+//let a = new delayWhenPoc();
+//let a = new letPoc();
+//let a = new toPromisePoc();
+let a = new timeoutPoc();
 
 
 
