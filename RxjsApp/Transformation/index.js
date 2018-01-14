@@ -9,4 +9,8 @@ __export(require("./RxjsMap"));
 __export(require("./RxjsConcatMap"));
 __export(require("./RxjsBufferTime"));
 __export(require("./RxjsScan"));
+__export(require("./rxjsBuffer"));
+__export(require("./rxjsBufferCount"));
+__export(require("./rxjsBufferToggle"));
+__export(require("./rxjsBufferWhen"));
 //# sourceMappingURL=index.js.map
