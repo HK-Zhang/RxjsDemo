@@ -4,4 +4,6 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./RxjsShare"));
+__export(require("./rxjsPublish"));
+__export(require("./rxjsMulticast"));
 //# sourceMappingURL=index.js.map

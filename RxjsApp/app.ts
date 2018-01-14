@@ -6,7 +6,7 @@ import { Poc } from './LodashPoc'
 import { SetPoc, QueuePoc, DictionaryPoc } from './Collections'
 import { CatchPoc, RetryPoc, RetryWhenPoc } from './ErrorHandle'
 import { DebounceTimePoc, RxjsDistinctUntilChangedPoc, FilterPoc, TakePoc, TakeUntilPoc } from './Filter'
-import { SharePoc } from './Multicasting'
+import { SharePoc, publishPoc, multicastPoc } from './Multicasting'
 import { EveryPoc,DefaultIfEmptyPoc } from './Conditional'
 
 //let a = new OfPoc();
@@ -51,9 +51,9 @@ import { EveryPoc,DefaultIfEmptyPoc } from './Conditional'
 //let a = new delayWhenPoc();
 //let a = new letPoc();
 //let a = new toPromisePoc();
-let a = new timeoutPoc();
-
-
+//let a = new timeoutPoc();
+//let a = new publishPoc();
+let a = new multicastPoc();
 
 
 a.test();

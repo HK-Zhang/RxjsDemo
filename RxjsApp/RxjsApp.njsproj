@@ -148,6 +148,12 @@
     <TypeScriptCompile Include="Multicasting\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Multicasting\rxjsMulticast.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Multicasting\rxjsPublish.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Multicasting\RxjsShare.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

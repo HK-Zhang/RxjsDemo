@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Utility_1 = require("./Utility");
+const Multicasting_1 = require("./Multicasting");
 //let a = new OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
@@ -43,6 +43,8 @@ const Utility_1 = require("./Utility");
 //let a = new delayWhenPoc();
 //let a = new letPoc();
 //let a = new toPromisePoc();
-let a = new Utility_1.timeoutPoc();
+//let a = new timeoutPoc();
+//let a = new publishPoc();
+let a = new Multicasting_1.multicastPoc();
 a.test();
 //# sourceMappingURL=app.js.map
