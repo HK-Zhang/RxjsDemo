@@ -49,6 +49,7 @@ const Transformation_1 = require("./Transformation");
 //let a = new bufferPoc();
 //let a = new bufferCountPoc();
 //let a = new bufferTogglePoc();
-let a = new Transformation_1.bufferWhenPoc();
+//let a = new bufferWhenPoc();
+let a = new Transformation_1.ConcatMapToPoc();
 a.test();
 //# sourceMappingURL=app.js.map

@@ -172,6 +172,9 @@
     <TypeScriptCompile Include="Transformation\rxjsBufferWhen.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Transformation\rxjsConcatMapTo.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Transformation\RxjsScan.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
