@@ -16,4 +16,5 @@ __export(require("./rxjsBufferWhen"));
 __export(require("./rxjsConcatMapTo"));
 __export(require("./rxjsExpand"));
 __export(require("./rxjsexhaustMap"));
+__export(require("./rxjsGroupby"));
 //# sourceMappingURL=index.js.map

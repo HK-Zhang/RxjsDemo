@@ -24,10 +24,10 @@ class exhaustMapPoc {
     }
     func2() {
         const firstInterval = Observable_1.Observable.interval(1000).take(10);
-        const secondInterval = Observable_1.Observable.interval(3000);
+        const secondInterval = Observable_1.Observable.interval(1000).take(2);
         const exhaustSub = firstInterval
             .do(i => console.log(`Emission of first interval: ${i}`))
-            .exhaustMap(_ => secondInterval)
+            .exhaustMap(f => secondInterval)
             .subscribe(s => console.log(s));
     }
 }

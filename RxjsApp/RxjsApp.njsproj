@@ -181,6 +181,9 @@
     <TypeScriptCompile Include="Transformation\rxjsExpand.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Transformation\rxjsGroupby.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Transformation\RxjsScan.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

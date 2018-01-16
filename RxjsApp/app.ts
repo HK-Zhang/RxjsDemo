@@ -1,7 +1,7 @@
 ﻿import { doPoc, delayPoc, delayWhenPoc, letPoc, toPromisePoc, timeoutPoc } from './Utility'
 import {
     MapPoc, MergeMapPoc, SwithMapPoc, ConcatMapPoc, BufferTimePoc, ScanPoc, bufferPoc,
-    bufferCountPoc, bufferTogglePoc, bufferWhenPoc, ConcatMapToPoc, expandPoc, exhaustMapPoc
+    bufferCountPoc, bufferTogglePoc, bufferWhenPoc, ConcatMapToPoc, expandPoc, exhaustMapPoc, groupByPoc
 } from './Transformation'
 import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartWithPoc, WithLatestFromPoc } from './Combination'
 import { FromPoc, FromPromisePoc, OfPoc, CreatePoc, EmptyPoc,IntervalPoc,RangePoc,ThrowPoc,TimerPoc } from './Creation'
@@ -63,7 +63,9 @@ import { EveryPoc,DefaultIfEmptyPoc } from './Conditional'
 //let a = new bufferWhenPoc();
 //let a = new ConcatMapToPoc();
 //let a = new expandPoc();
-let a = new exhaustMapPoc();
+//let a = new exhaustMapPoc();
+let a = new groupByPoc();
+
 
 
 
