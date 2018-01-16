@@ -14,4 +14,6 @@ __export(require("./rxjsBufferCount"));
 __export(require("./rxjsBufferToggle"));
 __export(require("./rxjsBufferWhen"));
 __export(require("./rxjsConcatMapTo"));
+__export(require("./rxjsExpand"));
+__export(require("./rxjsexhaustMap"));
 //# sourceMappingURL=index.js.map
