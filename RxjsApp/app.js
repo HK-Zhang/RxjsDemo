@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Transformation_1 = require("./Transformation");
+const Immutable_1 = require("./Immutable");
 //let a = new OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
@@ -58,6 +58,7 @@ const Transformation_1 = require("./Transformation");
 //let a = new maptoPoc();
 //let a = new partitionPoc();
 //let a = new pluckPoc();
-let a = new Transformation_1.reducePoc();
+//let a = new reducePoc();
+let a = new Immutable_1.listPoc();
 a.test();
 //# sourceMappingURL=app.js.map

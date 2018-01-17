@@ -139,6 +139,12 @@
     <TypeScriptCompile Include="Filter\RxjsTakeUntil.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Immutable\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Immutable\listPoc.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="LodashPoc\index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -244,6 +250,7 @@
     <Folder Include="Filter\" />
     <Folder Include="Multicasting\" />
     <Folder Include="Conditional\" />
+    <Folder Include="Immutable\" />
     <Folder Include="Utility\" />
     <Folder Include="Transformation\" />
     <Folder Include="Combination\" />

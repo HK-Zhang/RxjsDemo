@@ -1,16 +1,27 @@
 ﻿import { doPoc, delayPoc, delayWhenPoc, letPoc, toPromisePoc, timeoutPoc } from './Utility'
+
 import {
     MapPoc, MergeMapPoc, SwithMapPoc, ConcatMapPoc, BufferTimePoc, ScanPoc, bufferPoc,
     bufferCountPoc, bufferTogglePoc, bufferWhenPoc, ConcatMapToPoc, expandPoc, exhaustMapPoc, groupByPoc, maptoPoc,
     partitionPoc, pluckPoc, reducePoc
 } from './Transformation'
+
 import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartWithPoc, WithLatestFromPoc } from './Combination'
+
 import { FromPoc, FromPromisePoc, OfPoc, CreatePoc, EmptyPoc, IntervalPoc, RangePoc, ThrowPoc, TimerPoc } from './Creation'
+
 import { Poc } from './LodashPoc'
+
 import { SetPoc, QueuePoc, DictionaryPoc } from './Collections'
+
+import { listPoc } from './Immutable'
+
 import { CatchPoc, RetryPoc, RetryWhenPoc } from './ErrorHandle'
+
 import { DebounceTimePoc, RxjsDistinctUntilChangedPoc, FilterPoc, TakePoc, TakeUntilPoc } from './Filter'
+
 import { SharePoc, publishPoc, multicastPoc } from './Multicasting'
+
 import { EveryPoc,DefaultIfEmptyPoc } from './Conditional'
 
 //let a = new OfPoc();
@@ -70,8 +81,8 @@ import { EveryPoc,DefaultIfEmptyPoc } from './Conditional'
 //let a = new maptoPoc();
 //let a = new partitionPoc();
 //let a = new pluckPoc();
-let a = new reducePoc();
-
+//let a = new reducePoc();
+let a = new listPoc();
 
 
 
