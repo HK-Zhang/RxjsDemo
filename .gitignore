@@ -3,3 +3,7 @@
 ################################################################################
 
 /RxjsApp/obj/Debug
+/.vs
+/NodejsWebApp1/node_modules/@types/node
+/RxjsApp/bin
+/RxjsApp/node_modules
