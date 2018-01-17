@@ -17,4 +17,8 @@ __export(require("./rxjsConcatMapTo"));
 __export(require("./rxjsExpand"));
 __export(require("./rxjsexhaustMap"));
 __export(require("./rxjsGroupby"));
+__export(require("./rxjsMapto"));
+__export(require("./rxjsPartition"));
+__export(require("./rxjsPluck"));
+__export(require("./rxjsReduce"));
 //# sourceMappingURL=index.js.map

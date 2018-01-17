@@ -53,6 +53,11 @@ const Transformation_1 = require("./Transformation");
 //let a = new ConcatMapToPoc();
 //let a = new expandPoc();
 //let a = new exhaustMapPoc();
-let a = new Transformation_1.groupByPoc();
+//let a = new groupByPoc();
+//let a = new groupByPoc();
+//let a = new maptoPoc();
+//let a = new partitionPoc();
+//let a = new pluckPoc();
+let a = new Transformation_1.reducePoc();
 a.test();
 //# sourceMappingURL=app.js.map

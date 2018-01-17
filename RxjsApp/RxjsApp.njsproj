@@ -184,6 +184,18 @@
     <TypeScriptCompile Include="Transformation\rxjsGroupby.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Transformation\rxjsMapto.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Transformation\rxjsPartition.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Transformation\rxjsPluck.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Transformation\rxjsReduce.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Transformation\RxjsScan.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
