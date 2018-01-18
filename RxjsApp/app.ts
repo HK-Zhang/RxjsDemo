@@ -3,7 +3,7 @@
 import {
     MapPoc, MergeMapPoc, SwithMapPoc, ConcatMapPoc, BufferTimePoc, ScanPoc, bufferPoc,
     bufferCountPoc, bufferTogglePoc, bufferWhenPoc, ConcatMapToPoc, expandPoc, exhaustMapPoc, groupByPoc, maptoPoc,
-    partitionPoc, pluckPoc, reducePoc
+    partitionPoc, pluckPoc, reducePoc, windowPoc, windowCountPoc, windowTimePoc, windowWhenPoc, windowTogglePoc
 } from './Transformation'
 
 import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartWithPoc, WithLatestFromPoc } from './Combination'
@@ -82,7 +82,13 @@ import { EveryPoc,DefaultIfEmptyPoc } from './Conditional'
 //let a = new partitionPoc();
 //let a = new pluckPoc();
 //let a = new reducePoc();
-let a = new listPoc();
+//let a = new listPoc();
+//let a = new windowPoc();
+//let a = new windowCountPoc();
+//let a = new windowTimePoc();
+//let a = new windowWhenPoc();
+let a = new windowTogglePoc();
+
 
 
 
