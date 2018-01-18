@@ -6,24 +6,28 @@ export class listPoc {
     }
 
     func1() {
-        const emptyList = List()
+        const emptyList = List();
         // List []
 
-        const plainArray = [1, 2, 3, 4]
-        const listFromPlainArray = List(plainArray)
+        const plainArray = [1, 2, 3, 4];
+        const listFromPlainArray = List(plainArray);
         // List [ 1, 2, 3, 4 ]
 
-        const plainSet = Set([1, 2, 3, 4])
-        const listFromPlainSet = List(plainSet)
+        const plainSet = Set([1, 2, 3, 4]);
+        const listFromPlainSet = List(plainSet);
         // List [ 1, 2, 3, 4 ]
 
-        const arrayIterator = plainArray[Symbol.iterator]()
-        const listFromCollectionArray = List(arrayIterator)
+        const arrayIterator = plainArray[Symbol.iterator]();
+        const listFromCollectionArray = List(arrayIterator);
+        const newArray = listFromCollectionArray.set(0, 2);
+        listFromCollectionArray.forEach(t => console.log(t));
+        newArray.forEach(t => console.log(t));
+
         // List [ 1, 2, 3, 4 ]
 
-        console.log(listFromPlainArray.equals(listFromCollectionArray)) // true
-        console.log(listFromPlainSet.equals(listFromCollectionArray)) // true
-        console.log(listFromPlainSet.equals(listFromPlainArray)) // true
+        console.log(listFromPlainArray.equals(listFromCollectionArray)); // true
+        console.log(listFromPlainSet.equals(listFromCollectionArray)); // true
+        console.log(listFromPlainSet.equals(listFromPlainArray)); // true
 
     }
 

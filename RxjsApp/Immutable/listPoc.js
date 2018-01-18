@@ -16,6 +16,9 @@ class listPoc {
         // List [ 1, 2, 3, 4 ]
         const arrayIterator = plainArray[Symbol.iterator]();
         const listFromCollectionArray = immutable_1.List(arrayIterator);
+        const newArray = listFromCollectionArray.set(0, 2);
+        listFromCollectionArray.forEach(t => console.log(t));
+        newArray.forEach(t => console.log(t));
         // List [ 1, 2, 3, 4 ]
         console.log(listFromPlainArray.equals(listFromCollectionArray)); // true
         console.log(listFromPlainSet.equals(listFromCollectionArray)); // true

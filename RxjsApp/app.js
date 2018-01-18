@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Transformation_1 = require("./Transformation");
+const Immutable_1 = require("./Immutable");
 //let a = new OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
@@ -59,11 +59,11 @@ const Transformation_1 = require("./Transformation");
 //let a = new partitionPoc();
 //let a = new pluckPoc();
 //let a = new reducePoc();
-//let a = new listPoc();
+let a = new Immutable_1.listPoc();
 //let a = new windowPoc();
 //let a = new windowCountPoc();
 //let a = new windowTimePoc();
 //let a = new windowWhenPoc();
-let a = new Transformation_1.windowTogglePoc();
+//let a = new windowTogglePoc();
 a.test();
 //# sourceMappingURL=app.js.map
