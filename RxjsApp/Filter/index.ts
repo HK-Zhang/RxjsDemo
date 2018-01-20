@@ -3,3 +3,9 @@ export * from './RxjsDistinctUntilChanged'
 export * from './RxjsFilter'
 export * from './RxjsTake'
 export * from './RxjsTakeUntil'
+export * from './rxjsdebounce'
+export * from './rxjsFirst'
+export * from './ignoreElement'
+export * from './rxjsLast'
+
+

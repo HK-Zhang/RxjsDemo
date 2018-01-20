@@ -8,4 +8,8 @@ __export(require("./RxjsDistinctUntilChanged"));
 __export(require("./RxjsFilter"));
 __export(require("./RxjsTake"));
 __export(require("./RxjsTakeUntil"));
+__export(require("./rxjsdebounce"));
+__export(require("./rxjsFirst"));
+__export(require("./ignoreElement"));
+__export(require("./rxjsLast"));
 //# sourceMappingURL=index.js.map

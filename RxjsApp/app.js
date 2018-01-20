@@ -1,6 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Immutable_1 = require("./Immutable");
+const Filter_1 = require("./Filter");
+let a = new Filter_1.lastPoc();
+// let a = new ignoreElementPoc();
+// let a = new FirstPoc();
+// let a = new debouncePoc();
 //let a = new OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
@@ -65,6 +69,6 @@ const Immutable_1 = require("./Immutable");
 //let a = new windowTimePoc();
 //let a = new windowWhenPoc();
 //let a = new windowTogglePoc();
-let a = new Immutable_1.mapImPoc();
+// let a = new mapImPoc();
 a.test();
 //# sourceMappingURL=app.js.map
