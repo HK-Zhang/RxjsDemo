@@ -1,7 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Filter_1 = require("./Filter");
-let a = new Filter_1.lastPoc();
+let a = new Filter_1.skipWhilePoc();
+// let a = new skipUntilPoc();
+// let a = new skipPoc();
+// let a = new singlePoc();
+// let a = new samplePoc();
+// let a = new lastPoc();
 // let a = new ignoreElementPoc();
 // let a = new FirstPoc();
 // let a = new debouncePoc();

@@ -12,4 +12,9 @@ __export(require("./rxjsdebounce"));
 __export(require("./rxjsFirst"));
 __export(require("./ignoreElement"));
 __export(require("./rxjsLast"));
+__export(require("./rxjsSample"));
+__export(require("./rxjsSingle"));
+__export(require("./rxjsSkip"));
+__export(require("./rxjsSkipUntil"));
+__export(require("./rxjsSkipWhile"));
 //# sourceMappingURL=index.js.map

@@ -19,13 +19,20 @@ import { listPoc,mapImPoc } from './Immutable'
 import { CatchPoc, RetryPoc, RetryWhenPoc } from './ErrorHandle'
 
 import { DebounceTimePoc, RxjsDistinctUntilChangedPoc, FilterPoc, TakePoc, TakeUntilPoc,debouncePoc,FirstPoc,ignoreElementPoc,
-lastPoc } from './Filter'
+lastPoc,samplePoc,singlePoc,skipPoc,skipUntilPoc,skipWhilePoc } from './Filter'
 
 import { SharePoc, publishPoc, multicastPoc } from './Multicasting'
 
 import { EveryPoc,DefaultIfEmptyPoc } from './Conditional'
 
-let a = new lastPoc();
+
+let a = new skipWhilePoc();
+
+// let a = new skipUntilPoc();
+// let a = new skipPoc();
+// let a = new singlePoc();
+// let a = new samplePoc();
+// let a = new lastPoc();
 // let a = new ignoreElementPoc();
 // let a = new FirstPoc();
 // let a = new debouncePoc();
