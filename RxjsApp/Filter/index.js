@@ -17,4 +17,7 @@ __export(require("./rxjsSingle"));
 __export(require("./rxjsSkip"));
 __export(require("./rxjsSkipUntil"));
 __export(require("./rxjsSkipWhile"));
+__export(require("./rxjsTakewhile"));
+__export(require("./rxjsThrottle"));
+__export(require("./rxjsThrottleTime"));
 //# sourceMappingURL=index.js.map

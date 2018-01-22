@@ -12,6 +12,12 @@ export * from './rxjsSingle'
 export * from './rxjsSkip'
 export * from './rxjsSkipUntil'
 export * from './rxjsSkipWhile'
+export * from './rxjsTakewhile'
+export * from './rxjsThrottle'
+export * from './rxjsThrottleTime'
+
+
+
 
 
 

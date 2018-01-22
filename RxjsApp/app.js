@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Filter_1 = require("./Filter");
-let a = new Filter_1.skipWhilePoc();
+let a = new Filter_1.throttleTimePoc();
+// let a = new throttlePoc();
+// let a = new takewhilePoc();
+// let a = new skipWhilePoc();
 // let a = new skipUntilPoc();
 // let a = new skipPoc();
 // let a = new singlePoc();
