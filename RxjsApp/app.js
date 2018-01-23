@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Filter_1 = require("./Filter");
-let a = new Filter_1.throttleTimePoc();
+const Immutable_1 = require("./Immutable");
+let a = new Immutable_1.orderedMapImPoc();
+// let a = new throttleTimePoc();
 // let a = new throttlePoc();
 // let a = new takewhilePoc();
 // let a = new skipWhilePoc();

@@ -14,20 +14,22 @@ import { Poc } from './LodashPoc'
 
 import { SetPoc, QueuePoc, DictionaryPoc } from './Collections'
 
-import { listPoc, mapImPoc } from './Immutable'
+import { listPoc, mapImPoc, orderedMapImPoc } from './Immutable'
 
 import { CatchPoc, RetryPoc, RetryWhenPoc } from './ErrorHandle'
 
 import {
     DebounceTimePoc, RxjsDistinctUntilChangedPoc, FilterPoc, TakePoc, TakeUntilPoc, debouncePoc, FirstPoc, ignoreElementPoc,
-    lastPoc, samplePoc, singlePoc, skipPoc, skipUntilPoc, skipWhilePoc, takewhilePoc,throttlePoc,throttleTimePoc
+    lastPoc, samplePoc, singlePoc, skipPoc, skipUntilPoc, skipWhilePoc, takewhilePoc, throttlePoc, throttleTimePoc
 } from './Filter'
 
 import { SharePoc, publishPoc, multicastPoc } from './Multicasting'
 
 import { EveryPoc, DefaultIfEmptyPoc } from './Conditional'
 
-let a = new throttleTimePoc();
+
+let a = new orderedMapImPoc();
+// let a = new throttleTimePoc();
 // let a = new throttlePoc();
 // let a = new takewhilePoc();
 // let a = new skipWhilePoc();
