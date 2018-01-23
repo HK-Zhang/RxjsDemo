@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Immutable_1 = require("./Immutable");
-let a = new Immutable_1.orderedMapImPoc();
+const Combination_1 = require("./Combination");
+let a = new Combination_1.combineAllPoc();
+// let a = new orderedMapImPoc();
 // let a = new throttleTimePoc();
 // let a = new throttlePoc();
 // let a = new takewhilePoc();

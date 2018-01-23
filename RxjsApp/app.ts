@@ -6,7 +6,7 @@ import {
     partitionPoc, pluckPoc, reducePoc, windowPoc, windowCountPoc, windowTimePoc, windowWhenPoc, windowTogglePoc
 } from './Transformation'
 
-import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartWithPoc, WithLatestFromPoc } from './Combination'
+import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartWithPoc, WithLatestFromPoc,combineAllPoc } from './Combination'
 
 import { FromPoc, FromPromisePoc, OfPoc, CreatePoc, EmptyPoc, IntervalPoc, RangePoc, ThrowPoc, TimerPoc } from './Creation'
 
@@ -27,8 +27,8 @@ import { SharePoc, publishPoc, multicastPoc } from './Multicasting'
 
 import { EveryPoc, DefaultIfEmptyPoc } from './Conditional'
 
-
-let a = new orderedMapImPoc();
+let a = new combineAllPoc();
+// let a = new orderedMapImPoc();
 // let a = new throttleTimePoc();
 // let a = new throttlePoc();
 // let a = new takewhilePoc();
