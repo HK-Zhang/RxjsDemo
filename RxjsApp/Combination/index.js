@@ -11,4 +11,6 @@ __export(require("./RxjsMerge"));
 __export(require("./RxjsStartWith"));
 __export(require("./RxjsWithLatestFrom"));
 __export(require("./rxjsCombineAll"));
+__export(require("./rxjsMergeAll"));
+__export(require("./rxjsRace"));
 //# sourceMappingURL=index.js.map
