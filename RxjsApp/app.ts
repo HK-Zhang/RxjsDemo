@@ -14,7 +14,7 @@ import { Poc } from './LodashPoc'
 
 import { SetPoc, QueuePoc, DictionaryPoc } from './Collections'
 
-import { listPoc, mapImPoc, orderedMapImPoc } from './Immutable'
+import { listPoc, mapImPoc, orderedMapImPoc,setImPoc } from './Immutable'
 
 import { CatchPoc, RetryPoc, RetryWhenPoc } from './ErrorHandle'
 
@@ -27,7 +27,9 @@ import { SharePoc, publishPoc, multicastPoc } from './Multicasting'
 
 import { EveryPoc, DefaultIfEmptyPoc } from './Conditional'
 
-let a = new combineAllPoc();
+
+let a = new setImPoc();
+// let a = new combineAllPoc();
 // let a = new orderedMapImPoc();
 // let a = new throttleTimePoc();
 // let a = new throttlePoc();
