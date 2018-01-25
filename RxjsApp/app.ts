@@ -15,7 +15,7 @@ import { Poc } from './LodashPoc'
 
 import { SetPoc, QueuePoc, DictionaryPoc } from './Collections'
 
-import { listPoc, mapImPoc, orderedMapImPoc,setImPoc } from './Immutable'
+import { listPoc, mapImPoc, orderedMapImPoc,setImPoc,orderedsetImPoc } from './Immutable'
 
 import { CatchPoc, RetryPoc, RetryWhenPoc } from './ErrorHandle'
 
@@ -28,7 +28,8 @@ import { SharePoc, publishPoc, multicastPoc } from './Multicasting'
 
 import { EveryPoc, DefaultIfEmptyPoc } from './Conditional'
 
-let a = new racePoc();
+let a = new orderedsetImPoc();
+// let a = new racePoc();
 // let a = new mergeAllPoc();
 // let a = new setImPoc();
 // let a = new combineAllPoc();

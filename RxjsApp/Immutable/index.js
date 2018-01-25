@@ -7,4 +7,5 @@ __export(require("./listPoc"));
 __export(require("./mapPoc"));
 __export(require("./orderedMapPoc"));
 __export(require("./setPoc"));
+__export(require("./orderSet"));
 //# sourceMappingURL=index.js.map
