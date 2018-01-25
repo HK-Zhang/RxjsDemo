@@ -1,4 +1,4 @@
-﻿import { doPoc, delayPoc, delayWhenPoc, letPoc, toPromisePoc, timeoutPoc } from './Utility'
+﻿import { doPoc, delayPoc, delayWhenPoc, letPoc, toPromisePoc, timeoutPoc,pipePoc } from './Utility'
 
 import {
     MapPoc, MergeMapPoc, SwithMapPoc, ConcatMapPoc, BufferTimePoc, ScanPoc, bufferPoc,
@@ -7,7 +7,7 @@ import {
 } from './Transformation'
 
 import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartWithPoc, WithLatestFromPoc,combineAllPoc,
-    mergeAllPoc,racePoc } from './Combination'
+    mergeAllPoc,racePoc,zipPoc } from './Combination'
 
 import { FromPoc, FromPromisePoc, OfPoc, CreatePoc, EmptyPoc, IntervalPoc, RangePoc, ThrowPoc, TimerPoc } from './Creation'
 
@@ -28,7 +28,9 @@ import { SharePoc, publishPoc, multicastPoc } from './Multicasting'
 
 import { EveryPoc, DefaultIfEmptyPoc } from './Conditional'
 
-let a = new orderedsetImPoc();
+let a = new pipePoc();
+// let a = new zipPoc();
+// let a = new orderedsetImPoc();
 // let a = new racePoc();
 // let a = new mergeAllPoc();
 // let a = new setImPoc();

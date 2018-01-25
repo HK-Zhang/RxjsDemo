@@ -8,3 +8,5 @@ export * from './RxjsWithLatestFrom'
 export * from './rxjsCombineAll'
 export * from './rxjsMergeAll'
 export * from './rxjsRace'
+export * from './rxjszip'
+

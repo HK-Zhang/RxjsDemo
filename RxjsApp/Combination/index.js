@@ -13,4 +13,5 @@ __export(require("./RxjsWithLatestFrom"));
 __export(require("./rxjsCombineAll"));
 __export(require("./rxjsMergeAll"));
 __export(require("./rxjsRace"));
+__export(require("./rxjszip"));
 //# sourceMappingURL=index.js.map
