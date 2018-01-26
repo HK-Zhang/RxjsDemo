@@ -6,18 +6,18 @@ require("rxjs/add/operator/mapTo");
 require("rxjs/add/observable/interval");
 class racePoc {
     test() {
-        // this.func1();
-        this.func2();
+        this.func1();
+        // this.func2();
     }
     func1() {
-        const win = Observable_1.Observable.interval(1000);
-        const fwin = win.mapTo('1s won!');
+        // const win = Observable.interval(1000);
+        // const fwin = win.mapTo('1s won!');
         //take the first observable to emit
         const example = Observable_1.Observable.race(
         //emit every 1.5s
         Observable_1.Observable.interval(1500), 
         //emit every 1s
-        fwin, 
+        Observable_1.Observable.interval(1000).mapTo('1s won!'), 
         //emit every 2s
         Observable_1.Observable.interval(2000), 
         //emit every 2.5s

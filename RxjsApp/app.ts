@@ -28,11 +28,11 @@ import { SharePoc, publishPoc, multicastPoc } from './Multicasting'
 
 import { EveryPoc, DefaultIfEmptyPoc } from './Conditional'
 
-let a = new fromJsImPoc();
+// let a = new fromJsImPoc();
 // let a = new pipePoc();
 // let a = new zipPoc();
 // let a = new orderedsetImPoc();
-// let a = new racePoc();
+let a = new racePoc();
 // let a = new mergeAllPoc();
 // let a = new setImPoc();
 // let a = new combineAllPoc();
