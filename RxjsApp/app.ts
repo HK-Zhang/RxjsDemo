@@ -15,7 +15,7 @@ import { Poc } from './LodashPoc'
 
 import { SetPoc, QueuePoc, DictionaryPoc } from './Collections'
 
-import { listPoc, mapImPoc, orderedMapImPoc,setImPoc,orderedsetImPoc } from './Immutable'
+import { listPoc, mapImPoc, orderedMapImPoc,setImPoc,orderedsetImPoc,fromJsImPoc } from './Immutable'
 
 import { CatchPoc, RetryPoc, RetryWhenPoc } from './ErrorHandle'
 
@@ -28,7 +28,8 @@ import { SharePoc, publishPoc, multicastPoc } from './Multicasting'
 
 import { EveryPoc, DefaultIfEmptyPoc } from './Conditional'
 
-let a = new pipePoc();
+let a = new fromJsImPoc();
+// let a = new pipePoc();
 // let a = new zipPoc();
 // let a = new orderedsetImPoc();
 // let a = new racePoc();

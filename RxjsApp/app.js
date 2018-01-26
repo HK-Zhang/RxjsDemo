@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Utility_1 = require("./Utility");
-let a = new Utility_1.pipePoc();
+const Immutable_1 = require("./Immutable");
+let a = new Immutable_1.fromJsImPoc();
+// let a = new pipePoc();
 // let a = new zipPoc();
 // let a = new orderedsetImPoc();
 // let a = new racePoc();
