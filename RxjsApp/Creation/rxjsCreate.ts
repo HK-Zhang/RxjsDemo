@@ -1,6 +1,4 @@
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-//import 'rxjs/add/observable/create';
 
 
 export class CreatePoc {
@@ -11,9 +9,9 @@ export class CreatePoc {
 
     func1() {
         /*
-  Create an observable that emits 'Hello' and 'World' on  
-  subscription.
-*/
+        Create an observable that emits 'Hello' and 'World' on  
+        subscription.
+        */
         const hello = Observable.create(function (observer) {
             observer.next('Hello');
             observer.next('World');
@@ -25,8 +23,8 @@ export class CreatePoc {
 
     func2() {
         /*
-  Increment value every 1s, emit even numbers.
-*/
+        Increment value every 1s, emit even numbers.
+        */
         const evenNumbers = Observable.create(function (observer) {
             let value = 0;
             const interval = setInterval(() => {
