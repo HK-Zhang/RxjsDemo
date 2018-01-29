@@ -32,7 +32,7 @@ import { EveryPoc, DefaultIfEmptyPoc } from './Conditional'
 // let a = new pipePoc();
 // let a = new zipPoc();
 // let a = new orderedsetImPoc();
-let a = new racePoc();
+// let a = new racePoc();
 // let a = new mergeAllPoc();
 // let a = new setImPoc();
 // let a = new combineAllPoc();
@@ -49,7 +49,7 @@ let a = new racePoc();
 // let a = new ignoreElementPoc();
 // let a = new FirstPoc();
 // let a = new debouncePoc();
-//let a = new OfPoc();
+let a = new OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
 //let a = new MergeMapPoc();

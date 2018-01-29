@@ -1,5 +1,5 @@
 ﻿var Promise = require('promise');
-var Rx = require('rxjs/Rx');
+import { Observable } from 'rxjs/Observable';
 
 var tfx = function (item, index) {
     return item * 2;
@@ -13,13 +13,13 @@ export class OfPoc {
 
     func1() {
         //emits any number of provided values in sequence
-        const source = Rx.Observable.of(1, 2, 3, 4, 5);
+        const source = Observable.of(1, 2, 3, 4, 5);
         //output: 1,2,3,4,5
         const subscribe = source.subscribe(val => console.log(val));
     }
 
     func2() {
-        var source = Rx.Observable.of(1, 2, 3);
+        var source = Observable.of(1, 2, 3);
 
         var target = source.map(tfx);
 
@@ -28,7 +28,7 @@ export class OfPoc {
 
     func3() {
         //emits values of any type
-        const source = Rx.Observable.of({ name: 'Brian' }, [1, 2, 3], function hello() {
+        const source = Observable.of<any>({ name: 'Brian' }, [1, 2, 3], function hello() {
             return 'Hello';
         });
         //output: {name: 'Brian}, [1,2,3], function hello() { return 'Hello' }
