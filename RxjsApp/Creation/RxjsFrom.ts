@@ -1,7 +1,7 @@
 ﻿import * as Collections from 'typescript-collections';
-
+import { Observable } from 'rxjs/Observable';
 var Promise = require('promise');
-var Rx = require('rxjs/Rx');
+// var Rx = require('rxjs/Rx');
 //import Rx = require('rxjs/Rx');
 
 export class FromPoc {
@@ -14,14 +14,14 @@ export class FromPoc {
 
     func1() {
         //emit array as a sequence of values
-        const arraySource = Rx.Observable.from([1, 2, 3, 4, 5]);
+        const arraySource = Observable.from([1, 2, 3, 4, 5]);
         //output: 1,2,3,4,5
         const subscribe = arraySource.subscribe(val => console.log(val));
     }
 
     func2() {
         //emit result of promise
-        const promiseSource = Rx.Observable.from(
+        const promiseSource = Observable.from(
             new Promise(resolve => resolve('Hello World!'))
         );
         //output: 'Hello World'
@@ -30,17 +30,18 @@ export class FromPoc {
 
     func3() {
         //emit string as a sequence
-        const source = Rx.Observable.from('Hello World');
+        const source = Observable.from('Hello World');
         //output: 'H','e','l','l','o',' ','W','o','r','l','d'
         const subscribe = source.subscribe(val => console.log(val));
     }
 
     func4() {
-        let map: { [key: number]: string; } = {};
-        map['1'] = 'Hi';
-        map['2'] = 'Bye';
+        let map: { [key: number]: string; length: number; } = {length:0};
+        map[0] = 'Hi';
+        map[1] = 'Bye';
+        map.length=2;
 
-        const mapSource = Rx.Observable.from(map);
+        const mapSource = Observable.from(map);
         //output: [1, 'Hi'], [2, 'Bye']
         const subscribe = mapSource.subscribe(val => console.log(val));
     }

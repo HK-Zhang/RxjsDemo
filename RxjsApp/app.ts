@@ -49,7 +49,7 @@ import { EveryPoc, DefaultIfEmptyPoc } from './Conditional'
 // let a = new ignoreElementPoc();
 // let a = new FirstPoc();
 // let a = new debouncePoc();
-let a = new OfPoc();
+// let a = new OfPoc();
 //let a = new doPoc();
 //let a = new SwithMapPoc();
 //let a = new MergeMapPoc();
@@ -62,7 +62,7 @@ let a = new OfPoc();
 //let a = new MergePoc();
 //let a = new StartWithPoc();
 //let a = new WithLatestFromPoc()
-//let a = new FromPoc()
+let a = new FromPoc()
 //let a = new FromPromisePoc()
 //let a = new Poc()
 //let a = new SetPoc()
