@@ -1,6 +1,6 @@
 ﻿var Promise = require('promise');
-var Rx = require('rxjs/Rx');
-//import Rx = require('rxjs/Rx');
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromPromise';
 
 export class FromPromisePoc {
     test() {
@@ -18,13 +18,13 @@ export class FromPromisePoc {
             });
         };
         //emit true, then false
-        const source = Rx.Observable.of(true, false);
+        const source = Observable.of(true, false);
         const example = source.mergeMap(val =>
-            Rx.Observable
+            Observable
                 //turn promise into observable
                 .fromPromise(myPromise(val))
                 //catch and gracefully handle rejections
-                .catch(error => Rx.Observable.of(`Error: ${error}`))
+                .catch(error => Observable.of(`Error: ${error}`))
         );
         //output: 'Error: Rejected!', 'Resolved!'
         const subscribe = example.subscribe(val => console.log(val));
