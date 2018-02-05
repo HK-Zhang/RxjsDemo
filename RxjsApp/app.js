@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Creation_1 = require("./Creation");
+const ErrorHandle_1 = require("./ErrorHandle");
 // let a = new fromJsImPoc();
 // let a = new pipePoc();
 // let a = new zipPoc();
@@ -35,13 +35,13 @@ const Creation_1 = require("./Creation");
 //let a = new MergePoc();
 //let a = new StartWithPoc();
 //let a = new WithLatestFromPoc()
-let a = new Creation_1.FromPoc();
+// let a = new FromPoc()
 //let a = new FromPromisePoc()
 //let a = new Poc()
 //let a = new SetPoc()
 //let a = new QueuePoc()
 //let a = new DictionaryPoc()
-//let a = new CatchPoc();
+let a = new ErrorHandle_1.CatchPoc();
 //let a = new RetryPoc();
 //let a = new RetryWhenPoc();
 //let a = new DebounceTimePoc();

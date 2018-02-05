@@ -62,13 +62,13 @@ import { EveryPoc, DefaultIfEmptyPoc } from './Conditional'
 //let a = new MergePoc();
 //let a = new StartWithPoc();
 //let a = new WithLatestFromPoc()
-let a = new FromPoc()
+// let a = new FromPoc()
 //let a = new FromPromisePoc()
 //let a = new Poc()
 //let a = new SetPoc()
 //let a = new QueuePoc()
 //let a = new DictionaryPoc()
-//let a = new CatchPoc();
+let a = new CatchPoc();
 //let a = new RetryPoc();
 //let a = new RetryWhenPoc();
 //let a = new DebounceTimePoc();
