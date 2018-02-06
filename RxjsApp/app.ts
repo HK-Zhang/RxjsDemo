@@ -28,7 +28,7 @@ import { SharePoc, publishPoc, multicastPoc } from './Multicasting'
 
 import { EveryPoc, DefaultIfEmptyPoc } from './Conditional'
 
-// let a = new fromJsImPoc();
+let a = new fromJsImPoc();
 // let a = new pipePoc();
 // let a = new zipPoc();
 // let a = new orderedsetImPoc();
@@ -68,7 +68,7 @@ import { EveryPoc, DefaultIfEmptyPoc } from './Conditional'
 //let a = new SetPoc()
 //let a = new QueuePoc()
 //let a = new DictionaryPoc()
-let a = new CatchPoc();
+// let a = new CatchPoc();
 //let a = new RetryPoc();
 //let a = new RetryWhenPoc();
 //let a = new DebounceTimePoc();

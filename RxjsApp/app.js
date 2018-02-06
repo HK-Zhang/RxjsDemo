@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const ErrorHandle_1 = require("./ErrorHandle");
-// let a = new fromJsImPoc();
+const Immutable_1 = require("./Immutable");
+let a = new Immutable_1.fromJsImPoc();
 // let a = new pipePoc();
 // let a = new zipPoc();
 // let a = new orderedsetImPoc();
@@ -41,7 +41,7 @@ const ErrorHandle_1 = require("./ErrorHandle");
 //let a = new SetPoc()
 //let a = new QueuePoc()
 //let a = new DictionaryPoc()
-let a = new ErrorHandle_1.CatchPoc();
+// let a = new CatchPoc();
 //let a = new RetryPoc();
 //let a = new RetryWhenPoc();
 //let a = new DebounceTimePoc();
