@@ -10,7 +10,9 @@ export class zipPoc {
 
     test() {
         // this.func1();
-        this.func2();
+        // this.func2();
+        // this.func3();
+        this.func4();
     }
 
     func1() {
@@ -36,6 +38,18 @@ export class zipPoc {
         //when one observable completes no more values will be emitted
         const example = zip(interval, interval.pipe(take(2)));
         //output: [0,0]...[1,1]
+        const subscribe = example.subscribe(val => console.log(val));
+    }
+
+    func3(){
+        const source = Observable.of("src");
+        const example = source.zip(Observable.range(1,4));
+        const subscribe = example.subscribe(val => console.log(val));
+    }
+
+    func4(){
+        const source = Observable.interval(1000);
+        const example = source.zip(Observable.range(1,4));
         const subscribe = example.subscribe(val => console.log(val));
     }
 

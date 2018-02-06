@@ -1,20 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Rx = require('rxjs/Rx');
+const Observable_1 = require("rxjs/Observable");
 class RetryPoc {
     test() {
         this.func1();
     }
     func1() {
         //emit value every 1s
-        const source = Rx.Observable.interval(1000);
+        const source = Observable_1.Observable.interval(1000);
         const example = source
             .flatMap(val => {
             //throw error for demonstration
             if (val > 5) {
-                return Rx.Observable.throw('Error!');
+                return Observable_1.Observable.throw('Error!');
             }
-            return Rx.Observable.of(val);
+            return Observable_1.Observable.of(val);
         })
             .retry(2);
         /*

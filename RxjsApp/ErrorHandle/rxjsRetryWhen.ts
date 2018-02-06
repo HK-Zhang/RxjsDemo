@@ -1,4 +1,7 @@
-﻿var Rx = require('rxjs/Rx');
+﻿import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/retryWhen';
+import 'rxjs/add/operator/zip';
+
 
 export class RetryWhenPoc {
     test() {
@@ -8,7 +11,7 @@ export class RetryWhenPoc {
 
     func1() {
         //emit value every 1s
-        const source = Rx.Observable.interval(1000);
+        const source = Observable.interval(1000);
         const example = source
             .map(val => {
                 if (val > 5) {
@@ -22,7 +25,7 @@ export class RetryWhenPoc {
                     //log error message
                     .do(val => console.log(`Value ${val} was too high!`))
                     //restart in 5 seconds
-                    .delayWhen(val => Rx.Observable.timer(val * 1000))
+                    .delayWhen(val => Observable.timer(val * 1000))
             );
         /*
           output: 
@@ -40,7 +43,7 @@ export class RetryWhenPoc {
 
     func2() {
         //emit value every 1s
-        const source = Rx.Observable.interval(1000);
+        const source = Observable.interval(1000);
         const example = source
             .map(val => {
                 if (val > 2) {
@@ -50,15 +53,15 @@ export class RetryWhenPoc {
                 return val;
             })
             .retryWhen(attempts => {
-                return attempts.zip(Rx.Observable.range(1, 4)).mergeMap(([error, i]) => {
+                return attempts.zip(Observable.range(1, 4)).mergeMap(([error, i]) => {
                     if (i > 3) {
-                        return Rx.Observable.throw(error);
+                        return Observable.throw(error);
                     }
                     console.log(`Wait ${i} seconds, then retry!`);
-                    return Rx.Observable.timer(i * 1000);
+                    return Observable.timer(i * 1000);
                 });
             })
-            .catch(_ => Rx.Observable.of('Ouch, giving up!'));
+            .catch(_ => Observable.of('Ouch, giving up!'));
 
         const subscribe = example.subscribe(val => console.log(val));
     }

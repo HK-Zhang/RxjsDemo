@@ -1,4 +1,4 @@
-﻿var Rx = require('rxjs/Rx');
+﻿import { Observable } from 'rxjs/Observable';
 
 export class RetryPoc {
     test() {
@@ -7,14 +7,14 @@ export class RetryPoc {
 
     func1() {
         //emit value every 1s
-        const source = Rx.Observable.interval(1000);
+        const source = Observable.interval(1000);
         const example = source
             .flatMap(val => {
                 //throw error for demonstration
                 if (val > 5) {
-                    return Rx.Observable.throw('Error!');
+                    return Observable.throw('Error!');
                 }
-                return Rx.Observable.of(val);
+                return Observable.of(val);
             })
             //retry 2 times on error
             .retry(2);

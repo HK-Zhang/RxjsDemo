@@ -9,7 +9,9 @@ const operators_2 = require("rxjs/operators");
 class zipPoc {
     test() {
         // this.func1();
-        this.func2();
+        // this.func2();
+        // this.func3();
+        this.func4();
     }
     func1() {
         const sourceOne = of_1.of('Hello');
@@ -27,6 +29,16 @@ class zipPoc {
         //when one observable completes no more values will be emitted
         const example = zip_1.zip(interval, interval.pipe(operators_2.take(2)));
         //output: [0,0]...[1,1]
+        const subscribe = example.subscribe(val => console.log(val));
+    }
+    func3() {
+        const source = Observable_1.Observable.of("src");
+        const example = source.zip(Observable_1.Observable.range(1, 4));
+        const subscribe = example.subscribe(val => console.log(val));
+    }
+    func4() {
+        const source = Observable_1.Observable.interval(1000);
+        const example = source.zip(Observable_1.Observable.range(1, 4));
         const subscribe = example.subscribe(val => console.log(val));
     }
 }

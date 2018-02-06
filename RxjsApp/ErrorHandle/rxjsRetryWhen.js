@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Rx = require('rxjs/Rx');
+const Observable_1 = require("rxjs/Observable");
+require("rxjs/add/operator/retryWhen");
+require("rxjs/add/operator/zip");
 class RetryWhenPoc {
     test() {
         //this.func1();
@@ -8,7 +10,7 @@ class RetryWhenPoc {
     }
     func1() {
         //emit value every 1s
-        const source = Rx.Observable.interval(1000);
+        const source = Observable_1.Observable.interval(1000);
         const example = source
             .map(val => {
             if (val > 5) {
@@ -19,7 +21,7 @@ class RetryWhenPoc {
         })
             .retryWhen(errors => errors
             .do(val => console.log(`Value ${val} was too high!`))
-            .delayWhen(val => Rx.Observable.timer(val * 1000)));
+            .delayWhen(val => Observable_1.Observable.timer(val * 1000)));
         /*
           output:
           0
@@ -35,7 +37,7 @@ class RetryWhenPoc {
     }
     func2() {
         //emit value every 1s
-        const source = Rx.Observable.interval(1000);
+        const source = Observable_1.Observable.interval(1000);
         const example = source
             .map(val => {
             if (val > 2) {
@@ -45,15 +47,15 @@ class RetryWhenPoc {
             return val;
         })
             .retryWhen(attempts => {
-            return attempts.zip(Rx.Observable.range(1, 4)).mergeMap(([error, i]) => {
+            return attempts.zip(Observable_1.Observable.range(1, 4)).mergeMap(([error, i]) => {
                 if (i > 3) {
-                    return Rx.Observable.throw(error);
+                    return Observable_1.Observable.throw(error);
                 }
                 console.log(`Wait ${i} seconds, then retry!`);
-                return Rx.Observable.timer(i * 1000);
+                return Observable_1.Observable.timer(i * 1000);
             });
         })
-            .catch(_ => Rx.Observable.of('Ouch, giving up!'));
+            .catch(_ => Observable_1.Observable.of('Ouch, giving up!'));
         const subscribe = example.subscribe(val => console.log(val));
     }
 }
