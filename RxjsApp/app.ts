@@ -1,32 +1,34 @@
-﻿import { doPoc, delayPoc, delayWhenPoc, letPoc, toPromisePoc, timeoutPoc,pipePoc } from "./Utility";
+﻿import { delayPoc, delayWhenPoc, doPoc, letPoc, pipePoc, timeoutPoc, toPromisePoc } from "./Utility";
 
 import {
-    MapPoc, MergeMapPoc, SwithMapPoc, ConcatMapPoc, BufferTimePoc, ScanPoc, bufferPoc,
-    bufferCountPoc, bufferTogglePoc, bufferWhenPoc, ConcatMapToPoc, expandPoc, exhaustMapPoc, groupByPoc, maptoPoc,
-    partitionPoc, pluckPoc, reducePoc, windowPoc, windowCountPoc, windowTimePoc, windowWhenPoc, windowTogglePoc
+    bufferCountPoc, bufferPoc, BufferTimePoc, bufferTogglePoc, bufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
+    exhaustMapPoc, expandPoc, groupByPoc, MapPoc, MaptoPoc, MergeMapPoc, partitionPoc, pluckPoc,
+    reducePoc, ScanPoc, SwithMapPoc, windowCountPoc, windowPoc, windowTimePoc, windowTogglePoc, windowWhenPoc,
 } from "./Transformation";
 
-import { ConcatPoc, ForkJoinPoc, CombineLatestPoc, PairwisePoc, MergePoc, StartWithPoc, WithLatestFromPoc,combineAllPoc,
-    mergeAllPoc,racePoc,zipPoc } from "./Combination";
+import { combineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, mergeAllPoc, MergePoc, PairwisePoc, racePoc,
+    StartWithPoc, WithLatestFromPoc, zipPoc } from "./Combination";
 
-import { FromPoc, FromPromisePoc, OfPoc, CreatePoc, EmptyPoc, IntervalPoc, RangePoc, ThrowPoc, TimerPoc } from "./Creation";
+import { CreatePoc, EmptyPoc, FromPoc, FromPromisePoc, IntervalPoc, OfPoc, RangePoc, ThrowPoc,
+    TimerPoc } from "./Creation";
 
 import { Poc } from "./LodashPoc";
 
-import { SetPoc, QueuePoc, DictionaryPoc } from "./Collections";
+import { DictionaryPoc, QueuePoc, SetPoc } from "./Collections";
 
-import { listPoc, mapImPoc, orderedMapImPoc,setImPoc,orderedsetImPoc,fromJsImPoc } from "./Immutable";
+import { fromJsImPoc, listPoc, mapImPoc, orderedMapImPoc, orderedsetImPoc, setImPoc } from "./Immutable";
 
 import { CatchPoc, RetryPoc, RetryWhenPoc } from "./ErrorHandle";
 
 import {
-    DebounceTimePoc, RxjsDistinctUntilChangedPoc, FilterPoc, TakePoc, TakeUntilPoc, debouncePoc, FirstPoc, ignoreElementPoc,
-    lastPoc, samplePoc, singlePoc, skipPoc, skipUntilPoc, skipWhilePoc, takewhilePoc, throttlePoc, throttleTimePoc
+    debouncePoc, DebounceTimePoc, FilterPoc, FirstPoc, ignoreElementPoc, lastPoc, RxjsDistinctUntilChangedPoc,
+    samplePoc,
+    singlePoc, skipPoc, skipUntilPoc, skipWhilePoc, TakePoc, TakeUntilPoc, takewhilePoc, throttlePoc, throttleTimePoc,
 } from "./Filter";
 
-import { SharePoc, publishPoc, multicastPoc } from "./Multicasting";
+import { multicastPoc, publishPoc, SharePoc } from "./Multicasting";
 
-import { EveryPoc, DefaultIfEmptyPoc } from "./Conditional";
+import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 
 // let a = new fromJsImPoc();
 // let a = new pipePoc();
@@ -80,7 +82,7 @@ import { EveryPoc, DefaultIfEmptyPoc } from "./Conditional";
 // let a = new BufferTimePoc();
 // let a = new ScanPoc();
 // let a = new CreatePoc();
-let a:EmptyPoc = new EmptyPoc();
+const a = new EmptyPoc();
 // let a = new IntervalPoc();
 // let a = new RangePoc();
 // let a = new ThrowPoc();

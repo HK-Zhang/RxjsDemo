@@ -5,16 +5,16 @@ require("rxjs/add/operator/retryWhen");
 require("rxjs/add/operator/zip");
 class RetryWhenPoc {
     test() {
-        //this.func1();
+        // this.func1();
         this.func2();
     }
     func1() {
-        //emit value every 1s
+        // emit value every 1s
         const source = Observable_1.Observable.interval(1000);
         const example = source
             .map(val => {
             if (val > 5) {
-                //error will be picked up by retryWhen
+                // error will be picked up by retryWhen
                 throw val;
             }
             return val;
@@ -36,12 +36,12 @@ class RetryWhenPoc {
         const subscribe = example.subscribe(val => console.log(val));
     }
     func2() {
-        //emit value every 1s
+        // emit value every 1s
         const source = Observable_1.Observable.interval(1000);
         const example = source
             .map(val => {
             if (val > 2) {
-                //error will be picked up by retryWhen
+                // error will be picked up by retryWhen
                 throw val;
             }
             return val;
@@ -55,7 +55,7 @@ class RetryWhenPoc {
                 return Observable_1.Observable.timer(i * 1000);
             });
         })
-            .catch(_ => Observable_1.Observable.of('Ouch, giving up!'));
+            .catch(_ => Observable_1.Observable.of("Ouch, giving up!"));
         const subscribe = example.subscribe(val => console.log(val));
     }
 }
