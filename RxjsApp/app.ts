@@ -3,7 +3,7 @@
 import {
     bufferCountPoc, bufferPoc, BufferTimePoc, bufferTogglePoc, bufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
     exhaustMapPoc, expandPoc, groupByPoc, MapPoc, MaptoPoc, MergeMapPoc, partitionPoc, pluckPoc,
-    reducePoc, ScanPoc, SwithMapPoc, windowCountPoc, windowPoc, windowTimePoc, windowTogglePoc, windowWhenPoc,
+    ReducePoc, ScanPoc, SwithMapPoc, windowCountPoc, windowPoc, windowTimePoc, windowTogglePoc, windowWhenPoc,
 } from "./Transformation";
 
 import { combineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, mergeAllPoc, MergePoc, PairwisePoc, racePoc,
@@ -80,9 +80,9 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new TakeUntilPoc();
 // let a = new SharePoc();
 // let a = new BufferTimePoc();
-// let a = new ScanPoc();
+const a = new ScanPoc();
 // let a = new CreatePoc();
-const a = new EmptyPoc();
+// const a = new EmptyPoc();
 // let a = new IntervalPoc();
 // let a = new RangePoc();
 // let a = new ThrowPoc();
