@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Transformation_1 = require("./Transformation");
+const Combination_1 = require("./Combination");
 // let a = new fromJsImPoc();
 // let a = new pipePoc();
 // let a : zipPoc = new zipPoc();
@@ -25,7 +25,7 @@ const Transformation_1 = require("./Transformation");
 // let a = new OfPoc();
 // let a = new doPoc();
 // let a = new SwithMapPoc();
-// let a = new MergeMapPoc();
+// const a = new MergeMapPoc();
 // let a = new MapPoc();
 // let a = new ConcatMapPoc();
 // let a = new ConcatPoc();
@@ -34,7 +34,7 @@ const Transformation_1 = require("./Transformation");
 // let a = new PairwisePoc();
 // let a = new MergePoc();
 // let a = new StartWithPoc();
-// let a = new WithLatestFromPoc()
+const a = new Combination_1.WithLatestFromPoc();
 // let a = new FromPoc()
 // let a = new FromPromisePoc()
 // let a = new Poc()
@@ -51,7 +51,7 @@ const Transformation_1 = require("./Transformation");
 // let a = new TakeUntilPoc();
 // let a = new SharePoc();
 // let a = new BufferTimePoc();
-const a = new Transformation_1.ScanPoc();
+// const a = new ScanPoc();
 // let a = new CreatePoc();
 // const a = new EmptyPoc();
 // let a = new IntervalPoc();
