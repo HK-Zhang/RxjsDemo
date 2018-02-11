@@ -20,7 +20,7 @@ class MergeMapPoc {
         const source = Rx.Observable.interval(1000);
         const example = source.mergeMap(
         //project
-        val => Rx.Observable.interval(5000).take(2), 
+            val => Rx.Observable.interval(5000).take(2), 
         //resultSelector
         (oVal, iVal, oIndex, iIndex) => [oIndex, oVal, iIndex, iVal], 
         //concurrent
