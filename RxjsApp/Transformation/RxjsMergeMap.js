@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+require("rxjs/add/operator/switchMap");
 const Observable_1 = require("rxjs/Observable");
 class MergeMapPoc {
     test() {
-        this.func0();
+        // this.func0();
         // this.func1();
-        // this.func3();
+        this.func3();
     }
     /**
      * func0

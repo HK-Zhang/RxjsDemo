@@ -53,7 +53,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new debouncePoc();
 // let a = new OfPoc();
 // let a = new doPoc();
-// let a = new SwithMapPoc();
+const a = new SwithMapPoc();
 // const a = new MergeMapPoc();
 // let a = new MapPoc();
 // let a = new ConcatMapPoc();
@@ -63,7 +63,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new PairwisePoc();
 // let a = new MergePoc();
 // let a = new StartWithPoc();
-const a = new WithLatestFromPoc();
+// const a = new WithLatestFromPoc();
 // let a = new FromPoc()
 // let a = new FromPromisePoc()
 // let a = new Poc()

@@ -1,10 +1,11 @@
-﻿import { Observable } from "rxjs/Observable";
+﻿import "rxjs/add/operator/switchMap";
+import { Observable } from "rxjs/Observable";
 
 export class MergeMapPoc {
     public test() {
-        this.func0();
+        // this.func0();
         // this.func1();
-        // this.func3();
+        this.func3();
     }
 
     /**
