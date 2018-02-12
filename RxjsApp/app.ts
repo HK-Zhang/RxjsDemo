@@ -71,7 +71,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new QueuePoc()
 // let a = new DictionaryPoc()
 // let a = new CatchPoc();
-const a = new RetryPoc();
+// const a = new RetryPoc();
 // let a = new RetryWhenPoc();
 // let a = new DebounceTimePoc();
 // let a = new RxjsDistinctUntilChangedPoc();
@@ -85,7 +85,7 @@ const a = new RetryPoc();
 // const a = new EmptyPoc();
 // let a = new IntervalPoc();
 // let a = new RangePoc();
-// let a = new ThrowPoc();
+const a = new ThrowPoc();
 // let a = new TimerPoc();
 // let a = new EveryPoc();
 // let a = new DefaultIfEmptyPoc();

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const ErrorHandle_1 = require("./ErrorHandle");
+const Creation_1 = require("./Creation");
 // let a = new fromJsImPoc();
 // let a = new pipePoc();
 // let a : zipPoc = new zipPoc();
@@ -42,7 +42,7 @@ const ErrorHandle_1 = require("./ErrorHandle");
 // let a = new QueuePoc()
 // let a = new DictionaryPoc()
 // let a = new CatchPoc();
-const a = new ErrorHandle_1.RetryPoc();
+// const a = new RetryPoc();
 // let a = new RetryWhenPoc();
 // let a = new DebounceTimePoc();
 // let a = new RxjsDistinctUntilChangedPoc();
@@ -56,7 +56,7 @@ const a = new ErrorHandle_1.RetryPoc();
 // const a = new EmptyPoc();
 // let a = new IntervalPoc();
 // let a = new RangePoc();
-// let a = new ThrowPoc();
+const a = new Creation_1.ThrowPoc();
 // let a = new TimerPoc();
 // let a = new EveryPoc();
 // let a = new DefaultIfEmptyPoc();
