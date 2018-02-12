@@ -1,18 +1,23 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+require("rxjs/add/observable/interval");
+require("rxjs/add/observable/of");
+require("rxjs/add/observable/throw");
+require("rxjs/add/operator/retry");
+require("rxjs/add/operator/switchMap");
 const Observable_1 = require("rxjs/Observable");
 class RetryPoc {
     test() {
         this.func1();
     }
     func1() {
-        //emit value every 1s
+        // emit value every 1s
         const source = Observable_1.Observable.interval(1000);
         const example = source
-            .flatMap(val => {
-            //throw error for demonstration
+            .switchMap((val) => {
+            // throw error for demonstration
             if (val > 5) {
-                return Observable_1.Observable.throw('Error!');
+                return Observable_1.Observable.throw("Error!");
             }
             return Observable_1.Observable.of(val);
         })
@@ -25,8 +30,8 @@ class RetryPoc {
           "Error!: Retried 2 times then quit!"
         */
         const subscribe = example.subscribe({
-            next: val => console.log(val),
-            error: val => console.log(`${val}: Retried 2 times then quit!`)
+            error: (val) => console.log(`${val}: Retried 2 times then quit!`),
+            next: (val) => console.log(val),
         });
     }
 }

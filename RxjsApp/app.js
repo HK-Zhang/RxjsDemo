@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Transformation_1 = require("./Transformation");
+const ErrorHandle_1 = require("./ErrorHandle");
 // let a = new fromJsImPoc();
 // let a = new pipePoc();
 // let a : zipPoc = new zipPoc();
@@ -24,7 +24,7 @@ const Transformation_1 = require("./Transformation");
 // let a = new debouncePoc();
 // let a = new OfPoc();
 // let a = new doPoc();
-const a = new Transformation_1.SwithMapPoc();
+// const a = new SwithMapPoc();
 // const a = new MergeMapPoc();
 // let a = new MapPoc();
 // let a = new ConcatMapPoc();
@@ -42,7 +42,7 @@ const a = new Transformation_1.SwithMapPoc();
 // let a = new QueuePoc()
 // let a = new DictionaryPoc()
 // let a = new CatchPoc();
-// let a = new RetryPoc();
+const a = new ErrorHandle_1.RetryPoc();
 // let a = new RetryWhenPoc();
 // let a = new DebounceTimePoc();
 // let a = new RxjsDistinctUntilChangedPoc();

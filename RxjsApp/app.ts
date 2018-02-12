@@ -53,7 +53,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new debouncePoc();
 // let a = new OfPoc();
 // let a = new doPoc();
-const a = new SwithMapPoc();
+// const a = new SwithMapPoc();
 // const a = new MergeMapPoc();
 // let a = new MapPoc();
 // let a = new ConcatMapPoc();
@@ -71,7 +71,7 @@ const a = new SwithMapPoc();
 // let a = new QueuePoc()
 // let a = new DictionaryPoc()
 // let a = new CatchPoc();
-// let a = new RetryPoc();
+const a = new RetryPoc();
 // let a = new RetryWhenPoc();
 // let a = new DebounceTimePoc();
 // let a = new RxjsDistinctUntilChangedPoc();
