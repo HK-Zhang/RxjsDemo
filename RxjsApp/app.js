@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Creation_1 = require("./Creation");
+const LodashPoc_1 = require("./LodashPoc");
 // let a = new fromJsImPoc();
 // let a = new pipePoc();
 // let a : zipPoc = new zipPoc();
@@ -56,7 +56,7 @@ const Creation_1 = require("./Creation");
 // const a = new EmptyPoc();
 // let a = new IntervalPoc();
 // let a = new RangePoc();
-const a = new Creation_1.ThrowPoc();
+// const a = new ThrowPoc();
 // let a = new TimerPoc();
 // let a = new EveryPoc();
 // let a = new DefaultIfEmptyPoc();
@@ -87,5 +87,6 @@ const a = new Creation_1.ThrowPoc();
 // let a = new windowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
+const a = new LodashPoc_1.ArrayPoc();
 a.test();
 //# sourceMappingURL=app.js.map

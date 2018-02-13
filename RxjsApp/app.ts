@@ -12,7 +12,7 @@ import { combineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, mergeAllPoc, M
 import { CreatePoc, EmptyPoc, FromPoc, FromPromisePoc, IntervalPoc, OfPoc, RangePoc, ThrowPoc,
     TimerPoc } from "./Creation";
 
-import { Poc } from "./LodashPoc";
+import { ArrayPoc, Poc } from "./LodashPoc";
 
 import { DictionaryPoc, QueuePoc, SetPoc } from "./Collections";
 
@@ -85,7 +85,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // const a = new EmptyPoc();
 // let a = new IntervalPoc();
 // let a = new RangePoc();
-const a = new ThrowPoc();
+// const a = new ThrowPoc();
 // let a = new TimerPoc();
 // let a = new EveryPoc();
 // let a = new DefaultIfEmptyPoc();
@@ -116,6 +116,7 @@ const a = new ThrowPoc();
 // let a = new windowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
+const a = new ArrayPoc();
 
 
 
