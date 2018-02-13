@@ -1,12 +1,12 @@
-﻿import * as Collections from 'typescript-collections';
+﻿import * as Collections from "typescript-collections";
 
 export class DictionaryPoc {
-    test() {
+    public test() {
         this.func1();
     }
 
-    func1() {
-        var dict = new Collections.Dictionary<Person, Car>();
+    public func1() {
+        const dict = new Collections.Dictionary<Person, Car>();
         dict.setValue(new Person("john", 1970, "melbourne"), new Car("honda", "city", 2002));
         dict.setValue(new Person("gavin", 1984), new Car("ferrari", "F50", 2006));
         console.log("Orig");
@@ -21,29 +21,31 @@ export class DictionaryPoc {
 
         // Showing getting / setting a single car:
         console.log("Single Item");
-        var person = new Person("john", 1970);
+        const person = new Person("john", 1970);
         console.log("-Person:");
         console.log(person);
 
-        var car = dict.getValue(person);
+        const car = dict.getValue(person);
         console.log("-Car:");
         console.log(car.toString());
     }
 
 }
 
+// tslint:disable-next-line:max-classes-per-file
 class Person {
     constructor(public name: string, public yearOfBirth: number, public city?: string) {
     }
-    toString() {
+    public toString() {
         return this.name + "-" + this.yearOfBirth; // City is not a part of the key.
     }
 }
 
+// tslint:disable-next-line:max-classes-per-file
 class Car {
     constructor(public company: string, public type: string, public year: number) {
     }
-    toString() {
+    public toString() {
         // Short hand. Adds each own property
         return Collections.util.makeString(this);
     }

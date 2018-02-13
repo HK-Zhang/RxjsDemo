@@ -1,12 +1,12 @@
-﻿import * as Collections from 'typescript-collections';
+﻿import * as Collections from "typescript-collections";
 
 export class QueuePoc {
-    test() {
+    public test() {
         this.func1();
     }
 
-    func1() {
-        var myQueue = new Collections.Queue();
+    public func1() {
+        const myQueue = new Collections.Queue();
         myQueue.enqueue(1);
         myQueue.enqueue(2);
 
