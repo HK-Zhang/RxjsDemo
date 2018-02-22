@@ -1,20 +1,20 @@
-﻿import { Observable } from "rxjs/Observable";
-import "rxjs/add/observable/empty";
+﻿import "rxjs/add/observable/empty";
+import { Observable } from "rxjs/Observable";
 import { Subscription } from "rxjs/Subscription";
 
 export class EmptyPoc {
-    test():void {
+    public test() {
         this.func1();
         // this.func2();
     }
 
-    func1():void {
+    public func1() {
         // create observable that immediately completes
         const example: Observable<{}> = Observable.empty();
         // output: 'Complete!'
         const subscribe: Subscription = example.subscribe({
+            complete: () => console.log("Complete!"),
             next: () => console.log("Next"),
-            complete: () => console.log("Complete!")
         });
     }
 }

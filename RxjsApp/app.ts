@@ -81,7 +81,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new SharePoc();
 // let a = new BufferTimePoc();
 // const a = new ScanPoc();
-// let a = new CreatePoc();
+const a = new CreatePoc();
 // const a = new EmptyPoc();
 // let a = new IntervalPoc();
 // let a = new RangePoc();
@@ -116,7 +116,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new windowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
-const a = new ArrayPoc();
+// const a = new ArrayPoc();
 
 
 
