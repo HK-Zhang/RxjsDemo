@@ -5,7 +5,9 @@ export class ArrayPoc {
         // this.chunkFun();
         // this.compactFun();
         // this.concatFun();
-        this.dropFun();
+        // this.dropFun();
+        // this.fillFun();
+        this.findIndexFun();
     }
 
     // tslint:disable-next-line:max-line-length
@@ -55,5 +57,56 @@ export class ArrayPoc {
 
         const v2 = _.dropWhile(users,  (o) => !o.active);
         console.log(v2);
+    }
+
+    /**
+     * Fills elements of array with value from start up to, but not including, end.
+     */
+    public fillFun() {
+        const array =  [1,  2,  3];
+        _.fill(array,  "a");
+        console.log(array);
+
+        const a2 = _.fill(Array(3),  2);
+        console.log(a2);
+
+        const a3 = _.fill([4,  6,  8,  10],  "*",  1,  3);
+        console.log(a3);
+    }
+
+    /**
+     * This method is like _.find except that it returns the index of the first element
+     * predicate returns truthy for instead of the element itself.
+     */
+    public findIndexFun() {
+        const users =  [
+              { user:  "barney",   active:  false },
+              { user:  "fred",     active:  false },
+              { user:  "pebbles",  active:  true },
+            ];
+
+        const i1 = _.findIndex(users,  (o) => o.user === "barney");
+        console.log(i1);
+
+        const i2 = _.findIndex(users,  { user:  "fred",  active:  false });
+        console.log(i2);
+
+        const i3 = _.findIndex(users,  ["active",  false]);
+        console.log(i3);
+
+        const i4 = _.findIndex(users,  "active");
+        console.log(i4);
+
+        const i5 = _.findLastIndex(users,  (o) => o.user === "barney");
+        console.log(i5);
+
+        const i6 = _.findLastIndex(users,  { user:  "fred",  active:  false });
+        console.log(i6);
+
+        const i7 = _.findLastIndex(users,  ["active",  false]);
+        console.log(i7);
+
+        const i8 = _.findLastIndex(users,  "active");
+        console.log(i8);
     }
 }
