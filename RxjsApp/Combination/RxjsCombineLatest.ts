@@ -1,18 +1,19 @@
-﻿var Rx = require('rxjs/Rx');
+﻿import "rxjs/add/observable/combineLatest";
+import { Observable } from "rxjs/Observable";
 
 export class CombineLatestPoc {
-    test() {
+    public test() {
         this.func1();
     }
 
-    func1() {
-        const intervalOne$ = Rx.Observable.interval(1000);
-        const intervalTwo$ = Rx.Observable.interval(2000);
+    public func1() {
+        const intervalOne$ = Observable.interval(1000);
+        const intervalTwo$ = Observable.interval(2000);
 
-        Rx.Observable.combineLatest(
+        Observable.combineLatest(
             intervalOne$,
-            intervalTwo$
-        ).subscribe(all => console.log(all));
+            intervalTwo$,
+        ).subscribe((all) => console.log(all));
     }
 
 }

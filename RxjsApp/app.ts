@@ -57,11 +57,11 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // const a = new MergeMapPoc();
 // let a = new MapPoc();
 // let a = new ConcatMapPoc();
-// let a = new ConcatPoc();
+// const a = new ConcatPoc();
 // let a = new ForkJoinPoc();
-// let a = new CombineLatestPoc();
+const a = new CombineLatestPoc();
 // let a = new PairwisePoc();
-const a = new MergePoc();
+// const a = new MergePoc();
 // let a = new StartWithPoc();
 // const a = new WithLatestFromPoc();
 // let a = new FromPoc()
