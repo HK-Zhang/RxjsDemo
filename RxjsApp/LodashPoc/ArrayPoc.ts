@@ -7,7 +7,8 @@ export class ArrayPoc {
         // this.concatFun();
         // this.dropFun();
         // this.fillFun();
-        this.findIndexFun();
+        // this.findIndexFun();
+        this.flattenFun();
     }
 
     // tslint:disable-next-line:max-line-length
@@ -72,6 +73,27 @@ export class ArrayPoc {
 
         const a3 = _.fill([4,  6,  8,  10],  "*",  1,  3);
         console.log(a3);
+    }
+
+    /**
+     * Flattens array a single level deep.
+     */
+    public flattenFun() {
+        const array = [1,  [2,  [3,  [4]],  5]];
+        const a1 = _.flatten(array);
+        console.log(a1);
+
+        const a2 = _.flattenDeep(array);
+        console.log(a2);
+
+        const a3 = _.flattenDepth(array, 1);
+        console.log(a3);
+
+        const a4 = _.flattenDepth(array, 2);
+        console.log(a4);
+
+        const a5 = _.flattenDepth(array, 3);
+        console.log(a5);
     }
 
     /**

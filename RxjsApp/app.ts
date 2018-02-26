@@ -59,7 +59,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new ConcatMapPoc();
 // const a = new ConcatPoc();
 // let a = new ForkJoinPoc();
-const a = new CombineLatestPoc();
+// const a = new CombineLatestPoc();
 // let a = new PairwisePoc();
 // const a = new MergePoc();
 // let a = new StartWithPoc();
@@ -116,7 +116,7 @@ const a = new CombineLatestPoc();
 // let a = new windowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
-// const a = new ArrayPoc();
+const a = new ArrayPoc();
 
 
 
