@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const LodashPoc_1 = require("./LodashPoc");
+const Filter_1 = require("./Filter");
 // let a = new fromJsImPoc();
 // let a = new pipePoc();
 // let a : zipPoc = new zipPoc();
@@ -48,7 +48,7 @@ const LodashPoc_1 = require("./LodashPoc");
 // let a = new RxjsDistinctUntilChangedPoc();
 // let a = new FilterPoc();
 // let a = new TakePoc();
-// let a = new TakeUntilPoc();
+const a = new Filter_1.TakeUntilPoc();
 // let a = new SharePoc();
 // let a = new BufferTimePoc();
 // const a = new ScanPoc();
@@ -87,6 +87,6 @@ const LodashPoc_1 = require("./LodashPoc");
 // let a = new windowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
-const a = new LodashPoc_1.ArrayPoc();
+// const a = new ArrayPoc();
 a.test();
 //# sourceMappingURL=app.js.map
