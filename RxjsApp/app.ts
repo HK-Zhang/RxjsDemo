@@ -21,7 +21,7 @@ import { fromJsImPoc, listPoc, mapImPoc, orderedMapImPoc, orderedsetImPoc, setIm
 import { CatchPoc, RetryPoc, RetryWhenPoc } from "./ErrorHandle";
 
 import {
-    debouncePoc, DebounceTimePoc, FilterPoc, FirstPoc, ignoreElementPoc, lastPoc, RxjsDistinctUntilChangedPoc,
+    debouncePoc, DebounceTimePoc, FilterPoc, FirstPoc, IgnoreElementPoc, lastPoc, RxjsDistinctUntilChangedPoc,
     samplePoc,
     singlePoc, skipPoc, skipUntilPoc, skipWhilePoc, TakePoc, TakeUntilPoc, takewhilePoc, throttlePoc, throttleTimePoc,
 } from "./Filter";
@@ -48,7 +48,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new singlePoc();
 // let a = new samplePoc();
 // let a = new lastPoc();
-// let a = new ignoreElementPoc();
+const a = new IgnoreElementPoc();
 // let a = new FirstPoc();
 // let a = new debouncePoc();
 // let a = new OfPoc();
@@ -116,7 +116,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new windowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
-const a = new ArrayPoc();
+// const a = new ArrayPoc();
 
 
 
