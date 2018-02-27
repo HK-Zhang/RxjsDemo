@@ -77,7 +77,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new RxjsDistinctUntilChangedPoc();
 // let a = new FilterPoc();
 // let a = new TakePoc();
-const a = new TakeUntilPoc();
+// const a = new TakeUntilPoc();
 // let a = new SharePoc();
 // let a = new BufferTimePoc();
 // const a = new ScanPoc();
@@ -116,7 +116,7 @@ const a = new TakeUntilPoc();
 // let a = new windowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
-// const a = new ArrayPoc();
+const a = new ArrayPoc();
 
 
 

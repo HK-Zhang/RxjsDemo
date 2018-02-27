@@ -8,7 +8,8 @@ export class ArrayPoc {
         // this.dropFun();
         // this.fillFun();
         // this.findIndexFun();
-        this.flattenFun();
+        // this.flattenFun();
+        this.fromPairsFun();
     }
 
     // tslint:disable-next-line:max-line-length
@@ -130,5 +131,22 @@ export class ArrayPoc {
 
         const i8 = _.findLastIndex(users,  "active");
         console.log(i8);
+    }
+
+    /**
+     * returns an object composed from key-value pairs.
+     */
+    public fromPairsFun() {
+        const a1 = _.fromPairs([["a",  1],  ["b",  2]]);
+        console.log(a1);
+
+        const a2 = _.head([1,  2,  3]);
+        console.log(a2);
+
+        const a3 = _.indexOf([1, 2, 1, 2], 2);
+        console.log(a3);
+
+        const a4 = _.indexOf([1, 2, 1, 2], 2, 2);
+        console.log(a4);
     }
 }

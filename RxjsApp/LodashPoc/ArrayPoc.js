@@ -9,7 +9,8 @@ class ArrayPoc {
         // this.dropFun();
         // this.fillFun();
         // this.findIndexFun();
-        this.flattenFun();
+        // this.flattenFun();
+        this.fromPairsFun();
     }
     // tslint:disable-next-line:max-line-length
     // Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
@@ -107,6 +108,19 @@ class ArrayPoc {
         console.log(i7);
         const i8 = _.findLastIndex(users, "active");
         console.log(i8);
+    }
+    /**
+     * returns an object composed from key-value pairs.
+     */
+    fromPairsFun() {
+        const a1 = _.fromPairs([["a", 1], ["b", 2]]);
+        console.log(a1);
+        const a2 = _.head([1, 2, 3]);
+        console.log(a2);
+        const a3 = _.indexOf([1, 2, 1, 2], 2);
+        console.log(a3);
+        const a4 = _.indexOf([1, 2, 1, 2], 2, 2);
+        console.log(a4);
     }
 }
 exports.ArrayPoc = ArrayPoc;
