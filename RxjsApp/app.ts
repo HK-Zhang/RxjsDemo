@@ -48,7 +48,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new singlePoc();
 // let a = new samplePoc();
 // let a = new lastPoc();
-const a = new IgnoreElementPoc();
+// const a = new IgnoreElementPoc();
 // let a = new FirstPoc();
 // let a = new debouncePoc();
 // let a = new OfPoc();
@@ -116,7 +116,7 @@ const a = new IgnoreElementPoc();
 // let a = new windowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
-// const a = new ArrayPoc();
+const a = new ArrayPoc();
 
 
 

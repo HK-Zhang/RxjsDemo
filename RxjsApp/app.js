@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Filter_1 = require("./Filter");
+const LodashPoc_1 = require("./LodashPoc");
 // let a = new fromJsImPoc();
 // let a = new pipePoc();
 // let a : zipPoc = new zipPoc();
@@ -19,7 +19,7 @@ const Filter_1 = require("./Filter");
 // let a = new singlePoc();
 // let a = new samplePoc();
 // let a = new lastPoc();
-const a = new Filter_1.IgnoreElementPoc();
+// const a = new IgnoreElementPoc();
 // let a = new FirstPoc();
 // let a = new debouncePoc();
 // let a = new OfPoc();
@@ -87,6 +87,6 @@ const a = new Filter_1.IgnoreElementPoc();
 // let a = new windowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
-// const a = new ArrayPoc();
+const a = new LodashPoc_1.ArrayPoc();
 a.test();
 //# sourceMappingURL=app.js.map

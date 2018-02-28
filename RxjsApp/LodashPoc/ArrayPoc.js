@@ -10,7 +10,8 @@ class ArrayPoc {
         // this.fillFun();
         // this.findIndexFun();
         // this.flattenFun();
-        this.fromPairsFun();
+        // this.fromPairsFun();
+        this.insertsectionFun();
     }
     // tslint:disable-next-line:max-line-length
     // Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
@@ -120,6 +121,23 @@ class ArrayPoc {
         const a3 = _.indexOf([1, 2, 1, 2], 2);
         console.log(a3);
         const a4 = _.indexOf([1, 2, 1, 2], 2, 2);
+        console.log(a4);
+    }
+    /**
+     * Creates an array of unique values that are included in all given arrays
+     *  using SameValueZero for equality comparisons.
+     * The order and references of result values are determined by the first array.
+     */
+    insertsectionFun() {
+        const a1 = _.intersection([2, 1], [2, 3]);
+        console.log(a1);
+        const a2 = _.intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor);
+        console.log(a2);
+        const a3 = _.intersectionBy([{ x: 1 }], [{ x: 2 }, { x: 1 }], "x");
+        console.log(a3);
+        const objects = [{ x: 1, y: 2 }, { x: 2, y: 1 }];
+        const others = [{ x: 1, y: 1 }, { x: 1, y: 2 }];
+        const a4 = _.intersectionWith(objects, others, _.isEqual);
         console.log(a4);
     }
 }
