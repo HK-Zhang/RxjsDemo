@@ -26,7 +26,7 @@ import {
     singlePoc, skipPoc, skipUntilPoc, skipWhilePoc, TakePoc, TakeUntilPoc, takewhilePoc, throttlePoc, throttleTimePoc,
 } from "./Filter";
 
-import { multicastPoc, publishPoc, SharePoc } from "./Multicasting";
+import { MulticastPoc, PublishPoc, SharePoc } from "./Multicasting";
 
 import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 
