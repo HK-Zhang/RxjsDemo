@@ -10,7 +10,8 @@ export class ArrayPoc {
         // this.findIndexFun();
         // this.flattenFun();
         // this.fromPairsFun();
-        this.insertsectionFun();
+        // this.insertsectionFun();
+        this.joinFun();
     }
 
     // tslint:disable-next-line:max-line-length
@@ -170,5 +171,25 @@ export class ArrayPoc {
         const others =  [{ x:  1,  y:  1 },  { x:  1,  y:  2 }];
         const a4 = _.intersectionWith(objects,  others,  _.isEqual);
         console.log(a4);
+    }
+
+    /**
+     * Converts all elements in array into a string separated by separator.
+     */
+    public joinFun() {
+        const a1 = _.join(["a",  "b",  "c"],  "~");
+        console.log(a1);
+
+        const a2 = _.initial([1,  2,  3]);
+        console.log(a2);
+
+        const a3 = _.last([1,  2,  3]);
+        console.log(a3);
+
+        const a4 = _.lastIndexOf([1,  2,  1,  2],  2);
+        console.log(a4);
+
+        const a5 = _.lastIndexOf([1,  2,  1,  2],  2,  2);
+        console.log(a5);
     }
 }
