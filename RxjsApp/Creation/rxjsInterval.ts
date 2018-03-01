@@ -1,16 +1,16 @@
-﻿import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/interval';
+﻿import "rxjs/add/observable/interval";
+import { Observable } from "rxjs/Observable";
 
 export class IntervalPoc {
-    test() {
+    public test() {
         this.func1();
-        //this.func2();
+        // this.func2();
     }
 
-    func1() {
-        //emit value in sequence every 1 second
+    public func1() {
+        // emit value in sequence every 1 second
         const source = Observable.interval(1000);
-        //output: 0,1,2,3,4,5....
-        const subscribe = source.subscribe(val => console.log(val));
+        // output: 0,1,2,3,4,5....
+        const subscribe = source.subscribe((val) => console.log(val));
     }
 }
