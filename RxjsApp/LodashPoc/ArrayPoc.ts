@@ -11,7 +11,8 @@ export class ArrayPoc {
         // this.flattenFun();
         // this.fromPairsFun();
         // this.insertsectionFun();
-        this.joinFun();
+        // this.joinFun();
+        this.pullFun();
     }
 
     // tslint:disable-next-line:max-line-length
@@ -190,6 +191,34 @@ export class ArrayPoc {
         console.log(a4);
 
         const a5 = _.lastIndexOf([1,  2,  1,  2],  2,  2);
+        console.log(a5);
+    }
+
+    /**
+     * Removes all given values from array using SameValueZero for equality comparisons.
+     */
+    public pullFun() {
+        const array =  ["a",  "b",  "c",  "a",  "b",  "c"];
+        const a1 = _.pull(array,  "a",  "c");
+        console.log(a1);
+
+        const a2 = _.pullAll(array,  ["a",  "c"]);
+        console.log(a2);
+
+        const array2 =  [{ x:  1 },  { x:  2 },  { x:  3 },  { x:  1 }];
+        const a3 = _.pullAllBy(array2,  [{ x:  1 },  { x:  3 }],  "x");
+        console.log(a3);
+
+        const array3 =  [{ x:  1,  y:  2 },  { x:  3,  y:  4 },  { x:  5,  y:  6 }];
+        const a4 = _.pullAllWith(array3,  [{ x:  3,  y:  4 }],  _.isEqual);
+        console.log(a4);
+
+        const array4 =  ["a",  "b",  "c",  "d"];
+        const pulled =  _.pullAt(array4,  [1,  3]);
+        console.log(pulled);
+
+        const array5 =  ["a",  "b",  "c",  "d"];
+        const a5 = _.nth(array5,  1);
         console.log(a5);
     }
 }
