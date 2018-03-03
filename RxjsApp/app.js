@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const LodashPoc_1 = require("./LodashPoc");
+const Combination_1 = require("./Combination");
 // let a = new fromJsImPoc();
 // let a = new pipePoc();
 // let a : zipPoc = new zipPoc();
@@ -28,8 +28,8 @@ const LodashPoc_1 = require("./LodashPoc");
 // const a = new MergeMapPoc();
 // let a = new MapPoc();
 // let a = new ConcatMapPoc();
-// const a = new ConcatPoc();
-// let a = new ForkJoinPoc();
+const a = new Combination_1.ConcatPoc();
+// const a = new ForkJoinPoc();
 // const a = new CombineLatestPoc();
 // let a = new PairwisePoc();
 // const a = new MergePoc();
@@ -87,6 +87,6 @@ const LodashPoc_1 = require("./LodashPoc");
 // let a = new windowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
-const a = new LodashPoc_1.ArrayPoc();
+// const a = new ArrayPoc();
 a.test();
 //# sourceMappingURL=app.js.map

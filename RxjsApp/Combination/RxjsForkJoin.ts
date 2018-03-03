@@ -1,15 +1,16 @@
-﻿var Rx = require('rxjs/Rx');
+﻿import "rxjs/add/observable/forkJoin";
+import { Observable } from "rxjs/Observable";
 
 export class ForkJoinPoc {
-    test() {
+    public test() {
         this.func1();
     }
 
-    func1() {
-        const getPostOne$ = Rx.Observable.timer(1000).mapTo({ id: 1 });
-        const getPostTwo$ = Rx.Observable.timer(2000).mapTo({ id: 2 });
+    public func1() {
+        const getPostOne$ = Observable.timer(1000).mapTo({ id: 1 });
+        const getPostTwo$ = Observable.timer(2000).mapTo({ id: 2 });
 
-        Rx.Observable.forkJoin(getPostOne$, getPostTwo$).subscribe(res => console.log(res)) 
+        Observable.forkJoin(getPostOne$, getPostTwo$).subscribe((res) => console.log(res));
     }
 
 }

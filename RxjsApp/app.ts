@@ -6,7 +6,7 @@ import {
     ReducePoc, ScanPoc, SwithMapPoc, windowCountPoc, windowPoc, windowTimePoc, windowTogglePoc, windowWhenPoc,
 } from "./Transformation";
 
-import { combineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, mergeAllPoc, MergePoc, PairwisePoc, racePoc,
+import { combineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, mergeAllPoc, MergePoc, PairwisePoc, RacePoc,
     StartWithPoc, WithLatestFromPoc, zipPoc } from "./Combination";
 
 import { CreatePoc, EmptyPoc, FromPoc, FromPromisePoc, IntervalPoc, OfPoc, RangePoc, ThrowPoc,
@@ -57,8 +57,8 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // const a = new MergeMapPoc();
 // let a = new MapPoc();
 // let a = new ConcatMapPoc();
-// const a = new ConcatPoc();
-// let a = new ForkJoinPoc();
+const a = new ConcatPoc();
+// const a = new ForkJoinPoc();
 // const a = new CombineLatestPoc();
 // let a = new PairwisePoc();
 // const a = new MergePoc();
@@ -116,7 +116,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new windowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
-const a = new ArrayPoc();
+// const a = new ArrayPoc();
 
 
 
