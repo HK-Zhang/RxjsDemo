@@ -7,7 +7,7 @@ import {
 } from "./Transformation";
 
 import { combineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, mergeAllPoc, MergePoc, PairwisePoc, RacePoc,
-    StartWithPoc, WithLatestFromPoc, zipPoc } from "./Combination";
+    StartWithPoc, WithLatestFromPoc, ZipPoc } from "./Combination";
 
 import { CreatePoc, EmptyPoc, FromPoc, FromPromisePoc, IntervalPoc, OfPoc, RangePoc, ThrowPoc,
     TimerPoc } from "./Creation";
@@ -32,7 +32,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 
 // let a = new fromJsImPoc();
 // let a = new pipePoc();
-// let a : zipPoc = new zipPoc();
+// const a = new ZipPoc();
 // let a = new orderedsetImPoc();
 // let a = new racePoc();
 // let a = new mergeAllPoc();
@@ -57,13 +57,13 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // const a = new MergeMapPoc();
 // let a = new MapPoc();
 // let a = new ConcatMapPoc();
-const a = new ConcatPoc();
+// const a = new ConcatPoc();
 // const a = new ForkJoinPoc();
 // const a = new CombineLatestPoc();
 // let a = new PairwisePoc();
 // const a = new MergePoc();
 // let a = new StartWithPoc();
-// const a = new WithLatestFromPoc();
+const a = new WithLatestFromPoc();
 // let a = new FromPoc()
 // let a = new FromPromisePoc()
 // let a = new Poc()
