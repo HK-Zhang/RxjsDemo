@@ -1,23 +1,22 @@
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/combineAll'
+import "rxjs/add/operator/combineAll";
+import { Observable } from "rxjs/Observable";
 
 
+export class CombineAllPoc {
 
-export class combineAllPoc {
-
-    test() {
+    public test() {
         this.func1();
         // this.func2();
     }
 
-    func1() {
-        //emit every 1s, take 2
+    public func1() {
+        // emit every 1s, take 2
         const source = Observable.interval(1000).take(2);
-        //map each emitted value from source to interval observable that takes 5 values
-        const example = source.map(val =>
+        // map each emitted value from source to interval observable that takes 5 values
+        const example = source.map((val) =>
             Observable.interval(1000)
-                .map(i => `Result (${val}): ${i}`)
-                .take(5)
+                .map((i) => `Result (${val}): ${i}`)
+                .take(5),
         );
         /*
           2 values from source will map to 2 (inner) interval observables that emit every 1s
@@ -37,7 +36,7 @@ export class combineAllPoc {
           ["Result (0): 4", "Result (1): 3"]
           ["Result (0): 4", "Result (1): 4"]
         */
-        const subscribe = combined.subscribe(val => console.log(val));
+        const subscribe = combined.subscribe((val) => console.log(val));
     }
 
 

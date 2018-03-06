@@ -3,10 +3,10 @@
 import {
     bufferCountPoc, bufferPoc, BufferTimePoc, bufferTogglePoc, bufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
     exhaustMapPoc, expandPoc, groupByPoc, MapPoc, MaptoPoc, MergeMapPoc, partitionPoc, pluckPoc,
-    ReducePoc, ScanPoc, SwithMapPoc, windowCountPoc, windowPoc, windowTimePoc, windowTogglePoc, windowWhenPoc,
+    ReducePoc, ScanPoc, SwithMapPoc, windowCountPoc, windowPoc, windowTimePoc, windowTogglePoc, WindowWhenPoc,
 } from "./Transformation";
 
-import { combineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, MergeAllPoc, MergePoc, PairwisePoc, RacePoc,
+import { CombineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, MergeAllPoc, MergePoc, PairwisePoc, RacePoc,
     StartWithPoc, WithLatestFromPoc, ZipPoc } from "./Combination";
 
 import { CreatePoc, EmptyPoc, FromPoc, FromPromisePoc, IntervalPoc, OfPoc, RangePoc, ThrowPoc,
@@ -35,9 +35,9 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // const a = new ZipPoc();
 // let a = new orderedsetImPoc();
 // let a = new racePoc();
-const a = new MergeAllPoc();
+// const a = new MergeAllPoc();
 // let a = new setImPoc();
-// let a = new combineAllPoc();
+// const a = new CombineAllPoc();
 // let a = new orderedMapImPoc();
 // let a = new throttleTimePoc();
 // let a = new throttlePoc();
@@ -113,7 +113,7 @@ const a = new MergeAllPoc();
 // let a = new windowPoc();
 // let a = new windowCountPoc();
 // let a = new windowTimePoc();
-// let a = new windowWhenPoc();
+const a = new WindowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
 // const a = new ArrayPoc();
