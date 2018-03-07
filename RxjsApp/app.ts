@@ -30,6 +30,9 @@ import { MulticastPoc, PublishPoc, SharePoc } from "./Multicasting";
 
 import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 
+import { SubjectPoc } from "./Subject";
+
+
 // let a = new fromJsImPoc();
 // let a = new pipePoc();
 // const a = new ZipPoc();
@@ -51,7 +54,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // const a = new IgnoreElementPoc();
 // let a = new FirstPoc();
 // let a = new debouncePoc();
-// let a = new OfPoc();
+// const a = new OfPoc();
 // let a = new doPoc();
 // const a = new SwithMapPoc();
 // const a = new MergeMapPoc();
@@ -113,10 +116,11 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 // let a = new windowPoc();
 // let a = new windowCountPoc();
 // let a = new windowTimePoc();
-const a = new WindowWhenPoc();
+// const a = new WindowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
 // const a = new ArrayPoc();
+const a = new SubjectPoc();
 
 
 

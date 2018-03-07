@@ -1,4 +1,5 @@
-﻿import { Observable } from "rxjs/Observable";
+﻿import "rxjs/add/observable/of";
+import { Observable } from "rxjs/Observable";
 
 const tfx = (item, index) => {
     return item * 2;
@@ -6,15 +7,17 @@ const tfx = (item, index) => {
 
 export class OfPoc {
     public test() {
-        // this.func1();
-        this.func3();
+        this.func1();
+        // this.func3();
     }
 
     public func1() {
         // emits any number of provided values in sequence
-        const source = Observable.of(1, 2, 3, 4, 5);
+        let source = Observable.of(1, 2, 3, 4, 5);
         // output: 1,2,3,4,5
         const subscribe = source.subscribe((val) => console.log(val));
+
+        source = Observable.of(6, 7);
     }
 
     public func2() {
