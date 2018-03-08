@@ -4,4 +4,7 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./RxjsSubject"));
+__export(require("./RxjsBehaviorSubject"));
+__export(require("./RxjsAsyncSubject"));
+__export(require("./RxjsReplaySubject"));
 //# sourceMappingURL=index.js.map

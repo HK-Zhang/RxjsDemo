@@ -30,7 +30,7 @@ import { MulticastPoc, PublishPoc, SharePoc } from "./Multicasting";
 
 import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 
-import { SubjectPoc } from "./Subject";
+import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } from "./Subject";
 
 
 // let a = new fromJsImPoc();
@@ -120,7 +120,9 @@ import { SubjectPoc } from "./Subject";
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
 // const a = new ArrayPoc();
-const a = new SubjectPoc();
+// const a = new SubjectPoc();
+// const a = new AsyncSubjectPoc();
+const a = new ReplaySubjectPoc();
 
 
 

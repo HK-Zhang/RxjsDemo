@@ -1,16 +1,13 @@
+import { BehaviorSubject } from "rxjs/BehaviorSubject";
 
-import { Subject } from "rxjs/Subject";
-
-
-export class SubjectPoc {
+export class BehaviorSubjectPoc {
     public test() {
         // this.func1();
         this.func2();
     }
 
-    public func1() {
-        const sub = new Subject();
-        sub.next(1);
+    public func2() {
+        const sub = new BehaviorSubject(1);
         const subscription = sub.subscribe((t) => {
             console.log(t);
         });
@@ -19,17 +16,16 @@ export class SubjectPoc {
     }
 
     /**
-     * func2
+     * func1
      */
-    public func2() {
-        const sub = new Subject();
+    public func1() {
+        const sub = new BehaviorSubject(42);
         const subscription = sub.subscribe(
             (t) => {console.log("Next:" + t); },
             (err) => {console.log("Error:" + err); },
             () => {console.log("complete."); },
         );
 
-        sub.next(42);
         sub.next(56);
         sub.complete();
     }

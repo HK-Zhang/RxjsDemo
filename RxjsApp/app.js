@@ -88,6 +88,8 @@ const Subject_1 = require("./Subject");
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
 // const a = new ArrayPoc();
-const a = new Subject_1.SubjectPoc();
+// const a = new SubjectPoc();
+// const a = new AsyncSubjectPoc();
+const a = new Subject_1.ReplaySubjectPoc();
 a.test();
 //# sourceMappingURL=app.js.map
