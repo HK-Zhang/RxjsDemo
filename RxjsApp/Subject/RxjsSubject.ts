@@ -19,7 +19,7 @@ export class SubjectPoc {
     }
 
     public func2() {
-        const sub = new BehaviorSubject(1);
+        const sub = new BehaviorSubject<number>(1);
         const subscription = sub.subscribe((t) => {
             console.log(t);
         });
