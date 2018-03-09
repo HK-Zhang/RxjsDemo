@@ -119,10 +119,10 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new WindowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
-// const a = new ArrayPoc();
+const a = new ArrayPoc();
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
-const a = new ReplaySubjectPoc();
+// const a = new ReplaySubjectPoc();
 
 
 

@@ -13,7 +13,8 @@ class ArrayPoc {
         // this.fromPairsFun();
         // this.insertsectionFun();
         // this.joinFun();
-        this.pullFun();
+        // this.pullFun();
+        this.removeFun();
     }
     // tslint:disable-next-line:max-line-length
     // Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
@@ -178,6 +179,21 @@ class ArrayPoc {
         const array5 = ["a", "b", "c", "d"];
         const a5 = _.nth(array5, 1);
         console.log(a5);
+    }
+    /**
+     * removeFun
+     */
+    removeFun() {
+        const array = [1, 2, 3, 4];
+        const evens = _.remove(array, (n) => {
+            return n % 2 === 0;
+        });
+        console.log(array);
+        console.log(evens);
+        const reverseArr = _.reverse(array);
+        console.log(reverseArr);
+        const slicedArr = _.slice(array, 0, 1);
+        console.log(slicedArr);
     }
 }
 exports.ArrayPoc = ArrayPoc;
