@@ -1,17 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Observable_1 = require("rxjs/Observable");
-require("rxjs/add/operator/scan");
-require("rxjs/add/operator/window");
-require("rxjs/add/operator/mergeAll");
 require("rxjs/add/observable/interval");
 require("rxjs/add/observable/timer");
-class windowPoc {
+require("rxjs/add/operator/mergeAll");
+require("rxjs/add/operator/scan");
+require("rxjs/add/operator/window");
+const Observable_1 = require("rxjs/Observable");
+class WindowPoc {
     test() {
         this.func1();
     }
     func1() {
-        //emit immediately then every 1s
+        // emit immediately then every 1s
         const source = Observable_1.Observable.timer(0, 1000);
         const example = source.window(Observable_1.Observable.interval(3000));
         const count = example.scan((acc, curr) => acc + 1, 0);
@@ -26,9 +26,9 @@ class windowPoc {
           5
           ...
         */
-        const subscribe = count.subscribe(val => console.log(`Window ${val}:`));
-        const subscribeTwo = example.mergeAll().subscribe(val => console.log(val));
+        const subscribe = count.subscribe((val) => console.log(`Window ${val}:`));
+        const subscribeTwo = example.mergeAll().subscribe((val) => console.log(val));
     }
 }
-exports.windowPoc = windowPoc;
+exports.WindowPoc = WindowPoc;
 //# sourceMappingURL=rxjsWindow.js.map

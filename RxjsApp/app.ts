@@ -1,9 +1,9 @@
 ﻿import { delayPoc, delayWhenPoc, doPoc, letPoc, pipePoc, timeoutPoc, toPromisePoc } from "./Utility";
 
 import {
-    bufferCountPoc, bufferPoc, BufferTimePoc, bufferTogglePoc, bufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
-    exhaustMapPoc, expandPoc, groupByPoc, MapPoc, MaptoPoc, MergeMapPoc, partitionPoc, pluckPoc,
-    ReducePoc, ScanPoc, SwithMapPoc, windowCountPoc, windowPoc, windowTimePoc, windowTogglePoc, WindowWhenPoc,
+    bufferCountPoc, BufferPoc, BufferTimePoc, bufferTogglePoc, BufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
+    exhaustMapPoc, expandPoc, groupByPoc, MapPoc, MaptoPoc, MergeMapPoc, partitionPoc, PluckPoc,
+    ReducePoc, ScanPoc, SwithMapPoc, windowCountPoc, WindowPoc, windowTimePoc, windowTogglePoc, WindowWhenPoc,
 } from "./Transformation";
 
 import { CombineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, MergeAllPoc, MergePoc, PairwisePoc, RacePoc,
@@ -99,10 +99,10 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new timeoutPoc();
 // let a = new publishPoc();
 // let a = new multicastPoc();
-// let a = new bufferPoc();
+// const a = new BufferPoc();
 // let a = new bufferCountPoc();
 // let a = new bufferTogglePoc();
-// let a = new bufferWhenPoc();
+// const a = new BufferWhenPoc();
 // let a = new ConcatMapToPoc();
 // let a = new expandPoc();
 // let a = new exhaustMapPoc();
@@ -110,16 +110,16 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new groupByPoc();
 // let a = new maptoPoc();
 // let a = new partitionPoc();
-// let a = new pluckPoc();
+// const a = new PluckPoc();
 // let a = new reducePoc();
 // let a = new listPoc();
-// let a = new windowPoc();
+const a = new WindowPoc();
 // let a = new windowCountPoc();
 // let a = new windowTimePoc();
 // const a = new WindowWhenPoc();
 // let a = new windowTogglePoc();
 // let a = new mapImPoc();
-const a = new ArrayPoc();
+// const a = new ArrayPoc();
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
