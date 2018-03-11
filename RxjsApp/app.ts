@@ -3,7 +3,7 @@
 import {
     bufferCountPoc, BufferPoc, BufferTimePoc, bufferTogglePoc, BufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
     exhaustMapPoc, expandPoc, groupByPoc, MapPoc, MaptoPoc, MergeMapPoc, partitionPoc, PluckPoc,
-    ReducePoc, ScanPoc, SwithMapPoc, windowCountPoc, WindowPoc, windowTimePoc, windowTogglePoc, WindowWhenPoc,
+    ReducePoc, ScanPoc, SwithMapPoc, windowCountPoc, WindowPoc, windowTimePoc, WindowTogglePoc, WindowWhenPoc,
 } from "./Transformation";
 
 import { CombineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, MergeAllPoc, MergePoc, PairwisePoc, RacePoc,
@@ -113,11 +113,11 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new PluckPoc();
 // let a = new reducePoc();
 // let a = new listPoc();
-const a = new WindowPoc();
+// const a = new WindowPoc();
 // let a = new windowCountPoc();
 // let a = new windowTimePoc();
 // const a = new WindowWhenPoc();
-// let a = new windowTogglePoc();
+const a = new WindowTogglePoc();
 // let a = new mapImPoc();
 // const a = new ArrayPoc();
 // const a = new SubjectPoc();
