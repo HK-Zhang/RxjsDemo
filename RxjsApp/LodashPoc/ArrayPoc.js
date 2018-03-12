@@ -14,7 +14,8 @@ class ArrayPoc {
         // this.insertsectionFun();
         // this.joinFun();
         // this.pullFun();
-        this.removeFun();
+        // this.removeFun();
+        this.sortedIndexFun();
     }
     // tslint:disable-next-line:max-line-length
     // Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
@@ -194,6 +195,28 @@ class ArrayPoc {
         console.log(reverseArr);
         const slicedArr = _.slice(array, 0, 1);
         console.log(slicedArr);
+    }
+    /**
+     * sortedIndex
+     */
+    sortedIndexFun() {
+        const v1 = _.sortedIndex([30, 50], 40);
+        console.log(v1);
+        const objects = [{ x: 4 }, { x: 5 }];
+        const v2 = _.sortedIndexBy(objects, { x: 4 }, (o) => o.x);
+        console.log(v2);
+        const v3 = _.sortedIndexOf([4, 5, 5, 5, 6], 5);
+        console.log(v3);
+        const v4 = _.sortedLastIndex([4, 5, 5, 5, 6], 5);
+        console.log(v4);
+        const v5 = _.sortedLastIndexBy(objects, { x: 4 }, (o) => o.x);
+        console.log(v5);
+        const v6 = _.sortedLastIndexOf([4, 5, 5, 5, 6], 5);
+        console.log(v6);
+        const v7 = _.sortedUniq([1, 1, 2]);
+        console.log(v7);
+        const v8 = _.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor);
+        console.log(v8);
     }
 }
 exports.ArrayPoc = ArrayPoc;

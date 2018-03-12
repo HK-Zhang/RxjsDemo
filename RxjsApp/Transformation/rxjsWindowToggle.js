@@ -18,7 +18,8 @@ class WindowTogglePoc {
         const example = source
             .windowToggle(toggle, (val) => {
             console.log("N" + val);
-            return Observable_1.Observable.interval(5 * 1000);
+            return Observable_1.Observable.interval(val * 1000);
+            // return Observable.interval(5 * 1000);
         })
             .do(() => console.log("NEW WINDOW!"));
         const subscribeTwo = example
