@@ -1,27 +1,26 @@
-﻿import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/windowTime';
-import 'rxjs/add/operator/mergeAll';
-import 'rxjs/add/observable/timer';
+﻿import "rxjs/add/observable/timer";
+import "rxjs/add/operator/do";
+import "rxjs/add/operator/mergeAll";
+import "rxjs/add/operator/windowTime";
+import { Observable } from "rxjs/Observable";
 
 
+export class WindowTimePoc {
 
-export class windowTimePoc {
-
-    test() {
+    public test() {
         this.func1();
     }
 
-    func1() {
-        //emit immediately then every 1s
+    public func1() {
+        // emit immediately then every 1s
         const source = Observable.timer(0, 1000);
         const example = source
-            //start new window every 3s
+            // start new window every 3s
             .windowTime(3000)
-            .do(() => console.log('NEW WINDOW!'));
+            .do(() => console.log("NEW WINDOW!"));
 
         const subscribeTwo = example
-            //window emits nested observable
+            // window emits nested observable
             .mergeAll()
             /*
             output:
@@ -34,7 +33,7 @@ export class windowTimePoc {
             4
             5
           */
-            .subscribe(val => console.log(val));
+            .subscribe((val) => console.log(val));
     }
 
 
