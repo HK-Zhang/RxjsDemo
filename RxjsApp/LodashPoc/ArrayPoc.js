@@ -15,7 +15,8 @@ class ArrayPoc {
         // this.joinFun();
         // this.pullFun();
         // this.removeFun();
-        this.sortedIndexFun();
+        // this.sortedIndexFun();
+        this.takeFun();
     }
     // tslint:disable-next-line:max-line-length
     // Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
@@ -217,6 +218,26 @@ class ArrayPoc {
         console.log(v7);
         const v8 = _.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor);
         console.log(v8);
+    }
+    /**
+     * takeFun
+     */
+    takeFun() {
+        const v1 = _.tail([1, 2, 3]);
+        console.log(v1);
+        const v2 = _.take([1, 2, 3], 2);
+        console.log(v2);
+        const v3 = _.takeRight([1, 2, 3], 2);
+        console.log(v3);
+        const users = [
+            { user: "barney", active: true },
+            { user: "fred", active: false },
+            { user: "pebbles", active: false },
+        ];
+        const v4 = _.takeRightWhile(users, (o) => !o.active);
+        console.log(v4);
+        const v5 = _.takeWhile(users, (o) => !o.active);
+        console.log(v5);
     }
 }
 exports.ArrayPoc = ArrayPoc;
