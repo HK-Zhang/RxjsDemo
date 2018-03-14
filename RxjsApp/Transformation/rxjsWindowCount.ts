@@ -1,27 +1,26 @@
-﻿import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/windowCount';
-import 'rxjs/add/operator/mergeAll';
-import 'rxjs/add/observable/interval';
+﻿import "rxjs/add/observable/interval";
+import "rxjs/add/operator/do";
+import "rxjs/add/operator/mergeAll";
+import "rxjs/add/operator/windowCount";
+import { Observable } from "rxjs/Observable";
 
 
+export class WindowCountPoc {
 
-export class windowCountPoc {
-
-    test() {
+    public test() {
         this.func1();
     }
 
-    func1() {
-        //emit every 1s
+    public func1() {
+        // emit every 1s
         const source = Observable.interval(1000);
         const example = source
-            //start new window every 4 emitted values
+            // start new window every 4 emitted values
             .windowCount(4)
-            .do(() => console.log('NEW WINDOW!'));
+            .do(() => console.log("NEW WINDOW!"));
 
         const subscribeTwo = example
-            //window emits nested observable
+            // window emits nested observable
             .mergeAll()
             /*
             output:
@@ -34,9 +33,9 @@ export class windowCountPoc {
             4
             5
             6
-            7 
+            7
           */
-            .subscribe(val => console.log(val));
+            .subscribe((val) => console.log(val));
     }
 
 

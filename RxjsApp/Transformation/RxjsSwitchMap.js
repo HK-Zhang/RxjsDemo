@@ -19,7 +19,7 @@ class SwithMapPoc {
         // this.func3();
     }
     func() {
-        Observable_1.Observable.timer(0, 10000)
+        Observable_1.Observable.timer(0, 8000)
             .do((id) => {
             console.log("%carrived outer observable:", "color:green;", id);
         })
