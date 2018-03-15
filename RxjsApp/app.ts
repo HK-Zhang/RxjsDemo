@@ -56,7 +56,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new debouncePoc();
 // const a = new OfPoc();
 // let a = new doPoc();
-const a = new SwithMapPoc();
+// const a = new SwithMapPoc();
 // const a = new MergeMapPoc();
 // let a = new MapPoc();
 // let a = new ConcatMapPoc();
@@ -119,7 +119,7 @@ const a = new SwithMapPoc();
 // const a = new WindowWhenPoc();
 // const a = new WindowTogglePoc();
 // let a = new mapImPoc();
-// const a = new ArrayPoc();
+const a = new ArrayPoc();
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();

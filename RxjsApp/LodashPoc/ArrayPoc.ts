@@ -15,7 +15,8 @@ export class ArrayPoc {
         // this.pullFun();
         // this.removeFun();
         // this.sortedIndexFun();
-        this.takeFun();
+        // this.takeFun();
+        this.unionFun();
     }
 
     // tslint:disable-next-line:max-line-length
@@ -297,5 +298,24 @@ export class ArrayPoc {
 
         const v5 = _.takeWhile(users, (o) => !o.active);
         console.log(v5);
+    }
+
+    /**
+     * unionFun
+     */
+    public unionFun() {
+        const v1 = _.union([2], [1, 2]);
+        console.log(v1);
+
+        const v2 = _.unionBy([2.1], [1.2, 2.3], Math.floor);
+        console.log(v2);
+
+        const v3 = _.unionBy([{ x:  1 }],  [{ x:  2 },  { x:  1 }],  "x");
+        console.log(v3);
+
+        const objects =  [{ x:  1,  y:  2 },  { x:  2,  y:  1 }];
+        const others =  [{ x:  1,  y:  1 },  { x:  1,  y:  2 }];
+        const v4 = _.unionWith(objects, others, _.isEqual);
+        console.log(v4);
     }
 }
