@@ -17,7 +17,8 @@ export class ArrayPoc {
         // this.sortedIndexFun();
         // this.takeFun();
         // this.unionFun();
-        this.uniqFun();
+        // this.uniqFun();
+        this.unzipFun();
     }
 
     // tslint:disable-next-line:max-line-length
@@ -333,6 +334,22 @@ export class ArrayPoc {
         const  objects  =  [{  x:  1,  y:  2  },  {  x:  2,  y:  1  },  {  x:  1,  y:  2  }];
         const v3 = _.uniqWith(objects,  _.isEqual);
 
+        console.log(v3);
+    }
+
+    /**
+     * unzipFun
+     */
+    public unzipFun() {
+        const zipped =  _.zip(["a",  "b"],  [1,  2],  [true,  false]);
+        const v1 = _.unzip(zipped);
+        console.log(v1);
+
+        const z2 = _.zip([1,  2],  [10,  20],  [100,  200]);
+        const v2 = _.unzipWith(z2, _.add);
+        console.log(v2);
+
+        const v3 = _.without([2,  1,  2,  3],  1,  2);
         console.log(v3);
     }
 }
