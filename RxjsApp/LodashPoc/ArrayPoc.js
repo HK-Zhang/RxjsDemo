@@ -19,7 +19,8 @@ class ArrayPoc {
         // this.takeFun();
         // this.unionFun();
         // this.uniqFun();
-        this.unzipFun();
+        // this.unzipFun();
+        this.zipFun();
     }
     // tslint:disable-next-line:max-line-length
     // Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
@@ -280,6 +281,19 @@ class ArrayPoc {
         const v2 = _.unzipWith(z2, _.add);
         console.log(v2);
         const v3 = _.without([2, 1, 2, 3], 1, 2);
+        console.log(v3);
+    }
+    /**
+     * zipFun
+     */
+    zipFun() {
+        const v1 = _.zipObject(["a", "b"], [1, 2]);
+        console.log(v1);
+        const v2 = _.zipObjectDeep(["a.b[0].c", "a.b[1].d"], [1, 2]);
+        console.log(v2);
+        const v3 = _.zipWith([1, 2], [10, 20], [100, 200], (a, b, c) => {
+            return a + b + c;
+        });
         console.log(v3);
     }
 }

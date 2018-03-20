@@ -18,7 +18,8 @@ export class ArrayPoc {
         // this.takeFun();
         // this.unionFun();
         // this.uniqFun();
-        this.unzipFun();
+        // this.unzipFun();
+        this.zipFun();
     }
 
     // tslint:disable-next-line:max-line-length
@@ -350,6 +351,22 @@ export class ArrayPoc {
         console.log(v2);
 
         const v3 = _.without([2,  1,  2,  3],  1,  2);
+        console.log(v3);
+    }
+
+    /**
+     * zipFun
+     */
+    public zipFun() {
+        const v1 = _.zipObject(["a", "b"], [1, 2]);
+        console.log(v1);
+
+        const v2 = _.zipObjectDeep(["a.b[0].c", "a.b[1].d"], [1, 2]);
+        console.log(v2);
+
+        const v3 = _.zipWith([1, 2], [10, 20], [100, 200], (a, b, c) => {
+            return a + b + c;
+          });
         console.log(v3);
     }
 }
