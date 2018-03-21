@@ -111,7 +111,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new maptoPoc();
 // let a = new partitionPoc();
 // const a = new PluckPoc();
-// let a = new reducePoc();
+const a = new ReducePoc();
 // let a = new listPoc();
 // const a = new WindowPoc();
 // let a = new windowCountPoc();
@@ -119,7 +119,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new WindowWhenPoc();
 // const a = new WindowTogglePoc();
 // let a = new mapImPoc();
-const a = new ArrayPoc();
+// const a = new ArrayPoc();
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
