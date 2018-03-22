@@ -1,22 +1,21 @@
-﻿import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/partition';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/observable/from';
-import 'rxjs/add/observable/merge';
+﻿import "rxjs/add/observable/from";
+import "rxjs/add/observable/merge";
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/partition";
+import { Observable } from "rxjs/Observable";
 
 
+export class PartitionPoc {
 
-export class partitionPoc {
-
-    test() {
-        //this.func1();
+    public test() {
+        // this.func1();
         this.func2();
     }
 
-    func1() {
+    public func1() {
         const source = Observable.from([1, 2, 3, 4, 5, 6]);
-        //first value is true, second false
-        const [evens, odds] = source.partition(val => val % 2 === 0);
+        // first value is true, second false
+        const [evens, odds] = source.partition((val) => val % 2 === 0);
         /*
           Output:
           "Even: 2"
@@ -27,24 +26,24 @@ export class partitionPoc {
           "Odd: 5"
         */
         const subscribe = Observable.merge(
-            evens.map(val => `Even: ${val}`),
-            odds.map(val => `Odd: ${val}`)
-        ).subscribe(val => console.log(val));
+            evens.map((val) => `Even: ${val}`),
+            odds.map((val) => `Odd: ${val}`),
+        ).subscribe((val) => console.log(val));
     }
 
-    func2() {
+    public func2() {
         const source = Observable.from([1, 2, 3, 4, 5, 6]);
-        //if greater than 3 throw
+        // if greater than 3 throw
         const example = source
-            .map(val => {
+            .map((val) => {
                 if (val > 3) {
-                    throw `${val} greater than 3!`;
+                    throw new Error(`${val} greater than 3!`);
                 }
                 return { success: val };
             })
-            .catch(val => Observable.of({ error: val }));
-        //split on success or error
-        const [success, error] = example.partition((res:any) => res.success);
+            .catch((val) => Observable.of({ error: val }));
+        // split on success or error
+        const [success, error] = example.partition((res) => res.success);
         /*
           Output:
           "Success! 1"
@@ -53,9 +52,9 @@ export class partitionPoc {
           "Error! 4 greater than 3!"
         */
         const subscribe = Observable.merge(
-            success.map(val => `Success! ${val.success}`),
-            error.map(val => `Error! ${val.error}`)
-        ).subscribe(val => console.log(val));
+            success.map((val) => `Success! ${val.success}`),
+            error.map((val) => `Error! ${val.error}`),
+        ).subscribe((val) => console.log(val));
     }
 
 }
