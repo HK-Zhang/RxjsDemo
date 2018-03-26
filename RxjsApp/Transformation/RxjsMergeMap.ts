@@ -1,11 +1,13 @@
-﻿import "rxjs/add/operator/switchMap";
+﻿import "rxjs/add/operator/mergeMap";
+import "rxjs/add/operator/switchMap";
 import { Observable } from "rxjs/Observable";
 
 export class MergeMapPoc {
     public test() {
         // this.func0();
+        this.func01();
         // this.func1();
-        this.func3();
+        // this.func3();
     }
 
     /**
@@ -15,6 +17,13 @@ export class MergeMapPoc {
         // emit value every 1s
         const letters = Observable.of("a", "b", "c");
         const result = letters.mergeMap((x) =>
+            Observable.interval(5000).map((i) => x).take(5));
+        result.subscribe((x) => console.log(x));
+    }
+
+    public func01() {
+        const letters = Observable.of("a", "b", "c");
+        const result = letters.switchMap((x) =>
             Observable.interval(5000).map((i) => x).take(5));
         result.subscribe((x) => console.log(x));
     }

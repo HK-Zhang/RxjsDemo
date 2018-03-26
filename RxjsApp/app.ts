@@ -57,7 +57,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new OfPoc();
 // let a = new doPoc();
 // const a = new SwithMapPoc();
-// const a = new MergeMapPoc();
+const a = new MergeMapPoc();
 // let a = new MapPoc();
 // let a = new ConcatMapPoc();
 // const a = new ConcatPoc();
@@ -109,7 +109,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new groupByPoc();
 // let a = new groupByPoc();
 // let a = new maptoPoc();
-const a = new PartitionPoc();
+// const a = new PartitionPoc();
 // const a = new PluckPoc();
 // const a = new ReducePoc();
 // let a = new listPoc();
@@ -123,7 +123,7 @@ const a = new PartitionPoc();
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
-const a = new CollectionPoc();
+// const a = new CollectionPoc();
 
 
 

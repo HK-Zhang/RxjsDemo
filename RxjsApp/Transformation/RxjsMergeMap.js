@@ -1,12 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+require("rxjs/add/operator/mergeMap");
 require("rxjs/add/operator/switchMap");
 const Observable_1 = require("rxjs/Observable");
 class MergeMapPoc {
     test() {
         // this.func0();
+        this.func01();
         // this.func1();
-        this.func3();
+        // this.func3();
     }
     /**
      * func0
@@ -15,6 +17,11 @@ class MergeMapPoc {
         // emit value every 1s
         const letters = Observable_1.Observable.of("a", "b", "c");
         const result = letters.mergeMap((x) => Observable_1.Observable.interval(5000).map((i) => x).take(5));
+        result.subscribe((x) => console.log(x));
+    }
+    func01() {
+        const letters = Observable_1.Observable.of("a", "b", "c");
+        const result = letters.switchMap((x) => Observable_1.Observable.interval(5000).map((i) => x).take(5));
         result.subscribe((x) => console.log(x));
     }
     func1() {
