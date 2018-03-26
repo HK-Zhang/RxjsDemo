@@ -5,4 +5,5 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./Poc"));
 __export(require("./ArrayPoc"));
+__export(require("./CollectionPoc"));
 //# sourceMappingURL=index.js.map
