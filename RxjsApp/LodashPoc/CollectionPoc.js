@@ -4,7 +4,8 @@ const _ = require("lodash");
 class CollectionPoc {
     test() {
         // this.countFunc();
-        this.findFunc();
+        // this.findFunc();
+        this.flapFunc();
     }
     countFunc() {
         const v1 = _.countBy([6.1, 4.2, 6.3], Math.floor);
@@ -58,6 +59,18 @@ class CollectionPoc {
         console.log(v4);
         const v5 = _.findLast([1, 2, 3, 4], (n) => n % 2 === 1);
         console.log(v5);
+    }
+    /**
+     * flapFunc
+     */
+    flapFunc() {
+        const v1 = _.flatMap([1, 2], (o) => [o, o]);
+        console.log(v1);
+        _.forEach([1, 2], (value) => console.log(value));
+        _.forEach({ a: 1, b: 2 }, (value, key) => {
+            console.log(key);
+        });
+        _.forEachRight([1, 2], (value) => console.log(value));
     }
 }
 exports.CollectionPoc = CollectionPoc;
