@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const LodashPoc_1 = require("./LodashPoc");
+const Transformation_1 = require("./Transformation");
 // let a = new fromJsImPoc();
 // let a = new pipePoc();
 // const a = new ZipPoc();
@@ -75,7 +75,7 @@ const LodashPoc_1 = require("./LodashPoc");
 // let a = new expandPoc();
 // let a = new exhaustMapPoc();
 // let a = new groupByPoc();
-// let a = new groupByPoc();
+const a = new Transformation_1.GroupByPoc();
 // let a = new maptoPoc();
 // const a = new PartitionPoc();
 // const a = new PluckPoc();
@@ -91,6 +91,6 @@ const LodashPoc_1 = require("./LodashPoc");
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
-const a = new LodashPoc_1.CollectionPoc();
+// const a = new CollectionPoc();
 a.test();
 //# sourceMappingURL=app.js.map
