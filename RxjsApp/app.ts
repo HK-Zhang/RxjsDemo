@@ -107,7 +107,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new expandPoc();
 // let a = new exhaustMapPoc();
 // let a = new groupByPoc();
-const a = new GroupByPoc();
+// const a = new GroupByPoc();
 // let a = new maptoPoc();
 // const a = new PartitionPoc();
 // const a = new PluckPoc();
@@ -123,7 +123,7 @@ const a = new GroupByPoc();
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
-// const a = new CollectionPoc();
+const a = new CollectionPoc();
 
 
 

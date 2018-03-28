@@ -5,7 +5,8 @@ class CollectionPoc {
     test() {
         // this.countFunc();
         // this.findFunc();
-        this.flapFunc();
+        // this.flapFunc();
+        this.groupbyFunc();
     }
     countFunc() {
         const v1 = _.countBy([6.1, 4.2, 6.3], Math.floor);
@@ -71,6 +72,23 @@ class CollectionPoc {
             console.log(key);
         });
         _.forEachRight([1, 2], (value) => console.log(value));
+    }
+    /**
+     * groupbyFunc
+     */
+    groupbyFunc() {
+        const v1 = _.groupBy([6.1, 4.2, 6.3], Math.floor);
+        console.log(v1);
+        const v2 = _.groupBy(["one", "two", "three"], "length");
+        console.log(v2);
+        const v3 = _.includes([1, 2, 3], 1);
+        console.log(v3);
+        const v4 = _.includes([1, 2, 3], 1, 2);
+        console.log(v4);
+        const v5 = _.includes({ a: 1, b: 2 }, 1);
+        console.log(v5);
+        const v6 = _.includes("abcd", "bc");
+        console.log(v6);
     }
 }
 exports.CollectionPoc = CollectionPoc;
