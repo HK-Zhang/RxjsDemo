@@ -6,7 +6,8 @@ class CollectionPoc {
         // this.countFunc();
         // this.findFunc();
         // this.flapFunc();
-        this.groupbyFunc();
+        // this.groupbyFunc();
+        this.invokeMapFunc();
     }
     countFunc() {
         const v1 = _.countBy([6.1, 4.2, 6.3], Math.floor);
@@ -88,6 +89,33 @@ class CollectionPoc {
         const v5 = _.includes({ a: 1, b: 2 }, 1);
         console.log(v5);
         const v6 = _.includes("abcd", "bc");
+        console.log(v6);
+    }
+    /**
+     * invokeMapFunc
+     */
+    invokeMapFunc() {
+        const v1 = _.invokeMap([[5, 1, 7], [3, 2, 1]], "sort");
+        console.log(v1);
+        const v2 = _.invokeMap([123, 456], String.prototype.split, "");
+        console.log(v2);
+        const array = [
+            { dir: "left", code: 97 },
+            { dir: "right", code: 100 },
+        ];
+        const v3 = _.keyBy(array, (o) => {
+            return String.fromCharCode(o.code);
+        });
+        console.log(v3);
+        const v4 = _.keyBy(array, "dir");
+        console.log(v4);
+        const v5 = _.map([4, 8], (n) => n * n);
+        console.log(v5);
+        const users = [
+            { user: "barney" },
+            { user: "fred" },
+        ];
+        const v6 = _.map(users, "user");
         console.log(v6);
     }
 }
