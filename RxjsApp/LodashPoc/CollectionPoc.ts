@@ -6,7 +6,8 @@ export class CollectionPoc {
         // this.findFunc();
         // this.flapFunc();
         // this.groupbyFunc();
-        this.invokeMapFunc();
+        // this.invokeMapFunc();
+        this.orderbyFunc();
     }
 
     public countFunc() {
@@ -150,5 +151,52 @@ export class CollectionPoc {
             ];
         const v6 = _.map(users,  "user");
         console.log(v6);
+    }
+
+    /**
+     * orderbyFunc
+     */
+    public orderbyFunc() {
+        const users =  [
+              { user:  "fred",    age:  48 },
+              { user:  "barney",  age:  34 },
+              { user:  "fred",    age:  40 },
+              { user:  "barney",  age:  36 },
+            ];
+        const v1 = _.orderBy(users,  ["user",  "age"],  ["asc",  "desc"]);
+        console.log(v1);
+
+        const urs = [
+              { user:  "barney",   age:  36,  active:  false },
+              { user:  "fred",     age:  40,  active:  true },
+              { user:  "pebbles",  age:  1,   active:  false },
+            ];
+        const v2 = _.partition(urs,  (o) => o.active);
+        console.log(v2);
+
+        const v3 = _.partition(users,  { age:  1,  active:  false });
+        console.log(v3);
+
+        const v4 = _.partition(users,  ["active",  false]);
+        console.log(v4);
+
+        const v5 = _.partition(users,  "active");
+        console.log(v5);
+
+        const v6 = _.reduce([1, 2], (sum: number, n) => sum + n);
+        console.log(v6);
+
+        const v7 = _.reduce({ a:  1,  b:  2,  c:  1 },  (result,  value,  key) => {
+              (result[value] || (result[value] =  [])).push(key);
+              return result;
+            },  {});
+        console.log(v7);
+
+        const array =  [[0,  1],  [2,  3],  [4,  5]];
+        const v8 = _.reduceRight(array,  (flattened,  other) => {
+          return flattened.concat(other);
+        },  []);
+
+        console.log(v8);
     }
 }
