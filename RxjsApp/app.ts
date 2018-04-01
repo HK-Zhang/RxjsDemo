@@ -2,7 +2,7 @@
 
 import {
     bufferCountPoc, BufferPoc, BufferTimePoc, bufferTogglePoc, BufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
-    exhaustMapPoc, ExpandPoc, GroupByPoc, MapPoc, MaptoPoc, MergeMapPoc, PartitionPoc, PluckPoc,
+    ExhaustMapPoc, ExpandPoc, GroupByPoc, MapPoc, MaptoPoc, MergeMapPoc, PartitionPoc, PluckPoc,
     ReducePoc, ScanPoc, SwithMapPoc, WindowCountPoc, WindowPoc, WindowTimePoc, WindowTogglePoc, WindowWhenPoc,
 } from "./Transformation";
 
@@ -105,7 +105,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new BufferWhenPoc();
 // let a = new ConcatMapToPoc();
 // const a = new ExpandPoc();
-// let a = new exhaustMapPoc();
+const a = new ExhaustMapPoc();
 // let a = new groupByPoc();
 // const a = new GroupByPoc();
 // let a = new maptoPoc();
@@ -123,7 +123,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
-const a = new CollectionPoc();
+// const a = new CollectionPoc();
 
 
 
