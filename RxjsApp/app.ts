@@ -59,7 +59,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new SwithMapPoc();
 // const a = new MergeMapPoc();
 // let a = new MapPoc();
-// let a = new ConcatMapPoc();
+const a = new ConcatMapPoc();
 // const a = new ConcatPoc();
 // const a = new ForkJoinPoc();
 // const a = new CombineLatestPoc();
@@ -105,7 +105,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new BufferWhenPoc();
 // let a = new ConcatMapToPoc();
 // const a = new ExpandPoc();
-const a = new ExhaustMapPoc();
+// const a = new ExhaustMapPoc();
 // let a = new groupByPoc();
 // const a = new GroupByPoc();
 // let a = new maptoPoc();
