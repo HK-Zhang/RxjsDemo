@@ -103,7 +103,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new bufferCountPoc();
 // let a = new bufferTogglePoc();
 // const a = new BufferWhenPoc();
-const a = new ConcatMapToPoc();
+// const a = new ConcatMapToPoc();
 // const a = new ExpandPoc();
 // const a = new ExhaustMapPoc();
 // let a = new groupByPoc();
@@ -123,7 +123,7 @@ const a = new ConcatMapToPoc();
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
-// const a = new CollectionPoc();
+const a = new CollectionPoc();
 
 
 

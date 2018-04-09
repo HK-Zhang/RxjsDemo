@@ -8,7 +8,8 @@ class CollectionPoc {
         // this.flapFunc();
         // this.groupbyFunc();
         // this.invokeMapFunc();
-        this.orderbyFunc();
+        // this.orderbyFunc();
+        this.rejectFunc();
     }
     countFunc() {
         const v1 = _.countBy([6.1, 4.2, 6.3], Math.floor);
@@ -155,6 +156,28 @@ class CollectionPoc {
         const v8 = _.reduceRight(array, (flattened, other) => {
             return flattened.concat(other);
         }, []);
+        console.log(v8);
+    }
+    rejectFunc() {
+        const users = [
+            { user: "barney", age: 36, active: false },
+            { user: "fred", age: 40, active: true },
+        ];
+        const v1 = _.reject(users, (o) => !o.active);
+        console.log(v1);
+        const v2 = _.reject(users, { age: 40, active: true });
+        console.log(v2);
+        const v3 = _.reject(users, ["active", false]);
+        console.log(v3);
+        const v4 = _.reject(users, "active");
+        console.log(v4);
+        const v5 = _.sample([1, 2, 3, 4]);
+        console.log(v5);
+        const v6 = _.sampleSize([1, 2, 3], 2);
+        console.log(v6);
+        const v7 = _.sampleSize([1, 2, 3], 4);
+        console.log(v7);
+        const v8 = _.shuffle([1, 2, 3, 4]);
         console.log(v8);
     }
 }
