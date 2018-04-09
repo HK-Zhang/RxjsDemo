@@ -1,7 +1,7 @@
 ﻿import { delayPoc, delayWhenPoc, doPoc, letPoc, pipePoc, timeoutPoc, toPromisePoc } from "./Utility";
 
 import {
-    bufferCountPoc, BufferPoc, BufferTimePoc, bufferTogglePoc, BufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
+    bufferCountPoc, BufferPoc, BufferTimePoc, BufferTogglePoc, BufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
     ExhaustMapPoc, ExpandPoc, GroupByPoc, MapPoc, MaptoPoc, MergeMapPoc, PartitionPoc, PluckPoc,
     ReducePoc, ScanPoc, SwithMapPoc, WindowCountPoc, WindowPoc, WindowTimePoc, WindowTogglePoc, WindowWhenPoc,
 } from "./Transformation";
@@ -101,7 +101,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new multicastPoc();
 // const a = new BufferPoc();
 // let a = new bufferCountPoc();
-// let a = new bufferTogglePoc();
+const a = new BufferTogglePoc();
 // const a = new BufferWhenPoc();
 // const a = new ConcatMapToPoc();
 // const a = new ExpandPoc();
@@ -123,7 +123,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
-const a = new CollectionPoc();
+// const a = new CollectionPoc();
 
 
 
