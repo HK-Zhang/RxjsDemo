@@ -9,7 +9,8 @@ class CollectionPoc {
         // this.groupbyFunc();
         // this.invokeMapFunc();
         // this.orderbyFunc();
-        this.rejectFunc();
+        // this.rejectFunc();
+        this.sizeFunc();
     }
     countFunc() {
         const v1 = _.countBy([6.1, 4.2, 6.3], Math.floor);
@@ -179,6 +180,33 @@ class CollectionPoc {
         console.log(v7);
         const v8 = _.shuffle([1, 2, 3, 4]);
         console.log(v8);
+    }
+    sizeFunc() {
+        console.log(_.size([1, 2, 3]));
+        console.log(_.size({ a: 1, b: 2 }));
+        console.log(_.size("pebbles"));
+        console.log(_.some([null, 0, "yes", false], Boolean));
+        const users = [
+            { user: "barney", active: true },
+            { user: "fred", active: false },
+        ];
+        console.log(_.some(users, { user: "barney", active: false }));
+        console.log(_.some(users, ["active", false]));
+        console.log(_.some(users, "active"));
+        const user1 = [
+            { user: "fred", age: 48 },
+            { user: "barney", age: 36 },
+            { user: "fred", age: 40 },
+            { user: "barney", age: 34 },
+        ];
+        const v1 = _.sortBy(users, [(o) => o.user]);
+        console.log(v1);
+        const v2 = _.sortBy(users, ["user", "age"]);
+        console.log(v2);
+        console.log(_.now());
+        _.defer((stamp) => {
+            console.log(_.now() - stamp);
+        }, _.now());
     }
 }
 exports.CollectionPoc = CollectionPoc;
