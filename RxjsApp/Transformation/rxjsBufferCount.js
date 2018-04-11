@@ -1,24 +1,24 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Observable_1 = require("rxjs/Observable");
-require("rxjs/add/operator/bufferCount");
 require("rxjs/add/observable/interval");
-class bufferCountPoc {
+require("rxjs/add/operator/bufferCount");
+const Observable_1 = require("rxjs/Observable");
+class BufferCountPoc {
     test() {
-        //this.func1();
+        // this.func1();
         this.func2();
     }
     func1() {
-        //Create an observable that emits a value every second
+        // Create an observable that emits a value every second
         const source = Observable_1.Observable.interval(1000);
-        //After three values are emitted, pass on as an array of buffered values
+        // After three values are emitted, pass on as an array of buffered values
         const bufferThree = source.bufferCount(3);
-        //Print values to console
-        //ex. output [0,1,2]...[3,4,5]
-        const subscribe = bufferThree.subscribe(val => console.log('Buffered Values:', val));
+        // Print values to console
+        // ex. output [0,1,2]...[3,4,5]
+        const subscribe = bufferThree.subscribe((val) => console.log("Buffered Values:", val));
     }
     func2() {
-        //Create an observable that emits a value every second
+        // Create an observable that emits a value every second
         const source = Observable_1.Observable.interval(1000);
         /*
         bufferCount also takes second argument, when to start the next buffer
@@ -38,9 +38,9 @@ class bufferCountPoc {
         buffer 4: [3]
         */
         const bufferEveryOne = source.bufferCount(3, 1);
-        //Print values to console
-        const subscribe = bufferEveryOne.subscribe(val => console.log('Start Buffer Every 1:', val));
+        // Print values to console
+        const subscribe = bufferEveryOne.subscribe((val) => console.log("Start Buffer Every 1:", val));
     }
 }
-exports.bufferCountPoc = bufferCountPoc;
+exports.BufferCountPoc = BufferCountPoc;
 //# sourceMappingURL=rxjsBufferCount.js.map
