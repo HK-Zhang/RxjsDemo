@@ -100,7 +100,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new publishPoc();
 // let a = new multicastPoc();
 // const a = new BufferPoc();
-const a = new BufferCountPoc();
+// const a = new BufferCountPoc();
 // const a = new BufferTogglePoc();
 // const a = new BufferWhenPoc();
 // const a = new ConcatMapToPoc();
@@ -123,6 +123,7 @@ const a = new BufferCountPoc();
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
+const a = new BehaviorSubjectPoc();
 // const a = new CollectionPoc();
 
 
