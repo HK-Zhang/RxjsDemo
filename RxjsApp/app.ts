@@ -12,7 +12,7 @@ import { CombineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, MergeAllPoc, M
 import { CreatePoc, EmptyPoc, FromPoc, FromPromisePoc, IntervalPoc, OfPoc, RangePoc, ThrowPoc,
     TimerPoc } from "./Creation";
 
-import { ArrayPoc, CollectionPoc, Poc } from "./LodashPoc";
+import { ArrayPoc, CollectionPoc, FunctionPoc, Poc } from "./LodashPoc";
 
 import { DictionaryPoc, QueuePoc, SetPoc } from "./Collections";
 
@@ -123,9 +123,9 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
-const a = new BehaviorSubjectPoc();
+// const a = new BehaviorSubjectPoc();
 // const a = new CollectionPoc();
-
+const a = new FunctionPoc();
 
 
 
