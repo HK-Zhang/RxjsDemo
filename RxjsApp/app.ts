@@ -121,11 +121,11 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new mapImPoc();
 // const a = new ArrayPoc();
 // const a = new SubjectPoc();
-const a = new AsyncSubjectPoc();
+// const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
 // const a = new BehaviorSubjectPoc();
 // const a = new CollectionPoc();
-// const a = new FunctionPoc();
+const a = new FunctionPoc();
 
 
 

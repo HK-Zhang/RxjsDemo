@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Subject_1 = require("./Subject");
+const LodashPoc_1 = require("./LodashPoc");
 // let a = new fromJsImPoc();
 // let a = new pipePoc();
 // const a = new ZipPoc();
@@ -89,10 +89,10 @@ const Subject_1 = require("./Subject");
 // let a = new mapImPoc();
 // const a = new ArrayPoc();
 // const a = new SubjectPoc();
-const a = new Subject_1.AsyncSubjectPoc();
+// const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
 // const a = new BehaviorSubjectPoc();
 // const a = new CollectionPoc();
-// const a = new FunctionPoc();
+const a = new LodashPoc_1.FunctionPoc();
 a.test();
 //# sourceMappingURL=app.js.map

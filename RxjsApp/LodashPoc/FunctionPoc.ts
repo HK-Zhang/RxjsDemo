@@ -2,7 +2,8 @@ import * as _ from "lodash";
 
 export class FunctionPoc {
     public test() {
-        this.afterPoc();
+        // this.afterPoc();
+        this.bindPoc();
     }
 
     public afterPoc() {
@@ -33,5 +34,45 @@ export class FunctionPoc {
 
         // jQuery(element).on('click', _.before(5, addContactToList));
 //  => Allows adding up to 4 contacts to the list.
+    }
+
+    public bindPoc() {
+        function greet(greeting,  punctuation) {
+              return greeting + " " + this.user + punctuation;
+            }
+
+        const object =  { user:  "fred" };
+
+        const bound1 =  _.bind(greet,  object,  "hi");
+        console.log(bound1("!"));
+            //  => 'hi fred!'
+
+            //  Bound with placeholders.
+        const bound =  _.bind(greet,  object,  _,  "!");
+        console.log(bound("hi"));
+            //  => 'hi fred!'
+
+        const object2 =  {
+                  user:  "fred",
+                  greet(greeting,  punctuation) {
+                    return greeting + " " + this.user + punctuation;
+                  },
+                };
+
+        const bound3 =  _.bindKey(object2,  "greet",  "hi");
+        console.log(bound3("!"));
+                //  => 'hi fred!'
+
+        object2.greet =  function(greeting,  punctuation) {
+                  return greeting + "ya " + this.user + punctuation;
+                };
+
+        console.log(bound3("!"));
+                //  => 'hiya fred!'
+
+                //  Bound with placeholders.
+        const bound5 =  _.bindKey(object2,  "greet",  _,  "!");
+        console.log(bound5("hi"));
+                //  => 'hiya fred!'
     }
 }
