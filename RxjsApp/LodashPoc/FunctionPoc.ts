@@ -5,7 +5,8 @@ export class FunctionPoc {
         // this.afterPoc();
         // this.bindPoc();
         // this.curryFunc();
-        this.curryRightFunc();
+        // this.curryRightFunc();
+        this.deferFunc();
     }
 
     public afterPoc() {
@@ -124,5 +125,18 @@ export class FunctionPoc {
             //  Curried with placeholders.
         // curried(3)(1,  _)(2);
             //  => [1, 2, 3]
+    }
+
+    public deferFunc() {
+
+        _.delay((text) => {
+              console.log(text);
+            },  1000,  "later");
+            //  => Logs 'later' after one second.
+
+        _.defer((text) => {
+              console.log(text);
+            },  "deferred");
+            //  => Logs 'deferred' after one millisecond.
     }
 }
