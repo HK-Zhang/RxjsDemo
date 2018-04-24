@@ -1,4 +1,4 @@
-﻿import { delayPoc, delayWhenPoc, doPoc, letPoc, pipePoc, timeoutPoc, toPromisePoc } from "./Utility";
+﻿import { delayPoc, delayWhenPoc, doPoc, letPoc, pipePoc, timeoutPoc, ToPromisePoc } from "./Utility";
 
 import {
     BufferCountPoc, BufferPoc, BufferTimePoc, BufferTogglePoc, BufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
@@ -95,7 +95,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new delayPoc();
 // let a = new delayWhenPoc();
 // let a = new letPoc();
-// let a = new toPromisePoc();
+const a = new ToPromisePoc();
 // let a = new timeoutPoc();
 // let a = new publishPoc();
 // let a = new multicastPoc();
@@ -125,7 +125,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new ReplaySubjectPoc();
 // const a = new BehaviorSubjectPoc();
 // const a = new CollectionPoc();
-const a = new FunctionPoc();
+// const a = new FunctionPoc();
 
 
 
