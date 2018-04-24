@@ -6,7 +6,8 @@ export class FunctionPoc {
         // this.bindPoc();
         // this.curryFunc();
         // this.curryRightFunc();
-        this.deferFunc();
+        // this.deferFunc();
+        this.flipFunc();
     }
 
     public afterPoc() {
@@ -138,5 +139,36 @@ export class FunctionPoc {
               console.log(text);
             },  "deferred");
             //  => Logs 'deferred' after one millisecond.
+    }
+
+    public flipFunc() {
+        const flipped =  _.flip(() => {
+              return _.toArray(arguments);
+            });
+
+        console.log(flipped("a",  "b",  "c",  "d"));
+            //  => ['d', 'c', 'b', 'a']
+
+        const object =  { a:  1,  b:  2 };
+        const other =  { c:  3,  d:  4 };
+
+        const values =  _.memoize(_.values);
+        console.log(values(object));
+//  => [1, 2]
+
+        console.log(values(other));
+//  => [3, 4]
+
+        object.a =  2;
+        console.log(values(object));
+//  => [1, 2]
+
+//  Modify the result cache.
+        values.cache.set(object,  ["a",  "b"]);
+        console.log(values(object));
+//  => ['a', 'b']
+
+//  Replace `_.memoize.Cache`.
+        // _.memoize.Cache =  WeakMap;
     }
 }
