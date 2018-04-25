@@ -2,3 +2,4 @@
 export * from "./ArrayPoc";
 export * from "./CollectionPoc";
 export * from "./FunctionPoc";
+export * from "./LangPoc";

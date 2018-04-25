@@ -7,4 +7,5 @@ __export(require("./Poc"));
 __export(require("./ArrayPoc"));
 __export(require("./CollectionPoc"));
 __export(require("./FunctionPoc"));
+__export(require("./LangPoc"));
 //# sourceMappingURL=index.js.map
