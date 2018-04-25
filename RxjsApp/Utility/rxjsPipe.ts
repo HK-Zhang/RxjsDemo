@@ -1,38 +1,38 @@
-import { Observable } from 'rxjs/Observable';
-import { filter, map, reduce } from 'rxjs/operators';
-import { pipe } from 'rxjs/util/pipe';
-import { from } from 'rxjs/observable/from';
-import 'rxjs/add/operator/startWith'
+import "rxjs/add/operator/startWith";
+import { Observable } from "rxjs/Observable";
+import { from } from "rxjs/observable/from";
+import { filter, map, reduce } from "rxjs/operators";
+import { pipe } from "rxjs/util/pipe";
 
-export class pipePoc {
+export class PipePoc {
 
-    test() {
-        // this.func1();
+    public test() {
+        this.func1();
         // this.func2();
         // this.func3();
-        this.func4();
+        // this.func4();
     }
 
-    func1() {
-        const filterOutEvens = filter((x: number) => (x % 2) == 0);
+    public func1() {
+        const filterOutEvens = filter((x: number) => (x % 2) === 0);
         const sum = reduce((acc, next) => acc + next, 0);
-        const doubleBy = x => map((value: any) => value * x);
+        const doubleBy = (x) => map((value: any) => value * x);
 
         const complicatedLogic = pipe(
             filterOutEvens,
             doubleBy(2),
-            sum
+            sum,
         );
 
         const source$ = Observable.range(0, 10);
-        source$.let(complicatedLogic).subscribe(x => console.log(x)); // 50
+        source$.let(complicatedLogic).subscribe((x) => console.log(x)); // 40
     }
 
-    func2() {
-        const filterOutEvens = filter((x: number) => x % 2 == 0)
-        const doubleBy = x => map((value: any) => value * x);
+    public func2() {
+        const filterOutEvens = filter((x: number) => x % 2 === 0);
+        const doubleBy = (x) => map((value: any) => value * x);
         const sum = reduce((acc, next) => acc + next, 0);
-        const source$ = Observable.range(0, 10)
+        const source$ = Observable.range(0, 10);
 
         source$.pipe(
             filterOutEvens,
@@ -41,27 +41,27 @@ export class pipePoc {
             .subscribe(console.log); // 50
     }
 
-    func3() {
+    public func3() {
         const source$ = from([1, 2, 3, 4, 5, 6, 7, 8, 9]);
         source$
-            .filter(x => x % 2 == 1)
-            .map(x => x * 2)
+            .filter((x) => x % 2 === 1)
+            .map((x) => x * 2)
             .scan((acc, next) => acc + next, 0)
             .startWith(0)
-            .subscribe(console.log)
+            .subscribe(console.log);
     }
 
-    func4() {
-        const filterOutEvens = filter((x: number) => x % 2 == 1);
+    public func4() {
+        const filterOutEvens = filter((x: number) => x % 2 === 1);
         const sum = reduce((acc, next) => acc + next, 0);
-        const doubleBy = x => map((value: any)  => value * x);
+        const doubleBy = (x) => map((value: any)  => value * x);
         const source$ = Observable.range(0, 10);
 
         source$
             .let(filterOutEvens)
             .let(doubleBy(2))
             .let(sum)
-            .subscribe(x => console.log(x)); // 50
+            .subscribe((x) => console.log(x)); // 50
     }
 
 }

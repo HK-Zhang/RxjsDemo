@@ -1,4 +1,4 @@
-﻿import { delayPoc, delayWhenPoc, doPoc, letPoc, pipePoc, timeoutPoc, ToPromisePoc } from "./Utility";
+﻿import { delayPoc, delayWhenPoc, doPoc, letPoc, PipePoc, TimeoutPoc, ToPromisePoc } from "./Utility";
 
 import {
     BufferCountPoc, BufferPoc, BufferTimePoc, BufferTogglePoc, BufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
@@ -34,7 +34,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 
 
 // let a = new fromJsImPoc();
-// let a = new pipePoc();
+const a = new PipePoc();
 // const a = new ZipPoc();
 // let a = new orderedsetImPoc();
 // let a = new racePoc();
@@ -96,7 +96,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new delayWhenPoc();
 // let a = new letPoc();
 // const a = new ToPromisePoc();
-// let a = new timeoutPoc();
+// let a = new TimeoutPoc();
 // let a = new publishPoc();
 // let a = new multicastPoc();
 // const a = new BufferPoc();
@@ -126,7 +126,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new BehaviorSubjectPoc();
 // const a = new CollectionPoc();
 // const a = new FunctionPoc();
-const a = new LangPoc();
+// const a = new LangPoc();
 
 
 
