@@ -48,4 +48,34 @@ export class LangPoc {
 // var el = _.cloneWith(document.body, customizer);
 // var el = _.cloneDeepWith(document.body, customizer);
     }
+
+    public conformsTo() {
+        const object =  { a:  1,  b:  2 };
+
+        const v1 = _.conformsTo(object,  { b(n) { return n > 1;  } });
+        console.log(v1);
+        //  => true
+
+        const v2 = _.conformsTo(object,  { b(n) { return n > 2;  } });
+        console.log(v2);
+        //  => false
+
+        _.eq("a",  "a");
+//  => true
+
+        _.eq("a",  Object("a"));
+//  => false
+
+        _.gt(3,  1);
+//  => true
+
+        _.gt(3,  3);
+//  => false
+
+        _.gte(3,  3);
+//  => true
+
+        _.gte(1,  3);
+//  => false
+    }
 }

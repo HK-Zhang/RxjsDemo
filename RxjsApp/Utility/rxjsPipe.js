@@ -18,7 +18,7 @@ class PipePoc {
         const doubleBy = (x) => operators_1.map((value) => value * x);
         const complicatedLogic = pipe_1.pipe(filterOutEvens, doubleBy(2), sum);
         const source$ = Observable_1.Observable.range(0, 10);
-        source$.let(complicatedLogic).subscribe((x) => console.log(x)); // 50
+        source$.let(complicatedLogic).subscribe((x) => console.log(x)); // 40
     }
     func2() {
         const filterOutEvens = operators_1.filter((x) => x % 2 === 0);
