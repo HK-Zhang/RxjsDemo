@@ -7,8 +7,8 @@ import { pipe } from "rxjs/util/pipe";
 export class PipePoc {
 
     public test() {
-        this.func1();
-        // this.func2();
+        // this.func1();
+        this.func2();
         // this.func3();
         // this.func4();
     }
@@ -38,7 +38,7 @@ export class PipePoc {
             filterOutEvens,
             doubleBy(2),
             sum)
-            .subscribe(console.log); // 50
+            .subscribe(console.log); // 40
     }
 
     public func3() {

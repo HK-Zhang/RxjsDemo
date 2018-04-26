@@ -7,8 +7,8 @@ const operators_1 = require("rxjs/operators");
 const pipe_1 = require("rxjs/util/pipe");
 class PipePoc {
     test() {
-        this.func1();
-        // this.func2();
+        // this.func1();
+        this.func2();
         // this.func3();
         // this.func4();
     }
@@ -26,7 +26,7 @@ class PipePoc {
         const sum = operators_1.reduce((acc, next) => acc + next, 0);
         const source$ = Observable_1.Observable.range(0, 10);
         source$.pipe(filterOutEvens, doubleBy(2), sum)
-            .subscribe(console.log); // 50
+            .subscribe(console.log); // 40
     }
     func3() {
         const source$ = from_1.from([1, 2, 3, 4, 5, 6, 7, 8, 9]);
