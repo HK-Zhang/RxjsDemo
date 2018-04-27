@@ -3,6 +3,7 @@ import * as _ from "lodash";
 export class LangPoc {
     public test() {
         this.clonePoc();
+        this.conformsToFunc();
     }
 
     public clonePoc() {
@@ -49,7 +50,7 @@ export class LangPoc {
 // var el = _.cloneDeepWith(document.body, customizer);
     }
 
-    public conformsTo() {
+    public conformsToFunc() {
         const object =  { a:  1,  b:  2 };
 
         const v1 = _.conformsTo(object,  { b(n) { return n > 1;  } });
@@ -76,6 +77,50 @@ export class LangPoc {
 //  => true
 
         _.gte(1,  3);
+//  => false
+    }
+
+    public isArrayFunc() {
+        _.isArray([1,  2,  3]);
+        //  => true
+
+        // _.isArray(document.body.children);
+        //  => false
+
+        _.isArray("abc");
+        //  => false
+
+        _.isArray(_.noop);
+        //  => false
+
+        _.isArrayBuffer(new ArrayBuffer(2));
+//  => true
+
+        _.isArrayBuffer(new Array(2));
+//  => false
+
+        _.isArrayLike([1,  2,  3]);
+//  => true
+
+        // _.isArrayLike(document.body.children);
+//  => true
+
+        _.isArrayLike("abc");
+//  => true
+
+        _.isArrayLike(_.noop);
+//  => false
+
+        _.isArrayLikeObject([1,  2,  3]);
+//  => true
+
+        // _.isArrayLikeObject(document.body.children);
+//  => true
+
+        _.isArrayLikeObject("abc");
+//  => false
+
+        _.isArrayLikeObject(_.noop);
 //  => false
     }
 }
