@@ -1,4 +1,4 @@
-﻿import { delayPoc, delayWhenPoc, doPoc, letPoc, PipePoc, TimeoutPoc, ToPromisePoc } from "./Utility";
+﻿import { delayPoc, delayWhenPoc, doPoc, LetPoc, PipePoc, TimeoutPoc, ToPromisePoc } from "./Utility";
 
 import {
     BufferCountPoc, BufferPoc, BufferTimePoc, BufferTogglePoc, BufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
@@ -94,7 +94,7 @@ const a = new PipePoc();
 // let a = new DefaultIfEmptyPoc();
 // let a = new delayPoc();
 // let a = new delayWhenPoc();
-// let a = new letPoc();
+// let a = new LetPoc();
 // const a = new ToPromisePoc();
 // let a = new TimeoutPoc();
 // let a = new publishPoc();
