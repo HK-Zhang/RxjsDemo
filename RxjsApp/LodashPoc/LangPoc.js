@@ -3,7 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 class LangPoc {
     test() {
-        this.clonePoc();
+        // this.clonePoc();
+        // this.conformsToFunc();
+        this.isBooleanFunc();
     }
     clonePoc() {
         _.castArray(1);
@@ -37,7 +39,7 @@ class LangPoc {
         // var el = _.cloneWith(document.body, customizer);
         // var el = _.cloneDeepWith(document.body, customizer);
     }
-    conformsTo() {
+    conformsToFunc() {
         const object = { a: 1, b: 2 };
         const v1 = _.conformsTo(object, { b(n) { return n > 1; } });
         console.log(v1);
@@ -56,6 +58,66 @@ class LangPoc {
         _.gte(3, 3);
         //  => true
         _.gte(1, 3);
+        //  => false
+    }
+    isArrayFunc() {
+        _.isArray([1, 2, 3]);
+        //  => true
+        // _.isArray(document.body.children);
+        //  => false
+        _.isArray("abc");
+        //  => false
+        _.isArray(_.noop);
+        //  => false
+        _.isArrayBuffer(new ArrayBuffer(2));
+        //  => true
+        _.isArrayBuffer(new Array(2));
+        //  => false
+        _.isArrayLike([1, 2, 3]);
+        //  => true
+        // _.isArrayLike(document.body.children);
+        //  => true
+        _.isArrayLike("abc");
+        //  => true
+        _.isArrayLike(_.noop);
+        //  => false
+        _.isArrayLikeObject([1, 2, 3]);
+        //  => true
+        // _.isArrayLikeObject(document.body.children);
+        //  => true
+        _.isArrayLikeObject("abc");
+        //  => false
+        _.isArrayLikeObject(_.noop);
+        //  => false
+    }
+    isBooleanFunc() {
+        _.isBoolean(false);
+        //  => true
+        _.isBoolean(null);
+        //  => false
+        _.isBuffer(new Buffer(2));
+        //  => true
+        _.isBuffer(new Uint8Array(2));
+        //  => false
+        _.isDate(new Date());
+        //  => true
+        _.isDate("Mon April 23 2012");
+        //  => false
+        const v1 = _.isEmpty(null);
+        console.log(v1);
+        //  => true
+        const v2 = _.isEmpty(true);
+        console.log(v2);
+        //  => true
+        const v3 = _.isEmpty(undefined);
+        console.log(v3);
+        const v4 = _.isEmpty(false);
+        console.log(v4);
+        _.isEmpty(1);
+        //  => true
+        _.isEmpty([1, 2, 3]);
+        //  => false
+        _.isEmpty({ a: 1 });
         //  => false
     }
 }

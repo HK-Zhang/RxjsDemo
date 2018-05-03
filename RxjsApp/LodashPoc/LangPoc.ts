@@ -2,8 +2,9 @@ import * as _ from "lodash";
 
 export class LangPoc {
     public test() {
-        this.clonePoc();
-        this.conformsToFunc();
+        // this.clonePoc();
+        // this.conformsToFunc();
+        this.isBooleanFunc();
     }
 
     public clonePoc() {
@@ -121,6 +122,49 @@ export class LangPoc {
 //  => false
 
         _.isArrayLikeObject(_.noop);
+//  => false
+    }
+
+    public isBooleanFunc() {
+        _.isBoolean(false);
+        //  => true
+
+        _.isBoolean(null);
+        //  => false
+
+        _.isBuffer(new Buffer(2));
+//  => true
+
+        _.isBuffer(new Uint8Array(2));
+//  => false
+
+        _.isDate(new Date());
+//  => true
+
+        _.isDate("Mon April 23 2012");
+//  => false
+
+        const v1 = _.isEmpty(null);
+        console.log(v1);
+//  => true
+
+        const v2 = _.isEmpty(true);
+        console.log(v2);
+//  => true
+
+        const v3 = _.isEmpty(undefined);
+        console.log(v3);
+
+        const v4 = _.isEmpty(false);
+        console.log(v4);
+
+        _.isEmpty(1);
+//  => true
+
+        _.isEmpty([1,  2,  3]);
+//  => false
+
+        _.isEmpty({ a:  1 });
 //  => false
     }
 }

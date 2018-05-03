@@ -34,7 +34,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 
 
 // let a = new fromJsImPoc();
-const a = new PipePoc();
+// const a = new PipePoc();
 // const a = new ZipPoc();
 // let a = new orderedsetImPoc();
 // let a = new racePoc();
@@ -126,7 +126,7 @@ const a = new PipePoc();
 // const a = new BehaviorSubjectPoc();
 // const a = new CollectionPoc();
 // const a = new FunctionPoc();
-// const a = new LangPoc();
+const a = new LangPoc();
 
 
 
