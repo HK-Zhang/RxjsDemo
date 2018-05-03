@@ -1,49 +1,36 @@
-﻿var Rx = require('rxjs/Rx');
+﻿import "rxjs/add/observable/range";
+import "rxjs/add/operator/do";
+import { Observable } from "rxjs/Observable";
 
-var source = Rx.Observable.range(0, 3)
-    .do(
-    function (x) { console.log('Do Next:', x); },
-    function (err) { console.log('Do Error:', err); },
-    function () { console.log('Do Completed'); }
-    );
+export class DoPoc {
 
-/* Using an observer */
-//var observer = Rx.Observer.create(
-//    function (x) { console.log('Do Next: %s', x); },
-//    function (err) { console.log('Do Error: %s', err); },
-//    function () { console.log('Do Completed'); }
-//);
-//var source = Rx.Observable.range(0, 3)
-//    .do(observer);
-
-export class doPoc {
-
-    test() {
+    public test() {
         this.func1();
     }
 
-    func1() {
-        const source = Rx.Observable.of(1, 2, 3, 4, 5);
-        //transparently log values from source with 'do'
+    public func1() {
+        const source = Observable.of(1, 2, 3, 4, 5);
+        // transparently log values from source with 'do'
         const example = source
-            .do(val => console.log(`BEFORE MAP: ${val}`))
-            .map(val => val + 10)
-            .do(val => console.log(`AFTER MAP: ${val}`));
-        //'do' does not transform values
-        //output: 11...12...13...14...15
-        const subscribe = example.subscribe(val => console.log(val));
+            .do((val) => console.log(`BEFORE MAP: ${val}`))
+            .map((val) => val + 10)
+            .do((val) => console.log(`AFTER MAP: ${val}`));
+        // 'do' does not transform values
+        // output: 11...12...13...14...15
+        const subscribe = example.subscribe((val) => console.log(val));
     }
 
-    func2() {
-        var subscription = source.subscribe(
-            function (x) {
-                console.log('Next: %s', x);
-            },
-            function (err) {
-                console.log('Error: %s', err);
-            },
-            function () {
-                console.log('Completed');
-            });
+    public func2() {
+        const source = Observable.range(0, 3)
+            .do(
+                (x) => console.log("Do Next:", x),
+                (err) => console.log("Do Error:", err),
+                () => console.log("Do Completed"),
+        );
+
+        const subscription = source.subscribe(
+            (x) => console.log("Next: %s", x),
+            (err) => console.log("Error: %s", err),
+            () => console.log("Completed"));
     }
 }
