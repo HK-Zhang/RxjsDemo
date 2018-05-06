@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/operator/distinctUntilChanged");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 const Subject_1 = require("rxjs/Subject");
 class ScanPoc {
     test() {
@@ -22,7 +22,7 @@ class ScanPoc {
     }
     func2() {
         // Accumulate values in an array, emit random values from this array.
-        const scanObs = Observable_1.Observable.interval(1000)
+        const scanObs = rxjs_1.Observable.interval(1000)
             .scan((a, c) => a.concat(c), [])
             .map((r) => r[Math.floor(Math.random() * r.length)])
             .distinctUntilChanged()

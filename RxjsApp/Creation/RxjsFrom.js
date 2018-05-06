@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 const Promise = require("promise");
 class FromPoc {
     test() {
@@ -11,19 +11,19 @@ class FromPoc {
     }
     func1() {
         // emit array as a sequence of values
-        const arraySource = Observable_1.Observable.from([1, 2, 3, 4, 5]);
+        const arraySource = rxjs_1.Observable.from([1, 2, 3, 4, 5]);
         // output: 1,2,3,4,5
         const subscribe = arraySource.subscribe((val) => console.log(val));
     }
     func2() {
         // emit result of promise
-        const promiseSource = Observable_1.Observable.from(new Promise((resolve) => resolve("Hello World!")));
+        const promiseSource = rxjs_1.Observable.from(new Promise((resolve) => resolve("Hello World!")));
         // output: 'Hello World'
         const subscribe = promiseSource.subscribe((val) => console.log(val));
     }
     func3() {
         // emit string as a sequence
-        const source = Observable_1.Observable.from("Hello World");
+        const source = rxjs_1.Observable.from("Hello World");
         // output: 'H','e','l','l','o',' ','W','o','r','l','d'
         const subscribe = source.subscribe((val) => console.log(val));
     }
@@ -32,7 +32,7 @@ class FromPoc {
         map[0] = "Hi";
         map[1] = "Bye";
         map.length = 2;
-        const mapSource = Observable_1.Observable.from(map);
+        const mapSource = rxjs_1.Observable.from(map);
         // output: [1, 'Hi'], [2, 'Bye']
         const subscribe = mapSource.subscribe((val) => console.log(val));
     }

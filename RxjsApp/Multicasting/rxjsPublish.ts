@@ -1,7 +1,7 @@
 ﻿import "rxjs/add/observable/interval";
 import "rxjs/add/operator/do";
 import "rxjs/add/operator/publish";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 
 export class PublishPoc {

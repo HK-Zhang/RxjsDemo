@@ -5,16 +5,16 @@ require("rxjs/add/observable/timer");
 require("rxjs/add/operator/do");
 require("rxjs/add/operator/mergeAll");
 require("rxjs/add/operator/windowWhen");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class WindowWhenPoc {
     test() {
         this.func1();
     }
     func1() {
         // emit immediately then every 1s
-        const source = Observable_1.Observable.timer(0, 1000);
+        const source = rxjs_1.Observable.timer(0, 1000);
         const example = source
-            .windowWhen(() => Observable_1.Observable.interval(5000))
+            .windowWhen(() => rxjs_1.Observable.interval(5000))
             .do(() => console.log("NEW WINDOW!"));
         const subscribeTwo = example
             .mergeAll()

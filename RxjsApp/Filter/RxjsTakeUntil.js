@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/operator/takeUntil");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class TakeUntilPoc {
     test() {
         // this.func1();
@@ -9,9 +9,9 @@ class TakeUntilPoc {
     }
     func1() {
         // emit value every 1s
-        const source = Observable_1.Observable.interval(1000);
+        const source = rxjs_1.Observable.interval(1000);
         // after 5 seconds, emit value
-        const timer = Observable_1.Observable.timer(5000);
+        const timer = rxjs_1.Observable.timer(5000);
         // when timer emits after 5s, complete source
         const example = source.takeUntil(timer);
         // output: 0,1,2,3
@@ -19,7 +19,7 @@ class TakeUntilPoc {
     }
     func2() {
         // emit value every 1s
-        const source = Observable_1.Observable.interval(1000);
+        const source = rxjs_1.Observable.interval(1000);
         // is number even?
         const isEven = (val) => val % 2 === 0;
         // only allow values that are even

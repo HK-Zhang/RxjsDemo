@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class CreatePoc {
     test() {
         // this.func1();
@@ -11,7 +11,7 @@ class CreatePoc {
         Create an observable that emits 'Hello' and 'World' on
         subscription.
         */
-        const hello = Observable_1.Observable.create((observer) => {
+        const hello = rxjs_1.Observable.create((observer) => {
             observer.next("Hello");
             observer.next("World");
         });
@@ -22,7 +22,7 @@ class CreatePoc {
         /*
         Increment value every 1s, emit even numbers.
         */
-        const evenNumbers = Observable_1.Observable.create((observer) => {
+        const evenNumbers = rxjs_1.Observable.create((observer) => {
             let value = 0;
             const interval = setInterval(() => {
                 if (value % 2 === 0) {

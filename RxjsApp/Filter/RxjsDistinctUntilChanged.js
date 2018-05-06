@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class RxjsDistinctUntilChangedPoc {
     test() {
         // this.func1();
@@ -8,7 +8,7 @@ class RxjsDistinctUntilChangedPoc {
     }
     func1() {
         // only output distinct values, based on the last emitted value
-        const myArrayWithDuplicatesInARow = Observable_1.Observable.from([
+        const myArrayWithDuplicatesInARow = rxjs_1.Observable.from([
             1,
             1,
             2,
@@ -27,7 +27,7 @@ class RxjsDistinctUntilChangedPoc {
     func2() {
         const sampleObject = { name: "Test" };
         // Objects must be same reference
-        const myArrayWithDuplicateObjects = Observable_1.Observable.from([
+        const myArrayWithDuplicateObjects = rxjs_1.Observable.from([
             sampleObject,
             sampleObject,
             sampleObject,

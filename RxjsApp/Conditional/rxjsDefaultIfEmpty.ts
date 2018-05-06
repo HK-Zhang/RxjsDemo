@@ -1,6 +1,6 @@
 ﻿import "rxjs/add/observable/of";
 import "rxjs/add/operator/defaultIfEmpty";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class DefaultIfEmptyPoc {
     public test() {

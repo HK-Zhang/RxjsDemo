@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/operator/bufferTime");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class BufferTimePoc {
     test() {
         this.func1();
@@ -9,7 +9,7 @@ class BufferTimePoc {
     }
     func1() {
         // Create an observable that emits a value every 500ms
-        const source = Observable_1.Observable.interval(500);
+        const source = rxjs_1.Observable.interval(500);
         // After 2 seconds have passed, emit buffered values as an array
         const example = source.bufferTime(2000);
         // Print values to console
@@ -18,7 +18,7 @@ class BufferTimePoc {
     }
     func2() {
         // Create an observable that emits a value every 500ms
-        const source = Observable_1.Observable.interval(500);
+        const source = rxjs_1.Observable.interval(500);
         /*
         bufferTime also takes second argument, when to start the next buffer (time in ms)
         for instance, if we have a bufferTime of 2 seconds but second argument (bufferCreationInterval) of 1 second:

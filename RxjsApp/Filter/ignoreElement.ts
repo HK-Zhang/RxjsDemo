@@ -1,5 +1,5 @@
 import "rxjs/add/operator/ignoreElements";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class IgnoreElementPoc {
 

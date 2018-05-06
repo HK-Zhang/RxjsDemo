@@ -4,7 +4,7 @@ import "rxjs/add/operator/delay";
 import "rxjs/add/operator/exhaustMap";
 import "rxjs/add/operator/switchMap";
 import "rxjs/add/operator/take";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 
 

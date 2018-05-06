@@ -3,7 +3,7 @@ import "rxjs/add/observable/timer";
 import "rxjs/add/operator/mergeAll";
 import "rxjs/add/operator/scan";
 import "rxjs/add/operator/window";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 
 export class WindowPoc {

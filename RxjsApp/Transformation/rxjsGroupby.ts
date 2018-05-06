@@ -2,7 +2,7 @@
 import "rxjs/add/operator/groupBy";
 import "rxjs/add/operator/mergeMap";
 import "rxjs/add/operator/toArray";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class GroupByPoc {
 

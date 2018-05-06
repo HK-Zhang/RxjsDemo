@@ -1,4 +1,4 @@
-﻿import { Observable } from "rxjs/Observable";
+﻿import { Observable } from "rxjs";
 import * as Collections from "typescript-collections";
 const Promise = require("promise");
 

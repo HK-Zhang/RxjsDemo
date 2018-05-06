@@ -2,7 +2,7 @@
 import "rxjs/add/observable/merge";
 import "rxjs/add/operator/mapTo";
 import "rxjs/add/operator/merge";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class MergePoc {
     public test() {

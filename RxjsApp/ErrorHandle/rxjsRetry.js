@@ -5,21 +5,21 @@ require("rxjs/add/observable/of");
 require("rxjs/add/observable/throw");
 require("rxjs/add/operator/retry");
 require("rxjs/add/operator/switchMap");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class RetryPoc {
     test() {
         this.func1();
     }
     func1() {
         // emit value every 1s
-        const source = Observable_1.Observable.interval(1000);
+        const source = rxjs_1.Observable.interval(1000);
         const example = source
             .switchMap((val) => {
             // throw error for demonstration
             if (val > 5) {
-                return Observable_1.Observable.throw("Error!");
+                return rxjs_1.Observable.throw("Error!");
             }
-            return Observable_1.Observable.of(val);
+            return rxjs_1.Observable.of(val);
         })
             .retry(2);
         /*

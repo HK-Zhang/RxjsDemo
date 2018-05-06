@@ -4,7 +4,7 @@ require("rxjs/add/observable/from");
 require("rxjs/add/operator/groupBy");
 require("rxjs/add/operator/mergeMap");
 require("rxjs/add/operator/toArray");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class GroupByPoc {
     test() {
         this.func1();
@@ -17,7 +17,7 @@ class GroupByPoc {
             { name: "Sarah", age: 35 },
         ];
         // emit each person
-        const source = Observable_1.Observable.from(people);
+        const source = rxjs_1.Observable.from(people);
         // group by age
         const example = source
             .groupBy((person) => person.age)

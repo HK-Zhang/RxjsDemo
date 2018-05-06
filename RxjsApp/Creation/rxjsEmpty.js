@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/observable/empty");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class EmptyPoc {
     test() {
         this.func1();
@@ -9,7 +8,7 @@ class EmptyPoc {
     }
     func1() {
         // create observable that immediately completes
-        const example = Observable_1.Observable.empty();
+        const example = rxjs_1.empty();
         // output: 'Complete!'
         const subscribe = example.subscribe({
             complete: () => console.log("Complete!"),

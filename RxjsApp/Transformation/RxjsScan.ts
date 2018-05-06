@@ -1,5 +1,5 @@
 ﻿import "rxjs/add/operator/distinctUntilChanged";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import { Subject } from "rxjs/Subject";
 
 export class ScanPoc {

@@ -1,5 +1,5 @@
 ﻿import "rxjs/add/observable/combineLatest";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class CombineLatestPoc {
     public test() {

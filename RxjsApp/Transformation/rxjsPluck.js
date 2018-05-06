@@ -4,14 +4,14 @@ require("rxjs/add/observable/from");
 require("rxjs/add/observable/merge");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/pluck");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class PluckPoc {
     test() {
         // this.func1();
         this.func2();
     }
     func1() {
-        const source = Observable_1.Observable.from([
+        const source = rxjs_1.Observable.from([
             { name: "Joe", age: 30 },
             { name: "Sarah", age: 35 },
         ]);
@@ -21,7 +21,7 @@ class PluckPoc {
         const subscribe = example.subscribe((val) => console.log(val));
     }
     func2() {
-        const source = Observable_1.Observable.from([
+        const source = rxjs_1.Observable.from([
             { name: "Joe", age: 30, job: { title: "Developer", language: "JavaScript" } },
             // will return undefined when no job is found
             { name: "Sarah", age: 35 },

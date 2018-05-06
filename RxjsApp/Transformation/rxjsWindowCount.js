@@ -4,14 +4,14 @@ require("rxjs/add/observable/interval");
 require("rxjs/add/operator/do");
 require("rxjs/add/operator/mergeAll");
 require("rxjs/add/operator/windowCount");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class WindowCountPoc {
     test() {
         this.func1();
     }
     func1() {
         // emit every 1s
-        const source = Observable_1.Observable.interval(1000);
+        const source = rxjs_1.Observable.interval(1000);
         const example = source
             .windowCount(4)
             .do(() => console.log("NEW WINDOW!"));

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/operator/startWith");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 const from_1 = require("rxjs/observable/from");
 const operators_1 = require("rxjs/operators");
 const pipe_1 = require("rxjs/util/pipe");
@@ -17,14 +17,14 @@ class PipePoc {
         const sum = operators_1.reduce((acc, next) => acc + next, 0);
         const doubleBy = (x) => operators_1.map((value) => value * x);
         const complicatedLogic = pipe_1.pipe(filterOutEvens, doubleBy(2), sum);
-        const source$ = Observable_1.Observable.range(0, 10);
+        const source$ = rxjs_1.Observable.range(0, 10);
         source$.let(complicatedLogic).subscribe((x) => console.log(x)); // 40
     }
     func2() {
         const filterOutEvens = operators_1.filter((x) => x % 2 === 0);
         const doubleBy = (x) => operators_1.map((value) => value * x);
         const sum = operators_1.reduce((acc, next) => acc + next, 0);
-        const source$ = Observable_1.Observable.range(0, 10);
+        const source$ = rxjs_1.Observable.range(0, 10);
         source$.pipe(filterOutEvens, doubleBy(2), sum)
             .subscribe(console.log); // 40
     }
@@ -41,7 +41,7 @@ class PipePoc {
         const filterOutEvens = operators_1.filter((x) => x % 2 === 1);
         const sum = operators_1.reduce((acc, next) => acc + next, 0);
         const doubleBy = (x) => operators_1.map((value) => value * x);
-        const source$ = Observable_1.Observable.range(0, 10);
+        const source$ = rxjs_1.Observable.range(0, 10);
         source$
             .let(filterOutEvens)
             .let(doubleBy(2))

@@ -2,7 +2,7 @@
 import "rxjs/add/operator/do";
 import "rxjs/add/operator/mergeAll";
 import "rxjs/add/operator/windowCount";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 
 export class WindowCountPoc {

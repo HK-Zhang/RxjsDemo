@@ -1,7 +1,7 @@
 ﻿import "rxjs/add/observable/interval";
 import "rxjs/add/operator/buffer";
 import "rxjs/add/operator/delay";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 
 export class BufferPoc {

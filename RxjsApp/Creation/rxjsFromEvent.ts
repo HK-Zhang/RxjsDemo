@@ -1,5 +1,5 @@
 ﻿import "rxjs/add/operator/map";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class EmptyPoc {
     public test() {

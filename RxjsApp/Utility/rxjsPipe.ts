@@ -1,5 +1,5 @@
 import "rxjs/add/operator/startWith";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import { from } from "rxjs/observable/from";
 import { filter, map, reduce } from "rxjs/operators";
 import { pipe } from "rxjs/util/pipe";

@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class MapPoc {
     test() {
         this.func1();
     }
     func1() {
         // emit (1,2,3,4,5)
-        const source = Observable_1.Observable.from([1, 2, 3, 4, 5]);
+        const source = rxjs_1.Observable.from([1, 2, 3, 4, 5]);
         // add 10 to each value
         const example = source.map((val) => val + 10);
         // output: 11,12,13,14,15
@@ -15,7 +15,7 @@ class MapPoc {
     }
     func2() {
         // emit ({name: 'Joe', age: 30}, {name: 'Frank', age: 20},{name: 'Ryan', age: 50})
-        const source = Observable_1.Observable.from([
+        const source = rxjs_1.Observable.from([
             { name: "Joe", age: 30 },
             { name: "Frank", age: 20 },
             { name: "Ryan", age: 50 },

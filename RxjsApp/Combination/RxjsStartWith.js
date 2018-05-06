@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class StartWithPoc {
     test() {
         // this.func1();
@@ -9,7 +9,7 @@ class StartWithPoc {
     }
     func1() {
         // emit (1,2,3)
-        const source = Observable_1.Observable.of(1, 2, 3);
+        const source = rxjs_1.Observable.of(1, 2, 3);
         // start with 0
         const example = source.startWith(0);
         // output: 0,1,2,3
@@ -17,7 +17,7 @@ class StartWithPoc {
     }
     func2() {
         // emit ('World!', 'Goodbye', 'World!')
-        const source = Observable_1.Observable.of("World!", "Goodbye", "World!");
+        const source = rxjs_1.Observable.of("World!", "Goodbye", "World!");
         // start with 'Hello', concat current string to previous
         const example = source.startWith("Hello").scan((acc, curr) => `${acc} ${curr}`);
         /*
@@ -31,7 +31,7 @@ class StartWithPoc {
     }
     func3() {
         // emit values in sequence every 1s
-        const source = Observable_1.Observable.interval(1000);
+        const source = rxjs_1.Observable.interval(1000);
         // start with -3, -2, -1
         const example = source.startWith(-3, -2, -1);
         // output: -3, -2, -1, 0, 1, 2....

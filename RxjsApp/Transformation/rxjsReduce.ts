@@ -1,7 +1,7 @@
 ﻿import "rxjs/add/observable/of";
 import "rxjs/add/operator/reduce";
 import "rxjs/add/operator/scan";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 
 

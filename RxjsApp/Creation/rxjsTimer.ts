@@ -1,5 +1,5 @@
 ﻿import "rxjs/add/observable/timer";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class TimerPoc {
     public test() {

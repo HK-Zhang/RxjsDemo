@@ -1,5 +1,5 @@
 ﻿import "rxjs/add/observable/of";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 const tfx = (item, index) => {
     return item * 2;

@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/operator/switchMap");
-const Observable_1 = require("rxjs/Observable");
-const createInnerObservable = (id) => Observable_1.Observable.create((observer) => {
+const rxjs_1 = require("rxjs");
+const createInnerObservable = (id) => rxjs_1.Observable.create((observer) => {
     console.log("%ccreated inner observable:", "color:blue;", id);
     const handler = setInterval(() => {
         observer.next("inner:" + id);
@@ -19,7 +19,7 @@ class SwithMapPoc {
         // this.func3();
     }
     func() {
-        Observable_1.Observable.timer(0, 10000)
+        rxjs_1.Observable.timer(0, 10000)
             .do((id) => {
             console.log("%carrived outer observable:", "color:green;", id);
         })
@@ -28,17 +28,17 @@ class SwithMapPoc {
     }
     func2() {
         // emit immediately, then every 5s
-        const source = Observable_1.Observable.timer(0, 5000);
+        const source = rxjs_1.Observable.timer(0, 5000);
         // switch to new inner observable when source emits, emit items that are emitted
-        const example = source.switchMap(() => Observable_1.Observable.interval(500));
+        const example = source.switchMap(() => rxjs_1.Observable.interval(500));
         // output: 0,1,2,3,4,5,6,7,8,9...0,1,2,3,4,5,6,7,8
         const subscribe = example.subscribe((val) => console.log(val));
     }
     func3() {
         // emit immediately, then every 5s
-        const source = Observable_1.Observable.timer(0, 5000);
+        const source = rxjs_1.Observable.timer(0, 5000);
         // switch to new inner observable when source emits, invoke project function and emit values
-        const example = source.switchMap(() => Observable_1.Observable.interval(2000), (outerValue, innerValue, outerIndex, innerIndex) => ({ outerValue, innerValue, outerIndex, innerIndex }));
+        const example = source.switchMap(() => rxjs_1.Observable.interval(2000), (outerValue, innerValue, outerIndex, innerIndex) => ({ outerValue, innerValue, outerIndex, innerIndex }));
         /*
             Output:
             {outerValue: 0, innerValue: 0, outerIndex: 0, innerIndex: 0}
@@ -49,8 +49,8 @@ class SwithMapPoc {
         const subscribe = example.subscribe((val) => console.log(val));
     }
     func4() {
-        const timer = Observable_1.Observable.interval(1000);
-        const result = timer.switchMap((v) => Observable_1.Observable.of("a"));
+        const timer = rxjs_1.Observable.interval(1000);
+        const result = timer.switchMap((v) => rxjs_1.Observable.of("a"));
         result.subscribe((x) => console.log(x));
     }
 }

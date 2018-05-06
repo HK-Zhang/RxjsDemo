@@ -1,4 +1,4 @@
-﻿import { delayPoc, delayWhenPoc, doPoc, LetPoc, PipePoc, TimeoutPoc, ToPromisePoc } from "./Utility";
+﻿import { delayPoc, delayWhenPoc, DoPoc, LetPoc, PipePoc, TimeoutPoc, ToPromisePoc } from "./Utility";
 
 import {
     BufferCountPoc, BufferPoc, BufferTimePoc, BufferTogglePoc, BufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
@@ -84,7 +84,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new SharePoc();
 // let a = new BufferTimePoc();
 // const a = new ScanPoc();
-// const a = new CreatePoc();
+const a = new CreatePoc();
 // const a = new EmptyPoc();
 // let a = new IntervalPoc();
 // let a = new RangePoc();
@@ -126,7 +126,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new BehaviorSubjectPoc();
 // const a = new CollectionPoc();
 // const a = new FunctionPoc();
-const a = new LangPoc();
+// const a = new LangPoc();
 
 
 

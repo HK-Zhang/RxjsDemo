@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/operator/withLatestFrom");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class WithLatestFromPoc {
     test() {
         // this.func1();
@@ -10,16 +10,16 @@ class WithLatestFromPoc {
     }
     func0() {
         // emit value every 1s
-        const source = Observable_1.Observable.of("a", "b", "c");
-        const secondSource = Observable_1.Observable.interval(3000);
+        const source = rxjs_1.Observable.of("a", "b", "c");
+        const secondSource = rxjs_1.Observable.interval(3000);
         const combindSource = secondSource.withLatestFrom(source).map(([f, s]) => s);
         const result = combindSource.subscribe((x) => console.log(x));
     }
     func1() {
         // emit every 5s
-        const source = Observable_1.Observable.interval(5000);
+        const source = rxjs_1.Observable.interval(5000);
         // emit every 1s
-        const secondSource = Observable_1.Observable.interval(1000);
+        const secondSource = rxjs_1.Observable.interval(1000);
         const example = source.withLatestFrom(secondSource).map(([first, second]) => {
             return `First Source (5s): ${first} Second Source (1s): ${second}`;
         });
@@ -33,9 +33,9 @@ class WithLatestFromPoc {
     }
     func2() {
         // emit every 5s
-        const source = Observable_1.Observable.interval(5000);
+        const source = rxjs_1.Observable.interval(5000);
         // emit every 1s
-        const secondSource = Observable_1.Observable.interval(1000);
+        const secondSource = rxjs_1.Observable.interval(1000);
         // withLatestFrom slower than source
         const example = secondSource
             .withLatestFrom(source)

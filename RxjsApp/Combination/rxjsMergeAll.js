@@ -7,7 +7,7 @@ require("rxjs/add/operator/map");
 require("rxjs/add/operator/merge");
 require("rxjs/add/operator/mergeAll");
 require("rxjs/add/operator/take");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 var Promise = require("promise");
 class MergeAllPoc {
     test() {
@@ -17,7 +17,7 @@ class MergeAllPoc {
     func1() {
         const myPromise = (val) => new Promise((resolve) => setTimeout(() => resolve(`Result: ${val}`), 2000));
         // emit 1,2,3
-        const source = Observable_1.Observable.of(1, 2, 3, 4, 5, 6, 7);
+        const source = rxjs_1.Observable.of(1, 2, 3, 4, 5, 6, 7);
         const example = source
             .map((val) => myPromise(val))
             .mergeAll();
@@ -30,7 +30,7 @@ class MergeAllPoc {
         const subscribe = example.subscribe((val) => console.log(val));
     }
     func2() {
-        const interval = Observable_1.Observable.interval(500).take(5);
+        const interval = rxjs_1.Observable.interval(500).take(5);
         /*
           interval is emitting a value every 0.5s.  This value is then being mapped to interval that
           is delayed for 1.0s.  The mergeAll operator takes an optional argument that determines how

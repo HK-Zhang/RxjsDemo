@@ -2,7 +2,7 @@
 import "rxjs/add/observable/merge";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/pluck";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 
 export class PluckPoc {

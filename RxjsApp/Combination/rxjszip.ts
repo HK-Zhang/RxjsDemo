@@ -1,4 +1,4 @@
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import { interval } from "rxjs/observable/interval";
 import { of } from "rxjs/observable/of";
 import { zip } from "rxjs/observable/zip";

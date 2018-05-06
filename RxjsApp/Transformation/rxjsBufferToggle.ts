@@ -1,6 +1,6 @@
 ﻿import "rxjs/add/observable/interval";
 import "rxjs/add/operator/bufferToggle";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 
 export class BufferTogglePoc {

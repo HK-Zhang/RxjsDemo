@@ -3,7 +3,7 @@ import "rxjs/add/observable/of";
 import "rxjs/add/observable/throw";
 import "rxjs/add/operator/retry";
 import "rxjs/add/operator/switchMap";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class RetryPoc {
     public test() {

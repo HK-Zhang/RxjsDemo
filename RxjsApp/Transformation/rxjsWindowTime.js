@@ -4,14 +4,14 @@ require("rxjs/add/observable/timer");
 require("rxjs/add/operator/do");
 require("rxjs/add/operator/mergeAll");
 require("rxjs/add/operator/windowTime");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class WindowTimePoc {
     test() {
         this.func1();
     }
     func1() {
         // emit immediately then every 1s
-        const source = Observable_1.Observable.timer(0, 1000);
+        const source = rxjs_1.Observable.timer(0, 1000);
         const example = source
             .windowTime(3000)
             .do(() => console.log("NEW WINDOW!"));

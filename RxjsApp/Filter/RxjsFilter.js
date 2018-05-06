@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class FilterPoc {
     test() {
         // this.func1();
@@ -9,7 +9,7 @@ class FilterPoc {
     }
     func1() {
         // emit (1,2,3,4,5)
-        const source = Observable_1.Observable.from([1, 2, 3, 4, 5]);
+        const source = rxjs_1.Observable.from([1, 2, 3, 4, 5]);
         // filter out non-even numbers
         const example = source.filter((num) => num % 2 === 0);
         // output: "Even number: 2", "Even number: 4"
@@ -17,7 +17,7 @@ class FilterPoc {
     }
     func2() {
         // emit ({name: 'Joe', age: 31}, {name: 'Bob', age:25})
-        const source = Observable_1.Observable.from([
+        const source = rxjs_1.Observable.from([
             { name: "Joe", age: 31 },
             { name: "Bob", age: 25 },
         ]);
@@ -28,7 +28,7 @@ class FilterPoc {
     }
     func3() {
         // emit every second
-        const source = Observable_1.Observable.interval(1000);
+        const source = rxjs_1.Observable.interval(1000);
         // filter out all values until interval is greater than 5
         const example = source.filter((num) => num > 5);
         /*

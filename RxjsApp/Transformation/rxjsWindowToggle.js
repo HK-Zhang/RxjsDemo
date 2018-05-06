@@ -5,20 +5,20 @@ require("rxjs/add/observable/timer");
 require("rxjs/add/operator/do");
 require("rxjs/add/operator/mergeAll");
 require("rxjs/add/operator/windowToggle");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class WindowTogglePoc {
     test() {
         this.func1();
     }
     func1() {
         // emit immediately then every 1s
-        const source = Observable_1.Observable.timer(0, 1000);
+        const source = rxjs_1.Observable.timer(0, 1000);
         // toggle window on every 5
-        const toggle = Observable_1.Observable.interval(5000);
+        const toggle = rxjs_1.Observable.interval(5000);
         const example = source
             .windowToggle(toggle, (val) => {
             console.log("N" + val);
-            return Observable_1.Observable.interval(val * 1000);
+            return rxjs_1.Observable.interval(val * 1000);
             // return Observable.interval(5 * 1000);
         })
             .do(() => console.log("NEW WINDOW!"));

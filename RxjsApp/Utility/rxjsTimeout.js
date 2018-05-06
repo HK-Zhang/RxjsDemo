@@ -4,19 +4,19 @@ require("rxjs/add/observable/of");
 require("rxjs/add/operator/catch");
 require("rxjs/add/operator/concatMap");
 require("rxjs/add/operator/timeout");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class TimeoutPoc {
     test() {
         this.func1();
     }
     makeRequest(timeToDelay) {
-        return Observable_1.Observable.of("Request Complete!").delay(timeToDelay);
+        return rxjs_1.Observable.of("Request Complete!").delay(timeToDelay);
     }
     func1() {
-        Observable_1.Observable.of(4000, 3000, 2000)
+        rxjs_1.Observable.of(4000, 3000, 2000)
             .concatMap((duration) => this.makeRequest(duration)
             .timeout(2500)
-            .catch((error) => Observable_1.Observable.of(`Request timed out after: ${duration}`)))
+            .catch((error) => rxjs_1.Observable.of(`Request timed out after: ${duration}`)))
             .subscribe((val) => console.log(val));
     }
 }

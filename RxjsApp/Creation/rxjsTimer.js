@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/observable/timer");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class TimerPoc {
     test() {
         // this.func1();
@@ -9,7 +9,7 @@ class TimerPoc {
     }
     func1() {
         // emit 0 after 1 second then complete, since no second argument is supplied
-        const source = Observable_1.Observable.timer(1000);
+        const source = rxjs_1.Observable.timer(1000);
         // output: 0
         const subscribe = source.subscribe((val) => console.log(val));
     }
@@ -19,7 +19,7 @@ class TimerPoc {
   in this case we will emit first value after 1 second and subsequent
   values every 2 seconds after
 */
-        const source = Observable_1.Observable.timer(1000, 2000);
+        const source = rxjs_1.Observable.timer(1000, 2000);
         // output: 0,1,2,3,4,5......
         const subscribe = source.subscribe((val) => console.log(val));
     }

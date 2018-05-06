@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/observable/interval");
 require("rxjs/add/operator/bufferCount");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class BufferCountPoc {
     test() {
         // this.func1();
@@ -10,7 +10,7 @@ class BufferCountPoc {
     }
     func1() {
         // Create an observable that emits a value every second
-        const source = Observable_1.Observable.interval(1000);
+        const source = rxjs_1.Observable.interval(1000);
         // After three values are emitted, pass on as an array of buffered values
         const bufferThree = source.bufferCount(3);
         // Print values to console
@@ -19,7 +19,7 @@ class BufferCountPoc {
     }
     func2() {
         // Create an observable that emits a value every second
-        const source = Observable_1.Observable.interval(1000);
+        const source = rxjs_1.Observable.interval(1000);
         /*
         bufferCount also takes second argument, when to start the next buffer
         for instance, if we have a bufferCount of 3 but second argument (startBufferEvery) of 1:

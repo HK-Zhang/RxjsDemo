@@ -1,7 +1,7 @@
 ﻿import "rxjs/add/observable/of";
 import "rxjs/add/operator/expand";
 import "rxjs/add/operator/take";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 
 export class ExpandPoc {

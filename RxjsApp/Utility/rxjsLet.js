@@ -7,7 +7,7 @@ require("rxjs/add/operator/let");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/mergeMap");
 require("rxjs/add/operator/retry");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class LetPoc {
     test() {
         // this.func1();
@@ -17,23 +17,23 @@ class LetPoc {
     }
     func1() {
         // custom error handling logic
-        const retryThreeTimes = (obs) => obs.retry(3).catch((_) => Observable_1.Observable.of("ERROR!"));
+        const retryThreeTimes = (obs) => obs.retry(3).catch((_) => rxjs_1.Observable.of("ERROR!"));
         const examplePromise = (val) => new Promise((resolve) => resolve(`Complete: ${val}`));
         // faking request
-        const subscribe = Observable_1.Observable.of("some_url")
+        const subscribe = rxjs_1.Observable.of("some_url")
             .mergeMap((url) => examplePromise(url))
             .let(retryThreeTimes)
             .subscribe((result) => console.log(result));
-        const customizableRetry = (retryTimes) => (obs) => obs.retry(retryTimes).catch((_) => Observable_1.Observable.of("ERROR!"));
+        const customizableRetry = (retryTimes) => (obs) => obs.retry(retryTimes).catch((_) => rxjs_1.Observable.of("ERROR!"));
         // faking request
-        const secondSubscribe = Observable_1.Observable.of("some_url")
+        const secondSubscribe = rxjs_1.Observable.of("some_url")
             .mergeMap((url) => examplePromise(url))
             .let(customizableRetry(3))
             .subscribe((result) => console.log(result));
     }
     func2() {
         // emit array as a sequence
-        const source = Observable_1.Observable.from([1, 2, 3, 4, 5]);
+        const source = rxjs_1.Observable.from([1, 2, 3, 4, 5]);
         // demonstrating the difference between let and other operators
         const test = source
             .map((val) => val + 1)
@@ -45,7 +45,7 @@ class LetPoc {
     }
     func3() {
         // emit array as a sequence
-        const source = Observable_1.Observable.from([1, 2, 3, 4, 5]);
+        const source = rxjs_1.Observable.from([1, 2, 3, 4, 5]);
         // let provides flexibility to add multiple operators to source observable then return
         const subscribeTwo = source
             .map((val) => val + 1)
@@ -56,7 +56,7 @@ class LetPoc {
     }
     func4() {
         // emit array as a sequence
-        const source = Observable_1.Observable.from([1, 2, 3, 4, 5]);
+        const source = rxjs_1.Observable.from([1, 2, 3, 4, 5]);
         // pass in your own function to add operators to observable
         const obsArrayPlusYourOperators = (yourAppliedOperators) => {
             return source.map((val) => val + 1).let(yourAppliedOperators);

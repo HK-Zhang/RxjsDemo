@@ -3,14 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/observable/interval");
 require("rxjs/add/operator/do");
 require("rxjs/add/operator/publish");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class PublishPoc {
     test() {
         this.func1();
     }
     func1() {
         // emit value every 1 second
-        const source = Observable_1.Observable.interval(1000);
+        const source = rxjs_1.Observable.interval(1000);
         const example = source
             .do(() => console.log("Do Something!"))
             .publish();

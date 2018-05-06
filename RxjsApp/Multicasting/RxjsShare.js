@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/operator/share");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class SharePoc {
     test() {
         // this.func1();
@@ -9,7 +9,7 @@ class SharePoc {
     }
     func2() {
         // emit value in 1s
-        const source = Observable_1.Observable.timer(1000);
+        const source = rxjs_1.Observable.timer(1000);
         // log side effect, emit result
         const example = source
             .do(() => console.log("***SIDE EFFECT***"))

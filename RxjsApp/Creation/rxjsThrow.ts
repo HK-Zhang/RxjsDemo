@@ -1,5 +1,5 @@
 ﻿import "rxjs/add/observable/throw";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class ThrowPoc {
     public test() {

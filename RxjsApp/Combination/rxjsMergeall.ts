@@ -5,7 +5,7 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/merge";
 import "rxjs/add/operator/mergeAll";
 import "rxjs/add/operator/take";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 var Promise = require("promise");
 
 export class MergeAllPoc {

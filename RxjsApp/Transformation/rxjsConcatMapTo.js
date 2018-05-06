@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/observable/interval");
 require("rxjs/add/observable/of");
 require("rxjs/add/operator/concatMapTo");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class ConcatMapToPoc {
     test() {
         // this.func1();
@@ -11,8 +11,8 @@ class ConcatMapToPoc {
     }
     func1() {
         // emit value every 2 seconds
-        const interval = Observable_1.Observable.interval(2000);
-        const message = Observable_1.Observable.of("Second(s) elapsed!");
+        const interval = rxjs_1.Observable.interval(2000);
+        const message = rxjs_1.Observable.of("Second(s) elapsed!");
         // when interval emits, subscribe to message until complete, merge for result
         const example = interval.concatMapTo(message, (time, msg) => `${time} ${msg}`);
         // log values
@@ -21,9 +21,9 @@ class ConcatMapToPoc {
     }
     func2() {
         // emit value every 2 seconds
-        const interval = Observable_1.Observable.interval(2000);
+        const interval = rxjs_1.Observable.interval(2000);
         // emit value every second for 5 seconds
-        const source = Observable_1.Observable.interval(1000).take(5);
+        const source = rxjs_1.Observable.interval(1000).take(5);
         /*
           ***Be Careful***: In situations like this where the source emits at a faster pace
           than the inner observable completes, memory issues can arise.

@@ -1,6 +1,6 @@
 ﻿import "rxjs/add/observable/range";
 import "rxjs/add/operator/do";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class DoPoc {
 

@@ -1,6 +1,6 @@
 ﻿import "rxjs/add/observable/of";
 import "rxjs/add/operator/every";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class EveryPoc {
     public test() {

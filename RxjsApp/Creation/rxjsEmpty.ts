@@ -1,5 +1,4 @@
-﻿import "rxjs/add/observable/empty";
-import { Observable } from "rxjs/Observable";
+﻿import { empty, Observable } from "rxjs";
 import { Subscription } from "rxjs/Subscription";
 
 export class EmptyPoc {
@@ -10,7 +9,7 @@ export class EmptyPoc {
 
     public func1() {
         // create observable that immediately completes
-        const example: Observable<{}> = Observable.empty();
+        const example: Observable<{}> = empty();
         // output: 'Complete!'
         const subscribe: Subscription = example.subscribe({
             complete: () => console.log("Complete!"),

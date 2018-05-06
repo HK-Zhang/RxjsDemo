@@ -3,7 +3,7 @@ import "rxjs/add/operator/do";
 import "rxjs/add/operator/mapTo";
 import "rxjs/add/operator/multicast";
 import "rxjs/add/operator/take";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import { Subject } from "rxjs/Subject";
 
 export class MulticastPoc {

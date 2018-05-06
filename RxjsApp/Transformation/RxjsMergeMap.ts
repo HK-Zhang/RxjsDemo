@@ -1,6 +1,6 @@
 ﻿import "rxjs/add/operator/mergeMap";
 import "rxjs/add/operator/switchMap";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class MergeMapPoc {
     public test() {

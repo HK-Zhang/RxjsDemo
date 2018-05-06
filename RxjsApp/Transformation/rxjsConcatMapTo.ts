@@ -1,7 +1,7 @@
 ﻿import "rxjs/add/observable/interval";
 import "rxjs/add/observable/of";
 import "rxjs/add/operator/concatMapTo";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 
 export class ConcatMapToPoc {

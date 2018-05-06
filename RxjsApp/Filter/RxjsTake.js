@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class TakePoc {
     test() {
         // this.func1();
@@ -8,7 +8,7 @@ class TakePoc {
     }
     func1() {
         // emit 1,2,3,4,5
-        const source = Observable_1.Observable.of(1, 2, 3, 4, 5);
+        const source = rxjs_1.Observable.of(1, 2, 3, 4, 5);
         // take the first emitted value then complete
         const example = source.take(1);
         // output: 1
@@ -16,7 +16,7 @@ class TakePoc {
     }
     func2() {
         // emit value every 1s
-        const interval = Observable_1.Observable.interval(1000);
+        const interval = rxjs_1.Observable.interval(1000);
         // take the first 5 emitted values
         const example = interval.take(5);
         // output: 0,1,2,3,4

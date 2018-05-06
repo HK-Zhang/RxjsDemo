@@ -1,6 +1,6 @@
 ﻿import "rxjs/add/observable/interval";
 import "rxjs/add/operator/mapTo";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class MaptoPoc {
 

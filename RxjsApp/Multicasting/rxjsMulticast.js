@@ -5,7 +5,7 @@ require("rxjs/add/operator/do");
 require("rxjs/add/operator/mapTo");
 require("rxjs/add/operator/multicast");
 require("rxjs/add/operator/take");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 const Subject_1 = require("rxjs/Subject");
 class MulticastPoc {
     test() {
@@ -13,7 +13,7 @@ class MulticastPoc {
     }
     func1() {
         // emit every 2 seconds, take 5
-        const source = Observable_1.Observable.interval(2000).take(5);
+        const source = rxjs_1.Observable.interval(2000).take(5);
         const example = source
             .do(() => console.log("Side Effect #1"))
             .mapTo("Result!");

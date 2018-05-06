@@ -1,5 +1,5 @@
 ﻿import "rxjs/add/observable/interval";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class IntervalPoc {
     public test() {

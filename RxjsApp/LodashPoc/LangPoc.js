@@ -120,6 +120,41 @@ class LangPoc {
         _.isEmpty({ a: 1 });
         //  => false
     }
+    /**
+     * name
+     */
+    isEqualFunc() {
+        const object = { a: 1 };
+        const other = { a: 1 };
+        _.isEqual(object, other);
+        //  => true
+        console.log(object === other);
+        //  => false
+        const isGreeting = (value) => /^h(?:i|ello)$/.test(value);
+        const customizer = (objValue, othValue) => {
+            if (isGreeting(objValue) && isGreeting(othValue)) {
+                return true;
+            }
+        };
+        const array = ["hello", "goodbye"];
+        const array2 = ["hi", "goodbye"];
+        _.isEqualWith(array, array2, customizer);
+        //  => true
+        _.isError(new Error());
+        //  => true
+        _.isFinite(3);
+        //  => true
+        _.isFinite(Number.MIN_VALUE);
+        //  => true
+        _.isFinite(Infinity);
+        //  => false
+        _.isFinite("3");
+        //  => false
+        _.isFunction(_);
+        //  => true
+        _.isFunction(/abc/);
+        //  => false
+    }
 }
 exports.LangPoc = LangPoc;
 //# sourceMappingURL=LangPoc.js.map

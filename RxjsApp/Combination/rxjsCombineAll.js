@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/operator/combineAll");
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 class CombineAllPoc {
     test() {
         this.func1();
@@ -9,9 +9,9 @@ class CombineAllPoc {
     }
     func1() {
         // emit every 1s, take 2
-        const source = Observable_1.Observable.interval(1000).take(2);
+        const source = rxjs_1.Observable.interval(1000).take(2);
         // map each emitted value from source to interval observable that takes 5 values
-        const example = source.map((val) => Observable_1.Observable.interval(1000)
+        const example = source.map((val) => rxjs_1.Observable.interval(1000)
             .map((i) => `Result (${val}): ${i}`)
             .take(5));
         /*

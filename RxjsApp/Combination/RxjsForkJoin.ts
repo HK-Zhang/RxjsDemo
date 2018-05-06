@@ -1,5 +1,5 @@
 ﻿import "rxjs/add/observable/forkJoin";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class ForkJoinPoc {
     public test() {

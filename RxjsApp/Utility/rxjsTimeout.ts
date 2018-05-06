@@ -2,7 +2,7 @@
 import "rxjs/add/operator/catch";
 import "rxjs/add/operator/concatMap";
 import "rxjs/add/operator/timeout";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 
 

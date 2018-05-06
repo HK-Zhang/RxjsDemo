@@ -1,5 +1,5 @@
 ﻿import "rxjs/add/operator/takeUntil";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class TakeUntilPoc {
     public test() {

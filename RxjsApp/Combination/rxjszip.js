@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Observable_1 = require("rxjs/Observable");
+const rxjs_1 = require("rxjs");
 const of_1 = require("rxjs/observable/of");
 const zip_1 = require("rxjs/observable/zip");
 const operators_1 = require("rxjs/operators");
@@ -24,20 +24,20 @@ class ZipPoc {
     }
     func2() {
         // emit every 1s
-        const v = Observable_1.Observable.interval(1000);
+        const v = rxjs_1.Observable.interval(1000);
         // when one observable completes no more values will be emitted
         const example = zip_1.zip(v, v.pipe(operators_2.take(2)));
         // output: [0,0]...[1,1]
         const subscribe = example.subscribe((val) => console.log(val));
     }
     func3() {
-        const source = Observable_1.Observable.of("src");
-        const example = source.zip(Observable_1.Observable.range(1, 4));
+        const source = rxjs_1.Observable.of("src");
+        const example = source.zip(rxjs_1.Observable.range(1, 4));
         const subscribe = example.subscribe((val) => console.log(val));
     }
     func4() {
-        const source = Observable_1.Observable.interval(1000);
-        const example = source.zip(Observable_1.Observable.range(1, 4));
+        const source = rxjs_1.Observable.interval(1000);
+        const example = source.zip(rxjs_1.Observable.range(1, 4));
         const subscribe = example.subscribe((val) => console.log(val));
     }
 }

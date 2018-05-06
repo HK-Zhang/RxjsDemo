@@ -1,5 +1,5 @@
 ﻿import "rxjs/add/operator/bufferTime";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class BufferTimePoc {
     public test() {

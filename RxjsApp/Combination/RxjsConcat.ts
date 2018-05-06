@@ -1,5 +1,5 @@
 ﻿import "rxjs/add/observable/concat";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class ConcatPoc {
     public test() {

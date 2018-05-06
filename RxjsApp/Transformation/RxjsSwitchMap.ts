@@ -1,5 +1,5 @@
 ﻿import "rxjs/add/operator/switchMap";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 
 const createInnerObservable = (id) =>

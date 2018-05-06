@@ -1,5 +1,5 @@
 ﻿import "rxjs/add/operator/withLatestFrom";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 export class WithLatestFromPoc {
     public test() {
