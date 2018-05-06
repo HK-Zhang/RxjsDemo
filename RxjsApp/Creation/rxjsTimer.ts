@@ -1,5 +1,4 @@
-﻿import "rxjs/add/observable/timer";
-import { Observable } from "rxjs";
+﻿import { Observable, timer } from "rxjs";
 
 export class TimerPoc {
     public test() {
@@ -9,7 +8,7 @@ export class TimerPoc {
 
     public func1() {
         // emit 0 after 1 second then complete, since no second argument is supplied
-        const source = Observable.timer(1000);
+        const source = timer(1000);
         // output: 0
         const subscribe = source.subscribe((val) => console.log(val));
     }
@@ -20,7 +19,7 @@ export class TimerPoc {
   in this case we will emit first value after 1 second and subsequent
   values every 2 seconds after
 */
-        const source = Observable.timer(1000, 2000);
+        const source = timer(1000, 2000);
         // output: 0,1,2,3,4,5......
         const subscribe = source.subscribe((val) => console.log(val));
     }
