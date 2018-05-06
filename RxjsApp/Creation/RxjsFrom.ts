@@ -1,4 +1,4 @@
-﻿import { Observable } from "rxjs";
+﻿import { from, Observable } from "rxjs";
 import * as Collections from "typescript-collections";
 const Promise = require("promise");
 
@@ -12,14 +12,14 @@ export class FromPoc {
 
     public func1() {
         // emit array as a sequence of values
-        const arraySource = Observable.from([1, 2, 3, 4, 5]);
+        const arraySource = from([1, 2, 3, 4, 5]);
         // output: 1,2,3,4,5
         const subscribe = arraySource.subscribe((val) => console.log(val));
     }
 
     public func2() {
         // emit result of promise
-        const promiseSource = Observable.from(
+        const promiseSource = from(
             new Promise((resolve) => resolve("Hello World!")),
         );
         // output: 'Hello World'
@@ -28,7 +28,7 @@ export class FromPoc {
 
     public func3() {
         // emit string as a sequence
-        const source = Observable.from("Hello World");
+        const source = from("Hello World");
         // output: 'H','e','l','l','o',' ','W','o','r','l','d'
         const subscribe = source.subscribe((val) => console.log(val));
     }
@@ -39,7 +39,7 @@ export class FromPoc {
         map[1] = "Bye";
         map.length = 2;
 
-        const mapSource = Observable.from(map);
+        const mapSource = from(map);
         // output: [1, 'Hi'], [2, 'Bye']
         const subscribe = mapSource.subscribe((val) => console.log(val));
     }

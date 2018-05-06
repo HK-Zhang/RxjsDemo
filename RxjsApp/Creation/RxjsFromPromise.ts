@@ -1,32 +1,29 @@
-﻿var Promise = require('promise');
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/fromPromise';
+﻿let Promise = require("promise");
+import { from, Observable, of } from "rxjs";
+import { catchError, mergeMap } from "rxjs/operators";
 
 export class FromPromisePoc {
-    test() {
+    public test() {
         this.func1();
     }
 
-    func1() {
-        //example promise that will resolve or reject based on input
-        const myPromise = willReject => {
+    public func1() {
+        // example promise that will resolve or reject based on input
+        const myPromise = (willReject) => {
             return new Promise((resolve, reject) => {
                 if (willReject) {
-                    reject('Rejected!');
+                    reject("Rejected!");
                 }
-                resolve('Resolved!');
+                resolve("Resolved!");
             });
         };
-        //emit true, then false
-        const source = Observable.of(true, false);
-        const example = source.mergeMap(val =>
-            Observable
-                //turn promise into observable
-                .fromPromise(myPromise(val))
-                //catch and gracefully handle rejections
-                .catch(error => Observable.of(`Error: ${error}`))
-        );
-        //output: 'Error: Rejected!', 'Resolved!'
-        const subscribe = example.subscribe(val => console.log(val));
+        // emit true, then false
+        const source = of(true, false);
+        const example = source.pipe(mergeMap((val) =>
+        from(myPromise(val)).pipe(// catch and gracefully handle rejections
+            catchError((error) => of(`Error: ${error}`))),
+        ));
+        // output: 'Error: Rejected!', 'Resolved!'
+        const subscribe = example.subscribe((val) => console.log(val));
     }
 }
