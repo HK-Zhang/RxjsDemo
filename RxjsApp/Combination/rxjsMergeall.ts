@@ -33,7 +33,7 @@ export class MergeAllPoc {
 
     public func2() {
 
-        const interval$ = interval(500).take(5);
+        const interval$ = interval(500).pipe(take(5));
 
         /*
           interval is emitting a value every 0.5s.  This value is then being mapped to interval that
@@ -41,9 +41,9 @@ export class MergeAllPoc {
           many inner observables to subscribe to at a time.  The rest of the observables are stored
           in a backlog waiting to be subscribe.
         */
-        const example = interval$
-            .map((val) => interval.delay(1000).take(3))
-            .mergeAll(2)
+        const example = interval$.pipe(
+            map((val) => interval$.pipe(delay(1000), take(3)))
+            , mergeAll(2))
             .subscribe((val) => console.log(val));
         /*
           The subscription is completed once the operator emits all values.
