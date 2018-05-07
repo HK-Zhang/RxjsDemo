@@ -1,7 +1,6 @@
-import "rxjs/add/observable/interval";
-import "rxjs/add/observable/race";
-import "rxjs/add/operator/mapTo";
-import { Observable } from "rxjs";
+import { interval, Observable, of, race } from "rxjs";
+import { delay, map, mapTo } from "rxjs/operators";
+
 
 export class RacePoc {
 
@@ -14,15 +13,15 @@ export class RacePoc {
         // const win = Observable.interval(1000);
         // const fwin = win.mapTo('1s won!');
         // take the first observable to emit
-        const example = Observable.race<any>(
+        const example = race<any>(
             // emit every 1.5s
-            Observable.interval(1500),
+            interval(1500),
             // emit every 1s
-            Observable.interval(1000).mapTo("1s won!"),
+            interval(1000).pipe(mapTo("1s won!")),
             // emit every 2s
-            Observable.interval(2000),
+            interval(2000),
             // emit every 2.5s
-            Observable.interval(2500),
+            interval(2500),
         );
         // output: "1s won!"..."1s won!"...etc
         const subscribe = example.subscribe((val) => console.log(val));
@@ -31,15 +30,14 @@ export class RacePoc {
     public func2() {
 
         // Throws an error and ignore the rest of the observables.
-        const first = Observable.of("first")
-            .delay(100)
-            .map(() => {
+        const first = of("first").pipe(delay(100)
+            , map(() => {
                 throw new Error("error");
-            });
-        const second = Observable.of("second").delay(200);
-        const third = Observable.of("third").delay(300);
+            }));
+        const second = of("second").pipe(delay(200));
+        const third = of("third").pipe(delay(300));
 
-        const race = Observable.race(first, second, third).subscribe((val) =>
+        const race$ = race(first, second, third).subscribe((val) =>
             console.log(val),
         );
     }

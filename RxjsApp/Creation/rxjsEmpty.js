@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const rxjs_1 = require("rxjs");
+// import { Subscription } from "rxjs/Subscription";
 class EmptyPoc {
     test() {
         this.func1();

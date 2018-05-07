@@ -1,14 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/operator/pairwise");
 const rxjs_1 = require("rxjs");
+const operators_1 = require("rxjs/operators");
 class PairwisePoc {
     test() {
         this.func1();
     }
     func1() {
-        rxjs_1.Observable.interval(1000)
-            .pairwise()
+        rxjs_1.interval(1000).pipe(operators_1.pairwise())
             .subscribe((pair) => console.log(pair)); // pair[1] - pair[0]
     }
 }

@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/observable/throw");
 const rxjs_1 = require("rxjs");
 class ThrowPoc {
     test() {
@@ -8,7 +7,7 @@ class ThrowPoc {
     }
     func1() {
         // emits an error with specified value on subscription
-        const source = rxjs_1.Observable.throw("This is an error!");
+        const source = rxjs_1.throwError("This is an error!");
         // output: 'Error: This is an error!'
         const subscribe = source.subscribe({
             complete: () => console.log("Complete!"),

@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/observable/of");
-require("rxjs/add/operator/every");
 const rxjs_1 = require("rxjs");
+const operators_1 = require("rxjs/operators");
 class EveryPoc {
     test() {
         // this.func1();
@@ -10,17 +9,19 @@ class EveryPoc {
     }
     func1() {
         // emit 5 values
-        const source = rxjs_1.Observable.of(1, 2, 3, 4, 5);
-        const example = source
-            .every((val) => val % 2 === 0);
+        const source = rxjs_1.of(1, 2, 3, 4, 5);
+        const example = source.pipe(
+        // is every value even?
+        operators_1.every((val) => val % 2 === 0));
         // output: false
         const subscribe = example.subscribe((val) => console.log(val));
     }
     func2() {
         // emit 5 values
-        const allEvens = rxjs_1.Observable.of(2, 4, 6, 8, 10);
-        const example = allEvens
-            .every((val) => val % 2 === 0);
+        const allEvens = rxjs_1.of(2, 4, 6, 8, 10);
+        const example = allEvens.pipe(
+        // is every value even?
+        operators_1.every((val) => val % 2 === 0));
         // output: true
         const subscribe = example.subscribe((val) => console.log(val));
     }

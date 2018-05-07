@@ -1,8 +1,6 @@
-﻿import "rxjs/add/observable/interval";
-import "rxjs/add/observable/merge";
-import "rxjs/add/operator/mapTo";
-import "rxjs/add/operator/merge";
-import { Observable } from "rxjs";
+﻿import { interval, merge, Observable } from "rxjs";
+import { mapTo, merge as mergeOp } from "rxjs/operators";
+
 
 export class MergePoc {
     public test() {
@@ -12,20 +10,20 @@ export class MergePoc {
 
     public func1() {
         // emit every 2.5 seconds
-        const first = Observable.interval(2500);
+        const first = interval(2500);
         // emit every 2 seconds
-        const second = Observable.interval(2000);
+        const second = interval(2000);
         // emit every 1.5 seconds
-        const third = Observable.interval(1500);
+        const third = interval(1500);
         // emit every 1 second
-        const fourth = Observable.interval(1000);
+        const fourth = interval(1000);
 
         // emit outputs from one observable
-        const example = Observable.merge(
-            first.mapTo("FIRST!"),
-            second.mapTo("SECOND!"),
-            third.mapTo("THIRD"),
-            fourth.mapTo("FOURTH"),
+        const example = merge(
+            first.pipe(mapTo("FIRST!")),
+            second.pipe(mapTo("SECOND!")),
+            third.pipe(mapTo("THIRD")),
+            fourth.pipe(mapTo("FOURTH")),
         );
         // output: "FOURTH", "THIRD", "SECOND!", "FOURTH", "FIRST!", "THIRD", "FOURTH"
         const subscribe = example.subscribe((val) => console.log(val));
@@ -33,11 +31,11 @@ export class MergePoc {
 
     public func2() {
         // emit every 2.5 seconds
-        const first = Observable.interval(2500);
+        const first = interval(2500);
         // emit every 1 second
-        const second = Observable.interval(1000);
+        const second = interval(1000);
         // used as instance method
-        const example = first.merge(second);
+        const example = first.pipe(mergeOp(second));
         // output: 0,1,0,2....
         const subscribe = example.subscribe((val) => console.log(val));
     }

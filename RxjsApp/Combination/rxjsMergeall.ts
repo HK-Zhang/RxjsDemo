@@ -1,12 +1,7 @@
-import "rxjs/add/observable/interval";
-import "rxjs/add/observable/of";
-import "rxjs/add/operator/delay";
-import "rxjs/add/operator/map";
-import "rxjs/add/operator/merge";
-import "rxjs/add/operator/mergeAll";
-import "rxjs/add/operator/take";
-import { Observable } from "rxjs";
 var Promise = require("promise");
+
+import { interval, Observable, of } from "rxjs";
+import { delay, map, merge, mergeAll, take } from "rxjs/operators";
 
 export class MergeAllPoc {
 
@@ -19,13 +14,13 @@ export class MergeAllPoc {
         const myPromise = (val) =>
             new Promise((resolve) => setTimeout(() => resolve(`Result: ${val}`), 2000));
         // emit 1,2,3
-        const source = Observable.of(1, 2, 3, 4, 5, 6, 7);
+        const source = of(1, 2, 3, 4, 5, 6, 7);
 
-        const example = source
+        const example = source.pipe(
             // map each value to promise
-            .map((val) => myPromise(val))
+            map((val) => myPromise(val))
             // emit result from source
-            .mergeAll();
+            , mergeAll());
 
         /*
           output:
@@ -38,7 +33,7 @@ export class MergeAllPoc {
 
     public func2() {
 
-        const interval = Observable.interval(500).take(5);
+        const interval$ = interval(500).take(5);
 
         /*
           interval is emitting a value every 0.5s.  This value is then being mapped to interval that
@@ -46,7 +41,7 @@ export class MergeAllPoc {
           many inner observables to subscribe to at a time.  The rest of the observables are stored
           in a backlog waiting to be subscribe.
         */
-        const example = interval
+        const example = interval$
             .map((val) => interval.delay(1000).take(3))
             .mergeAll(2)
             .subscribe((val) => console.log(val));

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/operator/map");
+// import "rxjs/add/operator/map";
 class EmptyPoc {
     test() {
         this.func1();
