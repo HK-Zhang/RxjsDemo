@@ -1,5 +1,5 @@
-﻿import "rxjs/add/observable/concat";
-import { Observable } from "rxjs";
+﻿import { concat, Observable, timer } from "rxjs";
+import { mapTo } from "rxjs/operators";
 
 export class ConcatPoc {
     public test() {
@@ -7,10 +7,10 @@ export class ConcatPoc {
     }
 
     public func1() {
-        const getPostOne$ = Observable.timer(3000).mapTo({ id: 1 });
-        const getPostTwo$ = Observable.timer(1000).mapTo({ id: 2 });
+        const getPostOne$ = timer(3000).pipe(mapTo({ id: 1 }));
+        const getPostTwo$ = timer(1000).pipe(mapTo({ id: 2 }));
 
-        Observable.concat(getPostOne$, getPostTwo$).subscribe((res) => console.log(res));
+        concat(getPostOne$, getPostTwo$).subscribe((res) => console.log(res));
     }
 
 }

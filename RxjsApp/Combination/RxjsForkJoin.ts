@@ -1,5 +1,6 @@
-﻿import "rxjs/add/observable/forkJoin";
-import { Observable } from "rxjs";
+﻿import { forkJoin, Observable, timer } from "rxjs";
+import { mapTo } from "rxjs/operators";
+
 
 export class ForkJoinPoc {
     public test() {
@@ -7,10 +8,10 @@ export class ForkJoinPoc {
     }
 
     public func1() {
-        const getPostOne$ = Observable.timer(1000).mapTo({ id: 1 });
-        const getPostTwo$ = Observable.timer(2000).mapTo({ id: 2 });
+        const getPostOne$ = timer(1000).pipe(mapTo({ id: 1 }));
+        const getPostTwo$ = timer(2000).pipe(mapTo({ id: 2 }));
 
-        Observable.forkJoin(getPostOne$, getPostTwo$).subscribe((res) => console.log(res));
+        forkJoin(getPostOne$, getPostTwo$).subscribe((res) => console.log(res));
     }
 
 }
