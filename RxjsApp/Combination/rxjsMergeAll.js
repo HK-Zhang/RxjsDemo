@@ -26,16 +26,14 @@ class MergeAllPoc {
         const subscribe = example.subscribe((val) => console.log(val));
     }
     func2() {
-        const interval$ = rxjs_1.interval(500).take(5);
+        const interval$ = rxjs_1.interval(500).pipe(operators_1.take(5));
         /*
           interval is emitting a value every 0.5s.  This value is then being mapped to interval that
           is delayed for 1.0s.  The mergeAll operator takes an optional argument that determines how
           many inner observables to subscribe to at a time.  The rest of the observables are stored
           in a backlog waiting to be subscribe.
         */
-        const example = interval$
-            .map((val) => rxjs_1.interval.delay(1000).take(3))
-            .mergeAll(2)
+        const example = interval$.pipe(operators_1.map((val) => interval$.pipe(operators_1.delay(1000), operators_1.take(3))), operators_1.mergeAll(2))
             .subscribe((val) => console.log(val));
         /*
           The subscription is completed once the operator emits all values.

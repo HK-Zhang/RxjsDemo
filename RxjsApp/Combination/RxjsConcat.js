@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/observable/concat");
 const rxjs_1 = require("rxjs");
+const operators_1 = require("rxjs/operators");
 class ConcatPoc {
     test() {
         this.func1();
     }
     func1() {
-        const getPostOne$ = rxjs_1.Observable.timer(3000).mapTo({ id: 1 });
-        const getPostTwo$ = rxjs_1.Observable.timer(1000).mapTo({ id: 2 });
-        rxjs_1.Observable.concat(getPostOne$, getPostTwo$).subscribe((res) => console.log(res));
+        const getPostOne$ = rxjs_1.timer(3000).pipe(operators_1.mapTo({ id: 1 }));
+        const getPostTwo$ = rxjs_1.timer(1000).pipe(operators_1.mapTo({ id: 2 }));
+        rxjs_1.concat(getPostOne$, getPostTwo$).subscribe((res) => console.log(res));
     }
 }
 exports.ConcatPoc = ConcatPoc;
