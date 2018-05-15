@@ -1,9 +1,5 @@
-﻿import "rxjs/add/observable/interval";
-import "rxjs/add/observable/of";
-import "rxjs/add/observable/throw";
-import "rxjs/add/operator/retry";
-import "rxjs/add/operator/switchMap";
-import { Observable } from "rxjs";
+﻿import { interval, Observable, of, throwError } from "rxjs";
+import { retry, switchMap } from "rxjs/operators";
 
 export class RetryPoc {
     public test() {
@@ -12,17 +8,18 @@ export class RetryPoc {
 
     public func1() {
         // emit value every 1s
-        const source = Observable.interval(1000);
+        const source = interval(1000);
         const example = source
-            .switchMap((val) => {
+            .pipe(
+                switchMap((val) => {
                 // throw error for demonstration
                 if (val > 5) {
-                    return Observable.throw("Error!");
+                    return throwError("Error!");
                 }
-                return Observable.of(val);
-            })
-            // retry 2 times on error
-            .retry(2);
+                return of(val); })
+                // retry 2 times on error
+                , retry(2),
+            );
         /*
           output:
           0..1..2..3..4..5..

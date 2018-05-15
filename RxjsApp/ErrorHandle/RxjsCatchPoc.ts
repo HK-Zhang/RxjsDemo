@@ -1,52 +1,51 @@
-﻿var Promise = require('promise');
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/fromPromise';
+﻿var Promise = require("promise");
+import { from, Observable, of, throwError, timer } from "rxjs";
+import { catchError, flatMap } from "rxjs/operators";
 
 export class CatchPoc {
-    test() {
-        //this.func1();
+    public test() {
+        // this.func1();
         // this.func2();
         this.func3();
     }
 
-    func1() {
-        //emit error
-        const source = Observable.throw('This is an error!');
-        //gracefully handle error, returning observable with error message
-        const example = source.catch(val => Observable.of(`I caught: ${val}`));
-        //output: 'I caught: This is an error'
-        const subscribe = example.subscribe(val => console.log(val));
+    public func1() {
+        // emit error
+        const source = throwError("This is an error!");
+        // gracefully handle error, returning observable with error message
+        const example = source.pipe(catchError((val) => of(`I caught: ${val}`)));
+        // output: 'I caught: This is an error'
+        const subscribe = example.subscribe((val) => console.log(val));
     }
 
-    func2() {
-        //create promise that immediately rejects
+    public func2() {
+        // create promise that immediately rejects
         const myBadPromise = () =>
-            new Promise((resolve, reject) => reject('Rejected!'));
-        //emit single value after 1 second
-        const source = Observable.timer(1000);
-        //catch rejected promise, returning observable containing error message
-        const example = source.flatMap(() =>
-            Observable.fromPromise(myBadPromise()).catch(error =>
-                Observable.of(`Bad Promise: ${error}`)
-            )
-        );
-        //output: 'Bad Promise: Rejected'
-        const subscribe = example.subscribe(val => console.log(val));
+            new Promise((resolve, reject) => reject("Rejected!"));
+        // emit single value after 1 second
+        const source = timer(1000);
+        // catch rejected promise, returning observable containing error message
+        const example = source.pipe(
+            flatMap(() => from(myBadPromise()).pipe(
+                catchError((error) => of(`Bad Promise: ${error}`)),
+            )));
+        // output: 'Bad Promise: Rejected'
+        const subscribe = example.subscribe((val) => console.log(val));
     }
 
-    func3() {
-        //create promise that immediately rejects
+    public func3() {
+        // create promise that immediately rejects
         const myBadPromise = () =>
-            new Promise((resolve, reject) => resolve('Approve!'));
-        //emit single value after 1 second
-        const source = Observable.timer(1000);
-        //catch rejected promise, returning observable containing error message
-        const example = source.flatMap(() =>
-            Observable.fromPromise(myBadPromise()).catch(error =>
-                Observable.of(`Bad Promise: ${error}`)
-            )
-        );
-        //output: 'Bad Promise: Rejected'
-        const subscribe = example.subscribe(val => console.log(val));
+            new Promise((resolve, reject) => resolve("Approve!"));
+        // emit single value after 1 second
+        const source = timer(1000);
+        // catch rejected promise, returning observable containing error message
+        const example = source.pipe(flatMap(() =>
+        from(myBadPromise()).pipe(catchError((error) =>
+                of(`Bad Promise: ${error}`),
+            )),
+        ));
+        // output: 'Bad Promise: Rejected'
+        const subscribe = example.subscribe((val) => console.log(val));
     }
 }

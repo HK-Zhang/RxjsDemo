@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/operator/retryWhen");
-require("rxjs/add/operator/zip");
 const rxjs_1 = require("rxjs");
+const operators_1 = require("rxjs/operators");
 class RetryWhenPoc {
     test() {
         // this.func1();
@@ -10,18 +9,18 @@ class RetryWhenPoc {
     }
     func1() {
         // emit value every 1s
-        const source = rxjs_1.Observable.interval(1000);
-        const example = source
-            .map((val) => {
+        const source = rxjs_1.interval(1000);
+        const example = source.pipe(operators_1.map((val) => {
             if (val > 5) {
                 // error will be picked up by retryWhen
                 throw val;
             }
             return val;
-        })
-            .retryWhen((errors) => errors
-            .do((val) => console.log(`Value ${val} was too high!`))
-            .delayWhen((val) => rxjs_1.Observable.timer(val * 1000)));
+        }), operators_1.retryWhen((errors) => errors.pipe(
+        // log error message
+        operators_1.tap((val) => console.log(`Value ${val} was too high!`))
+        // restart in 5 seconds
+        , operators_1.delayWhen((val) => rxjs_1.timer(val * 1000)))));
         /*
           output:
           0
@@ -37,25 +36,22 @@ class RetryWhenPoc {
     }
     func2() {
         // emit value every 1s
-        const source = rxjs_1.Observable.interval(1000);
-        const example = source
-            .map((val) => {
+        const source = rxjs_1.interval(1000);
+        const example = source.pipe(operators_1.map((val) => {
             if (val > 2) {
                 // error will be picked up by retryWhen
                 throw val;
             }
             return val;
-        })
-            .retryWhen((attempts) => {
-            return attempts.zip(rxjs_1.Observable.range(1, 4)).mergeMap(([error, i]) => {
+        }), operators_1.retryWhen((attempts) => {
+            return attempts.pipe(operators_1.zip(rxjs_1.range(1, 4)), operators_1.mergeMap(([error, i]) => {
                 if (i > 3) {
                     return rxjs_1.Observable.throw(error);
                 }
                 console.log(`Wait ${i} seconds, then retry!`);
-                return rxjs_1.Observable.timer(i * 1000);
-            });
-        })
-            .catch((_) => rxjs_1.Observable.of("Ouch, giving up!"));
+                return rxjs_1.timer(i * 1000);
+            }));
+        }), operators_1.catchError((_) => rxjs_1.of("Ouch, giving up!")));
         const subscribe = example.subscribe((val) => console.log(val));
     }
 }
