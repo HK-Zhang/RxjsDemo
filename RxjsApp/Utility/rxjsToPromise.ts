@@ -1,5 +1,6 @@
-﻿import "rxjs/add/observable/of";
-import { Observable } from "rxjs";
+﻿import { Observable, of } from "rxjs";
+import { delay } from "rxjs/operators";
+
 
 
 export class ToPromisePoc {
@@ -11,7 +12,7 @@ export class ToPromisePoc {
 
     public func1() {
         // return basic observable
-        const sample = (val) => Observable.of(val).delay(5000);
+        const sample = (val) => of(val).pipe(delay(5000));
         // convert basic observable to promise
         const example = sample("First Example")
             .toPromise()
@@ -23,7 +24,7 @@ export class ToPromisePoc {
 
     public func2() {
         // return basic observable
-        const sample = (val) => Observable.of(val).delay(5000);
+        const sample = (val) => of(val).pipe(delay(5000));
         /*
           convert each to promise and use Promise.all
           to wait for all to resolve

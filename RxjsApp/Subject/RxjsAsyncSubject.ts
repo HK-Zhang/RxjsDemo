@@ -1,4 +1,4 @@
-import { AsyncSubject } from "rxjs/AsyncSubject";
+import { AsyncSubject } from "rxjs";
 
 export class AsyncSubjectPoc {
     public test() {

@@ -27,7 +27,8 @@ class MergePoc {
         // emit every 1 second
         const second = rxjs_1.interval(1000);
         // used as instance method
-        const example = first.pipe(operators_1.merge(second));
+        // const example = first.pipe(mergeOp(second));
+        const example = rxjs_1.merge(first, second);
         // output: 0,1,0,2....
         const subscribe = example.subscribe((val) => console.log(val));
     }

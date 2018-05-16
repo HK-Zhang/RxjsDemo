@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const AsyncSubject_1 = require("rxjs/AsyncSubject");
+const rxjs_1 = require("rxjs");
 class AsyncSubjectPoc {
     test() {
         this.func1();
     }
     func1() {
-        const sub = new AsyncSubject_1.AsyncSubject();
+        const sub = new rxjs_1.AsyncSubject();
         let i = 0;
         const handle = setInterval(() => {
             sub.next(i);

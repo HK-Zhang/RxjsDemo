@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Subject_1 = require("rxjs/Subject");
+const rxjs_1 = require("rxjs");
 class SubjectPoc {
     test() {
         // this.func1();
         this.func2();
     }
     func1() {
-        const sub = new Subject_1.Subject();
+        const sub = new rxjs_1.Subject();
         sub.next(1);
         const subscription = sub.subscribe((t) => {
             console.log(t);
@@ -19,7 +19,7 @@ class SubjectPoc {
      * func2
      */
     func2() {
-        const sub = new Subject_1.Subject();
+        const sub = new rxjs_1.Subject();
         const subscription = sub.subscribe((t) => { console.log("Next:" + t); }, (err) => { console.log("Error:" + err); }, () => { console.log("complete."); });
         sub.next(42);
         sub.next(56);

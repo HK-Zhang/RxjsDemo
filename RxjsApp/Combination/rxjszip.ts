@@ -38,13 +38,15 @@ export class ZipPoc {
 
     public func3() {
         const source = of("src");
-        const example = source.pipe(zipOp(range(1, 4)));
+        // const example = source.pipe(zipOp(range(1, 4)));
+        const example = zip(source, range(1, 4));
         const subscribe = example.subscribe((val) => console.log(val));
     }
 
     public func4() {
         const source = interval(1000);
-        const example = source.pipe(zipOp(range(1, 4)));
+        // const example = source.pipe(zipOp(range(1, 4)));
+        const example = zip(source, range(1, 4));
         const subscribe = example.subscribe((val) => console.log(val));
     }
 

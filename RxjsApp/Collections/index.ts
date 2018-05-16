@@ -1,3 +1,3 @@
-﻿export * from './SetPoc'
-export * from './QueuePoc'
-export * from './DictionaryPoc'
+﻿export * from "./SetPoc";
+export * from "./QueuePoc";
+export * from "./DictionaryPoc";

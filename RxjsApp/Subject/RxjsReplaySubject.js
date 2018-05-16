@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const ReplaySubject_1 = require("rxjs/ReplaySubject");
+const rxjs_1 = require("rxjs");
 class ReplaySubjectPoc {
     test() {
         this.func1();
     }
     func1() {
-        const sub = new ReplaySubject_1.ReplaySubject(2);
+        const sub = new rxjs_1.ReplaySubject(2);
         sub.next("a");
         sub.next("b");
         sub.next("c");

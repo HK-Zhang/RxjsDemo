@@ -29,12 +29,14 @@ class ZipPoc {
     }
     func3() {
         const source = rxjs_1.of("src");
-        const example = source.pipe(operators_1.zip(rxjs_1.range(1, 4)));
+        // const example = source.pipe(zipOp(range(1, 4)));
+        const example = rxjs_1.zip(source, rxjs_1.range(1, 4));
         const subscribe = example.subscribe((val) => console.log(val));
     }
     func4() {
         const source = rxjs_1.interval(1000);
-        const example = source.pipe(operators_1.zip(rxjs_1.range(1, 4)));
+        // const example = source.pipe(zipOp(range(1, 4)));
+        const example = rxjs_1.zip(source, rxjs_1.range(1, 4));
         const subscribe = example.subscribe((val) => console.log(val));
     }
 }

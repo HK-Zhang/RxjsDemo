@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/observable/of");
 const rxjs_1 = require("rxjs");
+const operators_1 = require("rxjs/operators");
 class ToPromisePoc {
     test() {
         // this.func1();
@@ -9,7 +9,7 @@ class ToPromisePoc {
     }
     func1() {
         // return basic observable
-        const sample = (val) => rxjs_1.Observable.of(val).delay(5000);
+        const sample = (val) => rxjs_1.of(val).pipe(operators_1.delay(5000));
         // convert basic observable to promise
         const example = sample("First Example")
             .toPromise()
@@ -19,7 +19,7 @@ class ToPromisePoc {
     }
     func2() {
         // return basic observable
-        const sample = (val) => rxjs_1.Observable.of(val).delay(5000);
+        const sample = (val) => rxjs_1.of(val).pipe(operators_1.delay(5000));
         /*
           convert each to promise and use Promise.all
           to wait for all to resolve

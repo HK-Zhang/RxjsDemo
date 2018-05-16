@@ -35,7 +35,8 @@ export class MergePoc {
         // emit every 1 second
         const second = interval(1000);
         // used as instance method
-        const example = first.pipe(mergeOp(second));
+        // const example = first.pipe(mergeOp(second));
+        const example = merge(first, second);
         // output: 0,1,0,2....
         const subscribe = example.subscribe((val) => console.log(val));
     }

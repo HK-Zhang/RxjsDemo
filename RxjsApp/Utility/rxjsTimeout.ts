@@ -1,10 +1,5 @@
-﻿import "rxjs/add/observable/of";
-import "rxjs/add/operator/catch";
-import "rxjs/add/operator/concatMap";
-import "rxjs/add/operator/timeout";
-import { Observable } from "rxjs";
-
-
+﻿import { Observable, of } from "rxjs";
+import { catchError, concatMap, delay, timeout } from "rxjs/operators";
 
 export class TimeoutPoc {
 
@@ -13,16 +8,16 @@ export class TimeoutPoc {
     }
 
     public makeRequest(timeToDelay) {
-        return Observable.of("Request Complete!").delay(timeToDelay);
+        return of("Request Complete!").pipe(delay(timeToDelay));
     }
 
     public func1() {
-        Observable.of(4000, 3000, 2000)
-            .concatMap((duration) =>
-                this.makeRequest(duration)
-                    .timeout(2500)
-                    .catch((error) => Observable.of(`Request timed out after: ${duration}`)),
-            )
+        of(4000, 3000, 2000).pipe(
+            concatMap((duration) =>
+                this.makeRequest(duration).pipe(
+                    timeout(2500)
+                    , catchError((error) => of(`Request timed out after: ${duration}`))),
+            ))
             /*
             *  "Request timed out after: 4000"
             *  "Request timed out after: 3000"
