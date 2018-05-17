@@ -23,7 +23,7 @@ import { CatchPoc, RetryPoc, RetryWhenPoc } from "./ErrorHandle";
 import {
     debouncePoc, DebounceTimePoc, FilterPoc, FirstPoc, IgnoreElementPoc, lastPoc, RxjsDistinctUntilChangedPoc,
     samplePoc,
-    singlePoc, skipPoc, skipUntilPoc, skipWhilePoc, TakePoc, TakeUntilPoc, takewhilePoc, throttlePoc, throttleTimePoc,
+    singlePoc, skipPoc, skipUntilPoc, skipWhilePoc, TakePoc, TakeUntilPoc, TakewhilePoc, ThrottlePoc, ThrottleTimePoc,
 } from "./Filter";
 
 import { MulticastPoc, PublishPoc, SharePoc } from "./Multicasting";
