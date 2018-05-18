@@ -1,7 +1,6 @@
-﻿import "rxjs/add/observable/interval";
-import "rxjs/add/operator/do";
-import "rxjs/add/operator/publish";
-import { Observable } from "rxjs";
+﻿import { ConnectableObservable, interval, Observable } from "rxjs";
+import { publish, tap } from "rxjs/operators";
+
 
 
 export class PublishPoc {
@@ -12,12 +11,12 @@ export class PublishPoc {
 
     public func1() {
         // emit value every 1 second
-        const source = Observable.interval(1000);
-        const example = source
+        const source = interval(1000);
+        const example = source.pipe(
             // side effects will be executed once
-            .do(() => console.log("Do Something!"))
+            tap(() => console.log("Do Something!"))
             // do nothing until connect() is called
-            .publish();
+            , publish());
 
         /*
           source will not emit values until connect() is called
@@ -38,7 +37,7 @@ export class PublishPoc {
 
         // call connect after 5 seconds, causing source to begin emitting items
         setTimeout(() => {
-            example.connect();
+            (example as ConnectableObservable<any>).connect();
         }, 5000);
     }
 

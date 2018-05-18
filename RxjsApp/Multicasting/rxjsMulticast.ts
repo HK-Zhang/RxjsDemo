@@ -1,10 +1,5 @@
-﻿import "rxjs/add/observable/interval";
-import "rxjs/add/operator/do";
-import "rxjs/add/operator/mapTo";
-import "rxjs/add/operator/multicast";
-import "rxjs/add/operator/take";
-import { Observable } from "rxjs";
-import { Subject } from "rxjs/Subject";
+﻿import { ConnectableObservable, interval, Observable, Subject } from "rxjs";
+import { mapTo, multicast, take, tap } from "rxjs/operators";
 
 export class MulticastPoc {
 
@@ -14,15 +9,15 @@ export class MulticastPoc {
 
     public func1() {
         // emit every 2 seconds, take 5
-        const source = Observable.interval(2000).take(5);
+        const source = interval(2000).pipe(take(5));
 
-        const example = source
+        const example = source.pipe(
             // since we are multicasting below, side effects will be executed once
-            .do(() => console.log("Side Effect #1"))
-            .mapTo("Result!");
+            tap(() => console.log("Side Effect #1"))
+            , mapTo("Result!"));
 
         // subscribe subject to source upon connect()
-        const multi = example.multicast(() => new Subject());
+        const multi = example.pipe(multicast(() => new Subject()));
         /*
           subscribers will share source
           output:
@@ -34,7 +29,7 @@ export class MulticastPoc {
         const subscriberOne = multi.subscribe((val) => console.log(val));
         const subscriberTwo = multi.subscribe((val) => console.log(val));
         // subscribe subject to source
-        multi.connect();
+        (multi as ConnectableObservable<any>).connect();
     }
 
 }

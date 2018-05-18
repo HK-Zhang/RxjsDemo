@@ -1,26 +1,24 @@
-﻿import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/delay';
-import 'rxjs/add/operator/mapTo';
-import 'rxjs/add/observable/merge';
+﻿import { merge, Observable, of } from "rxjs";
+import { delay, mapTo } from "rxjs/operators";
 
-export class delayPoc {
+export class DelayPoc {
 
-    test() {
+    public test() {
         this.func1();
     }
 
-    func1() {
-        //emit one item
-        const example = Observable.of(null);
-        //delay output of each by an extra second
-        const message = Observable.merge(
-            example.mapTo('Hello'),
-            example.mapTo('World!').delay(1000),
-            example.mapTo('Goodbye').delay(2000),
-            example.mapTo('World!').delay(3000)
+    public func1() {
+        // emit one item
+        const example = of(null);
+        // delay output of each by an extra second
+        const message = merge(
+            example.pipe(mapTo("Hello")),
+            example.pipe(mapTo("World!"), delay(1000)),
+            example.pipe(mapTo("Goodbye"), delay(2000)),
+            example.pipe(mapTo("World!"), delay(3000)),
         );
-        //output: 'Hello'...'World!'...'Goodbye'...'World!'
-        const subscribe = message.subscribe(val => console.log(val));
+        // output: 'Hello'...'World!'...'Goodbye'...'World!'
+        const subscribe = message.subscribe((val) => console.log(val));
     }
 
 }

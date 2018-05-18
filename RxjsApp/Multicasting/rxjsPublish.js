@@ -1,19 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/observable/interval");
-require("rxjs/add/operator/do");
-require("rxjs/add/operator/publish");
 const rxjs_1 = require("rxjs");
+const operators_1 = require("rxjs/operators");
 class PublishPoc {
     test() {
         this.func1();
     }
     func1() {
         // emit value every 1 second
-        const source = rxjs_1.Observable.interval(1000);
-        const example = source
-            .do(() => console.log("Do Something!"))
-            .publish();
+        const source = rxjs_1.interval(1000);
+        const example = source.pipe(
+        // side effects will be executed once
+        operators_1.tap(() => console.log("Do Something!"))
+        // do nothing until connect() is called
+        , operators_1.publish());
         /*
           source will not emit values until connect() is called
           output: (after 5s)

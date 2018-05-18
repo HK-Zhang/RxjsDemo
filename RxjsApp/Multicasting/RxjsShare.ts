@@ -1,5 +1,6 @@
-﻿import "rxjs/add/operator/share";
-import { Observable } from "rxjs";
+﻿import { Observable, timer } from "rxjs";
+import { mapTo, share, tap } from "rxjs/operators";
+
 
 export class SharePoc {
     public test() {
@@ -10,11 +11,11 @@ export class SharePoc {
 
     public func2() {
         // emit value in 1s
-        const source = Observable.timer(1000);
+        const source = timer(1000);
         // log side effect, emit result
-        const example = source
-            .do(() => console.log("***SIDE EFFECT***"))
-            .mapTo("***RESULT***");
+        const example = source.pipe(
+            tap(() => console.log("***SIDE EFFECT***"))
+            , mapTo("***RESULT***"));
         /*
           ***NOT SHARED, SIDE EFFECT WILL BE EXECUTED TWICE***
           output:
@@ -27,7 +28,7 @@ export class SharePoc {
         const subscribeTwo = example.subscribe((val) => console.log(val));
 
         // share observable among subscribers
-        const sharedExample = example.share();
+        const sharedExample = example.pipe(share());
         /*
           ***SHARED, SIDE EFFECT EXECUTED ONCE***
           output:

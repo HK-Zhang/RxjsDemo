@@ -1,24 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/observable/interval");
-require("rxjs/add/operator/do");
-require("rxjs/add/operator/mapTo");
-require("rxjs/add/operator/multicast");
-require("rxjs/add/operator/take");
 const rxjs_1 = require("rxjs");
-const Subject_1 = require("rxjs/Subject");
+const operators_1 = require("rxjs/operators");
 class MulticastPoc {
     test() {
         this.func1();
     }
     func1() {
         // emit every 2 seconds, take 5
-        const source = rxjs_1.Observable.interval(2000).take(5);
-        const example = source
-            .do(() => console.log("Side Effect #1"))
-            .mapTo("Result!");
+        const source = rxjs_1.interval(2000).pipe(operators_1.take(5));
+        const example = source.pipe(
+        // since we are multicasting below, side effects will be executed once
+        operators_1.tap(() => console.log("Side Effect #1")), operators_1.mapTo("Result!"));
         // subscribe subject to source upon connect()
-        const multi = example.multicast(() => new Subject_1.Subject());
+        const multi = example.pipe(operators_1.multicast(() => new rxjs_1.Subject()));
         /*
           subscribers will share source
           output:

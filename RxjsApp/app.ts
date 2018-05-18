@@ -1,4 +1,4 @@
-﻿import { delayPoc, delayWhenPoc, DoPoc, LetPoc, PipePoc, TimeoutPoc, ToPromisePoc } from "./Utility";
+﻿import { DelayPoc, DelayWhenPoc, DoPoc, LetPoc, PipePoc, TimeoutPoc, ToPromisePoc } from "./Utility";
 
 import {
     BufferCountPoc, BufferPoc, BufferTimePoc, BufferTogglePoc, BufferWhenPoc, ConcatMapPoc, ConcatMapToPoc,
@@ -23,7 +23,7 @@ import { CatchPoc, RetryPoc, RetryWhenPoc } from "./ErrorHandle";
 import {
     debouncePoc, DebounceTimePoc, FilterPoc, FirstPoc, IgnoreElementPoc, lastPoc, RxjsDistinctUntilChangedPoc,
     samplePoc,
-    singlePoc, skipPoc, skipUntilPoc, skipWhilePoc, TakePoc, TakeUntilPoc, TakewhilePoc, ThrottlePoc, ThrottleTimePoc,
+    singlePoc, skipPoc, skipUntilPoc, SkipWhilePoc, TakePoc, TakeUntilPoc, TakewhilePoc, ThrottlePoc, ThrottleTimePoc,
 } from "./Filter";
 
 import { MulticastPoc, PublishPoc, SharePoc } from "./Multicasting";
@@ -84,7 +84,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new SharePoc();
 // let a = new BufferTimePoc();
 // const a = new ScanPoc();
-const a = new CreatePoc();
+// const a = new CreatePoc();
 // const a = new EmptyPoc();
 // let a = new IntervalPoc();
 // let a = new RangePoc();
@@ -97,7 +97,7 @@ const a = new CreatePoc();
 // let a = new LetPoc();
 // const a = new ToPromisePoc();
 // let a = new TimeoutPoc();
-// let a = new publishPoc();
+const a = new PublishPoc();
 // let a = new multicastPoc();
 // const a = new BufferPoc();
 // const a = new BufferCountPoc();
