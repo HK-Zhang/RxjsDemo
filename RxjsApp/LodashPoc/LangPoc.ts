@@ -216,4 +216,95 @@ export class LangPoc {
                 _.isFunction(/abc/);
                 //  => false
         }
+
+        public isInteger() {
+                _.isInteger(3);
+                //  => true
+
+                _.isInteger(Number.MIN_VALUE);
+                //  => false
+
+                _.isInteger(Infinity);
+                //  => false
+
+                _.isInteger("3");
+                //  => false
+
+                _.isLength(3);
+                //  => true
+
+                _.isLength(Number.MIN_VALUE);
+                //  => false
+
+                _.isLength(Infinity);
+                //  => false
+
+                _.isLength("3");
+                //  => false
+
+                _.isMap(new Map());
+                //  => true
+
+                _.isMap(new WeakMap());
+                //  => false
+        }
+
+        public isMatch() {
+                const  object  = {  a: 1, b: 2  };
+
+                _.isMatch(object, {  b: 2  });
+                //  => true
+
+                _.isMatch(object, {  b: 1  });
+                //  => false
+
+                const isGreeting = (value) => /^h(?:i|ello)$/.test(value);
+
+                const customizer = (objValue,  srcValue) => {
+                          if  (isGreeting(objValue) && isGreeting(srcValue)) {
+                            return true;
+                          }
+                        };
+
+                const object2 =  { greeting:  "hello" };
+                const source =  { greeting:  "hi" };
+
+                _.isMatchWith(object2,  source,  customizer);
+                        //  => true
+        }
+
+        public isNan() {
+                _.isNaN(NaN);
+                //  => true
+
+                // _.isNaN(new Number(NaN));
+                //  => true
+
+                isNaN(undefined);
+                //  => true
+
+                _.isNaN(undefined);
+                //  => false
+
+                _.isNative(Array.prototype.push);
+                //  => true
+
+                _.isNative(_);
+                //  => false
+
+                _.isNil(null);
+                //  => true
+
+                _.isNil(void 0);
+                //  => true
+
+                _.isNil(NaN);
+                //  => false
+
+                _.isNull(null);
+                //  => true
+
+                _.isNull(void  0);
+                //  => false
+        }
 }
