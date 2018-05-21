@@ -307,4 +307,58 @@ export class LangPoc {
                 _.isNull(void  0);
                 //  => false
         }
+
+        public isNumber() {
+                _.isNumber(3);
+                //  => true
+
+                _.isNumber(Number.MIN_VALUE);
+                //  => true
+
+                _.isNumber(Infinity);
+                //  => true
+
+                _.isNumber("3");
+                //  => false
+
+                _.isObject({});
+                //  => true
+
+                _.isObject([1, 2, 3]);
+                //  => true
+
+                _.isObject(_.noop);
+                //  => true
+
+                _.isObject(null);
+                //  => false
+
+                _.isObjectLike({});
+                //  => true
+
+                _.isObjectLike([1, 2, 3]);
+                //  => true
+
+                _.isObjectLike(_.noop);
+                //  => false
+
+                _.isObjectLike(null);
+                //  => false
+
+                const Foo = () => {
+                          const a =  1;
+                        };
+
+                _.isPlainObject(new Foo());
+                        //  => false
+
+                _.isPlainObject([1,  2,  3]);
+                        //  => false
+
+                _.isPlainObject({ x:  0,  y:  0 });
+                        //  => true
+
+                _.isPlainObject(Object.create(null));
+                        //  => true
+        }
 }
