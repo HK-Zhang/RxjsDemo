@@ -361,4 +361,67 @@ export class LangPoc {
                 _.isPlainObject(Object.create(null));
                         //  => true
         }
+
+        public isRegExp() {
+                _.isRegExp(/abc/);
+                //  => true
+
+                _.isRegExp("/abc/");
+                //  => false
+
+                _.isSafeInteger(3);
+                //  => true
+
+                _.isSafeInteger(Number.MIN_VALUE);
+                //  => false
+
+                _.isSafeInteger(Infinity);
+                //  => false
+
+                _.isSafeInteger("3");
+                //  => false
+
+                _.isSet(new Set());
+                //  => true
+
+                _.isSet(new WeakSet());
+                //  => false
+
+                _.isString("abc");
+                //  => true
+
+                _.isString(1);
+                //  => false
+
+                _.isSymbol(Symbol.iterator);
+                //  => true
+
+                _.isSymbol("abc");
+                //  => false
+
+                _.isTypedArray(new Uint8Array([1]));
+                //  => true
+
+                _.isTypedArray([]);
+                //  => false
+
+                _.isUndefined(void 0);
+                //  => true
+
+                _.isUndefined(null);
+                //  => false
+
+                _.isWeakMap(new WeakMap());
+                //  => true
+
+                _.isWeakMap(new Map());
+                //  => false
+
+                _.isWeakSet(new  WeakSet());
+                //  => true
+
+                _.isWeakSet(new  Set());
+                //  => false
+
+        }
 }
