@@ -424,4 +424,117 @@ export class LangPoc {
                 //  => false
 
         }
+
+        public ltFunc() {
+                _.lt(1, 3);
+                //  => true
+
+                _.lt(3, 3);
+                //  => false
+
+                _.lt(3, 1);
+                //  => false
+
+                _.lte(1, 3);
+                //  => true
+
+                _.lte(3, 3);
+                //  => true
+
+                _.lte(3, 1);
+                //  => false
+
+                _.toArray({ a: 1, b: 2 });
+                //  => [1, 2]
+
+                _.toArray("abc");
+                //  => ['a', 'b', 'c']
+
+                _.toArray(1);
+                //  => []
+
+                _.toArray(null);
+                //  => []
+
+                _.toFinite(3.2);
+                //  => 3.2
+
+                _.toFinite(Number.MIN_VALUE);
+                //  => 5e-324
+
+                _.toFinite(Infinity);
+                //  => 1.7976931348623157e+308
+
+                _.toFinite("3.2");
+                //  => 3.2
+
+                _.toInteger(3.2);
+                //  => 3
+
+                _.toInteger(Number.MIN_VALUE);
+                //  => 0
+
+                _.toInteger(Infinity);
+                //  => 1.7976931348623157e+308
+
+                _.toInteger("3.2");
+                //  => 3
+
+                _.toLength(3.2);
+                //  => 3
+
+                _.toLength(Number.MIN_VALUE);
+                //  => 0
+
+                _.toLength(Infinity);
+                //  => 4294967295
+
+                _.toLength("3.2");
+                //  => 3
+
+                _.toNumber(3.2);
+                //  => 3.2
+
+                _.toNumber(Number.MIN_VALUE);
+                //  => 5e-324
+
+                _.toNumber(Infinity);
+                //  => Infinity
+
+                _.toNumber("3.2");
+                //  => 3.2
+
+                _.toSafeInteger(3.2);
+                //  => 3
+
+                _.toSafeInteger(Number.MIN_VALUE);
+                //  => 0
+
+                _.toSafeInteger(Infinity);
+                //  => 9007199254740991
+
+                _.toSafeInteger("3.2");
+                //  => 3
+
+                _.toString(null);
+                //  => ''
+
+                _.toString(-0);
+                //  => '-0'
+
+                _.toString([1, 2, 3]);
+                //  => '1,2,3'
+
+                function Foo() {
+                          this.b =  2;
+                        }
+
+                Foo.prototype.c =  3;
+
+                _.assign({ a:  1 },  new Foo());
+                        //  => { 'a': 1, 'b': 2 }
+
+                _.assign({ a:  1 },  _.toPlainObject(new Foo()));
+                        //  => { 'a': 1, 'b': 2, 'c': 3 }
+        }
 }
