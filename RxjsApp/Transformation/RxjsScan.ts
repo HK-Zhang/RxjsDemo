@@ -1,6 +1,5 @@
-﻿import "rxjs/add/operator/distinctUntilChanged";
-import { Observable } from "rxjs";
-import { Subject } from "rxjs/Subject";
+﻿import { interval, Observable, Subject } from "rxjs";
+import { distinctUntilChanged, map, scan, startWith } from "rxjs/operators";
 
 export class ScanPoc {
     public test() {
@@ -12,7 +11,7 @@ export class ScanPoc {
     public func1() {
         const subject = new Subject<number>();
         // basic scan example, sum over time starting with zero
-        const example = subject.startWith(0).scan((acc, curr) => acc + curr);
+        const example = subject.pipe(startWith(0), scan((acc, curr) => acc + curr));
         // log accumulated values
         const subscribe = example.subscribe((val) =>
             console.log("Accumulated total:", val),
@@ -25,17 +24,17 @@ export class ScanPoc {
 
     public func2() {
         // Accumulate values in an array, emit random values from this array.
-        const scanObs = Observable.interval(1000)
-            .scan((a, c) => a.concat(c), [])
-            .map((r) => r[Math.floor(Math.random() * r.length)])
-            .distinctUntilChanged()
+        const scanObs = interval(1000).pipe(
+            scan<any>((a, c) => a.concat(c), [])
+            , map((r) => r[Math.floor(Math.random() * r.length)])
+            , distinctUntilChanged())
             .subscribe(console.log);
     }
 
     public func3() {
         const subject = new Subject();
         // scan example building an object over time
-        const example = subject.scan((acc, curr) => Object.assign({}, acc, curr), {});
+        const example = subject.pipe(scan((acc, curr) => Object.assign({}, acc, curr), {}));
         // log accumulated values
         const subscribe = example.subscribe((val) =>
             console.log("Accumulated object:", val),

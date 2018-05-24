@@ -1,9 +1,6 @@
-﻿import "rxjs/add/observable/interval";
-import "rxjs/add/observable/timer";
-import "rxjs/add/operator/mergeAll";
-import "rxjs/add/operator/scan";
-import "rxjs/add/operator/window";
-import { Observable } from "rxjs";
+﻿import { interval, Observable, timer } from "rxjs";
+import { mergeAll, scan, window } from "rxjs/operators";
+
 
 
 export class WindowPoc {
@@ -14,9 +11,9 @@ export class WindowPoc {
 
     public func1() {
         // emit immediately then every 1s
-        const source = Observable.timer(0, 1000);
-        const example = source.window(Observable.interval(3000));
-        const count = example.scan((acc, curr) => acc + 1, 0);
+        const source = timer(0, 1000);
+        const example = source.pipe(window(interval(3000)));
+        const count = example.pipe(scan<any>((acc, curr) => acc + 1, 0));
         /*
           "Window 1:"
           0
@@ -29,6 +26,6 @@ export class WindowPoc {
           ...
         */
         const subscribe = count.subscribe((val) => console.log(`Window ${val}:`));
-        const subscribeTwo = example.mergeAll().subscribe((val) => console.log(val));
+        const subscribeTwo = example.pipe(mergeAll()).subscribe((val) => console.log(val));
     }
 }

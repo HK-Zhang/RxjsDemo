@@ -1,9 +1,5 @@
-﻿import "rxjs/add/observable/interval";
-import "rxjs/add/observable/timer";
-import "rxjs/add/operator/do";
-import "rxjs/add/operator/mergeAll";
-import "rxjs/add/operator/windowWhen";
-import { Observable } from "rxjs";
+﻿import { interval, Observable, timer } from "rxjs";
+import { mergeAll, tap, windowWhen } from "rxjs/operators";
 
 export class WindowWhenPoc {
 
@@ -13,15 +9,15 @@ export class WindowWhenPoc {
 
     public func1() {
         // emit immediately then every 1s
-        const source = Observable.timer(0, 1000);
-        const example = source
+        const source = timer(0, 1000);
+        const example = source.pipe(
             // close window every 5s and emit observable of collected values from source
-            .windowWhen(() => Observable.interval(5000))
-            .do(() => console.log("NEW WINDOW!"));
+            windowWhen(() => interval(5000))
+            , tap(() => console.log("NEW WINDOW!")));
 
-        const subscribeTwo = example
+        const subscribeTwo = example.pipe(
             // window emits nested observable
-            .mergeAll()
+            mergeAll())
             /*
             output:
             "NEW WINDOW!"

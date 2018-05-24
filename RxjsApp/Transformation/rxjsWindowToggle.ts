@@ -1,10 +1,5 @@
-﻿import "rxjs/add/observable/interval";
-import "rxjs/add/observable/timer";
-import "rxjs/add/operator/do";
-import "rxjs/add/operator/mergeAll";
-import "rxjs/add/operator/windowToggle";
-import { Observable } from "rxjs";
-
+﻿import { interval, Observable, timer } from "rxjs";
+import { mergeAll, tap, windowToggle} from "rxjs/operators";
 
 
 export class WindowTogglePoc {
@@ -15,21 +10,21 @@ export class WindowTogglePoc {
 
     public func1() {
         // emit immediately then every 1s
-        const source = Observable.timer(0, 1000);
+        const source = timer(0, 1000);
         // toggle window on every 5
-        const toggle = Observable.interval(5000);
-        const example = source
+        const toggle = interval(5000);
+        const example = source.pipe(
             // turn window on every 5s
-            .windowToggle(toggle, (val) => {
+            windowToggle(toggle, (val) => {
                 console.log("N" + val);
-                return Observable.interval(val * 1000);
+                return interval(val * 1000);
                 // return Observable.interval(5 * 1000);
             })
-            .do(() => console.log("NEW WINDOW!"));
+            , tap(() => console.log("NEW WINDOW!")));
 
-        const subscribeTwo = example
+        const subscribeTwo = example.pipe(
             // window emits nested observable
-            .mergeAll()
+            mergeAll())
             /*
             output:
             "NEW WINDOW!"

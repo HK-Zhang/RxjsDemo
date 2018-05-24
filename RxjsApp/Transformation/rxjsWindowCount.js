@@ -1,22 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/observable/interval");
-require("rxjs/add/operator/do");
-require("rxjs/add/operator/mergeAll");
-require("rxjs/add/operator/windowCount");
 const rxjs_1 = require("rxjs");
+const operators_1 = require("rxjs/operators");
 class WindowCountPoc {
     test() {
         this.func1();
     }
     func1() {
         // emit every 1s
-        const source = rxjs_1.Observable.interval(1000);
-        const example = source
-            .windowCount(4)
-            .do(() => console.log("NEW WINDOW!"));
-        const subscribeTwo = example
-            .mergeAll()
+        const source = rxjs_1.interval(1000);
+        const example = source.pipe(
+        // start new window every 4 emitted values
+        operators_1.windowCount(4), operators_1.tap(() => console.log("NEW WINDOW!")));
+        const subscribeTwo = example.pipe(
+        // window emits nested observable
+        operators_1.mergeAll())
             .subscribe((val) => console.log(val));
     }
 }
