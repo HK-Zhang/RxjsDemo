@@ -8,4 +8,6 @@ __export(require("./ArrayPoc"));
 __export(require("./CollectionPoc"));
 __export(require("./FunctionPoc"));
 __export(require("./LangPoc"));
+__export(require("./MathPoc"));
+__export(require("./NumberPoc"));
 //# sourceMappingURL=index.js.map
