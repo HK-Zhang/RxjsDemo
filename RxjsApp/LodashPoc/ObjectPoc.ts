@@ -37,4 +37,37 @@ export class ObjectPoc {
         defaults2({ a:  1 },  { b:  2 },  { a:  3 });
             //  => { 'a': 1, 'b': 2 }
     }
+
+    public atFunc() {
+        const object = { a: [{ b: { c: 3 } }, 4] };
+
+        _.at(object, ["a[0].b.c", "a[1]"]);
+        //  => [3, 4]
+
+        function Shape() {
+            this.x = 0;
+            this.y = 0;
+        }
+
+        function Circle() {
+            Shape.call(this);
+        }
+
+        Circle.prototype = _.create(Shape.prototype, {
+            constructor: Circle,
+        });
+
+        const circle = new Circle();
+        // circle instanceof Circle;
+        //  => true
+
+        // circle instanceof Shape;
+        //  => true
+
+        _.defaults({ a: 1 }, { b: 2 }, { a: 3 });
+        //  => { 'a': 1, 'b': 2 }
+
+        _.defaultsDeep({  a: {  b: 2  }  }, {  a: {  b: 1, c: 3  }  });
+        //  => { 'a': { 'b': 2, 'c': 3 } }
+    }
 }
