@@ -70,4 +70,71 @@ export class ObjectPoc {
         _.defaultsDeep({  a: {  b: 2  }  }, {  a: {  b: 1, c: 3  }  });
         //  => { 'a': { 'b': 2, 'c': 3 } }
     }
+
+    public findKeyFunc() {
+        const  users  = {
+            barney: {  age: 36, active: true  },
+            fred: {  age: 40, active: false  },
+            pebbles: {  age: 1, active: true  },
+        };
+
+        _.findKey(users, (o) => o.age  <  40);
+        //  => 'barney' (iteration order is not guaranteed)
+
+        //  The `_.matches` iteratee shorthand.
+        _.findKey(users, {  age: 1, active: true  });
+        //  => 'pebbles'
+
+        //  The `_.matchesProperty` iteratee shorthand.
+        _.findKey(users, ["active", false]);
+        //  => 'fred'
+
+        //  The `_.property` iteratee shorthand.
+        _.findKey(users, "active");
+        //  => 'barney'
+
+        _.findLastKey(users, (o) => o.age  <  40);
+        //  => returns 'pebbles' assuming `_.findKey` returns 'barney'
+
+        //  The `_.matches` iteratee shorthand.
+        _.findLastKey(users, {  age: 36, active: true  });
+        //  => 'barney'
+
+        //  The `_.matchesProperty` iteratee shorthand.
+        _.findLastKey(users, ["active", false]);
+        //  => 'fred'
+
+        //  The `_.property` iteratee shorthand.
+        _.findLastKey(users, "active");
+        //  => 'pebbles'
+    }
+
+    public forFunc() {
+        function Foo() {
+            this.a = 1;
+            this.b = 2;
+        }
+
+        Foo.prototype.c = 3;
+
+        _.forIn(new Foo(), (value, key) => {
+            console.log(key);
+        });
+        //  => Logs 'a', 'b', then 'c' (iteration order is not guaranteed).
+
+        _.forInRight(new Foo(), (value, key) => {
+            console.log(key);
+        });
+        //  => Logs 'c', 'b', then 'a' assuming `_.forIn` logs 'a', 'b', then 'c'.
+
+        _.forOwn(new  Foo(), (value, key)  => {
+            console.log(key);
+        });
+        //  => Logs 'a' then 'b' (iteration order is not guaranteed).
+
+        _.forOwnRight(new  Foo(), (value, key) =>  {
+            console.log(key);
+        });
+        //  => Logs 'b' then 'a' assuming `_.forOwn` logs 'a' then 'b'.
+    }
 }
