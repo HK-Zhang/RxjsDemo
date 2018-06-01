@@ -137,4 +137,55 @@ export class ObjectPoc {
         });
         //  => Logs 'b' then 'a' assuming `_.forOwn` logs 'a' then 'b'.
     }
+
+    public functionFun() {
+        function Foo() {
+            this.a = _.constant("a");
+            this.b = _.constant("b");
+        }
+
+        Foo.prototype.c = _.constant("c");
+
+        _.functions(new Foo());
+        //  => ['a', 'b']
+
+        _.functionsIn(new Foo());
+        //  => ['a', 'b', 'c']
+
+        const object = { a: [{ b: { c: 3 } }] };
+        const  other  = _.create({  a: _.create({  b: 2  })  });
+
+        _.get(object, "a[0].b.c");
+        //  => 3
+
+        _.get(object, ["a", "0", "b", "c"]);
+        //  => 3
+
+        _.get(object, "a.b.c", "default");
+        //  => 'default'
+
+        _.has(object, "a");
+        //  => true
+
+        _.has(object, "a.b");
+        //  => true
+
+        _.has(object, ["a", "b"]);
+        //  => true
+
+        _.has(other, "a");
+        //  => false
+
+        _.hasIn(other, "a");
+        //  => true
+
+        _.hasIn(other, "a.b");
+        //  => true
+
+        _.hasIn(other, ["a", "b"]);
+        //  => true
+
+        _.hasIn(other, "b");
+        //  => false
+    }
 }
