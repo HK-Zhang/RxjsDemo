@@ -1,6 +1,6 @@
-﻿import "rxjs/add/observable/interval";
-import "rxjs/add/operator/bufferCount";
-import { Observable } from "rxjs";
+﻿import { interval, Observable } from "rxjs";
+import { bufferCount } from "rxjs/operators";
+
 
 export class BufferCountPoc {
 
@@ -12,9 +12,9 @@ export class BufferCountPoc {
 
     public func1() {
         // Create an observable that emits a value every second
-        const source = Observable.interval(1000);
+        const source = interval(1000);
         // After three values are emitted, pass on as an array of buffered values
-        const bufferThree = source.bufferCount(3);
+        const bufferThree = source.pipe(bufferCount(3));
         // Print values to console
         // ex. output [0,1,2]...[3,4,5]
         const subscribe = bufferThree.subscribe((val) =>
@@ -24,7 +24,7 @@ export class BufferCountPoc {
 
     public func2() {
         // Create an observable that emits a value every second
-        const source = Observable.interval(1000);
+        const source = interval(1000);
         /*
         bufferCount also takes second argument, when to start the next buffer
         for instance, if we have a bufferCount of 3 but second argument (startBufferEvery) of 1:
@@ -42,7 +42,7 @@ export class BufferCountPoc {
         buffer 3: [2, 3]
         buffer 4: [3]
         */
-        const bufferEveryOne = source.bufferCount(3, 1);
+        const bufferEveryOne = source.pipe(bufferCount(3, 1));
         // Print values to console
         const subscribe = bufferEveryOne.subscribe((val) =>
             console.log("Start Buffer Every 1:", val),
