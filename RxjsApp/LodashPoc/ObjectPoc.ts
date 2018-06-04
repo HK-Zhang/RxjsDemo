@@ -188,4 +188,78 @@ export class ObjectPoc {
         _.hasIn(other, "b");
         //  => false
     }
+
+    public invertFun() {
+        const object = { a: 1, b: 2, c: 1 };
+
+        _.invert(object);
+        //  => { '1': 'c', '2': 'b' }
+
+        _.invertBy(object);
+        //  => { '1': ['a', 'c'], '2': ['b'] }
+
+        _.invertBy(object, (value) => "group" + value);
+        //  => { 'group1': ['a', 'c'], 'group2': ['b'] }
+
+        const object2 = { a: [{ b: { c: [1, 2, 3, 4] } }] };
+
+        _.invoke(object2, "a[0].b.c.slice", 1, 3);
+        //  => [2, 3]
+
+        function Foo() {
+            this.a = 1;
+            this.b = 2;
+        }
+
+        Foo.prototype.c = 3;
+
+        _.keys(new Foo());
+        //  => ['a', 'b'] (iteration order is not guaranteed)
+
+        _.keys("hi");
+        //  => ['0', '1']
+
+        _.keysIn(new Foo());
+        //  => ['a', 'b', 'c'] (iteration order is not guaranteed)
+
+        _.mapKeys({ a: 1, b: 2 }, (value, key) => key + value);
+        //  => { 'a1': 1, 'b2': 2 }
+
+        const  users  = {
+            fred: {  user: "fred", age: 40  },
+            pebbles: {  user: "pebbles", age: 1  },
+        };
+
+        _.mapValues(users, (o)  => o.age);
+        //  => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+
+        //  The `_.property` iteratee shorthand.
+        _.mapValues(users, "age");
+        //  => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+    }
+
+    public mergeFunc() {
+        const object = {
+            a: [{ b: 2 }, { d: 4 }],
+        };
+
+        const other = {
+            a: [{ c: 3 }, { e: 5 }],
+        };
+
+        _.merge(object, other);
+        //  => { 'a': [{ 'b': 2, 'c': 3 }, { 'd': 4, 'e': 5 }] }
+
+        function  customizer(objValue, srcValue)  {
+            if (_.isArray(objValue))  {
+                return  objValue.concat(srcValue);
+            }
+        }
+
+        const  object1  = {  a: [1], b: [2]  };
+        const  other1  = {  a: [3], b: [4]  };
+
+        _.mergeWith(object1, other1, customizer);
+        //  => { 'a': [1, 3], 'b': [2, 4] }
+    }
 }
