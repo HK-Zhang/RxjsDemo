@@ -1,6 +1,5 @@
-﻿import "rxjs/add/observable/interval";
-import "rxjs/add/operator/mapTo";
-import { Observable } from "rxjs";
+﻿import { interval, Observable } from "rxjs";
+import { mapTo} from "rxjs/operators";
 
 export class MaptoPoc {
 
@@ -10,9 +9,9 @@ export class MaptoPoc {
 
     public func1() {
         // emit value every two seconds
-        const source = Observable.interval(2000);
+        const source = interval(2000);
         // map all emissions to one value
-        const example = source.mapTo("HELLO WORLD!");
+        const example = source.pipe(mapTo("HELLO WORLD!"));
         // output: 'HELLO WORLD!'...'HELLO WORLD!'...'HELLO WORLD!'...
         const subscribe = example.subscribe((val) => console.log(val));
     }
