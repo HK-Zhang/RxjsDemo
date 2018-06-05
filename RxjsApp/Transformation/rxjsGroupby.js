@@ -1,10 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/observable/from");
-require("rxjs/add/operator/groupBy");
-require("rxjs/add/operator/mergeMap");
-require("rxjs/add/operator/toArray");
 const rxjs_1 = require("rxjs");
+const operators_1 = require("rxjs/operators");
 class GroupByPoc {
     test() {
         this.func1();
@@ -17,11 +14,11 @@ class GroupByPoc {
             { name: "Sarah", age: 35 },
         ];
         // emit each person
-        const source = rxjs_1.Observable.from(people);
+        const source = rxjs_1.from(people);
         // group by age
-        const example = source
-            .groupBy((person) => person.age)
-            .mergeMap((group) => group.toArray());
+        const example = source.pipe(operators_1.groupBy((person) => person.age)
+        // return each item in group as array
+        , operators_1.mergeMap((group) => group.pipe(operators_1.toArray())));
         /*
           output:
           [{age: 25, name: "Sue"},{age: 25, name: "Frank"}]

@@ -1,24 +1,23 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/observable/of");
-require("rxjs/add/operator/expand");
-require("rxjs/add/operator/take");
 const rxjs_1 = require("rxjs");
+const operators_1 = require("rxjs/operators");
 class ExpandPoc {
     test() {
         this.func1();
     }
     func1() {
         // emit 2
-        const source = rxjs_1.Observable.of(2);
+        const source = rxjs_1.of(2);
         const example = source
-            .expand((val) => {
+            .pipe(operators_1.expand((val) => {
             // 2,3,4,5,6
             console.log(`Passed value: ${val}`);
             // 3,4,5,6
-            return rxjs_1.Observable.of(1 + val);
+            return rxjs_1.of(1 + val);
         })
-            .take(5);
+        // call 5 times
+        , operators_1.take(5));
         /*
             "RESULT: 2"
             "Passed value: 2"
