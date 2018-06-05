@@ -262,4 +262,20 @@ export class ObjectPoc {
         _.mergeWith(object1, other1, customizer);
         //  => { 'a': [1, 3], 'b': [2, 4] }
     }
+
+    public omitFunc() {
+        const object = { a: 1, b: "2", c: 3 };
+
+        _.omit(object, ["a", "c"]);
+        //  => { 'b': '2' }
+
+        _.omitBy(object, _.isNumber);
+        //  => { 'b': '2' }
+
+        _.pick(object, ["a", "c"]);
+        //  => { 'a': 1, 'c': 3 }
+
+        _.pickBy(object,  _.isNumber);
+        //  => { 'a': 1, 'c': 3 }
+    }
 }
