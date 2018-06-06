@@ -278,4 +278,94 @@ export class ObjectPoc {
         _.pickBy(object,  _.isNumber);
         //  => { 'a': 1, 'c': 3 }
     }
+
+    public resultFunc() {
+        const  object  = {  a: [{  b: {  c1: 3, c2: _.constant(4)  }  }]  };
+
+        _.result(object, "a[0].b.c1");
+        //  => 3
+
+        _.result(object, "a[0].b.c2");
+        //  => 4
+
+        _.result(object, "a[0].b.c3", "default");
+        //  => 'default'
+
+        _.result(object, "a[0].b.c3", _.constant("default"));
+        //  => 'default'
+    }
+
+    public setFunc() {
+        const object = { a: [{ b: { c: 3 } }] };
+
+        _.set(object, "a[0].b.c", 4);
+        console.log(object.a[0].b.c);
+        //  => 4
+
+        _.set(object, ["x", "0", "y", "z"], 5);
+        // console.log(object.x[0].y.z);
+        //  => 5
+
+        _.setWith({}, "[0][1]", "a", Object);
+        //  => { '0': { '1': 'a' } }
+
+        function  Foo()  {
+            this.a  = 1;
+            this.b  = 2;
+        }
+
+        Foo.prototype.c  = 3;
+
+        _.toPairs(new  Foo());
+        //  => [['a', 1], ['b', 2]] (iteration order is not guaranteed)
+
+        _.toPairsIn(new  Foo());
+        //  => [['a', 1], ['b', 2], ['c', 3]] (iteration order is not guaranteed)
+    }
+
+    public unsetFunc() {
+        const  object  = {  a: [{  b: {  c: 7  }  }]  };
+        _.unset(object, "a[0].b.c");
+        //  => true
+
+        console.log(object);
+        //  => { 'a': [{ 'b': {} }] };
+
+        _.unset(object, ["a", "0", "b", "c"]);
+        //  => true
+
+        console.log(object);
+        //  => { 'a': [{ 'b': {} }] };
+    }
+
+    public updateFunc() {
+        const object = { a: [{ b: { c: 3 } }] };
+
+        _.update(object, "a[0].b.c", (n) => n * n);
+        console.log(object.a[0].b.c);
+        //  => 9
+
+        _.update(object, "a[0].b.c", (n) => n ? n + 1 : 0 );
+        console.log(object.a[0].b.c);
+        //  => 0
+
+        _.updateWith({}, "[0][1]", _.constant("a"), Object);
+        //  => { '0': { '1': 'a' } }
+
+        function  Foo()  {
+            this.a  = 1;
+            this.b  = 2;
+        }
+
+        Foo.prototype.c  = 3;
+
+        _.values(new  Foo());
+        //  => [1, 2] (iteration order is not guaranteed)
+
+        _.values("hi");
+        //  => ['h', 'i']
+
+        _.valuesIn(new  Foo());
+        //  => [1, 2, 3] (iteration order is not guaranteed)
+    }
 }
