@@ -1,4 +1,5 @@
-﻿import { Observable } from "rxjs";
+﻿import { from, Observable } from "rxjs";
+import { distinctUntilChanged } from "rxjs/operators";
 
 export class RxjsDistinctUntilChangedPoc {
     public test() {
@@ -9,7 +10,7 @@ export class RxjsDistinctUntilChangedPoc {
     public func1() {
 
         // only output distinct values, based on the last emitted value
-        const myArrayWithDuplicatesInARow = Observable.from([
+        const myArrayWithDuplicatesInARow = from([
             1,
             1,
             2,
@@ -20,8 +21,8 @@ export class RxjsDistinctUntilChangedPoc {
             3,
         ]);
 
-        const distinctSub = myArrayWithDuplicatesInARow
-            .distinctUntilChanged()
+        const distinctSub = myArrayWithDuplicatesInARow.pipe(
+            distinctUntilChanged())
             // output: 1,2,3,1,2,3
             .subscribe((val) => console.log("DISTINCT SUB:", val));
 
@@ -33,14 +34,14 @@ export class RxjsDistinctUntilChangedPoc {
     public func2() {
         const sampleObject = { name: "Test" };
         // Objects must be same reference
-        const myArrayWithDuplicateObjects = Observable.from([
+        const myArrayWithDuplicateObjects = from([
             sampleObject,
             sampleObject,
             sampleObject,
         ]);
         // only out distinct objects, based on last emitted value
-        const nonDistinctObjects = myArrayWithDuplicateObjects
-            .distinctUntilChanged()
+        const nonDistinctObjects = myArrayWithDuplicateObjects.pipe(
+            distinctUntilChanged())
             // output: 'DISTINCT OBJECTS: {name: 'Test'}
             .subscribe((val) => console.log("DISTINCT OBJECTS:", val));
     }

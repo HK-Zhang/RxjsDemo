@@ -1,38 +1,38 @@
-﻿var Rx = require('rxjs/Rx');
+﻿import { from, Observable, of } from "rxjs";
+import { debounceTime, delay, flatMap } from "rxjs/operators";
 
 export class DebounceTimePoc {
-    test() {
+    public test() {
         this.func1();
     }
 
-    func1() {
+    public func1() {
 
-        var times = [
+        const times = [
             { value: 0, time: 100 },
             { value: 1, time: 600 },
             { value: 2, time: 400 },
             { value: 3, time: 700 },
-            { value: 4, time: 200 }
+            { value: 4, time: 200 },
         ];
 
         // Delay each item by time and project value;
-        var source = Rx.Observable.from(times)
-            .flatMap(function (item) {
-                return Rx.Observable
-                    .of(item.value)
-                    .delay(item.time);
+        const source = from(times).pipe(
+            flatMap((item) => {
+                return of(item.value).pipe(
+                    delay(item.time));
             })
-            .debounceTime(500 /* ms */);
+            , debounceTime(500 /* ms */));
 
-        var subscription = source.subscribe(
-            function (x) {
-                console.log('Next: %s', x);
+        const subscription = source.subscribe(
+            (x) => {
+                console.log("Next: %s", x);
             },
-            function (err) {
-                console.log('Error: %s', err);
+            (err) => {
+                console.log("Error: %s", err);
             },
-            function () {
-                console.log('Completed');
+            () => {
+                console.log("Completed");
             });
 
         // => Next: 3

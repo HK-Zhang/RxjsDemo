@@ -1,5 +1,5 @@
-import "rxjs/add/operator/ignoreElements";
-import { Observable } from "rxjs";
+import { interval, Observable, of } from "rxjs";
+import { flatMap, ignoreElements, take } from "rxjs/operators";
 
 export class IgnoreElementPoc {
 
@@ -10,9 +10,9 @@ export class IgnoreElementPoc {
 
     public func1() {
         // emit value every 100ms
-        const source = Observable.interval(100);
+        const source = interval(100);
         // ignore everything but complete
-        const example = source.take(5).ignoreElements();
+        const example = source.pipe(take(5), ignoreElements());
         // output: "COMPLETE!"
         const subscribe = example.subscribe(
             (val) => console.log(`NEXT: ${val}`),
@@ -23,16 +23,16 @@ export class IgnoreElementPoc {
 
     public func2() {
         // emit value every 100ms
-        const source = Observable.interval(100);
+        const source = interval(100);
         // ignore everything but error
-        const error = source
-            .flatMap((val) => {
+        const error = source.pipe(
+            flatMap((val) => {
                 if (val === 4) {
                     return Observable.throw(`ERROR AT ${val}`);
                 }
-                return Observable.of(val);
+                return of(val);
             })
-            .ignoreElements();
+            , ignoreElements());
         // output: "ERROR: ERROR AT 4"
         const subscribe = error.subscribe(
             (val) => console.log(`NEXT: ${val}`),

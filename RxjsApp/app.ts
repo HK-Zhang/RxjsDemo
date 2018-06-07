@@ -21,7 +21,7 @@ import { fromJsImPoc, listPoc, mapImPoc, orderedMapImPoc, orderedsetImPoc, setIm
 import { CatchPoc, RetryPoc, RetryWhenPoc } from "./ErrorHandle";
 
 import {
-    debouncePoc, DebounceTimePoc, FilterPoc, FirstPoc, IgnoreElementPoc, lastPoc, RxjsDistinctUntilChangedPoc,
+    DebouncePoc, DebounceTimePoc, FilterPoc, FirstPoc, IgnoreElementPoc, LastPoc, RxjsDistinctUntilChangedPoc,
     SamplePoc,
     SinglePoc, SkipPoc, SkipUntilPoc, SkipWhilePoc, TakePoc, TakeUntilPoc, TakewhilePoc, ThrottlePoc, ThrottleTimePoc,
 } from "./Filter";
