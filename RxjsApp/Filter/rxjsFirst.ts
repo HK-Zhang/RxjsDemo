@@ -1,5 +1,5 @@
 import { from, Observable } from "rxjs";
-import { first } from "rxjs/operators";
+import { first, map } from "rxjs/operators";
 
 
 export class FirstPoc {
@@ -43,7 +43,7 @@ export class FirstPoc {
     public func4() {
         const source = from([1, 2, 3, 4, 5]);
         // no value will pass, emit default
-        const example = source.pipe(first<any>((val) => val > 5, "Nothing"));
+        const example = source.pipe(first<any>((val) => val > 5, "Nothing"), map((val) => `Value: ${val}`));
         // output: 'Nothing'
         const subscribe = example.subscribe((val) => console.log(val));
     }
