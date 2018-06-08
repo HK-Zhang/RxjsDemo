@@ -16,7 +16,7 @@ import { ArrayPoc, CollectionPoc, FunctionPoc, LangPoc, Poc } from "./LodashPoc"
 
 import { DictionaryPoc, QueuePoc, SetPoc } from "./Collections";
 
-import { fromJsImPoc, listPoc, mapImPoc, orderedMapImPoc, orderedsetImPoc, setImPoc } from "./Immutable";
+import { FromJsImPoc, listPoc, mapImPoc, orderedMapImPoc, orderedsetImPoc, setImPoc } from "./Immutable";
 
 import { CatchPoc, RetryPoc, RetryWhenPoc } from "./ErrorHandle";
 
