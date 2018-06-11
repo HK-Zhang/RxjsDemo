@@ -5,6 +5,7 @@ class ClassPoc {
     test() {
         const t = new ClassA_1.ClassA();
         t.pa = "a";
+        // below statement will not work.
         // t.newFunc = () => "Non Hope";
         t.newFunc = () => "Non Hope";
         console.log(t.newFunc());
