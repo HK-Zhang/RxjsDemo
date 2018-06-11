@@ -19,7 +19,8 @@ class PipePoc {
         //     sum,
         // );
         const source$ = rxjs_1.range(0, 10);
-        source$.pipe(filterOutEvens, doubleBy(2), sum).subscribe((x) => console.log(x)); // 40
+        source$.pipe(filterOutEvens, doubleBy(2), sum)
+            .subscribe((x) => console.log(x)); // 40
     }
     func2() {
         const filterOutEvens = operators_1.filter((x) => x % 2 === 0);

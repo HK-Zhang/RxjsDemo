@@ -33,7 +33,7 @@ class FirstPoc {
     func4() {
         const source = rxjs_1.from([1, 2, 3, 4, 5]);
         // no value will pass, emit default
-        const example = source.pipe(operators_1.first((val) => val > 5, "Nothing"));
+        const example = source.pipe(operators_1.first((val) => val > 5, "Nothing"), operators_1.map((val) => `Value: ${val}`));
         // output: 'Nothing'
         const subscribe = example.subscribe((val) => console.log(val));
     }

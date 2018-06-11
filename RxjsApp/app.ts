@@ -34,7 +34,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 
 
 // let a = new fromJsImPoc();
-// const a = new PipePoc();
+const a = new PipePoc();
 // const a = new ZipPoc();
 // let a = new orderedsetImPoc();
 // let a = new racePoc();
@@ -97,7 +97,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new LetPoc();
 // const a = new ToPromisePoc();
 // let a = new TimeoutPoc();
-const a = new PublishPoc();
+// const a = new PublishPoc();
 // let a = new multicastPoc();
 // const a = new BufferPoc();
 // const a = new BufferCountPoc();

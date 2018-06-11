@@ -22,7 +22,11 @@ export class PipePoc {
         // );
 
         const source$ = range(0, 10);
-        source$.pipe(filterOutEvens, doubleBy(2), sum).subscribe((x) => console.log(x)); // 40
+        source$.pipe(
+            filterOutEvens
+            , doubleBy(2)
+            , sum)
+            .subscribe((x) => console.log(x)); // 40
     }
 
     public func2() {
