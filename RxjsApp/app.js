@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const LodashPoc_1 = require("./LodashPoc");
+const Poc_1 = require("./Poc");
 // let a = new fromJsImPoc();
 // const a = new PipePoc();
 // const a = new ZipPoc();
@@ -94,6 +94,7 @@ const LodashPoc_1 = require("./LodashPoc");
 // const a = new BehaviorSubjectPoc();
 // const a = new CollectionPoc();
 // const a = new FunctionPoc();
-const a = new LodashPoc_1.LangPoc();
+// const a = new LangPoc();
+const a = new Poc_1.ClassPoc();
 a.test();
 //# sourceMappingURL=app.js.map
