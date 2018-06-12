@@ -28,13 +28,14 @@ import {
 
 import { MulticastPoc, PublishPoc, SharePoc } from "./Multicasting";
 
-import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
+import { DefaultIfEmptyPoc, EveryPoc, IIFPoc } from "./Conditional";
 
 import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } from "./Subject";
 
 
 // let a = new fromJsImPoc();
-const a = new PipePoc();
+// const a = new PipePoc();
+// const a = new IIFPoc();
 // const a = new ZipPoc();
 // let a = new orderedsetImPoc();
 // let a = new racePoc();
@@ -90,7 +91,7 @@ const a = new PipePoc();
 // let a = new RangePoc();
 // const a = new ThrowPoc();
 // let a = new TimerPoc();
-// let a = new EveryPoc();
+const a = new EveryPoc();
 // let a = new DefaultIfEmptyPoc();
 // let a = new delayPoc();
 // let a = new delayWhenPoc();

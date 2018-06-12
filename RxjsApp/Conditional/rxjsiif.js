@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const rxjs_1 = require("rxjs");
 class IIFPoc {
     test() {
-        // this.func1();
+        this.func1();
     }
     func1() {
         const shouldRun = true;

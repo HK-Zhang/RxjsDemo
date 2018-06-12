@@ -11,9 +11,10 @@ export class EveryPoc {
     public func1() {
         // emit 5 values
         const source = of(1, 2, 3, 4, 5);
-        const example = source.pipe(
-            // is every value even?
-            every((val) => val % 2 === 0));
+
+        // is every value even?
+        const isEveryEven = every((val: number) => val % 2 === 0);
+        const example = source.pipe(isEveryEven);
         // output: false
         const subscribe = example.subscribe((val) => console.log(val));
     }
@@ -21,9 +22,10 @@ export class EveryPoc {
     public func2() {
         // emit 5 values
         const allEvens = of(2, 4, 6, 8, 10);
-        const example = allEvens.pipe(
-            // is every value even?
-            every((val) => val % 2 === 0));
+
+        // is every value even?
+        const isEveryEven = every((val: number) => val % 2 === 0);
+        const example = allEvens.pipe(isEveryEven);
         // output: true
         const subscribe = example.subscribe((val) => console.log(val));
     }

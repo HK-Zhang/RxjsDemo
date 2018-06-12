@@ -5,4 +5,5 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./rxjsEvery"));
 __export(require("./rxjsDefaultIfEmpty"));
+__export(require("./rxjsiif"));
 //# sourceMappingURL=index.js.map

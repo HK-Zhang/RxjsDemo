@@ -3,7 +3,7 @@ import { iif, Observable, of } from "rxjs";
 export class IIFPoc {
 
     public test() {
-        // this.func1();
+        this.func1();
     }
 
     public func1() {
