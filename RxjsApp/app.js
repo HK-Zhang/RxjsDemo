@@ -95,6 +95,7 @@ const Poc_1 = require("./Poc");
 // const a = new CollectionPoc();
 // const a = new FunctionPoc();
 // const a = new LangPoc();
-const a = new Poc_1.ClassPoc();
+// const a = new ClassPoc();
+const a = new Poc_1.CallBagPoc();
 a.test();
 //# sourceMappingURL=app.js.map
