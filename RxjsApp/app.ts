@@ -91,8 +91,8 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new RangePoc();
 // const a = new ThrowPoc();
 // let a = new TimerPoc();
-const a = new EveryPoc();
-// let a = new DefaultIfEmptyPoc();
+// const a = new EveryPoc();
+const a = new DefaultIfEmptyPoc();
 // let a = new delayPoc();
 // let a = new delayWhenPoc();
 // let a = new LetPoc();
