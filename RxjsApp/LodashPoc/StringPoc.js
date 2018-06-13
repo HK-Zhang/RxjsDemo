@@ -65,6 +65,36 @@ class StringPoc {
         _.map(["6", "08", "10"], _.parseInt);
         //  => [6, 8, 10]
     }
+    repeatFunc() {
+        _.repeat("*", 3);
+        //  => '***'
+        _.repeat("abc", 2);
+        //  => 'abcabc'
+        _.repeat("abc", 0);
+        //  => ''
+        _.replace("Hi Fred", "Fred", "Barney");
+        //  => 'Hi Barney'
+        _.snakeCase("Foo Bar");
+        //  => 'foo_bar'
+        _.snakeCase("fooBar");
+        //  => 'foo_bar'
+        _.snakeCase("--FOO-BAR--");
+        //  => 'foo_bar'
+        _.split("a-b-c", "-", 2);
+        //  => ['a', 'b']
+        _.startCase("--foo-bar--");
+        //  => 'Foo Bar'
+        _.startCase("fooBar");
+        //  => 'Foo Bar'
+        _.startCase("__FOO_BAR__");
+        //  => 'FOO BAR'
+        _.startsWith("abc", "a");
+        //  => true
+        _.startsWith("abc", "b");
+        //  => false
+        _.startsWith("abc", "b", 1);
+        //  => true
+    }
 }
 exports.StringPoc = StringPoc;
 //# sourceMappingURL=StringPoc.js.map
