@@ -4,15 +4,16 @@ const rxjs_1 = require("rxjs");
 const operators_1 = require("rxjs/operators");
 class WithLatestFromPoc {
     test() {
-        // this.func1();
+        this.func1();
         // this.func2();
-        this.func0();
+        // this.func0();
     }
     func0() {
-        // emit value every 1s
+        // emit value every 3s
         const source = rxjs_1.of("a", "b", "c");
         const secondSource = rxjs_1.interval(3000);
-        const combindSource = secondSource.pipe(operators_1.withLatestFrom(source), operators_1.map(([f, s]) => s));
+        const getSecondSource = operators_1.map(([f, s]) => s);
+        const combindSource = secondSource.pipe(operators_1.withLatestFrom(source), getSecondSource);
         const result = combindSource.subscribe((x) => console.log(x));
     }
     func1() {
@@ -20,9 +21,10 @@ class WithLatestFromPoc {
         const source = rxjs_1.interval(5000);
         // emit every 1s
         const secondSource = rxjs_1.interval(1000);
-        const example = source.pipe(operators_1.withLatestFrom(secondSource), operators_1.map(([first, second]) => {
+        const concateSources = operators_1.map(([first, second]) => {
             return `First Source (5s): ${first} Second Source (1s): ${second}`;
-        }));
+        });
+        const example = source.pipe(operators_1.withLatestFrom(secondSource), concateSources);
         /*
           "First Source (5s): 0 Second Source (1s): 4"
           "First Source (5s): 1 Second Source (1s): 9"
@@ -37,10 +39,11 @@ class WithLatestFromPoc {
         // emit every 1s
         const secondSource = rxjs_1.interval(1000);
         // withLatestFrom slower than source
-        const example = secondSource
-            .pipe(operators_1.withLatestFrom(source), operators_1.map(([first, second]) => {
+        const concateSources = operators_1.map(([first, second]) => {
             return `Source (1s): ${first} Latest From (5s): ${second}`;
-        }));
+        });
+        // both sources must emit at least 1 value (5s) before emitting
+        const example = secondSource.pipe(operators_1.withLatestFrom(source), concateSources);
         /*
           "Source (1s): 4 Latest From (5s): 0"
           "Source (1s): 5 Latest From (5s): 0"

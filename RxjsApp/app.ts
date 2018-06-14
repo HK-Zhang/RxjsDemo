@@ -67,7 +67,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new PairwisePoc();
 // const a = new MergePoc();
 // let a = new StartWithPoc();
-// const a = new WithLatestFromPoc();
+const a = new WithLatestFromPoc();
 // let a = new FromPoc()
 // let a = new FromPromisePoc()
 // let a = new Poc()
@@ -92,7 +92,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new ThrowPoc();
 // let a = new TimerPoc();
 // const a = new EveryPoc();
-const a = new DefaultIfEmptyPoc();
+// const a = new DefaultIfEmptyPoc();
 // let a = new delayPoc();
 // let a = new delayWhenPoc();
 // let a = new LetPoc();

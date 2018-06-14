@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Conditional_1 = require("./Conditional");
+const Combination_1 = require("./Combination");
 // let a = new fromJsImPoc();
 // const a = new PipePoc();
 // const a = new IIFPoc();
@@ -35,7 +35,7 @@ const Conditional_1 = require("./Conditional");
 // const a = new PairwisePoc();
 // const a = new MergePoc();
 // let a = new StartWithPoc();
-// const a = new WithLatestFromPoc();
+const a = new Combination_1.WithLatestFromPoc();
 // let a = new FromPoc()
 // let a = new FromPromisePoc()
 // let a = new Poc()
@@ -60,7 +60,7 @@ const Conditional_1 = require("./Conditional");
 // const a = new ThrowPoc();
 // let a = new TimerPoc();
 // const a = new EveryPoc();
-const a = new Conditional_1.DefaultIfEmptyPoc();
+// const a = new DefaultIfEmptyPoc();
 // let a = new delayPoc();
 // let a = new delayWhenPoc();
 // let a = new LetPoc();
