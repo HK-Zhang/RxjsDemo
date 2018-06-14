@@ -32,7 +32,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 
 import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } from "./Subject";
 
-import { CallBagPoc, ClassPoc } from "./Poc";
+import { AsyncPoc, CallBagPoc, ClassPoc } from "./Poc";
 
 
 // let a = new fromJsImPoc();
@@ -130,7 +130,9 @@ import { CallBagPoc, ClassPoc } from "./Poc";
 // const a = new FunctionPoc();
 // const a = new LangPoc();
 // const a = new ClassPoc();
-const a = new CallBagPoc();
+// const a = new CallBagPoc();
+const a = new AsyncPoc();
+
 
 
 
