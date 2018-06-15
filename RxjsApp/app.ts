@@ -64,10 +64,10 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new ConcatPoc();
 // const a = new ForkJoinPoc();
 // const a = new CombineLatestPoc();
-// const a = new PairwisePoc();
+const a = new PairwisePoc();
 // const a = new MergePoc();
 // let a = new StartWithPoc();
-const a = new WithLatestFromPoc();
+// const a = new WithLatestFromPoc();
 // let a = new FromPoc()
 // let a = new FromPromisePoc()
 // let a = new Poc()

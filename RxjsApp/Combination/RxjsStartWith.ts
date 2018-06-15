@@ -22,7 +22,11 @@ export class StartWithPoc {
         // emit ('World!', 'Goodbye', 'World!')
         const source = of("World!", "Goodbye", "World!");
         // start with 'Hello', concat current string to previous
-        const example = source.pipe(startWith("Hello"), scan((acc, curr) => `${acc} ${curr}`));
+        const scanSource = scan((acc, curr) => `${acc} ${curr}`);
+
+        const example = source.pipe(
+            startWith("Hello")
+            , scanSource);
         /*
           output:
           "Hello"

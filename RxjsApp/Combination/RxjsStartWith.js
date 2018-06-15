@@ -20,7 +20,8 @@ class StartWithPoc {
         // emit ('World!', 'Goodbye', 'World!')
         const source = rxjs_1.of("World!", "Goodbye", "World!");
         // start with 'Hello', concat current string to previous
-        const example = source.pipe(operators_1.startWith("Hello"), operators_1.scan((acc, curr) => `${acc} ${curr}`));
+        const scanSource = operators_1.scan((acc, curr) => `${acc} ${curr}`);
+        const example = source.pipe(operators_1.startWith("Hello"), scanSource);
         /*
           output:
           "Hello"
