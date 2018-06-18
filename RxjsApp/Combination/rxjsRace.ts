@@ -29,11 +29,15 @@ export class RacePoc {
 
     public func2() {
 
+        const raiserror = map(() => {
+            throw new Error("error");
+        });
+
         // Throws an error and ignore the rest of the observables.
-        const first = of("first").pipe(delay(100)
-            , map(() => {
-                throw new Error("error");
-            }));
+        const first = of("first").pipe(
+            delay(100)
+            , raiserror);
+
         const second = of("second").pipe(delay(200));
         const third = of("third").pipe(delay(300));
 
