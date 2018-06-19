@@ -4,8 +4,8 @@ import { mapTo, merge as mergeOp } from "rxjs/operators";
 
 export class MergePoc {
     public test() {
-        // this.func1();
-        this.func2();
+        this.func1();
+        // this.func2();
     }
 
     public func1() {

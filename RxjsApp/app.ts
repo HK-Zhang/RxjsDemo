@@ -39,7 +39,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new ZipPoc();
 // let a = new orderedsetImPoc();
 // let a = new racePoc();
-const a = new MergeAllPoc();
+// const a = new MergeAllPoc();
 // let a = new setImPoc();
 // const a = new CombineAllPoc();
 // let a = new orderedMapImPoc();
@@ -62,7 +62,7 @@ const a = new MergeAllPoc();
 // let a = new MapPoc();
 // const a = new ConcatMapPoc();
 // const a = new ConcatPoc();
-// const a = new ForkJoinPoc();
+const a = new ForkJoinPoc();
 // const a = new CombineLatestPoc();
 // const a = new PairwisePoc();
 // const a = new MergePoc();

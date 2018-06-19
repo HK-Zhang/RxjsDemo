@@ -31,9 +31,17 @@ class MergeAllPoc {
           is delayed for 1.0s.  The mergeAll operator takes an optional argument that determines how
           many inner observables to subscribe to at a time.  The rest of the observables are stored
           in a backlog waiting to be subscribe.
+            500	    1000	1500	2000	2500	3000	3500	4000	4500	5000	5500	6000
+            A	    0	    1	    2	    3	    4
+            B A0				    0	    1	    2
+            B A1					        0	    1	    2
+            B A2						            0	    1	    2
+            B A3							                0	    1	    2
+            B A4								                    0	    1	    2
+
         */
         const takeThree = operators_1.map((val) => interval2$.pipe(operators_1.delay(1000), operators_1.take(3)));
-        const example = interval$.pipe(takeThree, operators_1.mergeAll(3))
+        const example = interval$.pipe(takeThree, operators_1.mergeAll(2))
             .subscribe((val) => console.log(val));
         /*
           The subscription is completed once the operator emits all values.

@@ -4,8 +4,8 @@ const rxjs_1 = require("rxjs");
 const operators_1 = require("rxjs/operators");
 class MergePoc {
     test() {
-        // this.func1();
-        this.func2();
+        this.func1();
+        // this.func2();
     }
     func1() {
         // emit every 2.5 seconds
