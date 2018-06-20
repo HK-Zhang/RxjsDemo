@@ -61,8 +61,8 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // const a = new MergeMapPoc();
 // let a = new MapPoc();
 // const a = new ConcatMapPoc();
-// const a = new ConcatPoc();
-const a = new ForkJoinPoc();
+const a = new ConcatPoc();
+// const a = new ForkJoinPoc();
 // const a = new CombineLatestPoc();
 // const a = new PairwisePoc();
 // const a = new MergePoc();

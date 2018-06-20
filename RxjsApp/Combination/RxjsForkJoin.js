@@ -9,6 +9,7 @@ class ForkJoinPoc {
     func1() {
         const getPostOne$ = rxjs_1.timer(1000).pipe(operators_1.mapTo({ id: 1 }));
         const getPostTwo$ = rxjs_1.timer(2000).pipe(operators_1.mapTo({ id: 2 }));
+        // Runs all observable sequences in parallel and collect their last elements.
         rxjs_1.forkJoin(getPostOne$, getPostTwo$).subscribe((res) => console.log(res));
     }
 }
