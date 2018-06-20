@@ -98,13 +98,41 @@ export class UtilPoc {
         _.map(objects, _.method(["a", "b"]));
         //  => [2, 1]
 
-        const  array  = _.times(3, _.constant);
-        const objects2  = {  a: array, b: array, c: array  };
+        const array = _.times(3, _.constant);
+        const objects2 = { a: array, b: array, c: array };
 
         _.map(["a[2]", "c[0]"], _.methodOf(objects2));
         //  => [2, 0]
 
         _.map([["a", "2"], ["c", "0"]], _.methodOf(objects2));
         //  => [2, 0]
+
+        _.times(2, _.noop);
+        //  => [undefined, undefined]
+    }
+
+    public vowelsFunc() {
+        function  vowels(str)  {
+            return  _.filter(str, (v) => /[aeiou]/i.test(v));
+        }
+
+        _.mixin({  vowels  });
+        (_ as any).vowels("fred");
+        //  => ['e']
+
+        (_("fred") as any).vowels().value();
+        //  => ['e']
+
+        _.mixin({  vowels  }, {  chain: false  });
+        (_("fred") as any).vowels();
+        //  => ['e']
+
+        let  func  = _.nthArg(1);
+        func("a", "b", "c", "d");
+        //  => 'b'
+
+        func  = _.nthArg(-2);
+        func("a", "b", "c", "d");
+        //  => 'c'
     }
 }
