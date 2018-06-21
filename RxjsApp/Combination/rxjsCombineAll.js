@@ -10,8 +10,11 @@ class CombineAllPoc {
     func1() {
         // emit every 1s, take 2
         const source = rxjs_1.interval(1000).pipe(operators_1.take(2));
+        const composeRst = (val) => operators_1.map((i) => `Result (${val}): ${i}`);
+        const secondSource = (val) => rxjs_1.interval(1000).pipe(composeRst(val), operators_1.take(5));
+        const toSecondSource = operators_1.map((val) => secondSource(val));
         // map each emitted value from source to interval observable that takes 5 values
-        const example = source.pipe(operators_1.map((val) => rxjs_1.interval(1000).pipe(operators_1.map((i) => `Result (${val}): ${i}`), operators_1.take(5))));
+        const example = source.pipe(toSecondSource);
         /*
           2 values from source will map to 2 (inner) interval observables that emit every 1s
           combineAll uses combineLatest strategy, emitting the last value from each
