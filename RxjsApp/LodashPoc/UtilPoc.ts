@@ -112,27 +112,127 @@ export class UtilPoc {
     }
 
     public vowelsFunc() {
-        function  vowels(str)  {
-            return  _.filter(str, (v) => /[aeiou]/i.test(v));
+        function vowels(str) {
+            return _.filter(str, (v) => /[aeiou]/i.test(v));
         }
 
-        _.mixin({  vowels  });
+        _.mixin({ vowels });
         (_ as any).vowels("fred");
         //  => ['e']
 
         (_("fred") as any).vowels().value();
         //  => ['e']
 
-        _.mixin({  vowels  }, {  chain: false  });
+        _.mixin({ vowels }, { chain: false });
         (_("fred") as any).vowels();
         //  => ['e']
 
-        let  func  = _.nthArg(1);
+        let func = _.nthArg(1);
         func("a", "b", "c", "d");
         //  => 'b'
 
-        func  = _.nthArg(-2);
+        func = _.nthArg(-2);
         func("a", "b", "c", "d");
         //  => 'c'
+    }
+
+    /**
+     * overFunc
+     */
+    public overFunc() {
+        const func = _.over([Math.max, Math.min]);
+
+        func(1, 2, 3, 4);
+        //  => [4, 1]
+    }
+
+    public overEveryFunc() {
+        const func = _.overEvery([Boolean, isFinite]);
+
+        func(1);
+        //  => true
+
+        func(null);
+        //  => false
+
+        func(NaN);
+        //  => false
+    }
+
+    public overSomeFunc() {
+        const func = _.overSome([Boolean, isFinite]);
+
+        func(1);
+        //  => true
+
+        func(null);
+        //  => true
+
+        func(NaN);
+        //  => false
+    }
+
+    public propertyFunc() {
+        const objects = [
+            { a: { b: 2 } },
+            { a: { b: 1 } },
+        ];
+
+        _.map(objects, _.property("a.b"));
+        //  => [2, 1]
+
+        _.map(_.sortBy(objects, _.property(["a", "b"])), "a.b");
+        //  => [1, 2]
+
+        const array = [0, 1, 2];
+        const objectl = { a: array, b: array, c: array };
+
+        _.map(["a[2]", "c[0]"], _.propertyOf(objectl ));
+        //  => [2, 0]
+
+        _.map([["a", "2"], ["c", "0"]], _.propertyOf(objectl ));
+        //  => [2, 0]
+
+        _.range(4);
+        //  => [0, 1, 2, 3]
+
+        _.range(-4);
+        //  => [0, -1, -2, -3]
+
+        _.range(1, 5);
+        //  => [1, 2, 3, 4]
+
+        _.range(0, 20, 5);
+        //  => [0, 5, 10, 15]
+
+        _.range(0, -4, -1);
+        //  => [0, -1, -2, -3]
+
+        _.range(1, 4, 0);
+        //  => [1, 1, 1]
+
+        _.range(0);
+        //  => []
+
+        _.rangeRight(4);
+        //  => [3, 2, 1, 0]
+
+        _.rangeRight(-4);
+        //  => [-3, -2, -1, 0]
+
+        _.rangeRight(1, 5);
+        //  => [4, 3, 2, 1]
+
+        _.rangeRight(0, 20, 5);
+        //  => [15, 10, 5, 0]
+
+        _.rangeRight(0, -4, -1);
+        //  => [-3, -2, -1, 0]
+
+        _.rangeRight(1, 4, 0);
+        //  => [1, 1, 1]
+
+        _.rangeRight(0);
+        //  => []
     }
 }
