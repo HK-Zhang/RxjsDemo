@@ -235,4 +235,24 @@ export class UtilPoc {
         _.rangeRight(0);
         //  => []
     }
+
+    public runInContextFunc() {
+        _.mixin({  foo: _.constant("foo")  });
+
+        const  lodash  = _.runInContext();
+        lodash.mixin({  bar: lodash.constant("bar")  });
+
+        _.isFunction((_ as any).foo);
+        //  => true
+        _.isFunction((_ as any).bar);
+        //  => false
+
+        lodash.isFunction((lodash as any).foo);
+        //  => false
+        lodash.isFunction((lodash as any).bar);
+        //  => true
+
+        //  Create a suped-up `defer` in Node.js.
+        const  defer  = _.runInContext({  setTimeout: setImmediate  }).defer;
+    }
 }
