@@ -41,7 +41,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new racePoc();
 // const a = new MergeAllPoc();
 // let a = new setImPoc();
-const a = new CombineAllPoc();
+// const a = new CombineAllPoc();
 // let a = new orderedMapImPoc();
 // let a = new throttleTimePoc();
 // let a = new throttlePoc();
@@ -74,7 +74,7 @@ const a = new CombineAllPoc();
 // let a = new SetPoc()
 // let a = new QueuePoc()
 // let a = new DictionaryPoc()
-// let a = new CatchPoc();
+const a = new CatchPoc();
 // const a = new RetryPoc();
 // let a = new RetryWhenPoc();
 // let a = new DebounceTimePoc();

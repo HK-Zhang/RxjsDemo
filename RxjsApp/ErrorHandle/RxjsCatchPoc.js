@@ -13,7 +13,8 @@ class CatchPoc {
         // emit error
         const source = rxjs_1.throwError("This is an error!");
         // gracefully handle error, returning observable with error message
-        const example = source.pipe(operators_1.catchError((val) => rxjs_1.of(`I caught: ${val}`)));
+        const errorHandler = operators_1.catchError((val) => rxjs_1.of(`I caught: ${val}`));
+        const example = source.pipe(errorHandler);
         // output: 'I caught: This is an error'
         const subscribe = example.subscribe((val) => console.log(val));
     }
@@ -23,7 +24,9 @@ class CatchPoc {
         // emit single value after 1 second
         const source = rxjs_1.timer(1000);
         // catch rejected promise, returning observable containing error message
-        const example = source.pipe(operators_1.flatMap(() => rxjs_1.from(myBadPromise()).pipe(operators_1.catchError((error) => rxjs_1.of(`Bad Promise: ${error}`)))));
+        const errorHandler = operators_1.catchError((error) => rxjs_1.of(`Bad Promise: ${error}`));
+        const promise$ = rxjs_1.from(myBadPromise()).pipe(errorHandler);
+        const example = source.pipe(operators_1.flatMap(() => promise$));
         // output: 'Bad Promise: Rejected'
         const subscribe = example.subscribe((val) => console.log(val));
     }
@@ -33,7 +36,9 @@ class CatchPoc {
         // emit single value after 1 second
         const source = rxjs_1.timer(1000);
         // catch rejected promise, returning observable containing error message
-        const example = source.pipe(operators_1.flatMap(() => rxjs_1.from(myBadPromise()).pipe(operators_1.catchError((error) => rxjs_1.of(`Bad Promise: ${error}`)))));
+        const errorHandler = operators_1.catchError((error) => rxjs_1.of(`Bad Promise: ${error}`));
+        const promise$ = rxjs_1.from(myBadPromise()).pipe(errorHandler);
+        const example = source.pipe(operators_1.flatMap(() => promise$));
         // output: 'Bad Promise: Rejected'
         const subscribe = example.subscribe((val) => console.log(val));
     }

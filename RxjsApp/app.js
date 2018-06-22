@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Combination_1 = require("./Combination");
+const ErrorHandle_1 = require("./ErrorHandle");
 // let a = new fromJsImPoc();
 // const a = new PipePoc();
 // const a = new IIFPoc();
@@ -9,7 +9,7 @@ const Combination_1 = require("./Combination");
 // let a = new racePoc();
 // const a = new MergeAllPoc();
 // let a = new setImPoc();
-const a = new Combination_1.CombineAllPoc();
+// const a = new CombineAllPoc();
 // let a = new orderedMapImPoc();
 // let a = new throttleTimePoc();
 // let a = new throttlePoc();
@@ -42,7 +42,7 @@ const a = new Combination_1.CombineAllPoc();
 // let a = new SetPoc()
 // let a = new QueuePoc()
 // let a = new DictionaryPoc()
-// let a = new CatchPoc();
+const a = new ErrorHandle_1.CatchPoc();
 // const a = new RetryPoc();
 // let a = new RetryWhenPoc();
 // let a = new DebounceTimePoc();

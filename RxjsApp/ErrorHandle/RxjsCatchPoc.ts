@@ -13,7 +13,8 @@ export class CatchPoc {
         // emit error
         const source = throwError("This is an error!");
         // gracefully handle error, returning observable with error message
-        const example = source.pipe(catchError((val) => of(`I caught: ${val}`)));
+        const errorHandler = catchError((val) => of(`I caught: ${val}`));
+        const example = source.pipe(errorHandler);
         // output: 'I caught: This is an error'
         const subscribe = example.subscribe((val) => console.log(val));
     }
@@ -25,10 +26,11 @@ export class CatchPoc {
         // emit single value after 1 second
         const source = timer(1000);
         // catch rejected promise, returning observable containing error message
+        const errorHandler = catchError((error) => of(`Bad Promise: ${error}`));
+        const promise$ = from(myBadPromise()).pipe(errorHandler);
+
         const example = source.pipe(
-            flatMap(() => from(myBadPromise()).pipe(
-                catchError((error) => of(`Bad Promise: ${error}`)),
-            )));
+            flatMap(() => promise$));
         // output: 'Bad Promise: Rejected'
         const subscribe = example.subscribe((val) => console.log(val));
     }
@@ -40,12 +42,14 @@ export class CatchPoc {
         // emit single value after 1 second
         const source = timer(1000);
         // catch rejected promise, returning observable containing error message
-        const example = source.pipe(flatMap(() =>
-        from(myBadPromise()).pipe(catchError((error) =>
-                of(`Bad Promise: ${error}`),
-            )),
-        ));
-        // output: 'Bad Promise: Rejected'
+        const errorHandler = catchError((error) =>
+            of(`Bad Promise: ${error}`),
+        );
+
+        const promise$ = from(myBadPromise()).pipe(errorHandler);
+
+        const example = source.pipe(flatMap(() => promise$));
+        // output: 'Approve!'
         const subscribe = example.subscribe((val) => console.log(val));
     }
 }
