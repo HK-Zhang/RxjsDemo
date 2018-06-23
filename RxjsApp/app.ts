@@ -74,8 +74,8 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 // let a = new SetPoc()
 // let a = new QueuePoc()
 // let a = new DictionaryPoc()
-const a = new CatchPoc();
-// const a = new RetryPoc();
+// const a = new CatchPoc();
+const a = new RetryPoc();
 // let a = new RetryWhenPoc();
 // let a = new DebounceTimePoc();
 // let a = new RxjsDistinctUntilChangedPoc();

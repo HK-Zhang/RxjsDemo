@@ -9,16 +9,14 @@ class RetryPoc {
     func1() {
         // emit value every 1s
         const source = rxjs_1.interval(1000);
-        const example = source
-            .pipe(operators_1.switchMap((val) => {
+        const porcess = operators_1.switchMap((val) => {
             // throw error for demonstration
             if (val > 5) {
                 return rxjs_1.throwError("Error!");
             }
             return rxjs_1.of(val);
-        })
-        // retry 2 times on error
-        , operators_1.retry(2));
+        });
+        const example = source.pipe(porcess, operators_1.retry(2));
         /*
           output:
           0..1..2..3..4..5..

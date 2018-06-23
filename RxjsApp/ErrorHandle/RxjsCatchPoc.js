@@ -39,7 +39,7 @@ class CatchPoc {
         const errorHandler = operators_1.catchError((error) => rxjs_1.of(`Bad Promise: ${error}`));
         const promise$ = rxjs_1.from(myBadPromise()).pipe(errorHandler);
         const example = source.pipe(operators_1.flatMap(() => promise$));
-        // output: 'Bad Promise: Rejected'
+        // output: 'Approve!'
         const subscribe = example.subscribe((val) => console.log(val));
     }
 }
