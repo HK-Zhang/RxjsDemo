@@ -78,6 +78,26 @@ export class RetryWhenPoc {
             , logError);
 
         const subscribe = example.subscribe((val) => console.log(val));
+
+        /*
+        output:
+        0
+        1
+        2
+        Wait 1 seconds, then retry!
+        0
+        1
+        2
+        Wait 2 seconds, then retry!
+        0
+        1
+        2
+        Wait 3 seconds, then retry!
+        0
+        1
+        2
+        Ouch, giving up!
+        */
     }
 
 }
