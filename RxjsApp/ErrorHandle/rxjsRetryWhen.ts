@@ -11,20 +11,27 @@ export class RetryWhenPoc {
     public func1() {
         // emit value every 1s
         const source = interval(1000);
-        const example  = source.pipe(
-            map((val) => {
-                if (val > 5) {
-                    // error will be picked up by retryWhen
-                    throw val;
-                }
-                return val;
-            })
-            , retryWhen((errors) =>
-                errors.pipe(
-                    // log error message
-                    tap((val) => console.log(`Value ${val} was too high!`))
-                    // restart in 5 seconds
-                    , delayWhen((val) => timer(val * 1000)))));
+
+        const throwErrorOnPurpose = map((val) => {
+            if (val > 5) {
+                // error will be picked up by retryWhen
+                throw val;
+            }
+            return val;
+        });
+
+        // log error message
+        const logError = tap((val) => console.log(`Value ${val} was too high!`));
+        const restartLater = delayWhen((val: number) => timer(val * 1000));
+
+        const logAndRetry = retryWhen((errors) =>
+            errors.pipe(
+                logError
+                , restartLater));
+
+        const example = source.pipe(
+            throwErrorOnPurpose
+            , logAndRetry);
         /*
           output:
           0
@@ -42,24 +49,33 @@ export class RetryWhenPoc {
     public func2() {
         // emit value every 1s
         const source = interval(1000);
+
+        const throwErrorOnPurpose = map((val) => {
+            if (val > 2) {
+                throw val;
+            }
+            return val;
+        });
+
+        const processRetry = mergeMap(([error, i]) => {
+            if (i > 3) {
+                return Observable.throw(error);
+            }
+            console.log(`Wait ${i} seconds, then retry!`);
+            return timer(i * 1000);
+        });
+
+        const retryHard = retryWhen((attempts) => attempts.pipe(
+            zip(range(1, 4))
+            , processRetry));
+
+        const logError = catchError((_) => of("Ouch, giving up!"));
+
+
         const example = source.pipe(
-            map((val) => {
-                if (val > 2) {
-                    // error will be picked up by retryWhen
-                    throw val;
-                }
-                return val;
-            })
-            , retryWhen((attempts) => {
-                return attempts.pipe(zip(range(1, 4)), mergeMap(([error, i]) => {
-                    if (i > 3) {
-                        return Observable.throw(error);
-                    }
-                    console.log(`Wait ${i} seconds, then retry!`);
-                    return timer(i * 1000);
-                }));
-            })
-            , catchError((_) => of("Ouch, giving up!")));
+            throwErrorOnPurpose
+            , retryHard
+            , logError);
 
         const subscribe = example.subscribe((val) => console.log(val));
     }
