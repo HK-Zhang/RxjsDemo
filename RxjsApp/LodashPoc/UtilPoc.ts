@@ -237,10 +237,10 @@ export class UtilPoc {
     }
 
     public runInContextFunc() {
-        _.mixin({  foo: _.constant("foo")  });
+        _.mixin({ foo: _.constant("foo") });
 
-        const  lodash  = _.runInContext();
-        lodash.mixin({  bar: lodash.constant("bar")  });
+        const lodash = _.runInContext();
+        lodash.mixin({ bar: lodash.constant("bar") });
 
         _.isFunction((_ as any).foo);
         //  => true
@@ -253,6 +253,16 @@ export class UtilPoc {
         //  => true
 
         //  Create a suped-up `defer` in Node.js.
-        const  defer  = _.runInContext({  setTimeout: setImmediate  }).defer;
+        const defer = _.runInContext({ setTimeout: setImmediate }).defer;
+    }
+
+    public stubArrayFunc() {
+        const  arrays  = _.times(2, _.stubArray);
+
+        console.log(arrays);
+        //  => [[], []]
+
+        console.log(arrays[0]  ===  arrays[1]);
+        //  => false
     }
 }
