@@ -265,4 +265,9 @@ export class UtilPoc {
         console.log(arrays[0]  ===  arrays[1]);
         //  => false
     }
+
+    public stubFalse() {
+        _.times(2, _.stubFalse);
+        //  => [false, false]
+    }
 }
