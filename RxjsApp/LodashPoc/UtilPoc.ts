@@ -270,4 +270,14 @@ export class UtilPoc {
         _.times(2, _.stubFalse);
         //  => [false, false]
     }
+
+    public stubObject() {
+        const  objects  = _.times(2, _.stubObject);
+
+        console.log(objects);
+        //  => [{}, {}]
+
+        console.log(objects[0]  ===  objects[1]);
+        //  => false
+    }
 }
