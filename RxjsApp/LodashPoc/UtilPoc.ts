@@ -281,7 +281,7 @@ export class UtilPoc {
         //  => false
     }
 
-    public subString() {
+    public stubString() {
         _.times(2, _.stubString);
         //  => ['', '']
     }
