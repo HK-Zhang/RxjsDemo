@@ -280,4 +280,9 @@ export class UtilPoc {
         console.log(objects[0]  ===  objects[1]);
         //  => false
     }
+
+    public stubString() {
+        _.times(2, _.stubString);
+        //  => ['', '']
+    }
 }
