@@ -97,6 +97,7 @@ const Poc_1 = require("./Poc");
 // const a = new LangPoc();
 // const a = new ClassPoc();
 // const a = new CallBagPoc();
-const a = new Poc_1.AsyncPoc();
+// const a = new AsyncPoc();
+const a = new Poc_1.LamdaPoc();
 a.test();
 //# sourceMappingURL=app.js.map
