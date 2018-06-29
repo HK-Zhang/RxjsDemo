@@ -285,4 +285,9 @@ export class UtilPoc {
         _.times(2, _.stubString);
         //  => ['', '']
     }
+
+    public stubTrue() {
+        _.times(2, _.stubTrue);
+        //  => [true, true]
+    }
 }
