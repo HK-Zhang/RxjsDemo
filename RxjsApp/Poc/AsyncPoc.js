@@ -27,6 +27,11 @@ class AsyncPoc {
         this.dramaticWelcome();
         console.log("Done");
     }
+    foo1() {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield this.dramaticWelcome();
+        });
+    }
     delay(milliseconds, count) {
         return new Promise((resolve) => {
             setTimeout(() => {

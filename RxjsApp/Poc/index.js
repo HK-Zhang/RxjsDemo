@@ -6,4 +6,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./ClassPoc"));
 __export(require("./CallBag"));
 __export(require("./AsyncPoc"));
+__export(require("./lamdaPoc"));
 //# sourceMappingURL=index.js.map
