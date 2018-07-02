@@ -257,12 +257,12 @@ export class UtilPoc {
     }
 
     public stubArrayFunc() {
-        const  arrays  = _.times(2, _.stubArray);
+        const arrays = _.times(2, _.stubArray);
 
         console.log(arrays);
         //  => [[], []]
 
-        console.log(arrays[0]  ===  arrays[1]);
+        console.log(arrays[0] === arrays[1]);
         //  => false
     }
 
@@ -272,12 +272,12 @@ export class UtilPoc {
     }
 
     public stubObject() {
-        const  objects  = _.times(2, _.stubObject);
+        const objects = _.times(2, _.stubObject);
 
         console.log(objects);
         //  => [{}, {}]
 
-        console.log(objects[0]  ===  objects[1]);
+        console.log(objects[0] === objects[1]);
         //  => false
     }
 
@@ -289,5 +289,13 @@ export class UtilPoc {
     public stubTrue() {
         _.times(2, _.stubTrue);
         //  => [true, true]
+    }
+
+    public timesFunc() {
+        _.times(3,  String);
+        //  => ['0', '1', '2']
+
+        _.times(4, _.constant(0));
+        //  => [0, 0, 0, 0]
     }
 }
