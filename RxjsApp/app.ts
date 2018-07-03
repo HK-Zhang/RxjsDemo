@@ -12,7 +12,7 @@ import { CombineAllPoc, CombineLatestPoc, ConcatPoc, ForkJoinPoc, MergeAllPoc, M
 import { CreatePoc, EmptyPoc, FromPoc, FromPromisePoc, IntervalPoc, OfPoc, RangePoc, ThrowPoc,
     TimerPoc } from "./Creation";
 
-import { ArrayPoc, CollectionPoc, FunctionPoc, LangPoc, Poc } from "./LodashPoc";
+import { ArrayPoc, CollectionPoc, FPpoc, FunctionPoc, LangPoc, Poc } from "./LodashPoc";
 
 import { DictionaryPoc, QueuePoc, SetPoc } from "./Collections";
 
@@ -132,7 +132,8 @@ import { AsyncPoc, CallBagPoc, ClassPoc, LamdaPoc } from "./Poc";
 // const a = new ClassPoc();
 // const a = new CallBagPoc();
 // const a = new AsyncPoc();
-const a = new LamdaPoc();
+// const a = new LamdaPoc();
+const a = new FPpoc();
 
 
 

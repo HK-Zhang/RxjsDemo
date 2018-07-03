@@ -12,4 +12,5 @@ __export(require("./MathPoc"));
 __export(require("./NumberPoc"));
 __export(require("./ObjectPoc"));
 __export(require("./SeqPoc"));
+__export(require("./fpPoc"));
 //# sourceMappingURL=index.js.map

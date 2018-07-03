@@ -209,6 +209,16 @@ class UtilPoc {
         _.times(2, _.stubString);
         //  => ['', '']
     }
+    stubTrue() {
+        _.times(2, _.stubTrue);
+        //  => [true, true]
+    }
+    timesFunc() {
+        _.times(3, String);
+        //  => ['0', '1', '2']
+        _.times(4, _.constant(0));
+        //  => [0, 0, 0, 0]
+    }
 }
 exports.UtilPoc = UtilPoc;
 //# sourceMappingURL=UtilPoc.js.map
