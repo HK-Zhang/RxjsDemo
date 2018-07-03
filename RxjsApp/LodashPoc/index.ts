@@ -7,5 +7,6 @@ export * from "./MathPoc";
 export * from "./NumberPoc";
 export * from "./ObjectPoc";
 export * from "./SeqPoc";
+export * from "./fpPoc";
 
 
