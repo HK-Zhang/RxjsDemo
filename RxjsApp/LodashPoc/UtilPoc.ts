@@ -298,4 +298,12 @@ export class UtilPoc {
         _.times(4, _.constant(0));
         //  => [0, 0, 0, 0]
     }
+
+    public uniqueFunc() {
+        _.uniqueId("contact_");
+        //  => 'contact_104'
+
+        _.uniqueId();
+        //  => '105'
+    }
 }
