@@ -25,4 +25,10 @@ export class FPpoc {
               );
         console.log(formatData(data));
     }
+
+    public curryFunc() {
+        const addCurried = (x) => (y) => x + y;
+        const addTwo = addCurried(2); // function
+        const result = addTwo(3); // 5
+    }
 }
