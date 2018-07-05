@@ -16,18 +16,18 @@ export class FunctionPoc {
         fp(); // Nothing
         fp(); // Prints "OMG!"
 
-//         var saves = ['profile', 'settings'];
-//
-// var done = _.after(saves.length, function() {
-//   console.log('done saving!');
-// });
-//
-// _.forEach(saves, function(type) {
-//   asyncSave({ 'type': type, 'complete': done });
-// });
-//  => Logs 'done saving!' after the two async saves have completed.
+        //         var saves = ['profile', 'settings'];
+        //
+        // var done = _.after(saves.length, function() {
+        //   console.log('done saving!');
+        // });
+        //
+        // _.forEach(saves, function(type) {
+        //   asyncSave({ 'type': type, 'complete': done });
+        // });
+        //  => Logs 'done saving!' after the two async saves have completed.
 
-        const v1 = _.map(["6",  "8",  "10"],  _.ary(parseInt,  1));
+        const v1 = _.map(["6", "8", "10"], _.ary(parseInt, 1));
         console.log(v1);
 
         const ff = _.before(4, () => console.log(new Date().getTime().toString()));
@@ -37,138 +37,169 @@ export class FunctionPoc {
         ff();
 
         // jQuery(element).on('click', _.before(5, addContactToList));
-//  => Allows adding up to 4 contacts to the list.
+        //  => Allows adding up to 4 contacts to the list.
     }
 
     public bindPoc() {
-        function greet(greeting,  punctuation) {
-              return greeting + " " + this.user + punctuation;
-            }
+        function  greet(greeting, punctuation)  {
+            return  greeting  +  " "  +  this.user  +  punctuation;
+        }
 
-        const object =  { user:  "fred" };
+        const  object  = {  user: "fred"  };
 
-        const bound1 =  _.bind(greet,  object,  "hi");
+        const  bound1  = _.bind(greet, object, "hi");
         console.log(bound1("!"));
-            //  => 'hi fred!'
+        //  => 'hi fred!'
 
-            //  Bound with placeholders.
-        const bound =  _.bind(greet,  object,  _,  "!");
+        //  Bound with placeholders.
+        const  bound  = _.bind(greet, object, _, "!");
         console.log(bound("hi"));
-            //  => 'hi fred!'
+        //  => 'hi fred!'
 
-        const object2 =  {
-                  user:  "fred",
-                  greet(greeting,  punctuation) {
-                    return greeting + " " + this.user + punctuation;
-                  },
-                };
+        const  object2  = {
+            user: "fred",
+            greet(greeting, punctuation)  {
+                return  greeting  +  " "  +  this.user  +  punctuation;
+            },
+        };
 
-        const bound3 =  _.bindKey(object2,  "greet",  "hi");
+        const  bound3  = _.bindKey(object2, "greet", "hi");
         console.log(bound3("!"));
-                //  => 'hi fred!'
+        //  => 'hi fred!'
 
-        object2.greet =  function(greeting,  punctuation) {
-                  return greeting + "ya " + this.user + punctuation;
-                };
+        object2.greet  = function (greeting, punctuation)  {
+            return  greeting  +  "ya "  +  this.user  +  punctuation;
+        };
 
         console.log(bound3("!"));
-                //  => 'hiya fred!'
+        //  => 'hiya fred!'
 
-                //  Bound with placeholders.
-        const bound5 =  _.bindKey(object2,  "greet",  _,  "!");
+        //  Bound with placeholders.
+        const  bound5  = _.bindKey(object2, "greet", _, "!");
         console.log(bound5("hi"));
-                //  => 'hiya fred!'
+        //  => 'hiya fred!'
     }
 
     public curryFunc() {
-        const abc =  (a,  b,  c) => {
-              return [a,  b,  c];
-            };
+        const  abc  = (a, b, c) =>  {
+            return  [a, b, c];
+        };
 
-        const curried =  _.curry(abc);
+        const  curried  = _.curry(abc);
 
         const v1 = curried(1)(2)(3);
         console.log(v1);
-            //  => [1, 2, 3]
+        //  => [1, 2, 3]
 
-        const v2 = curried(1,  2)(3);
+        const v2 = curried(1, 2)(3);
         console.log(v2);
-            //  => [1, 2, 3]
+        //  => [1, 2, 3]
 
-        const v3 = curried(1,  2,  3);
+        const v3 = curried(1, 2, 3);
         console.log(v3);
-            //  => [1, 2, 3]
+        //  => [1, 2, 3]
 
-            //  Curried with placeholders.
+        //  Curried with placeholders.
         // curried(1)(_,  3)(2);
-            //  => [1, 2, 3]
+        //  => [1, 2, 3]
     }
 
     public curryRightFunc() {
-        const abc =  (a,  b,  c) => {
-              return [a,  b,  c];
-            };
+        const  abc  = (a, b, c)  => {
+            return  [a, b, c];
+        };
 
-        const curried =  _.curryRight(abc);
+        const  curried  = _.curryRight(abc);
 
         const v1 = curried(3)(2)(1);
         console.log(v1);
-            //  => [1, 2, 3]
+        //  => [1, 2, 3]
 
-        const v2 = curried(2,  3)(1);
+        const v2 = curried(2, 3)(1);
         console.log(v2);
-            //  => [1, 2, 3]
+        //  => [1, 2, 3]
 
-        const v3 = curried(1,  2,  3);
+        const v3 = curried(1, 2, 3);
         console.log(v3);
-            //  => [1, 2, 3]
+        //  => [1, 2, 3]
 
-            //  Curried with placeholders.
+        //  Curried with placeholders.
         // curried(3)(1,  _)(2);
-            //  => [1, 2, 3]
+        //  => [1, 2, 3]
     }
 
     public deferFunc() {
 
-        _.delay((text) => {
-              console.log(text);
-            },  1000,  "later");
-            //  => Logs 'later' after one second.
+        _.delay((text)  => {
+            console.log(text);
+        }, 1000, "later");
+        //  => Logs 'later' after one second.
 
-        _.defer((text) => {
-              console.log(text);
-            },  "deferred");
-            //  => Logs 'deferred' after one millisecond.
+        _.defer((text)  => {
+            console.log(text);
+        }, "deferred");
+        //  => Logs 'deferred' after one millisecond.
     }
 
     public flipFunc() {
-        const flipped =  _.flip(() => {
-              return _.toArray(arguments);
-            });
+        const  flipped  = _.flip(() =>  {
+            return  _.toArray(arguments);
+        });
 
-        console.log(flipped("a",  "b",  "c",  "d"));
-            //  => ['d', 'c', 'b', 'a']
+        console.log(flipped("a", "b", "c", "d"));
+        //  => ['d', 'c', 'b', 'a']
 
-        const object =  { a:  1,  b:  2 };
-        const other =  { c:  3,  d:  4 };
+        const  object  = {  a: 1, b: 2  };
+        const  other  = {  c: 3, d: 4  };
 
-        const values =  _.memoize(_.values);
+        const  values  = _.memoize(_.values);
         console.log(values(object));
-//  => [1, 2]
+        //  => [1, 2]
 
         console.log(values(other));
-//  => [3, 4]
+        //  => [3, 4]
 
-        object.a =  2;
+        object.a  = 2;
         console.log(values(object));
-//  => [1, 2]
+        //  => [1, 2]
 
-//  Modify the result cache.
-        values.cache.set(object,  ["a",  "b"]);
+        //  Modify the result cache.
+        values.cache.set(object, ["a", "b"]);
         console.log(values(object));
-//  => ['a', 'b']
+        //  => ['a', 'b']
 
-//  Replace `_.memoize.Cache`.
+        //  Replace `_.memoize.Cache`.
         // _.memoize.Cache =  WeakMap;
+    }
+
+    public partialFunc() {
+        function greet(greeting, name) {
+            return greeting + " " + name;
+        }
+
+        const sayHelloTo = _.partial(greet, "hello");
+        sayHelloTo("fred");
+        //  => 'hello fred'
+
+        //  Partially applied with placeholders.
+        const greetFred = _.partial(greet, _, "fred");
+        greetFred("hi");
+        //  => 'hi fred'
+    }
+
+    public partialRightFunc() {
+        function greet(greeting, name) {
+            return greeting + " " + name;
+        }
+
+
+        const  greetFred  = _.partialRight(greet, "fred");
+        greetFred("hi");
+        //  => 'hi fred'
+
+        //  Partially applied with placeholders.
+        const  sayHelloTo  = _.partialRight(greet, "hello", _);
+        sayHelloTo("fred");
+        //  => 'hello fred'
     }
 }
