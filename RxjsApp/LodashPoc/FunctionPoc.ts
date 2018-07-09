@@ -67,7 +67,7 @@ export class FunctionPoc {
         console.log(bound3("!"));
         //  => 'hi fred!'
 
-        object2.greet  = function (greeting, punctuation)  {
+        object2.greet  = function(greeting, punctuation)  {
             return  greeting  +  "ya "  +  this.user  +  punctuation;
         };
 
@@ -210,5 +210,12 @@ export class FunctionPoc {
 
         _.filter([1,  2,  3,  4,  5,  6],  _.negate(isEven));
             //  => [1, 3, 5]
+    }
+
+    public reargFunc() {
+        const rearged =  _.rearg((a,  b,  c) =>  [a,  b,  c],  [2,  0,  1]);
+
+        rearged("b",  "c",  "a");
+            //  => ['a', 'b', 'c']
     }
 }
