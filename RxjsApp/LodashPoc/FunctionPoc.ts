@@ -218,4 +218,12 @@ export class FunctionPoc {
         rearged("b",  "c",  "a");
             //  => ['a', 'b', 'c']
     }
+
+    public restFunc() {
+        const say =  _.rest((what,  names) => what + " " + _.initial(names).join(", ") +
+            (_.size(names) > 1 ? ", & " :  "") + _.last(names));
+
+        say("hello",  "fred",  "barney",  "pebbles");
+            //  => 'hello fred, barney, & pebbles'
+    }
 }
