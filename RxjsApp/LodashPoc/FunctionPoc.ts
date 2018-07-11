@@ -226,4 +226,11 @@ export class FunctionPoc {
         say("hello",  "fred",  "barney",  "pebbles");
             //  => 'hello fred, barney, & pebbles'
     }
+
+    public spreadFunc() {
+        const say =  _.spread((who,  what) => who + " says " + what);
+
+        say(["fred",  "hello"]);
+            //  => 'fred says hello'
+    }
 }
