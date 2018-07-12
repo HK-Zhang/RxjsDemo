@@ -87,7 +87,7 @@ const LodashPoc_1 = require("./LodashPoc");
 // const a = new WindowWhenPoc();
 // const a = new WindowTogglePoc();
 // let a = new mapImPoc();
-// const a = new ArrayPoc();
+const a = new LodashPoc_1.ArrayPoc();
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
@@ -99,6 +99,6 @@ const LodashPoc_1 = require("./LodashPoc");
 // const a = new CallBagPoc();
 // const a = new AsyncPoc();
 // const a = new LamdaPoc();
-const a = new LodashPoc_1.FPpoc();
+// const a = new FPpoc();
 a.test();
 //# sourceMappingURL=app.js.map

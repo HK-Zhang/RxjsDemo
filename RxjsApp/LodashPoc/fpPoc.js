@@ -17,6 +17,11 @@ class FPpoc {
         const formatData = fp.compose(fp.map(formatPhone), fp.uniqBy("phone"), fp.filter("phone"), fp.sortBy("firstName"));
         console.log(formatData(data));
     }
+    curryFunc() {
+        const addCurried = (x) => (y) => x + y;
+        const addTwo = addCurried(2); // function
+        const result = addTwo(3); // 5
+    }
 }
 exports.FPpoc = FPpoc;
 //# sourceMappingURL=fpPoc.js.map

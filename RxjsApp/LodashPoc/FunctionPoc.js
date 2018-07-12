@@ -135,6 +135,53 @@ class FunctionPoc {
         //  Replace `_.memoize.Cache`.
         // _.memoize.Cache =  WeakMap;
     }
+    partialFunc() {
+        function greet(greeting, name) {
+            return greeting + " " + name;
+        }
+        const sayHelloTo = _.partial(greet, "hello");
+        sayHelloTo("fred");
+        //  => 'hello fred'
+        //  Partially applied with placeholders.
+        const greetFred = _.partial(greet, _, "fred");
+        greetFred("hi");
+        //  => 'hi fred'
+    }
+    partialRightFunc() {
+        function greet(greeting, name) {
+            return greeting + " " + name;
+        }
+        const greetFred = _.partialRight(greet, "fred");
+        greetFred("hi");
+        //  => 'hi fred'
+        //  Partially applied with placeholders.
+        const sayHelloTo = _.partialRight(greet, "hello", _);
+        sayHelloTo("fred");
+        //  => 'hello fred'
+    }
+    negateFunc() {
+        function isEven(n) {
+            return n % 2 === 0;
+        }
+        _.filter([1, 2, 3, 4, 5, 6], _.negate(isEven));
+        //  => [1, 3, 5]
+    }
+    reargFunc() {
+        const rearged = _.rearg((a, b, c) => [a, b, c], [2, 0, 1]);
+        rearged("b", "c", "a");
+        //  => ['a', 'b', 'c']
+    }
+    restFunc() {
+        const say = _.rest((what, names) => what + " " + _.initial(names).join(", ") +
+            (_.size(names) > 1 ? ", & " : "") + _.last(names));
+        say("hello", "fred", "barney", "pebbles");
+        //  => 'hello fred, barney, & pebbles'
+    }
+    spreadFunc() {
+        const say = _.spread((who, what) => who + " says " + what);
+        say(["fred", "hello"]);
+        //  => 'fred says hello'
+    }
 }
 exports.FunctionPoc = FunctionPoc;
 //# sourceMappingURL=FunctionPoc.js.map

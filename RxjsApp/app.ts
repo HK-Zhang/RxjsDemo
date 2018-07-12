@@ -121,7 +121,7 @@ import { AsyncPoc, CallBagPoc, ClassPoc, LamdaPoc } from "./Poc";
 // const a = new WindowWhenPoc();
 // const a = new WindowTogglePoc();
 // let a = new mapImPoc();
-// const a = new ArrayPoc();
+const a = new ArrayPoc();
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
@@ -133,7 +133,7 @@ import { AsyncPoc, CallBagPoc, ClassPoc, LamdaPoc } from "./Poc";
 // const a = new CallBagPoc();
 // const a = new AsyncPoc();
 // const a = new LamdaPoc();
-const a = new FPpoc();
+// const a = new FPpoc();
 
 
 
