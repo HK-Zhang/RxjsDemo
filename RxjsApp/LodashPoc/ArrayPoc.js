@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 class ArrayPoc {
     test() {
-        // this.chunkFun();
+        this.chunkFun();
         // this.compactFun();
         // this.concatFun();
         // this.dropFun();
@@ -20,14 +20,16 @@ class ArrayPoc {
         // this.unionFun();
         // this.uniqFun();
         // this.unzipFun();
-        this.zipFun();
+        // this.zipFun();
     }
-    // tslint:disable-next-line:max-line-length
-    // Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
+    // Creates an array of elements split into groups the length of size.
+    // If array can't be split evenly, the final chunk will be the remaining elements.
     chunkFun() {
         const original = ["a", "b", "c", "d"];
         const target = _.chunk(original, 2);
-        _.forEach(target, (val) => console.log(val));
+        console.log(JSON.stringify(target));
+        //  => [['a', 'b'], ['c', 'd']]
+        // _.forEach(target, (val) => console.log(val));
     }
     /**
      * Creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.

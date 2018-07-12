@@ -219,6 +219,12 @@ class UtilPoc {
         _.times(4, _.constant(0));
         //  => [0, 0, 0, 0]
     }
+    uniqueFunc() {
+        _.uniqueId("contact_");
+        //  => 'contact_104'
+        _.uniqueId();
+        //  => '105'
+    }
 }
 exports.UtilPoc = UtilPoc;
 //# sourceMappingURL=UtilPoc.js.map
