@@ -2,8 +2,8 @@ import * as _ from "lodash";
 
 export class ArrayPoc {
     public test() {
-        this.chunkFun();
-        // this.compactFun();
+        // this.chunkFun();
+        this.compactFun();
         // this.concatFun();
         // this.dropFun();
         // this.fillFun();
@@ -29,7 +29,6 @@ export class ArrayPoc {
         const target = _.chunk(original, 2);
         console.log(JSON.stringify(target));
         //  => [['a', 'b'], ['c', 'd']]
-        // _.forEach(target, (val) => console.log(val));
     }
 
     /**
@@ -37,7 +36,8 @@ export class ArrayPoc {
      */
     public compactFun() {
         const target = _.compact([0,  1,  false,  2,  "",  3]);
-        _.forEach(target, (val) => console.log(val));
+        console.log(JSON.stringify(target));
+        // => [1,2,3]
     }
 
     /**

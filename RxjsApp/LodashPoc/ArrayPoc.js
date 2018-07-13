@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 class ArrayPoc {
     test() {
-        this.chunkFun();
-        // this.compactFun();
+        // this.chunkFun();
+        this.compactFun();
         // this.concatFun();
         // this.dropFun();
         // this.fillFun();
@@ -29,14 +29,13 @@ class ArrayPoc {
         const target = _.chunk(original, 2);
         console.log(JSON.stringify(target));
         //  => [['a', 'b'], ['c', 'd']]
-        // _.forEach(target, (val) => console.log(val));
     }
     /**
      * Creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.
      */
     compactFun() {
         const target = _.compact([0, 1, false, 2, "", 3]);
-        _.forEach(target, (val) => console.log(val));
+        console.log(JSON.stringify(target));
     }
     /**
      * Creates a new array concatenating array with any additional arrays and/or values.
