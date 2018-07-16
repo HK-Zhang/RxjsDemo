@@ -15,6 +15,7 @@ class ReadablePoc {
             .filter(isNotVowel)
             .join("");
         console.log(y);
+        // DFHJL
     }
 }
 exports.ReadablePoc = ReadablePoc;

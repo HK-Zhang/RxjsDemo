@@ -4,8 +4,8 @@ const _ = require("lodash");
 class ArrayPoc {
     test() {
         // this.chunkFun();
-        this.compactFun();
-        // this.concatFun();
+        // this.compactFun();
+        this.concatFun();
         // this.dropFun();
         // this.fillFun();
         // this.findIndexFun();
@@ -45,8 +45,8 @@ class ArrayPoc {
         const array = [1];
         // const other =  _.concat(array,  2,  [3],  [[4]]);
         const other = _.concat(array, 2, [3], [4]);
-        console.log(other);
-        console.log(array);
+        console.log(JSON.stringify(other));
+        console.log(JSON.stringify(array));
     }
     /**
      * Creates a slice of array with n elements dropped from the beginning.

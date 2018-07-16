@@ -3,8 +3,8 @@ import * as _ from "lodash";
 export class ArrayPoc {
     public test() {
         // this.chunkFun();
-        this.compactFun();
-        // this.concatFun();
+        // this.compactFun();
+        this.concatFun();
         // this.dropFun();
         // this.fillFun();
         // this.findIndexFun();
@@ -47,8 +47,10 @@ export class ArrayPoc {
         const array =  [1];
         // const other =  _.concat(array,  2,  [3],  [[4]]);
         const other =  _.concat(array,  2,  [3],  [4]);
-        console.log(other);
-        console.log(array);
+        console.log(JSON.stringify(other));
+        // => [1,2,3,4]
+        console.log(JSON.stringify(array));
+        // => [1]
     }
 
     /**
