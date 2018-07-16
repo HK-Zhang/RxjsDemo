@@ -36,6 +36,7 @@ class ArrayPoc {
     compactFun() {
         const target = _.compact([0, 1, false, 2, "", 3]);
         console.log(JSON.stringify(target));
+        // => [1,2,3]
     }
     /**
      * Creates a new array concatenating array with any additional arrays and/or values.
