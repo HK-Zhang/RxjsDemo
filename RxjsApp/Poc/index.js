@@ -8,4 +8,5 @@ __export(require("./CallBag"));
 __export(require("./AsyncPoc"));
 __export(require("./lamdaPoc"));
 __export(require("./Readable"));
+__export(require("./PromisePoc"));
 //# sourceMappingURL=index.js.map

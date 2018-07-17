@@ -1,13 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+require("rxjs/add/observable/from");
 const Observable_1 = require("rxjs/Observable");
-const Promise = require("promise");
+// const Promise = require("promise");
 class FromPoc {
     test() {
         // this.func1();
-        // this.func2();
+        this.func2();
         // this.func3();
-        this.func4();
+        // this.func4();
     }
     func1() {
         // emit array as a sequence of values

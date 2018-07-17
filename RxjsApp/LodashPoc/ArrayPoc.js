@@ -46,7 +46,9 @@ class ArrayPoc {
         // const other =  _.concat(array,  2,  [3],  [[4]]);
         const other = _.concat(array, 2, [3], [4]);
         console.log(JSON.stringify(other));
+        // => [1,2,3,4]
         console.log(JSON.stringify(array));
+        // => [1]
     }
     /**
      * Creates a slice of array with n elements dropped from the beginning.
