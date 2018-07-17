@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const LodashPoc_1 = require("./LodashPoc");
+const Creation_1 = require("./Creation");
 // let a = new fromJsImPoc();
 // const a = new PipePoc();
 // const a = new ZipPoc();
@@ -35,7 +35,7 @@ const LodashPoc_1 = require("./LodashPoc");
 // const a = new MergePoc();
 // let a = new StartWithPoc();
 // const a = new WithLatestFromPoc();
-// let a = new FromPoc()
+const a = new Creation_1.FromPoc();
 // let a = new FromPromisePoc()
 // let a = new Poc()
 // let a = new SetPoc()
@@ -87,7 +87,7 @@ const LodashPoc_1 = require("./LodashPoc");
 // const a = new WindowWhenPoc();
 // const a = new WindowTogglePoc();
 // let a = new mapImPoc();
-const a = new LodashPoc_1.ArrayPoc();
+// const a = new ArrayPoc();
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
@@ -101,5 +101,6 @@ const a = new LodashPoc_1.ArrayPoc();
 // const a = new LamdaPoc();
 // const a = new FPpoc();
 // const a = new ReadablePoc();
+// const a = new PromisePoc();
 a.test();
 //# sourceMappingURL=app.js.map
