@@ -5,8 +5,8 @@ class ArrayPoc {
     test() {
         // this.chunkFun();
         // this.compactFun();
-        this.concatFun();
-        // this.dropFun();
+        // this.concatFun();
+        this.dropFun();
         // this.fillFun();
         // this.findIndexFun();
         // this.flattenFun();
@@ -55,18 +55,18 @@ class ArrayPoc {
      */
     dropFun() {
         const array = _.drop([1, 2, 3], 2);
-        console.log(array);
+        console.log(JSON.stringify(array));
         const array1 = _.dropRight([1, 2, 3], 2);
-        console.log(array1);
+        console.log(JSON.stringify(array1));
         const users = [
             { user: "barney", active: true },
             { user: "fred", active: false },
             { user: "pebbles", active: false }
         ];
         const v1 = _.dropRightWhile(users, (o) => !o.active);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
         const v2 = _.dropWhile(users, (o) => !o.active);
-        console.log(v2);
+        console.log(JSON.stringify(v2));
     }
     /**
      * Fills elements of array with value from start up to, but not including, end.
