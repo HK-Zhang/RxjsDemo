@@ -70,7 +70,7 @@ import { AsyncPoc, CallBagPoc, ClassPoc, LamdaPoc, PromisePoc, ReadablePoc } fro
 // const a = new MergePoc();
 // let a = new StartWithPoc();
 // const a = new WithLatestFromPoc();
-const a = new FromPoc();
+// const a = new FromPoc();
 // let a = new FromPromisePoc()
 // let a = new Poc()
 // let a = new SetPoc()
@@ -122,7 +122,7 @@ const a = new FromPoc();
 // const a = new WindowWhenPoc();
 // const a = new WindowTogglePoc();
 // let a = new mapImPoc();
-// const a = new ArrayPoc();
+const a = new ArrayPoc();
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
