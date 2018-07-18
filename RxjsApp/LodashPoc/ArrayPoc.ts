@@ -5,8 +5,8 @@ export class ArrayPoc {
         // this.chunkFun();
         // this.compactFun();
         // this.concatFun();
-        this.dropFun();
-        // this.fillFun();
+        // this.dropFun();
+        this.fillFun();
         // this.findIndexFun();
         // this.flattenFun();
         // this.fromPairsFun();
@@ -85,13 +85,13 @@ export class ArrayPoc {
     public fillFun() {
         const array =  [1,  2,  3];
         _.fill(array,  "a");
-        console.log(array);
+        console.log(JSON.stringify(array));
 
         const a2 = _.fill(Array(3),  2);
-        console.log(a2);
+        console.log(JSON.stringify(a2));
 
         const a3 = _.fill([4,  6,  8,  10],  "*",  1,  3);
-        console.log(a3);
+        console.log(JSON.stringify(a3));
     }
 
     /**
