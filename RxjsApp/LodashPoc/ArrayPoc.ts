@@ -6,9 +6,9 @@ export class ArrayPoc {
         // this.compactFun();
         // this.concatFun();
         // this.dropFun();
-        this.fillFun();
+        // this.fillFun();
         // this.findIndexFun();
-        // this.flattenFun();
+        this.flattenFun();
         // this.fromPairsFun();
         // this.insertsectionFun();
         // this.joinFun();
@@ -86,12 +86,15 @@ export class ArrayPoc {
         const array =  [1,  2,  3];
         _.fill(array,  "a");
         console.log(JSON.stringify(array));
+        // => ["a","a","a"]
 
         const a2 = _.fill(Array(3),  2);
         console.log(JSON.stringify(a2));
+        // => [2,2,2]
 
         const a3 = _.fill([4,  6,  8,  10],  "*",  1,  3);
         console.log(JSON.stringify(a3));
+        // => [4,"*","*",10]
     }
 
     /**
@@ -100,19 +103,24 @@ export class ArrayPoc {
     public flattenFun() {
         const array = [1,  [2,  [3,  [4]],  5]];
         const a1 = _.flatten(array);
-        console.log(a1);
+        console.log(JSON.stringify(a1));
+        // => [1,2,[3,[4]],5]
 
         const a2 = _.flattenDeep(array);
-        console.log(a2);
+        console.log(JSON.stringify(a2));
+        // => [1,2,3,4,5]
 
         const a3 = _.flattenDepth(array, 1);
-        console.log(a3);
+        console.log(JSON.stringify(a3));
+        // => [1,2,[3,[4]],5]
 
         const a4 = _.flattenDepth(array, 2);
-        console.log(a4);
+        console.log(JSON.stringify(a4));
+        // => [1,2,3,[4],5]
 
         const a5 = _.flattenDepth(array, 3);
-        console.log(a5);
+        console.log(JSON.stringify(a5));
+        // => [1,2,3,4,5]
     }
 
     /**
