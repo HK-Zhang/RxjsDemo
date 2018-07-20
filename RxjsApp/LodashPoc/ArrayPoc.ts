@@ -7,8 +7,8 @@ export class ArrayPoc {
         // this.concatFun();
         // this.dropFun();
         // this.fillFun();
-        // this.findIndexFun();
-        this.flattenFun();
+        this.findIndexFun();
+        // this.flattenFun();
         // this.fromPairsFun();
         // this.insertsectionFun();
         // this.joinFun();
@@ -136,27 +136,35 @@ export class ArrayPoc {
 
         const i1 = _.findIndex(users,  (o) => o.user === "barney");
         console.log(i1);
+        // => 0
 
         const i2 = _.findIndex(users,  { user:  "fred",  active:  false });
         console.log(i2);
+        // => 1
 
         const i3 = _.findIndex(users,  ["active",  false]);
         console.log(i3);
+        // => 0
 
         const i4 = _.findIndex(users,  "active");
         console.log(i4);
+        // => 2
 
         const i5 = _.findLastIndex(users,  (o) => o.user === "barney");
         console.log(i5);
+        // => 0
 
         const i6 = _.findLastIndex(users,  { user:  "fred",  active:  false });
         console.log(i6);
+        // => 1
 
         const i7 = _.findLastIndex(users,  ["active",  false]);
         console.log(i7);
+        // => 1
 
         const i8 = _.findLastIndex(users,  "active");
         console.log(i8);
+        // => 2
     }
 
     /**

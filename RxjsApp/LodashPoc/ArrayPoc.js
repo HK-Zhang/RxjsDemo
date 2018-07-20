@@ -8,8 +8,8 @@ class ArrayPoc {
         // this.concatFun();
         // this.dropFun();
         // this.fillFun();
-        // this.findIndexFun();
-        this.flattenFun();
+        this.findIndexFun();
+        // this.flattenFun();
         // this.fromPairsFun();
         // this.insertsectionFun();
         // this.joinFun();
@@ -94,14 +94,19 @@ class ArrayPoc {
         const array = [1, [2, [3, [4]], 5]];
         const a1 = _.flatten(array);
         console.log(JSON.stringify(a1));
+        // => [1,2,[3,[4]],5]
         const a2 = _.flattenDeep(array);
         console.log(JSON.stringify(a2));
+        // => [1,2,3,4,5]
         const a3 = _.flattenDepth(array, 1);
         console.log(JSON.stringify(a3));
+        // => [1,2,[3,[4]],5]
         const a4 = _.flattenDepth(array, 2);
         console.log(JSON.stringify(a4));
+        // => [1,2,3,[4],5]
         const a5 = _.flattenDepth(array, 3);
         console.log(JSON.stringify(a5));
+        // => [1,2,3,4,5]
     }
     /**
      * This method is like _.find except that it returns the index of the first element
