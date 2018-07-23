@@ -8,9 +8,9 @@ class ArrayPoc {
         // this.concatFun();
         // this.dropFun();
         // this.fillFun();
-        this.findIndexFun();
+        // this.findIndexFun();
         // this.flattenFun();
-        // this.fromPairsFun();
+        this.fromPairsFun();
         // this.insertsectionFun();
         // this.joinFun();
         // this.pullFun();
@@ -120,33 +120,41 @@ class ArrayPoc {
         ];
         const i1 = _.findIndex(users, (o) => o.user === "barney");
         console.log(i1);
+        // => 0
         const i2 = _.findIndex(users, { user: "fred", active: false });
         console.log(i2);
+        // => 1
         const i3 = _.findIndex(users, ["active", false]);
         console.log(i3);
+        // => 0
         const i4 = _.findIndex(users, "active");
         console.log(i4);
+        // => 2
         const i5 = _.findLastIndex(users, (o) => o.user === "barney");
         console.log(i5);
+        // => 0
         const i6 = _.findLastIndex(users, { user: "fred", active: false });
         console.log(i6);
+        // => 1
         const i7 = _.findLastIndex(users, ["active", false]);
         console.log(i7);
+        // => 1
         const i8 = _.findLastIndex(users, "active");
         console.log(i8);
+        // => 2
     }
     /**
      * returns an object composed from key-value pairs.
      */
     fromPairsFun() {
         const a1 = _.fromPairs([["a", 1], ["b", 2]]);
-        console.log(a1);
+        console.log(JSON.stringify(a1));
         const a2 = _.head([1, 2, 3]);
-        console.log(a2);
+        console.log(JSON.stringify(a2));
         const a3 = _.indexOf([1, 2, 1, 2], 2);
-        console.log(a3);
+        console.log(JSON.stringify(a3));
         const a4 = _.indexOf([1, 2, 1, 2], 2, 2);
-        console.log(a4);
+        console.log(JSON.stringify(a4));
     }
     /**
      * Creates an array of unique values that are included in all given arrays

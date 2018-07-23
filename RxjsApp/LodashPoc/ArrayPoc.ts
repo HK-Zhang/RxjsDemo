@@ -7,9 +7,9 @@ export class ArrayPoc {
         // this.concatFun();
         // this.dropFun();
         // this.fillFun();
-        this.findIndexFun();
+        // this.findIndexFun();
         // this.flattenFun();
-        // this.fromPairsFun();
+        this.fromPairsFun();
         // this.insertsectionFun();
         // this.joinFun();
         // this.pullFun();
@@ -172,16 +172,20 @@ export class ArrayPoc {
      */
     public fromPairsFun() {
         const a1 = _.fromPairs([["a",  1],  ["b",  2]]);
-        console.log(a1);
+        console.log(JSON.stringify(a1));
+        // => {"a":1,"b":2}
 
         const a2 = _.head([1,  2,  3]);
-        console.log(a2);
+        console.log(JSON.stringify(a2));
+        // => 1
 
         const a3 = _.indexOf([1, 2, 1, 2], 2);
-        console.log(a3);
+        console.log(JSON.stringify(a3));
+        // => 1
 
         const a4 = _.indexOf([1, 2, 1, 2], 2, 2);
-        console.log(a4);
+        console.log(JSON.stringify(a4));
+        // => 3
     }
 
     /**
