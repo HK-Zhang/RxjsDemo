@@ -10,8 +10,8 @@ export class ArrayPoc {
         // this.findIndexFun();
         // this.flattenFun();
         // this.fromPairsFun();
-        this.insertsectionFun();
-        // this.joinFun();
+        // this.insertsectionFun();
+        this.joinFun();
         // this.pullFun();
         // this.removeFun();
         // this.sortedIndexFun();
@@ -219,18 +219,23 @@ export class ArrayPoc {
     public joinFun() {
         const a1 = _.join(["a",  "b",  "c"],  "~");
         console.log(a1);
+        // => a~b~c
 
         const a2 = _.initial([1,  2,  3]);
         console.log(a2);
+        // => [1, 2]
 
         const a3 = _.last([1,  2,  3]);
         console.log(a3);
+        // => 3
 
         const a4 = _.lastIndexOf([1,  2,  1,  2],  2);
         console.log(a4);
+        // => 3
 
         const a5 = _.lastIndexOf([1,  2,  1,  2],  2,  2);
         console.log(a5);
+        // => 1
     }
 
     /**
