@@ -11,8 +11,8 @@ class ArrayPoc {
         // this.findIndexFun();
         // this.flattenFun();
         // this.fromPairsFun();
-        this.insertsectionFun();
-        // this.joinFun();
+        // this.insertsectionFun();
+        this.joinFun();
         // this.pullFun();
         // this.removeFun();
         // this.sortedIndexFun();
@@ -168,14 +168,18 @@ class ArrayPoc {
     insertsectionFun() {
         const a1 = _.intersection([2, 1], [2, 3]);
         console.log(JSON.stringify(a1));
+        // => [2]
         const a2 = _.intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor);
         console.log(JSON.stringify(a2));
+        // => [2.1]
         const a3 = _.intersectionBy([{ x: 1 }], [{ x: 2 }, { x: 1 }], "x");
         console.log(JSON.stringify(a3));
+        // => [{"x":1}]
         const objects = [{ x: 1, y: 2 }, { x: 2, y: 1 }];
         const others = [{ x: 1, y: 1 }, { x: 1, y: 2 }];
         const a4 = _.intersectionWith(objects, others, _.isEqual);
         console.log(JSON.stringify(a4));
+        // => [{"x":1,"y":2}]
     }
     /**
      * Converts all elements in array into a string separated by separator.
