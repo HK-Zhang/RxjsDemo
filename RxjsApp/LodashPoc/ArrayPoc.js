@@ -13,8 +13,8 @@ class ArrayPoc {
         // this.fromPairsFun();
         // this.insertsectionFun();
         // this.joinFun();
-        this.pullFun();
-        // this.removeFun();
+        // this.pullFun();
+        this.removeFun();
         // this.sortedIndexFun();
         // this.takeFun();
         // this.unionFun();
@@ -208,20 +208,26 @@ class ArrayPoc {
         const array = ["a", "b", "c", "a", "b", "c"];
         const a1 = _.pull(array, "a", "c");
         console.log(JSON.stringify(a1));
+        // => ["b","b"]
         const a2 = _.pullAll(array, ["a", "c"]);
         console.log(JSON.stringify(a2));
+        // => ["b","b"]
         const array2 = [{ x: 1 }, { x: 2 }, { x: 3 }, { x: 1 }];
         const a3 = _.pullAllBy(array2, [{ x: 1 }, { x: 3 }], "x");
         console.log(JSON.stringify(a3));
+        // => [{"x":2}]
         const array3 = [{ x: 1, y: 2 }, { x: 3, y: 4 }, { x: 5, y: 6 }];
         const a4 = _.pullAllWith(array3, [{ x: 3, y: 4 }], _.isEqual);
         console.log(JSON.stringify(a4));
+        // => [{"x":1,"y":2},{"x":5,"y":6}]
         const array4 = ["a", "b", "c", "d"];
         const pulled = _.pullAt(array4, [1, 3]);
         console.log(JSON.stringify(pulled));
+        // => ["b","d"]
         const array5 = ["a", "b", "c", "d"];
         const a5 = _.nth(array5, 1);
         console.log(JSON.stringify(a5));
+        // => "b"
     }
     /**
      * removeFun
@@ -231,12 +237,12 @@ class ArrayPoc {
         const evens = _.remove(array, (n) => {
             return n % 2 === 0;
         });
-        console.log(array);
-        console.log(evens);
+        console.log(JSON.stringify(array));
+        console.log(JSON.stringify(evens));
         const reverseArr = _.reverse(array);
-        console.log(reverseArr);
+        console.log(JSON.stringify(reverseArr));
         const slicedArr = _.slice(array, 0, 1);
-        console.log(slicedArr);
+        console.log(JSON.stringify(slicedArr));
     }
     /**
      * sortedIndex

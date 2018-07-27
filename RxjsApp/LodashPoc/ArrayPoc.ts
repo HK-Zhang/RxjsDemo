@@ -12,8 +12,8 @@ export class ArrayPoc {
         // this.fromPairsFun();
         // this.insertsectionFun();
         // this.joinFun();
-        this.pullFun();
-        // this.removeFun();
+        // this.pullFun();
+        this.removeFun();
         // this.sortedIndexFun();
         // this.takeFun();
         // this.unionFun();
@@ -280,15 +280,19 @@ export class ArrayPoc {
         const  evens  = _.remove(array, (n) =>  {
               return  n  %  2  ===  0;
         });
-        console.log(array);
+        console.log(JSON.stringify(array));
+        // => [1,3]
 
-        console.log(evens);
+        console.log(JSON.stringify(evens));
+        // => [2,4]
 
         const reverseArr = _.reverse(array);
-        console.log(reverseArr);
+        console.log(JSON.stringify(reverseArr));
+        // => [3,1]
 
         const slicedArr = _.slice(array, 0, 1);
-        console.log(slicedArr);
+        console.log(JSON.stringify(slicedArr));
+        // => [3]
     }
 
     /**
