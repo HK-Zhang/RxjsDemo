@@ -13,8 +13,8 @@ export class ArrayPoc {
         // this.insertsectionFun();
         // this.joinFun();
         // this.pullFun();
-        this.removeFun();
-        // this.sortedIndexFun();
+        // this.removeFun();
+        this.sortedIndexFun();
         // this.takeFun();
         // this.unionFun();
         // this.uniqFun();
@@ -319,10 +319,10 @@ export class ArrayPoc {
         console.log(v6);
 
         const v7 = _.sortedUniq([1,  1,  2]);
-        console.log(v7);
+        console.log(JSON.stringify(v7));
 
         const v8 = _.sortedUniqBy([1.1,  1.2,  2.3,  2.4],  Math.floor);
-        console.log(v8);
+        console.log(JSON.stringify(v8));
     }
 
     /**
