@@ -14,8 +14,8 @@ class ArrayPoc {
         // this.insertsectionFun();
         // this.joinFun();
         // this.pullFun();
-        this.removeFun();
-        // this.sortedIndexFun();
+        // this.removeFun();
+        this.sortedIndexFun();
         // this.takeFun();
         // this.unionFun();
         // this.uniqFun();
@@ -238,11 +238,15 @@ class ArrayPoc {
             return n % 2 === 0;
         });
         console.log(JSON.stringify(array));
+        // => [1,3]
         console.log(JSON.stringify(evens));
+        // => [2,4]
         const reverseArr = _.reverse(array);
         console.log(JSON.stringify(reverseArr));
+        // => [3,1]
         const slicedArr = _.slice(array, 0, 1);
         console.log(JSON.stringify(slicedArr));
+        // => [3]
     }
     /**
      * sortedIndex
@@ -262,9 +266,9 @@ class ArrayPoc {
         const v6 = _.sortedLastIndexOf([4, 5, 5, 5, 6], 5);
         console.log(v6);
         const v7 = _.sortedUniq([1, 1, 2]);
-        console.log(v7);
+        console.log(JSON.stringify(v7));
         const v8 = _.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor);
-        console.log(v8);
+        console.log(JSON.stringify(v8));
     }
     /**
      * takeFun
