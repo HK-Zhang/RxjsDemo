@@ -14,8 +14,8 @@ export class ArrayPoc {
         // this.joinFun();
         // this.pullFun();
         // this.removeFun();
-        this.sortedIndexFun();
-        // this.takeFun();
+        // this.sortedIndexFun();
+        this.takeFun();
         // this.unionFun();
         // this.uniqFun();
         // this.unzipFun();
@@ -301,28 +301,36 @@ export class ArrayPoc {
     public sortedIndexFun() {
         const v1 = _.sortedIndex([30, 50], 40);
         console.log(v1);
+        // => 1
 
         const objects =  [{ x:  4 },  { x:  5 }];
         const v2 = _.sortedIndexBy(objects , {x: 4}, (o) => o.x);
         console.log(v2);
+        // => 0
 
         const v3 = _.sortedIndexOf([4,  5,  5,  5,  6],  5);
         console.log(v3);
+        // => 1
 
         const v4 = _.sortedLastIndex([4,  5,  5,  5,  6],  5);
         console.log(v4);
+        // => 4
 
         const v5 = _.sortedLastIndexBy(objects , {x: 4}, (o) => o.x);
         console.log(v5);
+        // => 1
 
         const v6 = _.sortedLastIndexOf([4,  5,  5,  5,  6],  5);
         console.log(v6);
+        // => 3
 
         const v7 = _.sortedUniq([1,  1,  2]);
         console.log(JSON.stringify(v7));
+        // => [1,2]
 
         const v8 = _.sortedUniqBy([1.1,  1.2,  2.3,  2.4],  Math.floor);
         console.log(JSON.stringify(v8));
+        // => [1.1,2.3]
     }
 
     /**
@@ -330,13 +338,16 @@ export class ArrayPoc {
      */
     public takeFun() {
         const v1 = _.tail([1,  2,  3]);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
+        // => [2,3]
 
         const v2 = _.take([1, 2, 3], 2);
-        console.log(v2);
+        console.log(JSON.stringify(v2));
+        // => [1,2]
 
         const v3 = _.takeRight([1, 2, 3], 2);
-        console.log(v3);
+        console.log(JSON.stringify(v3));
+        // => [2,3]
 
         const users =  [
               { user:  "barney",   active:  true },
@@ -344,10 +355,12 @@ export class ArrayPoc {
               { user:  "pebbles",  active:  false },
             ];
         const v4 = _.takeRightWhile(users, (o) => !o.active);
-        console.log(v4);
+        console.log(JSON.stringify(v4));
+        // => [{"user":"fred","active":false},{"user":"pebbles","active":false}]
 
         const v5 = _.takeWhile(users, (o) => !o.active);
-        console.log(v5);
+        console.log(JSON.stringify(v5));
+        // => []
     }
 
     /**
