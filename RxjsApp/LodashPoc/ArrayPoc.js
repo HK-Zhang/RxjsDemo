@@ -16,8 +16,8 @@ class ArrayPoc {
         // this.pullFun();
         // this.removeFun();
         // this.sortedIndexFun();
-        this.takeFun();
-        // this.unionFun();
+        // this.takeFun();
+        this.unionFun();
         // this.uniqFun();
         // this.unzipFun();
         // this.zipFun();
@@ -284,10 +284,13 @@ class ArrayPoc {
     takeFun() {
         const v1 = _.tail([1, 2, 3]);
         console.log(JSON.stringify(v1));
+        // => [2,3]
         const v2 = _.take([1, 2, 3], 2);
         console.log(JSON.stringify(v2));
+        // => [1,2]
         const v3 = _.takeRight([1, 2, 3], 2);
         console.log(JSON.stringify(v3));
+        // => [2,3]
         const users = [
             { user: "barney", active: true },
             { user: "fred", active: false },
@@ -295,23 +298,25 @@ class ArrayPoc {
         ];
         const v4 = _.takeRightWhile(users, (o) => !o.active);
         console.log(JSON.stringify(v4));
+        // => [{"user":"fred","active":false},{"user":"pebbles","active":false}]
         const v5 = _.takeWhile(users, (o) => !o.active);
         console.log(JSON.stringify(v5));
+        // => []
     }
     /**
      * unionFun
      */
     unionFun() {
         const v1 = _.union([2], [1, 2]);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
         const v2 = _.unionBy([2.1], [1.2, 2.3], Math.floor);
-        console.log(v2);
+        console.log(JSON.stringify(v2));
         const v3 = _.unionBy([{ x: 1 }], [{ x: 2 }, { x: 1 }], "x");
-        console.log(v3);
+        console.log(JSON.stringify(v3));
         const objects = [{ x: 1, y: 2 }, { x: 2, y: 1 }];
         const others = [{ x: 1, y: 1 }, { x: 1, y: 2 }];
         const v4 = _.unionWith(objects, others, _.isEqual);
-        console.log(v4);
+        console.log(JSON.stringify(v4));
     }
     /**
      * uniqFun
