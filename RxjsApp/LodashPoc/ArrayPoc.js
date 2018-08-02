@@ -17,8 +17,8 @@ class ArrayPoc {
         // this.removeFun();
         // this.sortedIndexFun();
         // this.takeFun();
-        this.unionFun();
-        // this.uniqFun();
+        // this.unionFun();
+        this.uniqFun();
         // this.unzipFun();
         // this.zipFun();
     }
@@ -309,26 +309,30 @@ class ArrayPoc {
     unionFun() {
         const v1 = _.union([2], [1, 2]);
         console.log(JSON.stringify(v1));
+        // => [2,1]
         const v2 = _.unionBy([2.1], [1.2, 2.3], Math.floor);
         console.log(JSON.stringify(v2));
+        // => [2.1,1.2]
         const v3 = _.unionBy([{ x: 1 }], [{ x: 2 }, { x: 1 }], "x");
         console.log(JSON.stringify(v3));
+        // => [{"x":1},{"x":2}]
         const objects = [{ x: 1, y: 2 }, { x: 2, y: 1 }];
         const others = [{ x: 1, y: 1 }, { x: 1, y: 2 }];
         const v4 = _.unionWith(objects, others, _.isEqual);
         console.log(JSON.stringify(v4));
+        // => [{"x":1,"y":2},{"x":2,"y":1},{"x":1,"y":1}]
     }
     /**
      * uniqFun
      */
     uniqFun() {
         const v1 = _.uniq([2, 1, 2]);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
         const v2 = _.uniqBy([{ x: 1 }, { x: 2 }, { x: 1 }], "x");
-        console.log(v2);
+        console.log(JSON.stringify(v2));
         const objects = [{ x: 1, y: 2 }, { x: 2, y: 1 }, { x: 1, y: 2 }];
         const v3 = _.uniqWith(objects, _.isEqual);
-        console.log(v3);
+        console.log(JSON.stringify(v3));
     }
     /**
      * unzipFun
