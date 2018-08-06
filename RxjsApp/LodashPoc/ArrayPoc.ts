@@ -18,8 +18,8 @@ export class ArrayPoc {
         // this.takeFun();
         // this.unionFun();
         // this.uniqFun();
-        this.unzipFun();
-        // this.zipFun();
+        // this.unzipFun();
+        this.zipFun();
     }
 
     // Creates an array of elements split into groups the length of size.
@@ -434,14 +434,17 @@ export class ArrayPoc {
      */
     public zipFun() {
         const v1 = _.zipObject(["a", "b"], [1, 2]);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
+        // => {"a":1,"b":2}
 
         const v2 = _.zipObjectDeep(["a.b[0].c", "a.b[1].d"], [1, 2]);
-        console.log(v2);
+        console.log(JSON.stringify(v2));
+        // => {"a":{"b":[{"c":1},{"d":2}]}}
 
         const v3 = _.zipWith([1, 2], [10, 20], [100, 200], (a, b, c) => {
             return a + b + c;
           });
-        console.log(v3);
+        console.log(JSON.stringify(v3));
+        // => [111,222]
     }
 }
