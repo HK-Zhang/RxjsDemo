@@ -19,8 +19,8 @@ class ArrayPoc {
         // this.takeFun();
         // this.unionFun();
         // this.uniqFun();
-        this.unzipFun();
-        // this.zipFun();
+        // this.unzipFun();
+        this.zipFun();
     }
     // Creates an array of elements split into groups the length of size.
     // If array can't be split evenly, the final chunk will be the remaining elements.
@@ -343,28 +343,32 @@ class ArrayPoc {
     unzipFun() {
         const zipped = _.zip(["a", "b"], [1, 2], [true, false]);
         console.log(JSON.stringify(zipped));
+        // => [["a",1,true],["b",2,false]]
         const v1 = _.unzip(zipped);
         console.log(JSON.stringify(v1));
+        // => [["a","b"],[1,2],[true,false]]
         const z2 = _.zip([1, 2], [10, 20], [100, 200]);
         console.log(JSON.stringify(z2));
+        // => [[1,10,100],[2,20,200]]
         const v2 = _.unzipWith(z2, _.add);
         console.log(JSON.stringify(v2));
+        // => [3,30,300]
         const v3 = _.without([2, 1, 2, 3], 1, 2);
-        console.log(v3);
         console.log(JSON.stringify(v3));
+        // => [3]
     }
     /**
      * zipFun
      */
     zipFun() {
         const v1 = _.zipObject(["a", "b"], [1, 2]);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
         const v2 = _.zipObjectDeep(["a.b[0].c", "a.b[1].d"], [1, 2]);
-        console.log(v2);
+        console.log(JSON.stringify(v2));
         const v3 = _.zipWith([1, 2], [10, 20], [100, 200], (a, b, c) => {
             return a + b + c;
         });
-        console.log(v3);
+        console.log(JSON.stringify(v3));
     }
 }
 exports.ArrayPoc = ArrayPoc;
