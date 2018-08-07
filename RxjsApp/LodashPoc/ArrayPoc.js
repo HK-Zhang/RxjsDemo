@@ -363,12 +363,15 @@ class ArrayPoc {
     zipFun() {
         const v1 = _.zipObject(["a", "b"], [1, 2]);
         console.log(JSON.stringify(v1));
+        // => {"a":1,"b":2}
         const v2 = _.zipObjectDeep(["a.b[0].c", "a.b[1].d"], [1, 2]);
         console.log(JSON.stringify(v2));
+        // => {"a":{"b":[{"c":1},{"d":2}]}}
         const v3 = _.zipWith([1, 2], [10, 20], [100, 200], (a, b, c) => {
             return a + b + c;
         });
         console.log(JSON.stringify(v3));
+        // => [111,222]
     }
 }
 exports.ArrayPoc = ArrayPoc;

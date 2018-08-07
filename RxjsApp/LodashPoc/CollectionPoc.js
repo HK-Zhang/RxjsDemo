@@ -3,14 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 class CollectionPoc {
     test() {
-        // this.countFunc();
+        this.countFunc();
         // this.findFunc();
         // this.flapFunc();
         // this.groupbyFunc();
         // this.invokeMapFunc();
         // this.orderbyFunc();
         // this.rejectFunc();
-        this.sizeFunc();
+        // this.sizeFunc();
     }
     countFunc() {
         const v1 = _.countBy([6.1, 4.2, 6.3], Math.floor);

@@ -2,14 +2,14 @@ import * as _ from "lodash";
 
 export class CollectionPoc {
     public test() {
-        // this.countFunc();
+        this.countFunc();
         // this.findFunc();
         // this.flapFunc();
         // this.groupbyFunc();
         // this.invokeMapFunc();
         // this.orderbyFunc();
         // this.rejectFunc();
-        this.sizeFunc();
+        // this.sizeFunc();
     }
 
     public countFunc() {
@@ -17,10 +17,13 @@ export class CollectionPoc {
         const v2 = _.countBy(["one",  "two",  "three"],  "length");
 
         console.log(v1);
+        // => {4: 1, 6: 2}
         console.log(v2);
+        // => {3: 2, 5: 1}
 
         const v3 = _.every([true,  1,  null,  "yes"],  Boolean);
         console.log(v3);
+        // => false
 
         const users =  [
               { user:  "barney",  age:  36,  active:  false },
@@ -29,9 +32,11 @@ export class CollectionPoc {
 
         const v4 = _.every(users,  { user:  "barney",  active:  false });
         console.log(v4);
+        // => false
 
         const v5 = _.every(users,  ["active",  false]);
         console.log(v5);
+        // => true
     }
 
     /**

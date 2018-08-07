@@ -122,12 +122,12 @@ import { AsyncPoc, CallBagPoc, ClassPoc, LamdaPoc, PromisePoc, ReadablePoc } fro
 // const a = new WindowWhenPoc();
 // const a = new WindowTogglePoc();
 // let a = new mapImPoc();
-const a = new ArrayPoc();
+// const a = new ArrayPoc();
 // const a = new SubjectPoc();
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
 // const a = new BehaviorSubjectPoc();
-// const a = new CollectionPoc();
+const a = new CollectionPoc();
 // const a = new FunctionPoc();
 // const a = new LangPoc();
 // const a = new ClassPoc();
