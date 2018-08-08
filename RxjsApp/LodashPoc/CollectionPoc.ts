@@ -2,7 +2,8 @@ import * as _ from "lodash";
 
 export class CollectionPoc {
     public test() {
-        this.countFunc();
+        // this.countFunc();
+        this.filterFunc();
         // this.findFunc();
         // this.flapFunc();
         // this.groupbyFunc();
@@ -48,16 +49,20 @@ export class CollectionPoc {
               { user:  "fred",    age:  40,  active:  false },
             ];
         const v1 = _.filter(users, (o) => !o.active);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
+        // => [{"user":"fred","age":40,"active":false}]
 
         const v2 = _.filter(users, {age: 36, active: true});
-        console.log(v2);
+        console.log(JSON.stringify(v2));
+        // => [{"user":"barney","age":36,"active":true}]
 
         const v3 = _.filter(users, ["active", false]);
-        console.log(v3);
+        console.log(JSON.stringify(v3));
+        // => [{"user":"fred","age":40,"active":false}]
 
         const v4 = _.filter(users, "active");
-        console.log(v4);
+        console.log(JSON.stringify(v4));
+        // => [{"user":"barney","age":36,"active":true}]
     }
 
     /**

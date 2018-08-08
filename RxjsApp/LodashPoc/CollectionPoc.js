@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 class CollectionPoc {
     test() {
-        this.countFunc();
+        // this.countFunc();
+        this.filterFunc();
         // this.findFunc();
         // this.flapFunc();
         // this.groupbyFunc();
@@ -16,17 +17,22 @@ class CollectionPoc {
         const v1 = _.countBy([6.1, 4.2, 6.3], Math.floor);
         const v2 = _.countBy(["one", "two", "three"], "length");
         console.log(v1);
+        // => {4: 1, 6: 2}
         console.log(v2);
+        // => {3: 2, 5: 1}
         const v3 = _.every([true, 1, null, "yes"], Boolean);
         console.log(v3);
+        // => false
         const users = [
             { user: "barney", age: 36, active: false },
             { user: "fred", age: 40, active: false },
         ];
         const v4 = _.every(users, { user: "barney", active: false });
         console.log(v4);
+        // => false
         const v5 = _.every(users, ["active", false]);
         console.log(v5);
+        // => true
     }
     /**
      * filterFunc
@@ -37,13 +43,13 @@ class CollectionPoc {
             { user: "fred", age: 40, active: false },
         ];
         const v1 = _.filter(users, (o) => !o.active);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
         const v2 = _.filter(users, { age: 36, active: true });
-        console.log(v2);
+        console.log(JSON.stringify(v2));
         const v3 = _.filter(users, ["active", false]);
-        console.log(v3);
+        console.log(JSON.stringify(v3));
         const v4 = _.filter(users, "active");
-        console.log(v4);
+        console.log(JSON.stringify(v4));
     }
     /**
      * findFunc
