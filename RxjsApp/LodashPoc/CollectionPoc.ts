@@ -3,8 +3,8 @@ import * as _ from "lodash";
 export class CollectionPoc {
     public test() {
         // this.countFunc();
-        this.filterFunc();
-        // this.findFunc();
+        // this.filterFunc();
+        this.findFunc();
         // this.flapFunc();
         // this.groupbyFunc();
         // this.invokeMapFunc();
@@ -75,19 +75,24 @@ export class CollectionPoc {
               { user:  "pebbles",  age:  1,   active:  true },
             ];
         const v1 = _.find(users, (o) => o.age < 40);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
+        // => {"user":"barney","age":36,"active":true}
 
         const v2 = _.find(users, {age: 36, active: true});
-        console.log(v2);
+        console.log(JSON.stringify(v2));
+        // => {"user":"barney","age":36,"active":true}
 
         const v3 = _.find(users, ["active", false]);
-        console.log(v3);
+        console.log(JSON.stringify(v3));
+        // => {"user":"fred","age":40,"active":false}
 
         const v4 = _.find(users, "active");
-        console.log(v4);
+        console.log(JSON.stringify(v4));
+        // => {"user":"barney","age":36,"active":true}
 
         const v5 = _.findLast([1, 2, 3, 4], (n) => n % 2 === 1);
-        console.log(v5);
+        console.log(JSON.stringify(v5));
+        // => 3
     }
 
     /**
