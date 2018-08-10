@@ -5,8 +5,8 @@ class CollectionPoc {
     test() {
         // this.countFunc();
         // this.filterFunc();
-        this.findFunc();
-        // this.flapFunc();
+        // this.findFunc();
+        this.flapFunc();
         // this.groupbyFunc();
         // this.invokeMapFunc();
         // this.orderbyFunc();
@@ -66,21 +66,27 @@ class CollectionPoc {
         ];
         const v1 = _.find(users, (o) => o.age < 40);
         console.log(JSON.stringify(v1));
+        // => {"user":"barney","age":36,"active":true}
         const v2 = _.find(users, { age: 36, active: true });
         console.log(JSON.stringify(v2));
+        // => {"user":"barney","age":36,"active":true}
         const v3 = _.find(users, ["active", false]);
         console.log(JSON.stringify(v3));
+        // => {"user":"fred","age":40,"active":false}
         const v4 = _.find(users, "active");
         console.log(JSON.stringify(v4));
+        // => {"user":"barney","age":36,"active":true}
         const v5 = _.findLast([1, 2, 3, 4], (n) => n % 2 === 1);
         console.log(JSON.stringify(v5));
+        // => 3
     }
     /**
      * flapFunc
      */
     flapFunc() {
         const v1 = _.flatMap([1, 2], (o) => [o, o]);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
+        // => [1,1,2,2]
         _.forEach([1, 2], (value) => console.log(value));
         _.forEach({ a: 1, b: 2 }, (value, key) => {
             console.log(key);
