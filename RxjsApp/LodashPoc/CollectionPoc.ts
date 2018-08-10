@@ -4,8 +4,8 @@ export class CollectionPoc {
     public test() {
         // this.countFunc();
         // this.filterFunc();
-        this.findFunc();
-        // this.flapFunc();
+        // this.findFunc();
+        this.flapFunc();
         // this.groupbyFunc();
         // this.invokeMapFunc();
         // this.orderbyFunc();
@@ -100,17 +100,19 @@ export class CollectionPoc {
      */
     public flapFunc() {
         const v1 = _.flatMap([1,  2],  (o) => [o, o]);
-
-        console.log(v1);
+        console.log(JSON.stringify(v1));
+        // => [1,1,2,2]
 
         _.forEach([1,  2],  (value) => console.log(value));
+        // => 1, 2
 
         _.forEach({ a:  1,  b:  2 },  (value,  key) => {
               console.log(key);
             });
+        // => a, b
 
         _.forEachRight([1,  2],  (value) => console.log(value));
-
+        // => 2, 1
     }
 
     /**
