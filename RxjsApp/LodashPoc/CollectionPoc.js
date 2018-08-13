@@ -6,8 +6,8 @@ class CollectionPoc {
         // this.countFunc();
         // this.filterFunc();
         // this.findFunc();
-        this.flapFunc();
-        // this.groupbyFunc();
+        // this.flapFunc();
+        this.groupbyFunc();
         // this.invokeMapFunc();
         // this.orderbyFunc();
         // this.rejectFunc();
@@ -88,27 +88,30 @@ class CollectionPoc {
         console.log(JSON.stringify(v1));
         // => [1,1,2,2]
         _.forEach([1, 2], (value) => console.log(value));
+        // => 1, 2
         _.forEach({ a: 1, b: 2 }, (value, key) => {
             console.log(key);
         });
+        // => a, b
         _.forEachRight([1, 2], (value) => console.log(value));
+        // => 2, 1
     }
     /**
      * groupbyFunc
      */
     groupbyFunc() {
         const v1 = _.groupBy([6.1, 4.2, 6.3], Math.floor);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
         const v2 = _.groupBy(["one", "two", "three"], "length");
-        console.log(v2);
+        console.log(JSON.stringify(v2));
         const v3 = _.includes([1, 2, 3], 1);
-        console.log(v3);
+        console.log(JSON.stringify(v3));
         const v4 = _.includes([1, 2, 3], 1, 2);
-        console.log(v4);
+        console.log(JSON.stringify(v4));
         const v5 = _.includes({ a: 1, b: 2 }, 1);
-        console.log(v5);
+        console.log(JSON.stringify(v5));
         const v6 = _.includes("abcd", "bc");
-        console.log(v6);
+        console.log(JSON.stringify(v6));
     }
     /**
      * invokeMapFunc
