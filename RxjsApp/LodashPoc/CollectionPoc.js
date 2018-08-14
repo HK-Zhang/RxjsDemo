@@ -7,8 +7,8 @@ class CollectionPoc {
         // this.filterFunc();
         // this.findFunc();
         // this.flapFunc();
-        this.groupbyFunc();
-        // this.invokeMapFunc();
+        // this.groupbyFunc();
+        this.invokeMapFunc();
         // this.orderbyFunc();
         // this.rejectFunc();
         // this.sizeFunc();
@@ -102,25 +102,31 @@ class CollectionPoc {
     groupbyFunc() {
         const v1 = _.groupBy([6.1, 4.2, 6.3], Math.floor);
         console.log(JSON.stringify(v1));
+        // => {"4":[4.2],"6":[6.1,6.3]}
         const v2 = _.groupBy(["one", "two", "three"], "length");
         console.log(JSON.stringify(v2));
+        // => {"3":["one","two"],"5":["three"]}
         const v3 = _.includes([1, 2, 3], 1);
         console.log(JSON.stringify(v3));
+        // => true
         const v4 = _.includes([1, 2, 3], 1, 2);
         console.log(JSON.stringify(v4));
+        // => false
         const v5 = _.includes({ a: 1, b: 2 }, 1);
         console.log(JSON.stringify(v5));
+        // => true
         const v6 = _.includes("abcd", "bc");
         console.log(JSON.stringify(v6));
+        // => true
     }
     /**
      * invokeMapFunc
      */
     invokeMapFunc() {
         const v1 = _.invokeMap([[5, 1, 7], [3, 2, 1]], "sort");
-        console.log(v1);
+        console.log(JSON.stringify(v1));
         const v2 = _.invokeMap([123, 456], String.prototype.split, "");
-        console.log(v2);
+        console.log(JSON.stringify(v2));
         const array = [
             { dir: "left", code: 97 },
             { dir: "right", code: 100 },
@@ -128,17 +134,17 @@ class CollectionPoc {
         const v3 = _.keyBy(array, (o) => {
             return String.fromCharCode(o.code);
         });
-        console.log(v3);
+        console.log(JSON.stringify(v3));
         const v4 = _.keyBy(array, "dir");
-        console.log(v4);
+        console.log(JSON.stringify(v4));
         const v5 = _.map([4, 8], (n) => n * n);
-        console.log(v5);
+        console.log(JSON.stringify(v5));
         const users = [
             { user: "barney" },
             { user: "fred" },
         ];
         const v6 = _.map(users, "user");
-        console.log(v6);
+        console.log(JSON.stringify(v6));
     }
     /**
      * orderbyFunc
