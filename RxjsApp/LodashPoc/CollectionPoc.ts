@@ -6,8 +6,8 @@ export class CollectionPoc {
         // this.filterFunc();
         // this.findFunc();
         // this.flapFunc();
-        this.groupbyFunc();
-        // this.invokeMapFunc();
+        // this.groupbyFunc();
+        this.invokeMapFunc();
         // this.orderbyFunc();
         // this.rejectFunc();
         // this.sizeFunc();
@@ -149,10 +149,12 @@ export class CollectionPoc {
      */
     public invokeMapFunc() {
         const v1 = _.invokeMap([[5,  1,  7],  [3,  2,  1]],  "sort");
-        console.log(v1);
+        console.log(JSON.stringify(v1));
+        // => [[1,5,7],[1,2,3]]
 
         const v2 = _.invokeMap([123,  456],  String.prototype.split,  "");
-        console.log(v2);
+        console.log(JSON.stringify(v2));
+        // => [["1","2","3"],["4","5","6"]]
 
         const array =  [
               { dir:  "left",  code:  97 },
@@ -162,20 +164,24 @@ export class CollectionPoc {
         const v3 = _.keyBy(array,  (o) => {
               return String.fromCharCode(o.code);
             });
-        console.log(v3);
+        console.log(JSON.stringify(v3));
+        // => {"a":{"dir":"left","code":97},"d":{"dir":"right","code":100}}
 
         const v4 = _.keyBy(array,  "dir");
-        console.log(v4);
+        console.log(JSON.stringify(v4));
+        // => {"left":{"dir":"left","code":97},"right":{"dir":"right","code":100}}
 
         const v5 = _.map([4,  8],  (n) => n * n);
-        console.log(v5);
+        console.log(JSON.stringify(v5));
+        // => [16,64]
 
         const users =  [
               { user:  "barney" },
               { user:  "fred" },
             ];
         const v6 = _.map(users,  "user");
-        console.log(v6);
+        console.log(JSON.stringify(v6));
+        // => ["barney","fred"]
     }
 
     /**
