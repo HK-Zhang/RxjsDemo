@@ -7,8 +7,8 @@ export class CollectionPoc {
         // this.findFunc();
         // this.flapFunc();
         // this.groupbyFunc();
-        this.invokeMapFunc();
-        // this.orderbyFunc();
+        // this.invokeMapFunc();
+        this.orderbyFunc();
         // this.rejectFunc();
         // this.sizeFunc();
     }
@@ -195,7 +195,8 @@ export class CollectionPoc {
               { user:  "barney",  age:  36 },
             ];
         const v1 = _.orderBy(users,  ["user",  "age"],  ["asc",  "desc"]);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
+        // => [{"user":"barney","age":36},{"user":"barney","age":34},{"user":"fred","age":48},{"user":"fred","age":40}]
 
         const urs = [
               { user:  "barney",   age:  36,  active:  false },
@@ -203,32 +204,43 @@ export class CollectionPoc {
               { user:  "pebbles",  age:  1,   active:  false },
             ];
         const v2 = _.partition(urs,  (o) => o.active);
-        console.log(v2);
+        console.log(JSON.stringify(v2));
+        // => [[{"user":"fred","age":40,"active":true}],[{"user":"barney","age":36,"active":false},
+        // {"user":"pebbles","age":1,"active":false}]]
 
-        const v3 = _.partition(users,  { age:  1,  active:  false });
-        console.log(v3);
+        const v3 = _.partition(urs,  { age:  1,  active:  false });
+        console.log(JSON.stringify(v3));
+        // => [[{"user":"pebbles","age":1,"active":false}],
+        // [{"user":"barney","age":36,"active":false},{"user":"fred","age":40,"active":true}]]
 
-        const v4 = _.partition(users,  ["active",  false]);
-        console.log(v4);
+        const v4 = _.partition(urs,  ["active",  false]);
+        console.log(JSON.stringify(v4));
+        // => [[{"user":"barney","age":36,"active":false},{"user":"pebbles","age":1,"active":false}],
+        // [{"user":"fred","age":40,"active":true}]]
 
-        const v5 = _.partition(users,  "active");
-        console.log(v5);
+        const v5 = _.partition(urs,  "active");
+        console.log(JSON.stringify(v5));
+        // => [[{"user":"fred","age":40,"active":true}],
+        // [{"user":"barney","age":36,"active":false},{"user":"pebbles","age":1,"active":false}]]
 
         const v6 = _.reduce([1, 2], (sum: number, n) => sum + n);
-        console.log(v6);
+        console.log(JSON.stringify(v6));
+        // => 3
 
         const v7 = _.reduce({ a:  1,  b:  2,  c:  1 },  (result,  value,  key) => {
               (result[value] || (result[value] =  [])).push(key);
               return result;
             },  {});
-        console.log(v7);
+        console.log(JSON.stringify(v7));
+        // => {"1":["a","c"],"2":["b"]}
 
         const array =  [[0,  1],  [2,  3],  [4,  5]];
         const v8 = _.reduceRight(array,  (flattened,  other) => {
           return flattened.concat(other);
         },  []);
 
-        console.log(v8);
+        console.log(JSON.stringify(v8));
+        // => [4,5,2,3,0,1]
     }
 
     public rejectFunc() {
