@@ -8,8 +8,8 @@ export class CollectionPoc {
         // this.flapFunc();
         // this.groupbyFunc();
         // this.invokeMapFunc();
-        this.orderbyFunc();
-        // this.rejectFunc();
+        // this.orderbyFunc();
+        this.rejectFunc();
         // this.sizeFunc();
     }
 
@@ -249,28 +249,36 @@ export class CollectionPoc {
               { user:  "fred",    age:  40,  active:  true },
             ];
         const v1 = _.reject(users,  (o) => !o.active);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
+        // => [{"user":"fred","age":40,"active":true}]
 
         const v2 = _.reject(users,  { age:  40,  active:  true });
-        console.log(v2);
+        console.log(JSON.stringify(v2));
+        // => [{"user":"barney","age":36,"active":false}]
 
         const v3 = _.reject(users,  ["active",  false]);
-        console.log(v3);
+        console.log(JSON.stringify(v3));
+        // => [{"user":"fred","age":40,"active":true}]
 
         const v4 = _.reject(users,  "active");
-        console.log(v4);
+        console.log(JSON.stringify(v4));
+        // => [{"user":"barney","age":36,"active":false}]
 
         const v5 = _.sample([1,  2,  3,  4]);
-        console.log(v5);
+        console.log(JSON.stringify(v5));
+        // => 4
 
         const v6 = _.sampleSize([1,  2,  3],  2);
-        console.log(v6);
+        console.log(JSON.stringify(v6));
+        // => [1,2]
 
         const v7 = _.sampleSize([1,  2,  3],  4);
-        console.log(v7);
+        console.log(JSON.stringify(v7));
+        // => [2,1,3]
 
         const v8 = _.shuffle([1,  2,  3,  4]);
-        console.log(v8);
+        console.log(JSON.stringify(v8));
+        // => [1,2,4,3]
     }
 
     public sizeFunc() {
