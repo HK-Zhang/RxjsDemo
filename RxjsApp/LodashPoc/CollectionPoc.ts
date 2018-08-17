@@ -9,8 +9,8 @@ export class CollectionPoc {
         // this.groupbyFunc();
         // this.invokeMapFunc();
         // this.orderbyFunc();
-        this.rejectFunc();
-        // this.sizeFunc();
+        // this.rejectFunc();
+        this.sizeFunc();
     }
 
     public countFunc() {
@@ -283,19 +283,32 @@ export class CollectionPoc {
 
     public sizeFunc() {
         console.log(_.size([1,  2,  3]));
+        // => 3
         console.log(_.size({ a:  1,  b:  2 }));
+        // => 2
         console.log(_.size("pebbles"));
-        console.log(_.some([null,  0,  "yes",  false],  Boolean));
+        // => 7
+
+        const v0 = _.some([null,  0,  "yes",  false],  Boolean);
+        console.log(JSON.stringify(v0));
+        // => true
 
         const users =  [
               { user:  "barney",  active:  true },
               { user:  "fred",    active:  false },
             ];
-        console.log(_.some(users,  { user:  "barney",  active:  false }));
 
-        console.log(_.some(users,  ["active",  false]));
+        const v3 = _.some(users,  { user:  "barney",  active:  false });
+        console.log(JSON.stringify(v3));
+        // => false
 
-        console.log(_.some(users,  "active"));
+        const v4 = _.some(users,  ["active",  false]);
+        console.log(JSON.stringify(v4));
+        // => true
+
+        const v5 = _.some(users,  "active");
+        console.log(JSON.stringify(v5));
+        // => true
 
         const user1 = [
               { user:  "fred",    age:  48 },
@@ -303,16 +316,20 @@ export class CollectionPoc {
               { user:  "fred",    age:  40 },
               { user:  "barney",  age:  34 },
             ];
-        const v1 = _.sortBy(users,  [(o) => o.user]);
-        console.log(v1);
+        const v1 = _.sortBy(user1,  [(o) => o.user]);
+        console.log(JSON.stringify(v1));
+        // => [{"user":"barney","age":36},{"user":"barney","age":34},{"user":"fred","age":48},{"user":"fred","age":40}]
 
-        const v2 = _.sortBy(users,  ["user",  "age"]);
-        console.log(v2);
+        const v2 = _.sortBy(user1,  ["user",  "age"]);
+        console.log(JSON.stringify(v2));
+        // => [{"user":"barney","age":34},{"user":"barney","age":36},{"user":"fred","age":40},{"user":"fred","age":48}]
 
         console.log(_.now());
+        // => 1534490821064
 
         _.defer((stamp) => {
               console.log(_.now() - stamp);
             },  _.now());
+            // => 4
     }
 }
