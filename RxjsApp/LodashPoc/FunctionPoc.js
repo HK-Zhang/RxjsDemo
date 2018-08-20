@@ -3,12 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 class FunctionPoc {
     test() {
-        // this.afterPoc();
+        this.afterPoc();
         // this.bindPoc();
         // this.curryFunc();
         // this.curryRightFunc();
         // this.deferFunc();
-        this.flipFunc();
+        // this.flipFunc();
     }
     afterPoc() {
         const fp = _.after(3, () => console.log("OMG!"));

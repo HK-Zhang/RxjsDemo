@@ -2,19 +2,20 @@ import * as _ from "lodash";
 
 export class FunctionPoc {
     public test() {
-        // this.afterPoc();
+        this.afterPoc();
         // this.bindPoc();
         // this.curryFunc();
         // this.curryRightFunc();
         // this.deferFunc();
-        this.flipFunc();
+        // this.flipFunc();
     }
 
     public afterPoc() {
         const fp = _.after(3, () => console.log("OMG!"));
-        fp(); // Nothing
-        fp(); // Nothing
-        fp(); // Prints "OMG!"
+        fp();
+        fp();
+        fp();
+        // => OMG!
 
         //         var saves = ['profile', 'settings'];
         //
@@ -28,7 +29,8 @@ export class FunctionPoc {
         //  => Logs 'done saving!' after the two async saves have completed.
 
         const v1 = _.map(["6", "8", "10"], _.ary(parseInt, 1));
-        console.log(v1);
+        console.log(JSON.stringify(v1));
+        // => [6,8,10]
 
         const ff = _.before(4, () => console.log(new Date().getTime().toString()));
         ff();

@@ -127,8 +127,8 @@ import { AsyncPoc, CallBagPoc, ClassPoc, LamdaPoc, PromisePoc, ReadablePoc } fro
 // const a = new AsyncSubjectPoc();
 // const a = new ReplaySubjectPoc();
 // const a = new BehaviorSubjectPoc();
-const a = new CollectionPoc();
-// const a = new FunctionPoc();
+// const a = new CollectionPoc();
+const a = new FunctionPoc();
 // const a = new LangPoc();
 // const a = new ClassPoc();
 // const a = new CallBagPoc();
