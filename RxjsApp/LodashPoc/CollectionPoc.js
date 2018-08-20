@@ -263,13 +263,16 @@ class CollectionPoc {
         ];
         const v1 = _.sortBy(user1, [(o) => o.user]);
         console.log(JSON.stringify(v1));
-        // => [{"user":"barney","active":true},{"user":"fred","active":false}]
+        // => [{"user":"barney","age":36},{"user":"barney","age":34},{"user":"fred","age":48},{"user":"fred","age":40}]
         const v2 = _.sortBy(user1, ["user", "age"]);
         console.log(JSON.stringify(v2));
+        // => [{"user":"barney","age":34},{"user":"barney","age":36},{"user":"fred","age":40},{"user":"fred","age":48}]
         console.log(_.now());
+        // => 1534490821064
         _.defer((stamp) => {
             console.log(_.now() - stamp);
         }, _.now());
+        // => 4
     }
 }
 exports.CollectionPoc = CollectionPoc;
