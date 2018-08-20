@@ -37,6 +37,9 @@ export class FunctionPoc {
         ff();
         ff();
         ff();
+        // => 1534738375506
+        // 1534738375507
+        // 1534738375507
 
         // jQuery(element).on('click', _.before(5, addContactToList));
         //  => Allows adding up to 4 contacts to the list.
