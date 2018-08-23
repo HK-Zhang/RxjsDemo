@@ -3,18 +3,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash");
 class FunctionPoc {
     test() {
-        this.afterPoc();
+        // this.afterPoc();
         // this.bindPoc();
-        // this.curryFunc();
+        this.curryFunc();
         // this.curryRightFunc();
         // this.deferFunc();
         // this.flipFunc();
     }
     afterPoc() {
         const fp = _.after(3, () => console.log("OMG!"));
-        fp(); // Nothing
-        fp(); // Nothing
-        fp(); // Prints "OMG!"
+        fp();
+        fp();
+        fp();
+        // => OMG!
         //         var saves = ['profile', 'settings'];
         //
         // var done = _.after(saves.length, function() {
@@ -26,12 +27,16 @@ class FunctionPoc {
         // });
         //  => Logs 'done saving!' after the two async saves have completed.
         const v1 = _.map(["6", "8", "10"], _.ary(parseInt, 1));
-        console.log(v1);
+        console.log(JSON.stringify(v1));
+        // => [6,8,10]
         const ff = _.before(4, () => console.log(new Date().getTime().toString()));
         ff();
         ff();
         ff();
         ff();
+        // => 1534738375506
+        // 1534738375507
+        // 1534738375507
         // jQuery(element).on('click', _.before(5, addContactToList));
         //  => Allows adding up to 4 contacts to the list.
     }
@@ -72,13 +77,13 @@ class FunctionPoc {
         };
         const curried = _.curry(abc);
         const v1 = curried(1)(2)(3);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
         //  => [1, 2, 3]
         const v2 = curried(1, 2)(3);
-        console.log(v2);
+        console.log(JSON.stringify(v2));
         //  => [1, 2, 3]
         const v3 = curried(1, 2, 3);
-        console.log(v3);
+        console.log(JSON.stringify(v3));
         //  => [1, 2, 3]
         //  Curried with placeholders.
         // curried(1)(_,  3)(2);
