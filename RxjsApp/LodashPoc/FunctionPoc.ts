@@ -4,8 +4,8 @@ export class FunctionPoc {
     public test() {
         // this.afterPoc();
         // this.bindPoc();
-        this.curryFunc();
-        // this.curryRightFunc();
+        // this.curryFunc();
+        this.curryRightFunc();
         // this.deferFunc();
         // this.flipFunc();
     }
@@ -117,15 +117,15 @@ export class FunctionPoc {
         const  curried  = _.curryRight(abc);
 
         const v1 = curried(3)(2)(1);
-        console.log(v1);
+        console.log(JSON.stringify(v1));
         //  => [1, 2, 3]
 
         const v2 = curried(2, 3)(1);
-        console.log(v2);
+        console.log(JSON.stringify(v2));
         //  => [1, 2, 3]
 
         const v3 = curried(1, 2, 3);
-        console.log(v3);
+        console.log(JSON.stringify(v3));
         //  => [1, 2, 3]
 
         //  Curried with placeholders.
