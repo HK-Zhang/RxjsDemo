@@ -5,8 +5,8 @@ export class FunctionPoc {
         // this.afterPoc();
         // this.bindPoc();
         // this.curryFunc();
-        this.curryRightFunc();
-        // this.deferFunc();
+        // this.curryRightFunc();
+        this.deferFunc();
         // this.flipFunc();
     }
 
