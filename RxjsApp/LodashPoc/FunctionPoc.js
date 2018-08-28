@@ -7,8 +7,8 @@ class FunctionPoc {
         // this.bindPoc();
         // this.curryFunc();
         // this.curryRightFunc();
-        this.deferFunc();
-        // this.flipFunc();
+        // this.deferFunc();
+        this.flipFunc();
     }
     afterPoc() {
         const fp = _.after(3, () => console.log("OMG!"));
@@ -118,10 +118,11 @@ class FunctionPoc {
         //  => Logs 'deferred' after one millisecond.
     }
     flipFunc() {
-        const flipped = _.flip(() => {
+        const flipped = _.flip(function () {
             return _.toArray(arguments);
         });
-        console.log(flipped("a", "b", "c", "d"));
+        const fippedResult = flipped("a", "b", "c", "d");
+        console.log(JSON.stringify(fippedResult));
         //  => ['d', 'c', 'b', 'a']
         const object = { a: 1, b: 2 };
         const other = { c: 3, d: 4 };
