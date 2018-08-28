@@ -6,8 +6,8 @@ export class FunctionPoc {
         // this.bindPoc();
         // this.curryFunc();
         // this.curryRightFunc();
-        this.deferFunc();
-        // this.flipFunc();
+        // this.deferFunc();
+        this.flipFunc();
     }
 
     public afterPoc() {
@@ -147,11 +147,17 @@ export class FunctionPoc {
     }
 
     public flipFunc() {
-        const  flipped  = _.flip(() =>  {
-            return  _.toArray(arguments);
-        });
+        // const  flipped  = _.flip(() =>  {
+        //     return  _.toArray(arguments);
+        // });
 
-        console.log(flipped("a", "b", "c", "d"));
+        const flipped = _.flip(function() {
+              return _.toArray(arguments);
+            });
+
+        const fippedResult = flipped("a", "b", "c", "d");
+
+        console.log(JSON.stringify(fippedResult));
         //  => ['d', 'c', 'b', 'a']
 
         const  object  = {  a: 1, b: 2  };
