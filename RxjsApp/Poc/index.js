@@ -9,4 +9,5 @@ __export(require("./AsyncPoc"));
 __export(require("./lamdaPoc"));
 __export(require("./Readable"));
 __export(require("./PromisePoc"));
+__export(require("./ArrayOps"));
 //# sourceMappingURL=index.js.map
