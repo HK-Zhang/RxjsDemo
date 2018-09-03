@@ -118,6 +118,9 @@ class FunctionPoc {
         //  => Logs 'deferred' after one millisecond.
     }
     flipFunc() {
+        // const  flipped  = _.flip(() =>  {
+        //     return  _.toArray(arguments);
+        // });
         const flipped = _.flip(function () {
             return _.toArray(arguments);
         });
