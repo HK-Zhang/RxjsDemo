@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var fp = require("lodash/fp");
 class FPpoc {
     test() {
-        this.composeFunc();
+        // this.composeFunc();
+        this.curryFunc();
     }
     composeFunc() {
         const data = [{
@@ -15,12 +16,14 @@ class FPpoc {
             return (Object.assign({}, c, { phone: `(${c.phone.slice(0, 2)})${c.phone.slice(3, 5)} - ${c.phone.slice(6)}` }));
         }
         const formatData = fp.compose(fp.map(formatPhone), fp.uniqBy("phone"), fp.filter("phone"), fp.sortBy("firstName"));
-        console.log(formatData(data));
+        console.log(JSON.stringify(formatData(data)));
+        // => [{"firstName":"justin","lastName":"fuller","phone":"(12)45 - 8490"}]
     }
     curryFunc() {
         const addCurried = (x) => (y) => x + y;
         const addTwo = addCurried(2); // function
         const result = addTwo(3); // 5
+        console.log(result);
     }
 }
 exports.FPpoc = FPpoc;
