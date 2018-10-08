@@ -20,10 +20,12 @@ class FPpoc {
         // => [{"firstName":"justin","lastName":"fuller","phone":"(12)45 - 8490"}]
     }
     curryFunc() {
-        const addCurried = (x) => (y) => x + y;
+        const addCurried = (x) => (y) => (z) => x + y + z;
         const addTwo = addCurried(2); // function
-        const result = addTwo(3); // 5
+        const addFour = addTwo(4);
+        const result = addFour(3); // 5
         console.log(result);
+        // => 5
     }
 }
 exports.FPpoc = FPpoc;
