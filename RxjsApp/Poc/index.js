@@ -10,4 +10,5 @@ __export(require("./lamdaPoc"));
 __export(require("./Readable"));
 __export(require("./PromisePoc"));
 __export(require("./ArrayOps"));
+__export(require("./ValidationPoc"));
 //# sourceMappingURL=index.js.map
