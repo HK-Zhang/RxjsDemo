@@ -32,7 +32,7 @@ import { DefaultIfEmptyPoc, EveryPoc } from "./Conditional";
 
 import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } from "./Subject";
 
-import { ArrayOps, AsyncPoc, CallBagPoc, ClassPoc, LamdaPoc, PromisePoc, ReadablePoc } from "./Poc";
+import { ArrayOps, AsyncPoc, CallBagPoc, ClassPoc, LamdaPoc, PromisePoc, ReadablePoc, ValidationPoc } from "./Poc";
 
 
 
@@ -134,10 +134,11 @@ import { ArrayOps, AsyncPoc, CallBagPoc, ClassPoc, LamdaPoc, PromisePoc, Readabl
 // const a = new CallBagPoc();
 // const a = new AsyncPoc();
 // const a = new LamdaPoc();
-const a = new FPpoc();
+// const a = new FPpoc();
 // const a = new ReadablePoc();
 // const a = new PromisePoc();
 // const a = new ArrayOps();
+const a = new ValidationPoc();
 
 
 a.test();
