@@ -97,12 +97,12 @@ const Poc_1 = require("./Poc");
 // const a = new LangPoc();
 // const a = new ClassPoc();
 // const a = new CallBagPoc();
-// const a = new AsyncPoc();
+const a = new Poc_1.AsyncPoc();
 // const a = new LamdaPoc();
 // const a = new FPpoc();
 // const a = new ReadablePoc();
 // const a = new PromisePoc();
 // const a = new ArrayOps();
-const a = new Poc_1.ValidationPoc();
-a.test();
+// const a = new ValidationPoc();
+a.foo1();
 //# sourceMappingURL=app.js.map
