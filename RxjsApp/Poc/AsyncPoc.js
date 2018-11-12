@@ -30,6 +30,7 @@ class AsyncPoc {
     foo1() {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.dramaticWelcome();
+            console.log("Done");
         });
     }
     delay(milliseconds, count) {

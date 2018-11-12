@@ -132,13 +132,14 @@ import { ArrayOps, AsyncPoc, CallBagPoc, ClassPoc, LamdaPoc, PromisePoc, Readabl
 // const a = new LangPoc();
 // const a = new ClassPoc();
 // const a = new CallBagPoc();
-// const a = new AsyncPoc();
+const a = new AsyncPoc();
 // const a = new LamdaPoc();
 // const a = new FPpoc();
 // const a = new ReadablePoc();
 // const a = new PromisePoc();
 // const a = new ArrayOps();
-const a = new ValidationPoc();
+// const a = new ValidationPoc();
 
 
+// a.foo1();
 a.test();

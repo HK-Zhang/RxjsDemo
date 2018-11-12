@@ -22,6 +22,7 @@ export class AsyncPoc {
 
     public async foo1() {
         await this.dramaticWelcome();
+        console.log("Done");
     }
 
     public delay(milliseconds: number, count: number): Promise<number> {
