@@ -6,7 +6,7 @@ class QueuePoc {
         this.func1();
     }
     func1() {
-        var myQueue = new Collections.Queue();
+        const myQueue = new Collections.Queue();
         myQueue.enqueue(1);
         myQueue.enqueue(2);
         console.log(myQueue.dequeue()); // prints 1

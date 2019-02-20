@@ -21,4 +21,9 @@ __export(require("./rxjsMapto"));
 __export(require("./rxjsPartition"));
 __export(require("./rxjsPluck"));
 __export(require("./rxjsReduce"));
+__export(require("./rxjsWindow"));
+__export(require("./rxjsWindowCount"));
+__export(require("./rxjsWindowTime"));
+__export(require("./rxjsWindowWhen"));
+__export(require("./rxjsWindowToggle"));
 //# sourceMappingURL=index.js.map

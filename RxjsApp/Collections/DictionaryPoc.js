@@ -6,7 +6,7 @@ class DictionaryPoc {
         this.func1();
     }
     func1() {
-        var dict = new Collections.Dictionary();
+        const dict = new Collections.Dictionary();
         dict.setValue(new Person("john", 1970, "melbourne"), new Car("honda", "city", 2002));
         dict.setValue(new Person("gavin", 1984), new Car("ferrari", "F50", 2006));
         console.log("Orig");
@@ -19,15 +19,16 @@ class DictionaryPoc {
         console.log(dict);
         // Showing getting / setting a single car:
         console.log("Single Item");
-        var person = new Person("john", 1970);
+        const person = new Person("john", 1970);
         console.log("-Person:");
         console.log(person);
-        var car = dict.getValue(person);
+        const car = dict.getValue(person);
         console.log("-Car:");
         console.log(car.toString());
     }
 }
 exports.DictionaryPoc = DictionaryPoc;
+// tslint:disable-next-line:max-classes-per-file
 class Person {
     constructor(name, yearOfBirth, city) {
         this.name = name;
@@ -38,6 +39,7 @@ class Person {
         return this.name + "-" + this.yearOfBirth; // City is not a part of the key.
     }
 }
+// tslint:disable-next-line:max-classes-per-file
 class Car {
     constructor(company, type, year) {
         this.company = company;

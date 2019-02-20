@@ -1,2 +1,2 @@
-﻿export * from './rxjsEvery'
-export * from './rxjsDefaultIfEmpty'
+﻿export * from "./rxjsEvery";
+export * from "./rxjsDefaultIfEmpty";

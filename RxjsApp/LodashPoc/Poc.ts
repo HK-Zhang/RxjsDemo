@@ -3,12 +3,12 @@
 
 
 export class Poc {
-    test() {
+    public test() {
         this.func1();
     }
 
-    func1() {
-        let a = _.padStart("Hello TypeScript!", 20, " ");
+    public func1() {
+        const a = _.padStart("Hello TypeScript!", 20, " ");
         console.log(a);
     }
 

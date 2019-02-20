@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Promise = require('promise');
-var Rx = require('rxjs/Rx');
-//import Rx = require('rxjs/Rx');
+const Observable_1 = require("rxjs/Observable");
+require("rxjs/add/observable/fromPromise");
 class FromPromisePoc {
     test() {
         this.func1();
@@ -18,10 +18,10 @@ class FromPromisePoc {
             });
         };
         //emit true, then false
-        const source = Rx.Observable.of(true, false);
-        const example = source.mergeMap(val => Rx.Observable
+        const source = Observable_1.Observable.of(true, false);
+        const example = source.mergeMap(val => Observable_1.Observable
             .fromPromise(myPromise(val))
-            .catch(error => Rx.Observable.of(`Error: ${error}`)));
+            .catch(error => Observable_1.Observable.of(`Error: ${error}`)));
         //output: 'Error: Rejected!', 'Resolved!'
         const subscribe = example.subscribe(val => console.log(val));
     }

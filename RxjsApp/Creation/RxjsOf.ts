@@ -1,37 +1,39 @@
-﻿var Promise = require('promise');
-var Rx = require('rxjs/Rx');
+﻿import "rxjs/add/observable/of";
+import { Observable } from "rxjs/Observable";
 
-var tfx = function (item, index) {
+const tfx = (item, index) => {
     return item * 2;
 };
 
 export class OfPoc {
-    test() {
-        //this.func1();
-        this.func3();
+    public test() {
+        this.func1();
+        // this.func3();
     }
 
-    func1() {
-        //emits any number of provided values in sequence
-        const source = Rx.Observable.of(1, 2, 3, 4, 5);
-        //output: 1,2,3,4,5
-        const subscribe = source.subscribe(val => console.log(val));
+    public func1() {
+        // emits any number of provided values in sequence
+        let source = Observable.of(1, 2, 3, 4, 5);
+        // output: 1,2,3,4,5
+        const subscribe = source.subscribe((val) => console.log(val));
+
+        source = Observable.of(6, 7);
     }
 
-    func2() {
-        var source = Rx.Observable.of(1, 2, 3);
+    public func2() {
+        const source = Observable.of(1, 2, 3);
 
-        var target = source.map(tfx);
+        const target = source.map(tfx);
 
-        target.subscribe(x => console.log(x));
+        target.subscribe((x) => console.log(x));
     }
 
-    func3() {
-        //emits values of any type
-        const source = Rx.Observable.of({ name: 'Brian' }, [1, 2, 3], function hello() {
-            return 'Hello';
+    public func3() {
+        // emits values of any type
+        const source = Observable.of<any>({ name: "Brian" }, [1, 2, 3], function hello() {
+            return "Hello";
         });
-        //output: {name: 'Brian}, [1,2,3], function hello() { return 'Hello' }
-        const subscribe = source.subscribe(val => console.log(val));
+        // output: {name: 'Brian}, [1,2,3], function hello() { return 'Hello' }
+        const subscribe = source.subscribe((val) => console.log(val));
     }
 }

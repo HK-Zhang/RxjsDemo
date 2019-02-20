@@ -1,27 +1,27 @@
-﻿import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/take';
-import 'rxjs/add/operator/expand';
-import 'rxjs/add/observable/of';
+﻿import "rxjs/add/observable/of";
+import "rxjs/add/operator/expand";
+import "rxjs/add/operator/take";
+import { Observable } from "rxjs/Observable";
 
 
-export class expandPoc {
+export class ExpandPoc {
 
-    test() {
+    public test() {
         this.func1();
     }
 
-    func1() {
-        //emit 2
+    public func1() {
+        // emit 2
         const source = Observable.of(2);
         const example = source
-            //recursively call supplied function
-            .expand(val => {
-                //2,3,4,5,6
+            // recursively call supplied function
+            .expand((val) => {
+                // 2,3,4,5,6
                 console.log(`Passed value: ${val}`);
-                //3,4,5,6
+                // 3,4,5,6
                 return Observable.of(1 + val);
             })
-            //call 5 times
+            // call 5 times
             .take(5);
         /*
             "RESULT: 2"
@@ -35,8 +35,8 @@ export class expandPoc {
             "RESULT: 6"
             "Passed value: 6"
         */
-        //output: 2,3,4,5,6
-        const subscribe = example.subscribe(val => console.log(`RESULT: ${val}`));
+        // output: 2,3,4,5,6
+        const subscribe = example.subscribe((val) => console.log(`RESULT: ${val}`));
     }
 
 }

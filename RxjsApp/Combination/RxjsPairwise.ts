@@ -1,14 +1,15 @@
-﻿var Rx = require('rxjs/Rx');
+﻿import "rxjs/add/operator/pairwise";
+import { Observable } from "rxjs/Observable";
 
 export class PairwisePoc {
-    test() {
+    public test() {
         this.func1();
     }
 
-    func1() {
-        Rx.Observable.interval(1000)
+    public func1() {
+        Observable.interval(1000)
             .pairwise()
-            .subscribe(pair => console.log(pair)); // pair[1] - pair[0]
+            .subscribe((pair) => console.log(pair)); // pair[1] - pair[0]
     }
 
 }

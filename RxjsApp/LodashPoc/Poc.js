@@ -6,7 +6,7 @@ class Poc {
         this.func1();
     }
     func1() {
-        let a = _.padStart("Hello TypeScript!", 20, " ");
+        const a = _.padStart("Hello TypeScript!", 20, " ");
         console.log(a);
     }
 }

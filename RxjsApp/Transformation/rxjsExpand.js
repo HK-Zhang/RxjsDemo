@@ -1,21 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Observable_1 = require("rxjs/Observable");
-require("rxjs/add/operator/take");
-require("rxjs/add/operator/expand");
 require("rxjs/add/observable/of");
-class expandPoc {
+require("rxjs/add/operator/expand");
+require("rxjs/add/operator/take");
+const Observable_1 = require("rxjs/Observable");
+class ExpandPoc {
     test() {
         this.func1();
     }
     func1() {
-        //emit 2
+        // emit 2
         const source = Observable_1.Observable.of(2);
         const example = source
-            .expand(val => {
-            //2,3,4,5,6
+            .expand((val) => {
+            // 2,3,4,5,6
             console.log(`Passed value: ${val}`);
-            //3,4,5,6
+            // 3,4,5,6
             return Observable_1.Observable.of(1 + val);
         })
             .take(5);
@@ -31,9 +31,9 @@ class expandPoc {
             "RESULT: 6"
             "Passed value: 6"
         */
-        //output: 2,3,4,5,6
-        const subscribe = example.subscribe(val => console.log(`RESULT: ${val}`));
+        // output: 2,3,4,5,6
+        const subscribe = example.subscribe((val) => console.log(`RESULT: ${val}`));
     }
 }
-exports.expandPoc = expandPoc;
+exports.ExpandPoc = ExpandPoc;
 //# sourceMappingURL=rxjsExpand.js.map

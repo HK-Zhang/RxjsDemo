@@ -9,4 +9,5 @@ __export(require("./rxjsDelayWhen"));
 __export(require("./rxjsLet"));
 __export(require("./rxjsToPromise"));
 __export(require("./rxjsTimeout"));
+__export(require("./rxjsPipe"));
 //# sourceMappingURL=index.js.map
