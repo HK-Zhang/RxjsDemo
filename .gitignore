@@ -259,3 +259,5 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+RxjsApp/data/database.sqlite
+RxjsApp/data/db2.sqlite

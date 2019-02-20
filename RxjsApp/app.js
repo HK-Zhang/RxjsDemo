@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Poc_1 = require("./Poc");
+const sqlitepoc_1 = require("./sqlitepoc");
 // let a = new fromJsImPoc();
 // const a = new PipePoc();
 // const a = new ZipPoc();
@@ -97,12 +97,14 @@ const Poc_1 = require("./Poc");
 // const a = new LangPoc();
 // const a = new ClassPoc();
 // const a = new CallBagPoc();
-const a = new Poc_1.AsyncPoc();
+// const a = new AsyncPoc();
 // const a = new LamdaPoc();
 // const a = new FPpoc();
 // const a = new ReadablePoc();
 // const a = new PromisePoc();
 // const a = new ArrayOps();
 // const a = new ValidationPoc();
-a.foo1();
+const a = new sqlitepoc_1.SqlitePoc();
+// a.foo1();
+a.test();
 //# sourceMappingURL=app.js.map
