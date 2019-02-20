@@ -34,6 +34,8 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 
 import { ArrayOps, AsyncPoc, CallBagPoc, ClassPoc, LamdaPoc, PromisePoc, ReadablePoc, ValidationPoc } from "./Poc";
 
+import { SqlitePoc } from "./sqlitepoc";
+
 
 
 // let a = new fromJsImPoc();
@@ -132,14 +134,14 @@ import { ArrayOps, AsyncPoc, CallBagPoc, ClassPoc, LamdaPoc, PromisePoc, Readabl
 // const a = new LangPoc();
 // const a = new ClassPoc();
 // const a = new CallBagPoc();
-const a = new AsyncPoc();
+// const a = new AsyncPoc();
 // const a = new LamdaPoc();
 // const a = new FPpoc();
 // const a = new ReadablePoc();
 // const a = new PromisePoc();
 // const a = new ArrayOps();
 // const a = new ValidationPoc();
-
+const a = new SqlitePoc();
 
 // a.foo1();
 a.test();
