@@ -104,7 +104,8 @@ const sqlitepoc_1 = require("./sqlitepoc");
 // const a = new PromisePoc();
 // const a = new ArrayOps();
 // const a = new ValidationPoc();
-const a = new sqlitepoc_1.SqlitePoc();
+// const a = new SqlitePoc();
+const a = new sqlitepoc_1.SequelizeSqite();
 // a.foo1();
 a.test();
 //# sourceMappingURL=app.js.map

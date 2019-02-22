@@ -34,7 +34,7 @@ import { AsyncSubjectPoc, BehaviorSubjectPoc, ReplaySubjectPoc, SubjectPoc } fro
 
 import { ArrayOps, AsyncPoc, CallBagPoc, ClassPoc, LamdaPoc, PromisePoc, ReadablePoc, ValidationPoc } from "./Poc";
 
-import { SqlitePoc } from "./sqlitepoc";
+import { SequelizeSqite, SqlitePoc } from "./sqlitepoc";
 
 
 
@@ -141,7 +141,8 @@ import { SqlitePoc } from "./sqlitepoc";
 // const a = new PromisePoc();
 // const a = new ArrayOps();
 // const a = new ValidationPoc();
-const a = new SqlitePoc();
+// const a = new SqlitePoc();
+const a = new SequelizeSqite();
 
 // a.foo1();
 a.test();
