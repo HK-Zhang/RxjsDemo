@@ -10,6 +10,15 @@ export class SequelizeSqite {
     });
 
     public test() {
+        // this.foo1();
+        // this.initialize();
+        // this.foo2();
+        // this.foo3();
+        // this.foo4();
+        this.foo5();
+    }
+
+    public foo1() {
         this.sequelize
             .authenticate()
             .then(() => {
@@ -33,5 +42,71 @@ export class SequelizeSqite {
             .then((jane) => {
                 console.log(JSON.stringify(jane));
             });
+    }
+
+    public initialize() {
+        const User = this.sequelize.define("user", {
+            birthday: Sequelize.DATE,
+            username: Sequelize.STRING,
+        });
+
+        for (const u of ["henry", "jimmy", "william", "bill", "jackie"]) {
+            User.create({
+                birthday: new Date(1980, 6, 20),
+                username: u,
+            });
+        }
+    }
+
+    public foo2() {
+        const User = this.sequelize.define("user", {
+            birthday: Sequelize.DATE,
+            username: Sequelize.STRING,
+        });
+
+        User.findById(1).then((u) => {
+            console.log(JSON.stringify(u));
+        });
+
+        User.findOne({where: {username: "janedoe"}}).then((u) => {
+            console.log(JSON.stringify(u));
+        });
+    }
+
+    public foo3() {
+        const User = this.sequelize.define("user", {
+            birthday: Sequelize.DATE,
+            username: Sequelize.STRING,
+        });
+
+        User.update({ birthday: new Date("2019-06-20") }, { where: { id: 1 } }).then((u) => {
+            console.log(JSON.stringify(u));
+        });
+    }
+
+    public foo4() {
+        const User = this.sequelize.define("user", {
+            birthday: Sequelize.DATE,
+            username: Sequelize.STRING,
+        });
+
+        User.destroy({where: {username: "henry"}}).then((u) => {
+            console.log(JSON.stringify(u));
+        });
+    }
+
+    public foo5() {
+        const User = this.sequelize.define("user", {
+            birthday: Sequelize.DATE,
+            username: Sequelize.STRING,
+        });
+
+        User.find({ where: { username: "william" } }).then((u: any) => {
+            if (u) {
+                u.update({ birthday: new Date("2019-06-20") }).then((t) => {
+                    console.log(JSON.stringify(t));
+                });
+            }
+        });
     }
 }
