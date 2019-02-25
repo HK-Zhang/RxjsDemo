@@ -14,7 +14,8 @@ export class SequelizeSqite {
         // this.initialize();
         // this.foo2();
         // this.foo3();
-        this.foo4();
+        // this.foo4();
+        this.foo5();
     }
 
     public foo1() {
@@ -91,6 +92,21 @@ export class SequelizeSqite {
 
         User.destroy({where: {username: "henry"}}).then((u) => {
             console.log(JSON.stringify(u));
+        });
+    }
+
+    public foo5() {
+        const User = this.sequelize.define("user", {
+            birthday: Sequelize.DATE,
+            username: Sequelize.STRING,
+        });
+
+        User.find({ where: { username: "william" } }).then((u: any) => {
+            if (u) {
+                u.update({ birthday: new Date("2019-06-20") }).then((t) => {
+                    console.log(JSON.stringify(t));
+                });
+            }
         });
     }
 }
